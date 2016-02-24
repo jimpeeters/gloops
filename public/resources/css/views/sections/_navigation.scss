@@ -14,9 +14,27 @@
 		height: auto;
 	}
 
+	/* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : $screen-phone) {
+		.logo {
+			width: 80px;
+		}
+    }
+
+	/* Small Devices, Tablets */
+    @media only screen and (min-width : $screen-tablet) {
+		.logo {
+			width: 100px;
+		}
+    }
+
+
+
+
 }
 
 .navigation {
+
 	background-color: $beige;
 	padding: 5px;
 	border-left: 2px solid $black;
@@ -24,10 +42,6 @@
 
 	p{
 		font-size: 10px;
-	
+		clear:both;
 	}
-}
-
-.turn-button-box {
-	box-sizing: border-box;
 }

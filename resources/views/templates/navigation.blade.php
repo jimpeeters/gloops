@@ -14,23 +14,17 @@
 
         <div class="col-xs-2">
             <!-- Library -->
-            <div class="turn-button-box">
-             <a href="#" class="turn-button tick"></a>
-            </div>
+            <a href="#" class="turn-button tick"></a>
             <p>Library</p>
         </div>
         <div class="col-xs-2">
             <!-- My Loops -->
-            <div class="turn-button-box">
-             <a href="#" class="turn-button tick"></a>
-            </div>
+            <a href="#" class="turn-button tick"></a>
             <p>Station</p>
         </div>
         <div class="col-xs-2">
             <!-- My Account -->
-            <div class="turn-button-box">
-             <a href="#" class="turn-button tick"></a>
-            </div>
+            <a href="#" class="turn-button tick"></a>
             <p>Account</p>
         </div>
 

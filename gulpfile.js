@@ -1,4 +1,7 @@
+'use strict';
+
 var elixir = require('laravel-elixir');
+var autoprefixer = require('gulp-autoprefixer'); //for browser compatibility
 
 /*
  |--------------------------------------------------------------------------
@@ -12,5 +15,13 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix.sass([
+        './public/resources/css/**/*.scss'
+    ], 'public/resources/css/style.css');
 });
+
+//To watch changes in sass files
+elixir.Task.find('sass').watch('./public/resources/css/**/*.scss');
+
+
+//console.log(elixir);

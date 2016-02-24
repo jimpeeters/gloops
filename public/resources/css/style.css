@@ -23,9 +23,10 @@
   src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.5.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.5.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.5.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.5.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 .fa {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal normal 14px / 1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -33,7 +34,7 @@
 
 /* makes the font 33% larger relative to the icon container */
 .fa-lg {
-  font-size: 1.33333em;
+  font-size: 1.3333333333em;
   line-height: 0.75em;
   vertical-align: -15%; }
 
@@ -50,24 +51,24 @@
   font-size: 5em; }
 
 .fa-fw {
-  width: 1.28571em;
+  width: 1.2857142857em;
   text-align: center; }
 
 .fa-ul {
   padding-left: 0;
-  margin-left: 2.14286em;
+  margin-left: 2.1428571429em;
   list-style-type: none; }
   .fa-ul > li {
     position: relative; }
 
 .fa-li {
   position: absolute;
-  left: -2.14286em;
-  width: 2.14286em;
-  top: 0.14286em;
+  left: -2.1428571429em;
+  width: 2.1428571429em;
+  top: 0.1428571429em;
   text-align: center; }
   .fa-li.fa-lg {
-    left: -1.85714em; }
+    left: -1.8571428571em; }
 
 .fa-border {
   padding: .2em .25em .15em;
@@ -82,6 +83,7 @@
 
 .fa.fa-pull-left {
   margin-right: .3em; }
+
 .fa.fa-pull-right {
   margin-left: .3em; }
 
@@ -94,6 +96,7 @@
 
 .fa.pull-left {
   margin-right: .3em; }
+
 .fa.pull-right {
   margin-left: .3em; }
 
@@ -112,6 +115,7 @@
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
+
 @keyframes fa-spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -119,34 +123,30 @@
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
+
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
   transform: rotate(90deg); }
 
 .fa-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
   transform: rotate(180deg); }
 
 .fa-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
   transform: rotate(270deg); }
 
 .fa-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
   -webkit-transform: scale(-1, 1);
-  -ms-transform: scale(-1, 1);
   transform: scale(-1, 1); }
 
 .fa-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: scale(1, -1);
-  -ms-transform: scale(1, -1);
   transform: scale(1, -1); }
 
 :root .fa-rotate-90,
@@ -154,6 +154,7 @@
 :root .fa-rotate-270,
 :root .fa-flip-horizontal,
 :root .fa-flip-vertical {
+  -webkit-filter: none;
   filter: none; }
 
 .fa-stack {
@@ -2139,10 +2140,12 @@
   font-size: 10px;
   text-decoration: none;
   text-shadow: 0px -1px 1px #661b03, 1px 1px 1px #661b03;
+  -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg); }
   .turn-button:hover, .turn-button:active, .turn-button:focus {
     color: #00B286;
     text-shadow: 0px 0px 6px rgba(0, 178, 134, 0.8);
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   .turn-button:after {
     content: "";
@@ -2163,10 +2166,10 @@
     height: 40px;
     width: 40px;
     font-size: 13px; }
-
   .tick:after {
     left: 28px;
     top: 12px; } }
+
 /*
  *
  * Own styling */
@@ -2201,10 +2204,18 @@ body {
   border-left: 2px solid #040404;
   border-right: 2px solid #040404;
   border-top-right-radius: 15px;
-  border-top-left-radius: 15px; }
+  border-top-left-radius: 15px;
+  /* Extra Small Devices, Phones */
+  /* Small Devices, Tablets */ }
   .header .logo {
     width: 50px;
     height: auto; }
+  @media only screen and (min-width: 480px) {
+    .header .logo {
+      width: 80px; } }
+  @media only screen and (min-width: 768px) {
+    .header .logo {
+      width: 100px; } }
 
 .navigation {
   background-color: #E6DCAA;
@@ -2212,9 +2223,7 @@ body {
   border-left: 2px solid #040404;
   border-right: 2px solid #040404; }
   .navigation p {
-    font-size: 10px; }
-
-.turn-button-box {
-  box-sizing: border-box; }
+    font-size: 10px;
+    clear: both; }
 
 /*# sourceMappingURL=style.css.map */
