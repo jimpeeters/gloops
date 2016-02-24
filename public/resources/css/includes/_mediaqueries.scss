@@ -1,35 +1,24 @@
-/*
- *
- * Media Queries
- *
- */
+$screen-phone: 480px;
+$screen-tablet: 768px;
+$screen-desktop-s: 992px;
+$screen-desktop-l: 1200px;
 
-/*
- * Layout 01 & Layout 02 - - - 0px - 767px */
-@media all and (max-width: $layout-2) {
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : $screen-phone) {
 
-}
+    }
 
-/*
- * Layout 01 - - - 0px - 419px */
-@media all and (max-width: $layout-1) {
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : $screen-tablet) {
 
-}
+    }
 
-/*
- * Layout 02 - - - 420px - 767px */
-@media all and (min-width: ($layout-1 + 1px)) and (max-width: $layout-2) {
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : $screen-desktop-s) {
 
-}
+    }
 
-/*
- * Layout 03 - - - 768px - 1023px */
-@media all and (min-width: ($layout-2 + 1px)) and (max-width: $layout-3) {
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : $screen-desktop-l) {
 
-}
-
-/*
- * Layout 04 - - - 1024px - ... */
-@media all and (min-width: ($layout-3 + 1px)) {
-
-}
+    }

@@ -1,0 +1,33 @@
+.header{
+
+	//margin-top: $base-margin;
+	background-color: $beige;
+	padding: 5px;
+	border-top: 2px solid $black;
+	border-left: 2px solid $black;
+	border-right: 2px solid $black;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+
+	.logo {
+		width: 50px;
+		height: auto;
+	}
+
+}
+
+.navigation {
+	background-color: $beige;
+	padding: 5px;
+	border-left: 2px solid $black;
+	border-right: 2px solid $black;
+
+	p{
+		font-size: 10px;
+	
+	}
+}
+
+.turn-button-box {
+	box-sizing: border-box;
+}

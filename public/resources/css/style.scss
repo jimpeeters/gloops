@@ -1,15 +1,7 @@
 /*
  *
- * Compass Essentials */
-@import "compass/css3";
-@import "compass/utilities";
-
-
-
-/*
- *
  * Project Essentials */
-@import "includes/reset";
+//@import "includes/reset";
 @import "includes/variables";
 @import "includes/extends";
 @import "includes/fonts";
@@ -30,7 +22,6 @@
 @import "ui/buttons";
 
 
-
 /*
  *
  * Own styling */
@@ -42,10 +33,6 @@
 
 	// sections
 	@import "views/sections/content";
+	@import "views/sections/navigation";
 
-	// pages
-
-
-
-
-
+	//pages

@@ -5,6 +5,25 @@ $color-main: 	#333333;
 $color-theme:	#ffcc00;
 
 
+//Main colors
+$beige: #E6DCAA;
+$orange: #D15805;
+$red: #B02F06;
+$brown: #6E5541;
+
+$black: #040404;
+$white: #ffffff;
+$greenblue: #00B286; //Complementary color of red variable
+
+//Margin
+$base-margin : 15px;
+
+//Media queries
+$screen-phone: 480px;
+$screen-tablet: 768px;
+$screen-desktop-s: 992px;
+$screen-desktop-l: 1200px;
+
 
 /*
  *
@@ -12,3 +31,5 @@ $color-theme:	#ffcc00;
 $layout-1:		419px;
 $layout-2:		767px;
 $layout-3:		1023px;
+
+

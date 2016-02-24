@@ -9,20 +9,33 @@
 <script src="resources/js/libs/modernizr.min.js"></script>
 
 <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700,900" rel="stylesheet" type="text/css">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="resources/css/libs/bootstrap.min.css">
+
+<!-- Custom css -->
 <link rel="stylesheet" href="resources/css/style.css">
 
-<title>App Name - @yield('title')</title>
+<title>Gloops - @yield('title')</title>
 
 </head>
 
 <body>
 
     <div class="container">
+
+        <!-- Header -->
+        @include('templates.navigation')
+
         @yield('content')
     </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="resources/js/libs/jquery.min.js"><\/script>')</script>
+
+<!-- Bootstrap js -->
+<script src="resources/js/libs/bootstrap.min.js"></script>
+
 <script src="resources/js/plugins.js"></script>
 <script src="resources/js/custom.js"></script>
 </body>
