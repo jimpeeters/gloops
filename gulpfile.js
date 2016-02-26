@@ -18,6 +18,10 @@ elixir(function(mix) {
     mix.sass([
         './public/resources/css/**/*.scss'
     ], 'public/resources/css/style.css');
+
+    mix.scripts([
+       'app.js'
+    ], 'public/js/app.js');
 });
 
 //To watch changes in sass files
