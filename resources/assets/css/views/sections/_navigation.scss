@@ -76,10 +76,10 @@
 	#search-input {
 		position: absolute;
 	    top: 0px;
-	    left: 30px;
+	    margin-left: 15px;
 	    height: 30px;
-	    border-top-right-radius: 5px;
-	    border-bottom-right-radius: 5px;
+	    border-top-right-radius: 15px;
+	    border-bottom-right-radius: 15px;
 	    border: 0px solid $red;
 	    width: 0px;
 	    padding: 0px;
@@ -98,12 +98,37 @@
 	.navigation .center-content p {
 		font-size: 14px;
 	}
+
+	.navigation #search-input {
+	    margin-left: 20px;
+	    height: 40px;
+	   	border-top-right-radius: 20px;
+	    border-bottom-right-radius: 20px;
+	}
 }
+
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : $screen-tablet) {
 	.header .logo {
 		width: 120px;
+	}
+}
+
+@media only screen and (min-width : $screen-desktop-s) {
+	.navigation #search-input {
+	    margin-left: 30px;
+	    height: 60px;
+	   	border-top-right-radius: 30px;
+	    border-bottom-right-radius: 30px;
+	}
+
+	.navigation #search-input[placeholder]{
+		font-size: 16px;
+	}
+
+	.navigation .center-content p {
+		font-size: 16px;
 	}
 }
 

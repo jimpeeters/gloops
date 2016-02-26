@@ -4,7 +4,7 @@ $( "#search-button" ).click(function() {
 	{
 	  $( "#search-input" ).animate({
 		    	width: 150+'%',
-			    paddingLeft: 20,
+			    paddingLeft: 30,
 			    border: 1
 		}, 1000, function() {
 		    $("#search-input").removeClass( "closed" );
