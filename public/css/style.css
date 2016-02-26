@@ -2210,8 +2210,6 @@
       clear: both;
       text-align: center;
       text-transform: uppercase; }
-    .navigation .center-content .fix-hexagon {
-      margin-top: -5px; }
   .navigation #login-button:active + #login-light, .navigation #login-button:focus + #login-light {
     background-color: #00B286; }
   .navigation #login-light {
@@ -2229,6 +2227,20 @@
       height: 12px;
       width: 12px;
       border-radius: 6px; } }
+  .navigation #search-button {
+    z-index: 100;
+    position: relative; }
+  .navigation #search-input {
+    position: absolute;
+    top: 0px;
+    left: 30px;
+    height: 30px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 0px solid #B02F06;
+    width: 0px;
+    padding: 0px;
+    border: 0px; }
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {

@@ -31,13 +31,18 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/libs/jquery.min.js"><\/script>')</script>
+<!-- Custom Jquery -->
+<script type="text/javascript" src="{{asset('/js/jquery.js')}}"></script>
 
 <!-- <script src="js/libs/modernizr.min.js"></script> -->
-
-<!-- Bootstrap js -->
-<script type="text/javascript" src="{{asset('js/libs/bootstrap.min.js')}}"></script>
 <!-- Angular -->
 <script type="text/javascript" src="{{asset('/js/libs/angular.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('/js/libs/angular-animate.min.js')}}"></script>
+<!-- Custom angular -->
+<script type="text/javascript" src="{{asset('/js/app.js')}}"></script>
+<!-- <script type="text/javascript" src="{{asset('/js/controllers.js')}}"></script> -->
+<!-- Bootstrap js -->
+<script type="text/javascript" src="{{asset('js/libs/bootstrap.min.js')}}"></script>
 
 
 </body>

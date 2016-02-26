@@ -38,9 +38,7 @@
 			text-transform: uppercase;
 		}
 
-		.fix-hexagon{
-			margin-top: -5px;
-		}
+		
 	}
 
 	#login-button{
@@ -68,6 +66,24 @@
 			width: 12px;
 			border-radius: 6px;
 		}
+	}
+
+ 	#search-button {
+		z-index: 100;
+		position: relative;
+	} 
+
+	#search-input {
+		position: absolute;
+	    top: 0px;
+	    left: 30px;
+	    height: 30px;
+	    border-top-right-radius: 5px;
+	    border-bottom-right-radius: 5px;
+	    border: 0px solid $red;
+	    width: 0px;
+	    padding: 0px;
+	    border: 0px;
 	}
 
 }

@@ -38,15 +38,18 @@
         </div>
 
         <div class="col-xs-2">
-            <!-- Button mobile -->
-            <div class="center-content">
-                <a href="#" class="round-button">
-                    <i class="fa fa-search"></i>
-                </a>
-            </div>
-            <div class="center-content">
-                <p>Search</p>
-            </div>
+            <!-- Search -->
+            <form>
+                <div class="center-content">
+                    <a href="#" id="search-button" class="round-button">
+                        <i class="fa fa-search"></i>
+                    </a>
+                    <input id="search-input" class="closed" placeholder="..."/>
+                </div>
+                <div class="center-content">
+                    <p>Search</p>
+                </div>
+            </form>
 
         </div>
 
@@ -62,5 +65,4 @@
             </div>
 
         </div>
-
 </div>

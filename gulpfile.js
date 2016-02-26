@@ -22,6 +22,14 @@ elixir(function(mix) {
     mix.scripts([
        'app.js'
     ], 'public/js/app.js');
+
+    mix.scripts([
+       'jquery/searchbarHide.js'
+    ], 'public/js/jquery.js');
+
+/*    mix.scripts([
+    	'controllers/navigationController.js'
+    ], 'public/js/controllers.js');*/
 });
 
 //To watch changes in sass files
