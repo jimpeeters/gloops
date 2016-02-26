@@ -16,8 +16,8 @@ var autoprefixer = require('gulp-autoprefixer'); //for browser compatibility
 
 elixir(function(mix) {
     mix.sass([
-        './public/resources/css/**/*.scss'
-    ], 'public/resources/css/style.css');
+        './resources/assets/css/**/*.scss'
+    ], 'public/css/style.css');
 
     mix.scripts([
        'app.js'
@@ -25,7 +25,7 @@ elixir(function(mix) {
 });
 
 //To watch changes in sass files
-elixir.Task.find('sass').watch('./public/resources/css/**/*.scss');
+elixir.Task.find('sass').watch('./resources/assets/css/**/*.scss');
 
 
 //console.log(elixir);

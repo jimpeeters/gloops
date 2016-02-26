@@ -1,7 +1,7 @@
 <div class="row header">
   
         <div class="col-xs-4">
-             <img class="logo" src="resources/images/logo.png">
+             <img class="logo" src="images/logo.png">
         </div>
   
 </div>

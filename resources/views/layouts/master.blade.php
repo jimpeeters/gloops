@@ -6,13 +6,11 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
-<script src="resources/js/libs/modernizr.min.js"></script>
-
 <!-- Bootstrap -->
-<link rel="stylesheet" href="resources/css/libs/bootstrap.min.css">
+<link rel="stylesheet" href="css/libs/bootstrap.min.css">
 
 <!-- Custom css -->
-<link rel="stylesheet" href="resources/css/style.css">
+<link rel="stylesheet" href="css/style.css">
 
 <title>Gloops - @yield('title')</title>
 
@@ -32,12 +30,14 @@
     </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="resources/js/libs/jquery.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery.min.js"><\/script>')</script>
+
+<!-- <script src="js/libs/modernizr.min.js"></script> -->
 
 <!-- Bootstrap js -->
-<script type="text/javascript" src="{{asset('resources/js/libs/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/libs/bootstrap.min.js')}}"></script>
 <!-- Angular -->
-<script type="text/javascript" src="{{asset('resources/js/libs/angular.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('/js/libs/angular.min.js')}}"></script>
 
 
 </body>
