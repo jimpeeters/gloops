@@ -8,6 +8,15 @@
 /*
  *
  * Define layouts */
+@font-face {
+  font-family: AUdimat;
+  src: url("../fonts/AUdimat-Regular.otf"); }
+
+@font-face {
+  font-family: AUdimat;
+  src: url("../fonts/AUdimat-Bold.otf");
+  font-weight: bold; }
+
 /*
  *
  * Make it fancy */
@@ -2089,49 +2098,11 @@
 /*
  *
  * UI Elements */
-.heading {
-  font-family: 'Lato', sans-serif;
-  margin: 0;
-  padding: 0; }
-  .heading.size-1 {
-    font-size: 30px;
-    line-height: 36px; }
-  .heading.size-2 {
-    font-size: 24px;
-    line-height: 28px; }
-  .heading.size-3 {
-    font-size: 18px;
-    line-height: 22px; }
-  .heading.weight-300 {
-    font-weight: 300; }
-  .heading.weight-400 {
-    font-weight: 400; }
-  .heading.weight-700 {
-    font-weight: 700; }
-  .heading.weight-900 {
-    font-weight: 900; }
-  .heading.spacing-xs {
-    margin: 0 0 5px 0; }
-  .heading.spacing-s {
-    margin: 0 0 10px 0; }
-  .heading.spacing-m {
-    margin: 0 0 15px 0; }
-  .heading.spacing-l {
-    margin: 0 0 20px 0; }
-  .heading.spacing-xl {
-    margin: 0 0 25px 0; }
-  .heading.text-upper {
-    text-transform: uppercase; }
-  .heading.bordered {
-    border-bottom: 3px solid #333333;
-    padding-bottom: 8px; }
-
 .turn-button {
   background-color: #040404;
   color: #B02F06;
   border-radius: 50%;
   box-shadow: inset 0px 0px 1px 1px rgba(204, 198, 197, 0.5);
-  float: left;
   height: 30px;
   margin: 0;
   position: relative;
@@ -2162,7 +2133,6 @@
 
 @media only screen and (min-width: 480px) {
   .turn-button {
-    box-shadow: inset 0px 0px 1px 1px rgba(204, 198, 197, 0.5);
     height: 40px;
     width: 40px;
     font-size: 13px; }
@@ -2170,60 +2140,124 @@
     left: 28px;
     top: 12px; } }
 
-/*
- *
- * Own styling */
-body {
-  background-color: #ffffff; }
+@media only screen and (min-width: 992px) {
+  .turn-button {
+    height: 60px;
+    width: 60px;
+    font-size: 16px; }
+  .tick:after {
+    left: 46px;
+    top: 20px; } }
 
-.section {
-  width: 100%;
-  float: left;
-  position: relative;
-  overflow: hidden; }
-  .section .inner {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 10px; }
+.round-button {
+  padding: 5px 5px 5px 9px;
+  display: table;
+  margin: 0px auto;
+  width: 30px;
+  height: 30px;
+  color: #B02F06;
+  background-color: black;
+  display: inline-block;
+  border-radius: 100px;
+  box-shadow: inset 0px 0px 1px 1px rgba(204, 198, 197, 0.5);
+  transition: all .2s linear; }
+  .round-button:hover, .round-button:active, .round-button:focus {
+    color: #00B286;
+    /* font-size: 15px; */
+    text-shadow: 0px 0px 6px rgba(0, 178, 134, 0.8); }
 
-.box {
-  background: #d9d9d9;
-  padding: 40px 25px;
-  margin: 50px 0 0 0; }
-  .box:first-child {
-    margin-top: 0; }
+@media only screen and (min-width: 480px) {
+  .round-button {
+    padding: 8px 5px 5px 12px;
+    height: 40px;
+    width: 40px;
+    font-size: 18px; } }
 
-#content .inner {
-  padding-top: 50px;
-  padding-bottom: 50px; }
+@media only screen and (min-width: 992px) {
+  .round-button {
+    padding: 14px 5px 5px 20px;
+    height: 60px;
+    width: 60px;
+    font-size: 22px; } }
 
 .header {
-  background-color: #E6DCAA;
-  padding: 5px;
+  margin-top: 5px;
+  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
+  padding: 10px 0px;
   border-top: 2px solid #040404;
   border-left: 2px solid #040404;
   border-right: 2px solid #040404;
   border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-  /* Extra Small Devices, Phones */
-  /* Small Devices, Tablets */ }
+  border-top-left-radius: 15px; }
   .header .logo {
-    width: 50px;
+    width: 70px;
     height: auto; }
-  @media only screen and (min-width: 480px) {
-    .header .logo {
-      width: 80px; } }
-  @media only screen and (min-width: 768px) {
-    .header .logo {
-      width: 100px; } }
 
 .navigation {
+  padding-top: 15px;
   background-color: #E6DCAA;
-  padding: 5px;
   border-left: 2px solid #040404;
   border-right: 2px solid #040404; }
-  .navigation p {
-    font-size: 10px;
-    clear: both; }
+  .navigation .center-content {
+    display: table;
+    margin: 0px auto; }
+    .navigation .center-content a {
+      display: block; }
+    .navigation .center-content p {
+      font-size: 10px;
+      clear: both;
+      text-align: center;
+      text-transform: uppercase; }
+    .navigation .center-content .fix-hexagon {
+      margin-top: -5px; }
+  .navigation #login-button:active + #login-light, .navigation #login-button:focus + #login-light {
+    background-color: #00B286; }
+  .navigation #login-light {
+    transition: all .4s linear;
+    top: 0px;
+    margin-left: -6px;
+    height: 6px;
+    width: 6px;
+    border-radius: 3px;
+    position: absolute;
+    background-color: #B02F06; }
+  @media only screen and (min-width: 992px) {
+    .navigation #login-light {
+      margin-left: -12px;
+      height: 12px;
+      width: 12px;
+      border-radius: 6px; } }
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+  .header .logo {
+    width: 100px; }
+  .navigation .center-content p {
+    font-size: 14px; } }
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  .header .logo {
+    width: 120px; } }
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+  .header .logo {
+    width: 150px; } }
+
+/*
+ *
+ * Own styling */
+body {
+  font-family: AUdimat; }
+
+.content {
+  border-bottom: 2px solid #040404;
+  border-left: 2px solid #040404;
+  border-right: 2px solid #040404;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px; }
 
 /*# sourceMappingURL=style.css.map */

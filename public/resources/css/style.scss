@@ -17,21 +17,28 @@
 /*
  *
  * UI Elements */
-@import "ui/titles";
 @import "ui/buttons";
 
+//components
+@import "views/components/search";
+
+//sections
+@import "views/sections/navigation";
 
 /*
  *
  * Own styling */
-@import "views/main";
 
-	// components
-	@import "views/components/section";
-	@import "views/components/boxes";
+body{
+	font-family: AUdimat;
+}
 
-	// sections
-	@import "views/sections/content";
-	@import "views/sections/navigation";
+.content {
+	border-bottom: 2px solid $black;
+	border-left: 2px solid $black;
+	border-right: 2px solid $black;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
 
-	//pages
+

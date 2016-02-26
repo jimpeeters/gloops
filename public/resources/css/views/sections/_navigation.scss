@@ -1,8 +1,9 @@
 .header{
-
-	//margin-top: $base-margin;
-	background-color: $beige;
-	padding: 5px;
+	margin-top: 5px;
+	background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    background-color: #131313;
+    background-size: 20px 20px;
+	padding: 10px 0px;
 	border-top: 2px solid $black;
 	border-left: 2px solid $black;
 	border-right: 2px solid $black;
@@ -10,38 +11,89 @@
 	border-top-left-radius: 15px;
 
 	.logo {
-		width: 50px;
+		width: 70px;
 		height: auto;
 	}
-
-	/* Extra Small Devices, Phones */ 
-    @media only screen and (min-width : $screen-phone) {
-		.logo {
-			width: 80px;
-		}
-    }
-
-	/* Small Devices, Tablets */
-    @media only screen and (min-width : $screen-tablet) {
-		.logo {
-			width: 100px;
-		}
-    }
-
-
-
-
 }
 
 .navigation {
-
+	padding-top: 15px;
 	background-color: $beige;
-	padding: 5px;
 	border-left: 2px solid $black;
 	border-right: 2px solid $black;
 
-	p{
-		font-size: 10px;
-		clear:both;
+	.center-content {
+
+		display: table;
+		margin: 0px auto;
+
+		a{
+			display: block;
+		}
+
+		p{
+			font-size: 10px;
+			clear:both;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		.fix-hexagon{
+			margin-top: -5px;
+		}
+	}
+
+	#login-button{
+		    &:active + #login-light, &:focus + #login-light {
+		    	background-color: $greenblue;
+
+		    }
+	}
+
+	#login-light {
+		transition: all .4s linear;
+		top: 0px;
+        margin-left: -6px;
+		height: 6px;
+		width: 6px;
+		border-radius: 3px;
+		position: absolute;
+        background-color: $red;
+	}
+
+	@media only screen and (min-width : $screen-desktop-s) {
+		#login-light {
+			margin-left: -12px;
+			height: 12px;
+			width: 12px;
+			border-radius: 6px;
+		}
+	}
+
+}
+
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : $screen-phone) {
+	.header .logo {
+		width: 100px;
+	}
+
+	.navigation .center-content p {
+		font-size: 14px;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : $screen-tablet) {
+	.header .logo {
+		width: 120px;
+	}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : $screen-desktop-l) {
+	.header .logo {
+		width: 150px;
 	}
 }

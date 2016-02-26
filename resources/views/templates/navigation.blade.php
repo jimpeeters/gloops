@@ -8,24 +8,59 @@
 
 <div class="row navigation">
 
-<!--         <div class="col-xs-1">
-    
-</div> -->
-
         <div class="col-xs-2">
             <!-- Library -->
-            <a href="#" class="turn-button tick"></a>
-            <p>Library</p>
+            <div class="center-content">
+                <a href="#" class="turn-button tick"></a>
+            </div>
+            <div class="center-content">
+                <p>Library</p>
+            </div>
+
         </div>
         <div class="col-xs-2">
             <!-- My Loops -->
-            <a href="#" class="turn-button tick"></a>
-            <p>Station</p>
+            <div class="center-content">
+                <a href="#" class="turn-button tick"></a>
+            </div>
+            <div class="center-content">
+                <p>Station</p>
+            </div>
         </div>
         <div class="col-xs-2">
             <!-- My Account -->
-            <a href="#" class="turn-button tick"></a>
-            <p>Account</p>
+            <div class="center-content">
+                <a href="#" class="turn-button tick"></a>
+            </div>
+            <div class="center-content">
+                <p>Account</p>
+            </div>
+        </div>
+
+        <div class="col-xs-2">
+            <!-- Button mobile -->
+            <div class="center-content">
+                <a href="#" class="round-button">
+                    <i class="fa fa-search"></i>
+                </a>
+            </div>
+            <div class="center-content">
+                <p>Search</p>
+            </div>
+
+        </div>
+
+        <div class="col-xs-2 col-xs-offset-2">
+            <div class="center-content">
+                <a id="login-button" href="#" class="round-button">
+                    <i class="fa fa-sign-in"></i>
+                </a>
+                <div id="login-light"></div>
+            </div>
+            <div class="center-content">
+                <p>Login</p>
+            </div>
+
         </div>
 
 </div>

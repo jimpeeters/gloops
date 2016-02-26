@@ -27,7 +27,10 @@
         <!-- Header -->
         @include('templates.navigation')
 
-        @yield('content')
+        <div class="row content">
+        	@yield('content')
+        </div>
+
     </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
