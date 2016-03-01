@@ -19,26 +19,41 @@
  * UI Elements */
 @import "ui/buttons";
 
-//components
-@import "views/components/search";
+//Components
+//call to action
+@import "views/components/record";
+@import "views/components/register";
 
 //sections
 @import "views/sections/navigation";
-
+@import "views/sections/footer";
 /*
  *
  * Own styling */
+
+//helper classes 
+
+//bootstrap full screen
+.padding-0 {
+    padding: 0;
+}
+
+//overlay colors
+ .beige-overlay {
+    background-color: $beige;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 
 body{
 	font-family: AUdimat;
 }
 
 .content {
-	border-bottom: 2px solid $black;
 	border-left: 2px solid $black;
 	border-right: 2px solid $black;
-	border-bottom-right-radius: 15px;
-	border-bottom-left-radius: 15px;
 }
 
 

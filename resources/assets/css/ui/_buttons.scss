@@ -4,7 +4,6 @@
 	background-color: $black;
 	color: $red;
 	border-radius: 50%;
-	box-shadow: inset 0px 0px 1px 1px rgba(204,198,197,.5);
 	height: 30px;
 	margin: 0;
 	position: relative;
@@ -81,7 +80,6 @@
 	background-color: black;
     display: inline-block;
     border-radius: 100px;
-    box-shadow: inset 0px 0px 1px 1px rgba(204,198,197,.5);
     transition: all .2s linear;
 
     &:hover, &:active, &:focus {
@@ -111,3 +109,26 @@
 		font-size: 22px;		
 	}
 }
+
+//Ghost button red
+.ghost-button-white {
+  display: inline-block;
+  width: 200px;
+  padding: 8px;
+  color: $white;
+  border: 2px solid $white;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out, border-radius 0.2s ease-out;
+  border-radius: 5px;
+
+  &:hover, &:active, &:focus{
+  	background-color: $white;
+  	color: $black;
+  	transition: background-color 0.3s ease-in, color 0.3s ease-in, border-radius 0.3s ease-in;
+  	text-decoration: none;
+  	border-radius: 0px;
+  }
+}
+

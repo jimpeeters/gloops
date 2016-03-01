@@ -24,8 +24,23 @@
         @include('snippets.navigation')
 
         <div class="row content">
+
         	@yield('content')
+
+        	<!-- If logged in -->
+<!-- 			<div class="col-xs-12 nopadding">
+		include('snippets.calltoaction.record')
+</div> -->
+
+			<!-- If not logged in -->
+			<!-- <div class="row">
+				<div class="col-xs-12">
+					include('snippets.calltoaction.register')
+				</div>
+			</div> -->
         </div>
+
+        @include('snippets.footer')
 
     </div>
 
