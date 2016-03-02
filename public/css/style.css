@@ -2250,14 +2250,18 @@
   border-left: 2px solid #040404;
   border-right: 2px solid #040404; }
   .navigation .center-content {
-    display: table;
-    margin: 0 auto; }
+    display: inline-block; }
     .navigation .center-content a {
-      display: block; }
+      display: block;
+      margin: 0 auto; }
     .navigation .center-content p {
       clear: both;
-      text-align: center;
-      text-transform: uppercase; }
+      text-align: left;
+      text-transform: uppercase;
+      width: auto;
+      display: inline-block; }
+    .navigation .center-content #login-text {
+      padding: 0 3px; }
   .navigation #login-button:active + #login-light, .navigation #login-button:focus + #login-light {
     background-color: #00B286; }
   .navigation #login-light {
@@ -2298,14 +2302,22 @@
     margin-left: 20px;
     height: 40px;
     border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px; } }
+    border-bottom-right-radius: 20px; }
+  .navigation .center-content {
+    overflow: hidden; } }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
   .header .logo {
-    width: 120px; } }
+    width: 120px; }
+  .navigation #login-text {
+    padding: 0 5px; } }
 
 @media only screen and (min-width: 992px) {
+  .navigation .center-content p {
+    font-size: 22px; }
+  .navigation .center-content #login-text {
+    padding: 0 15px; }
   .navigation #search-input {
     margin-left: 30px;
     height: 60px;
@@ -2409,11 +2421,13 @@
   .footer .email-link {
     float: right;
     display: block;
-    margin-top: 60px; }
+    margin-top: 60px;
+    margin-right: 10px; }
   .footer .copyright-text {
     float: right;
     width: 100%;
-    text-align: right; } }
+    text-align: right;
+    margin-right: 10px; } }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {

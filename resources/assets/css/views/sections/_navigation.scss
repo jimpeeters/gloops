@@ -24,20 +24,24 @@
 
 	.center-content {
 
-		display: table;
-		margin: 0 auto;
+		display: inline-block;
 
 		a{
 			display: block;
-		}
+			margin: 0 auto;
+		}		
 
 		p{
 			clear:both;
-			text-align: center;
+			text-align: left;
 			text-transform: uppercase;
+			width: auto;
+			display: inline-block;
 		}
 
-		
+		#login-text {
+			padding: 0 3px;
+		}
 	}
 
 	#login-button{
@@ -93,11 +97,17 @@
 		width: 100px;
 	}
 
-	.navigation #search-input {
-	    margin-left: 20px;
-	    height: 40px;
-	   	border-top-right-radius: 20px;
-	    border-bottom-right-radius: 20px;
+	.navigation {
+
+		#search-input {
+		    margin-left: 20px;
+		    height: 40px;
+		   	border-top-right-radius: 20px;
+		    border-bottom-right-radius: 20px;
+		}
+		.center-content {
+			overflow:hidden;
+		}
 	}
 }
 
@@ -107,18 +117,35 @@
 	.header .logo {
 		width: 120px;
 	}
+
+	.navigation #login-text{
+		padding: 0 5px;
+	}
 }
 
 @media only screen and (min-width : $screen-desktop-s) {
-	.navigation #search-input {
-	    margin-left: 30px;
-	    height: 60px;
-	   	border-top-right-radius: 30px;
-	    border-bottom-right-radius: 30px;
-	}
 
-	.navigation #search-input[placeholder]{
-		font-size: 16px;
+	.navigation {
+		.center-content {
+			p {
+				font-size: 22px;
+			}
+
+			#login-text {
+				padding: 0 15px;
+			}
+		}
+
+		#search-input {
+		    margin-left: 30px;
+		    height: 60px;
+		   	border-top-right-radius: 30px;
+		    border-bottom-right-radius: 30px;
+		}
+
+		#search-input[placeholder]{
+			font-size: 16px;
+		}
 	}
 }
 

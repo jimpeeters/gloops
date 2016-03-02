@@ -12,8 +12,6 @@
             <!-- Library -->
             <div class="center-content">
                 <a href="#" class="turn-button tick"></a>
-            </div>
-            <div class="center-content">
                 <p>Library</p>
             </div>
 
@@ -22,8 +20,6 @@
             <!-- My Loops -->
             <div class="center-content">
                 <a href="#" class="turn-button tick"></a>
-            </div>
-            <div class="center-content">
                 <p>Station</p>
             </div>
         </div>
@@ -31,8 +27,6 @@
             <!-- My Account -->
             <div class="center-content">
                 <a href="#" class="turn-button tick"></a>
-            </div>
-            <div class="center-content">
                 <p>Account</p>
             </div>
         </div>
@@ -45,8 +39,6 @@
                         <i class="fa fa-search"></i>
                     </a>
                     <input id="search-input" class="closed" placeholder="..."/>
-                </div>
-                <div class="center-content">
                     <p>Search</p>
                 </div>
             </form>
@@ -59,9 +51,7 @@
                     <i class="fa fa-sign-in"></i>
                 </a>
                 <div id="login-light"></div>
-            </div>
-            <div class="center-content">
-                <p>Login</p>
+                <p id="login-text">Login</p>
             </div>
 
         </div>

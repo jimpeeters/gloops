@@ -1,13 +1,10 @@
 @extends('layouts.master')
 
-@section('title', 'Page Title')
-
-@section('sidebar')
-    @parent
-
-    <p>This is appended to the master sidebar.</p>
-@stop
+@section('title', 'Home')
 
 @section('content')
-    <p>This is my body content.</p>
+	<div class="col-xs-12">
+		<h1>Home</h1>
+	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quaerat, error harum sunt, sapiente voluptas temporibus porro quam, magnam dolores recusandae. Recusandae sed, aperiam earum sapiente rem neque officiis quaerat.</p>
+	</div>
 @stop
