@@ -21,7 +21,7 @@
     <div class="container">
 
         <!-- Header -->
-        @include('snippets.navigation')
+        @include('navigation')
 
         <div class="row content">
 
@@ -40,7 +40,7 @@
 			</div> -->
         </div>
 
-        @include('snippets.footer')
+        @include('footer')
 
     </div>
 

@@ -3,7 +3,7 @@
 	background: linear-gradient(27deg, lighten($black, 5) 5px, transparent 5px) 0 5px, linear-gradient(207deg, lighten($black, 5) 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
     background-color: $black;
     background-size: 20px 20px;
-	padding: 10px 0px;
+	padding: 10px 0;
 	border-top: 2px solid $black;
 	border-left: 2px solid $black;
 	border-right: 2px solid $black;
@@ -25,7 +25,7 @@
 	.center-content {
 
 		display: table;
-		margin: 0px auto;
+		margin: 0 auto;
 
 		a{
 			display: block;
@@ -49,7 +49,7 @@
 
 	#login-light {
 		transition: all .4s linear;
-		top: 0px;
+		top: 0;
         margin-left: -6px;
 		height: 6px;
 		width: 6px;
@@ -74,19 +74,18 @@
 
 	#search-input {
 		position: absolute;
-	    top: 0px;
+	    top: 0;
 	    margin-left: 15px;
 	    height: 30px;
 	    border-top-right-radius: 15px;
 	    border-bottom-right-radius: 15px;
-	    border: 0px solid $red;
-	    width: 0px;
-	    padding: 0px;
-	    border: 0px;
+	    border: 0 solid $red;
+	    width: 0;
+	    padding: 0;
+	    border: 0;
 	}
 
 }
-
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : $screen-phone) {
