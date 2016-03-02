@@ -8,17 +8,19 @@
 
     .sub-footer {
 
+    	border-bottom: 1px solid $white;
+
     	h5, a {
     		display: inline-block;
     	}
 
     	h5 {
-    		min-width: 70px;
+    		min-width: 80px;
     		color: $white;
     	}
 
     	a {
-    		font-size: 12px;
+    		padding: 0px 2px;
     		margin: 0px 2px;
 	        color: $red;
 	        text-decoration: underline;
@@ -32,7 +34,7 @@
 
 		form {
 			overflow: hidden;
-			margin: 10px 0px;
+			margin: 15px 0px;
 
 			.search-button{
 				float: left;
@@ -54,9 +56,6 @@
 		}
 	}
 
-    .copyright-text{
-        font-size: 0.9em;
-    }
     .email-link {
 
     	i{
@@ -67,36 +66,90 @@
         display: inline;
         text-decoration : underline;
     }
-
-    .left-border {
-        border-left: 0px solid $black;
-        padding-left: 0px;
-    }
-
-
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : $screen-phone) {
 
-	.footer #search-input {
-	    margin-left: 20px;
-	    height: 40px;
-	   	border-top-right-radius: 20px;
-	    border-bottom-right-radius: 20px;
+	.footer {
+
+		.sub-footer {
+
+			h5 {
+				font-size: 1.3em;
+				min-width: 120px;
+			}
+		}
+
+
+		.search{
+			form {
+				margin: 20px 0px;
+			}
+
+			form .search-input {
+			    margin-left: -20px;
+			    height: 40px;
+			   	border-top-right-radius: 20px;
+			    border-bottom-right-radius: 20px;
+			    padding-left: 30px;
+			    width: 60%;
+			}
+			form .search-button{
+			    width: 40px;
+			} 
+		}
 	}
 }
 
+/* Small Devices, Tablets */
+@media only screen and (min-width : $screen-tablet) {
+
+	.footer {
+
+		.sub-footer{
+			border-bottom: none;
+
+			h5, a {
+	    		display: block;
+	    	}
+		}
+
+		.search form {
+			margin-top: 60px;
+		}
+
+		.email-link {
+			float:right;
+			display: block;
+			margin-top: 60px;
+		}
+
+		.copyright-text{
+			float: right;
+			width: 100%;
+			text-align: right;
+		}
+	}
+}
+
+/* Medium Devices, Desktops */
 @media only screen and (min-width : $screen-desktop-s) {
-	.footer #search-input {
-	    margin-left: 30px;
-	    height: 60px;
-	   	border-top-right-radius: 30px;
-	    border-bottom-right-radius: 30px;
-	}
+		.footer {
 
-	.footer #search-input[placeholder]{
-		font-size: 16px;
-	}
+			.search{
 
+				form .search-input {
+				    margin-left: -30px;
+				    height: 60px;
+				   	border-top-right-radius: 30px;
+				    border-bottom-right-radius: 30px;
+				    padding-left: 40px;
+				    width: 100%;
+				}
+				form .search-button{
+				    width: 60px;
+				} 
+			}
+	}
 }

@@ -32,7 +32,6 @@
 		}
 
 		p{
-			font-size: 10px;
 			clear:both;
 			text-align: center;
 			text-transform: uppercase;
@@ -95,10 +94,6 @@
 		width: 100px;
 	}
 
-	.navigation .center-content p {
-		font-size: 14px;
-	}
-
 	.navigation #search-input {
 	    margin-left: 20px;
 	    height: 40px;
@@ -124,10 +119,6 @@
 	}
 
 	.navigation #search-input[placeholder]{
-		font-size: 16px;
-	}
-
-	.navigation .center-content p {
 		font-size: 16px;
 	}
 }
