@@ -5,3 +5,4 @@ Homestead.json
 .env
 public/resources/style.css
 public/resources/style.css.map
+public/video/*

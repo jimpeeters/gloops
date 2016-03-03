@@ -13,3 +13,31 @@
    font-family: blowbrush;
    src: url('../fonts/blowbrush.otf');
 }
+
+
+//h1 36px 
+//h2 30px
+//h3 24px
+//h4 18px
+//h5 14px
+//h6 12px
+
+//Responsive fonts
+
+p,a,input[type="text"] {
+	font-size: 10px;
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : $screen-phone) {
+	p,a,input[type="text"] {
+		font-size: 14px;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : $screen-tablet) {
+	p,a,input[type="text"] {
+		font-size: 16px;
+	}
+}

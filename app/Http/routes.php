@@ -12,13 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
-
-Route::get('/layout', function () {
-    return view('layout');
-});
-
 
 /*
 |--------------------------------------------------------------------------

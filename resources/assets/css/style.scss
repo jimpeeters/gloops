@@ -27,11 +27,17 @@
 //sections
 @import "views/sections/navigation";
 @import "views/sections/footer";
-/*
- *
- * Own styling */
 
-//helper classes 
+//views
+@import "views/home";
+
+//helper classes ----------------
+
+//Center button
+.center-button {
+	display: block;
+	margin: 0 auto;
+}
 
 //bootstrap full screen
 .padding-0 {
@@ -46,33 +52,4 @@ body{
 	border-left: 2px solid $black;
 	border-right: 2px solid $black;
 }
-
-p,a,input[type="text"] {
-	font-size: 10px;
-}
-
-/* Extra Small Devices, Phones */ 
-@media only screen and (min-width : $screen-phone) {
-	p,a,input[type="text"] {
-		font-size: 14px;
-	}
-}
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : $screen-tablet) {
-	p,a,input[type="text"] {
-		font-size: 16px;
-	}
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : $screen-desktop-s) {
-
-}
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : $screen-desktop-l) {
-
-}
-
 
