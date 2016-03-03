@@ -2458,17 +2458,17 @@ body {
   border-left: 2px solid #040404;
   border-right: 2px solid #040404; }
 
-p, a {
+p, a, input[type="text"] {
   font-size: 10px; }
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
-  p, a {
+  p, a, input[type="text"] {
     font-size: 14px; } }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
-  p, a {
+  p, a, input[type="text"] {
     font-size: 16px; } }
 
 /* Medium Devices, Desktops */

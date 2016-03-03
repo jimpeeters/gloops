@@ -38,7 +38,7 @@
                     <a href="#" id="search-button" class="round-button">
                         <i class="fa fa-search"></i>
                     </a>
-                    <input id="search-input" class="closed" placeholder="..."/>
+                    <input type="text" id="search-input" class="closed" placeholder="Search loops"/>
                     <p>Search</p>
                 </div>
             </form>

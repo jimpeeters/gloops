@@ -47,20 +47,20 @@ body{
 	border-right: 2px solid $black;
 }
 
-p,a {
+p,a,input[type="text"] {
 	font-size: 10px;
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : $screen-phone) {
-	p,a {
+	p,a,input[type="text"] {
 		font-size: 14px;
 	}
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : $screen-tablet) {
-	p,a {
+	p,a,input[type="text"] {
 		font-size: 16px;
 	}
 }

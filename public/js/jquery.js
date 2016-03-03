@@ -2,14 +2,30 @@ $( "#search-button" ).click(function() {
 
 	if($("#search-input" ).hasClass( "closed" ))
 	{
-	  $( "#search-input" ).animate({
+		//if screen is mobile
+		if ($("#search-input").css("font-size") == "10px" )
+		{
+	    	$( "#search-input" ).animate({
 		    	width: 150+'%',
-			    paddingLeft: 30,
+			    paddingLeft: 80+'%',
 			    border: 1
-		}, 1000, function() {
-		    $("#search-input").removeClass( "closed" );
-		    $("#search-input").addClass( "open" ); 
-	  });
+			}, 1000, function() {
+			    $("#search-input").removeClass( "closed" );
+			    $("#search-input").addClass( "open" );
+			});
+	    }
+	    else
+	    {
+	    	$( "#search-input" ).animate({
+		    	width: 150+'%',
+			    paddingLeft: 40+'%',
+			    border: 1
+			}, 1000, function() {
+			    $("#search-input").removeClass( "closed" );
+			    $("#search-input").addClass( "open" ); 
+	  		});
+	    }
+
 	}
 	else
 	{
