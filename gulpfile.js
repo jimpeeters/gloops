@@ -24,7 +24,7 @@ elixir(function(mix) {
     ], 'public/js/app.js');
 
     mix.scripts([
-       'jquery/searchbarHide.js'
+       'jquery/searchbarHide.js','jquery/loginModalActions.js'
     ], 'public/js/jquery.js');
 
 /*    mix.scripts([

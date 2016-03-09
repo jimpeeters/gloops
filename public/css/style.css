@@ -21,17 +21,17 @@
   font-family: blowbrush;
   src: url("../fonts/blowbrush.otf"); }
 
-p, a, input[type="text"] {
+p, a, input[type="text"], label {
   font-size: 10px; }
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
-  p, a, input[type="text"] {
+  p, a, input[type="text"], label {
     font-size: 14px; } }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
-  p, a, input[type="text"] {
+  p, a, input[type="text"], label {
     font-size: 16px; } }
 
 /*
@@ -2116,6 +2116,7 @@ p, a, input[type="text"] {
  *
  * UI Elements */
 .turn-button {
+  display: block;
   background-color: #040404;
   color: #B02F06;
   border-radius: 50%;
@@ -2194,7 +2195,7 @@ p, a, input[type="text"] {
     width: 60px;
     font-size: 22px; } }
 
-.ghost-button-white {
+.ghost-button-white, .ghost-button-green, .ghost-button-red {
   font-size: 16px;
   display: inline-block;
   width: 200px;
@@ -2206,12 +2207,26 @@ p, a, input[type="text"] {
   text-decoration: none;
   transition: background-color 0.2s ease-out, color 0.2s ease-out, border-radius 0.2s ease-out;
   border-radius: 5px; }
-  .ghost-button-white:hover, .ghost-button-white:active, .ghost-button-white:focus {
+  .ghost-button-white:hover, .ghost-button-green:hover, .ghost-button-red:hover, .ghost-button-white:active, .ghost-button-green:active, .ghost-button-red:active, .ghost-button-white:focus, .ghost-button-green:focus, .ghost-button-red:focus {
     background-color: #ffffff;
     color: #040404;
     transition: background-color 0.3s ease-in, color 0.3s ease-in, border-radius 0.3s ease-in;
     text-decoration: none;
     border-radius: 0px; }
+
+.ghost-button-green {
+  color: #00B286;
+  border: 2px solid #00B286; }
+  .ghost-button-green:hover, .ghost-button-green:active, .ghost-button-green:focus {
+    background-color: #00B286;
+    color: #ffffff; }
+
+.ghost-button-red {
+  color: #B02F06;
+  border: 2px solid #B02F06; }
+  .ghost-button-red:hover, .ghost-button-red:active, .ghost-button-red:focus {
+    background-color: #B02F06;
+    color: #ffffff; }
 
 .record-cta {
   position: relative;
@@ -2459,6 +2474,37 @@ p, a, input[type="text"] {
     width: 60px;
     border-radius: 0 0 15px 15px; } }
 
+#registerModal {
+  /* Extra Small Devices, Phones */
+  /* Small Devices, Tablets */ }
+  #registerModal .modal-header {
+    background: #040404;
+    color: #ffffff; }
+    #registerModal .modal-header .close {
+      color: #B02F06;
+      opacity: 1;
+      text-shadow: none; }
+      #registerModal .modal-header .close:hover {
+        color: #ce3707; }
+  #registerModal .modal-body {
+    background-color: #E6DCAA; }
+  #registerModal .modal-footer {
+    background-color: #040404;
+    color: #ffffff;
+    text-align: left; }
+    #registerModal .modal-footer a {
+      text-decoration: underline;
+      color: #B02F06; }
+      #registerModal .modal-footer a:hover {
+        text-decoration: none; }
+  @media only screen and (min-width: 480px) {
+    #registerModal .modal-dialog {
+      width: 300px;
+      margin: 30px auto; } }
+  @media only screen and (min-width: 768px) {
+    #registerModal .modal-dialog {
+      width: 450px; } }
+
 .home .video-container {
   position: relative;
   overflow: hidden;
@@ -2529,5 +2575,9 @@ body {
 .content {
   border-left: 2px solid #040404;
   border-right: 2px solid #040404; }
+
+.form-control:focus {
+  border-color: #040404;
+  box-shadow: inset 0 1px 1px rgba(2, 2, 2, 0.08), 0 0 8px rgba(7, 7, 7, 0.6); }
 
 /*# sourceMappingURL=style.css.map */

@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +23,21 @@ Route::get('/', function () {
 |
 */
 
+
 Route::group(['middleware' => ['web']], function () {
-    //
+
+	Route::get('/', function () {
+	    return view('home');
+	});
+
+
+    //facebook login
+    Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
+	Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
+
+	//register
+	Route::post('/register', array('as' => 'register', 'uses' => 'Auth\AuthController@register'));
+	//login
+	Route::post('/login', array('as' => 'login', 'uses' => 'Auth\AuthController@login'));
+
 });

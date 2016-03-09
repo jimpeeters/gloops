@@ -24,6 +24,7 @@
 			<i class="fa fa-play"></i>
 		</a>
 	</div>
+
 </div>
 
 

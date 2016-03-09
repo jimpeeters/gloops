@@ -24,20 +24,20 @@
 
 //Responsive fonts
 
-p,a,input[type="text"] {
+p,a,input[type="text"],label {
 	font-size: 10px;
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : $screen-phone) {
-	p,a,input[type="text"] {
+	p,a,input[type="text"],label {
 		font-size: 14px;
 	}
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : $screen-tablet) {
-	p,a,input[type="text"] {
+	p,a,input[type="text"],label {
 		font-size: 16px;
 	}
 }

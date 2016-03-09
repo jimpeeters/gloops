@@ -47,7 +47,7 @@
 
         <div class="col-xs-2 col-xs-offset-2">
             <div class="center-content">
-                <a id="login-button" href="#" class="round-button">
+                <a id="login-button" href="#" class="round-button" data-toggle="modal" data-target="#registerModal">
                     <i class="fa fa-sign-in"></i>
                 </a>
                 <div id="login-light"></div>
@@ -56,3 +56,7 @@
 
         </div>
 </div>
+
+<!-- Register modal -->
+
+@include('auth.login')

@@ -1,6 +1,7 @@
 //Turn button
 
 .turn-button{
+	display: block;
 	background-color: $black;
 	color: $red;
 	border-radius: 50%;
@@ -109,7 +110,7 @@
 	}
 }
 
-//Ghost button red
+//Ghost button white
 .ghost-button-white {
   font-size: 16px;
   display: inline-block;
@@ -130,5 +131,29 @@
   	text-decoration: none;
   	border-radius: 0px;
   }
+}
+
+.ghost-button-green {
+	@extend .ghost-button-white;
+
+	color: $greenblue;
+  	border: 2px solid $greenblue;
+
+	&:hover, &:active, &:focus{
+		background-color: $greenblue;
+  		color: $white;
+	}
+}
+
+.ghost-button-red {
+	@extend .ghost-button-white;
+
+	color: $red;
+  	border: 2px solid $red;
+
+	&:hover, &:active, &:focus{
+		background-color: $red;
+  		color: $white;
+	}
 }
 
