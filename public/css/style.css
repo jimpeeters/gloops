@@ -2196,6 +2196,7 @@ p, a, input[type="text"], label {
     font-size: 22px; } }
 
 .ghost-button-white, .ghost-button-green, .ghost-button-red {
+  background-color: rgba(255, 255, 255, 0);
   font-size: 16px;
   display: inline-block;
   width: 200px;
@@ -2302,6 +2303,10 @@ p, a, input[type="text"], label {
     border-radius: 3px;
     position: absolute;
     background-color: #B02F06; }
+  .navigation #login-light.bg-green {
+    background-color: #00B286; }
+  .navigation #login-button.green {
+    color: #00B286; }
   @media only screen and (min-width: 992px) {
     .navigation #login-light {
       margin-left: -12px;
@@ -2561,6 +2566,9 @@ p, a, input[type="text"], label {
 @media only screen and (min-width: 992px) {
   .home .video-container {
     height: 300px; } }
+
+.station .station-title {
+  text-align: center; }
 
 .center-button {
   display: block;

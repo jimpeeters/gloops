@@ -23,13 +23,12 @@
 |
 */
 
-
 Route::group(['middleware' => ['web']], function () {
 
-	Route::get('/', function () {
-	    return view('home');
-	});
+	//Logged in
+	Route::group(['middleware' => 'auth'], function () {
 
+	});
 
     //facebook login
     Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
@@ -37,7 +36,17 @@ Route::group(['middleware' => ['web']], function () {
 
 	//register
 	Route::post('/register', array('as' => 'register', 'uses' => 'Auth\AuthController@register'));
+
 	//login
 	Route::post('/login', array('as' => 'login', 'uses' => 'Auth\AuthController@login'));
+
+	//uitloggen
+	Route::get('auth/logout', array('as' => 'getLogout','uses' => 'Auth\AuthController@getLogout'));
+
+	//home
+	Route::get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
+
+	//station
+	Route::get('/station', array('as' => 'station', 'uses' => "StationController@index"));
 
 });

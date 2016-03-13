@@ -25,16 +25,16 @@
 		</div>
 		<div class="row login-modal">
 			<div class="col-md-12">
-				{!! Form::open(array('route' => 'login', 'method' => 'POST','files' => true)) !!}
+				{!! Form::open(array('route' => 'login', 'method' => 'POST')) !!}
 					<div class="form-group">
-						{!! Form::label('name', 'Name') !!}
-						{!! Form::text('name','',array('class' => 'form-control')) !!}
+						{!! Form::label('email', 'Email') !!}
+						{!! Form::text('email','',array('class' => 'form-control')) !!}
 					</div>
 					<div class="form-group">
 						{!! Form::label('password', 'Password') !!}
 						{!! Form::password('password', array('class' => 'form-control')) !!}
 					</div>
-					<center><a href="" type="submit" class="ghost-button-red">Login</a></center>
+					<center><button href="" type="submit" class="ghost-button-red">Login</button></center>
 				{!! Form::close() !!}	
 			</div>
 		</div>
@@ -61,7 +61,7 @@
 					    {!! Form::label('Profiel Foto') !!}
 					    {!! Form::file('image', null) !!}
 					</div>
-					<center><a href="" type="submit" class="ghost-button-red">Register</a></center>
+					<center><button href="" type="submit" class="ghost-button-red">Register</a></button>
 				{!! Form::close() !!}	
 			</div>
 		</div>

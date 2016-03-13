@@ -45,9 +45,9 @@
 	}
 
 	#login-button{
+
 		    &:active + #login-light, &:focus + #login-light {
 		    	background-color: $greenblue;
-
 		    }
 	}
 
@@ -60,6 +60,14 @@
 		border-radius: 3px;
 		position: absolute;
         background-color: $red;
+	}
+
+	#login-light.bg-green {
+		background-color: $greenblue;
+	}
+
+	#login-button.green {
+		color: $greenblue;
 	}
 
 	@media only screen and (min-width : $screen-desktop-s) {

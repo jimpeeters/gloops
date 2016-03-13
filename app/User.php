@@ -18,7 +18,7 @@ class User extends Model implements AuthenticatableContract,
     use Authenticatable, Authorizable, CanResetPassword;
 
 
-    protected $table = 'Users';
+    protected $table = 'users';
     protected $primaryKey = 'id';
     public $timestamps = true;
     protected $hidden = ['password', 'remember_token'];

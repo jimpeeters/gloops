@@ -7,9 +7,10 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-use App\Http\Requests\Request;
+use Illuminate\Http\Request;
 use Auth;
 use Socialite;
+use Redirect;
 
 class AuthController extends Controller
 {
@@ -154,7 +155,7 @@ class AuthController extends Controller
        $validator = Validator::make($request->all(), [
             'name'         => 'required|max:100|min:2',
             'password'      => 'required|confirmed|min:6',
-            'email'         => 'email|required|unique:Users,email',
+            'email'         => 'email|required|unique:users,email',
             'avatar'         => 'mimes:png,jpeg'
         ]);
         
@@ -195,7 +196,7 @@ class AuthController extends Controller
         }*/
 
         $user->facebookAccount  = false;
-        $user->password         = Hash::make($input['password']);
+        $user->password         = \Hash::make($input['password']);
         if ($request->hasFile('image'))
         {
             $file = $request->file('image');
@@ -206,5 +207,19 @@ class AuthController extends Controller
 
         $user->save();
         return redirect('/')->with('success','Account successvol aangemaakt!');
+    }
+
+    public function login(request $request)
+    {   
+        $input = $request->all();
+
+        if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']]))
+        {
+            return Redirect::route('home');
+        }
+        else
+        {
+            return Redirect::route('home')->with('loginFail', ['fail']);
+        }
     }
 }

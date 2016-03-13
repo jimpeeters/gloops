@@ -3,6 +3,8 @@
 Homestead.yaml
 Homestead.json
 .env
-public/resources/style.css
-public/resources/style.css.map
+public/css/style.css
+public/css/style.css.map
 public/video/*
+public/images/profilePictures
+
