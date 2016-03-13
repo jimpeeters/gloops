@@ -10,13 +10,13 @@
 	@else
 
 		<div class="title-section">
-			<center>
-				<h1>Your station</h1>
-			</center>
+			<h1>YOUR STATION</h1>
 		</div>
 
 		<div class="col-md-12">
-			<h4 class="station-title">To plug in your own guitar loops managing station you will need to register.</h4>
+			<div class="info-box">
+				<p class="station-title"><i class="fa fa-plug"></i> To plug in your own guitar loops managing station you will need to register.</p>
+			</div>
 		</div>
 	@endif
 </div>

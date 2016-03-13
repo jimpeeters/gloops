@@ -23,9 +23,12 @@
 //h6 12px
 
 //Responsive fonts
-
 p,a,input[type="text"],label {
 	font-size: 10px;
+}
+
+h1 {
+	font-size: 18px;
 }
 
 /* Extra Small Devices, Phones */ 
@@ -33,11 +36,26 @@ p,a,input[type="text"],label {
 	p,a,input[type="text"],label {
 		font-size: 14px;
 	}
+
+	h1 {
+		font-size: 24px;
+	}
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : $screen-tablet) {
 	p,a,input[type="text"],label {
 		font-size: 16px;
+	}
+
+	h1 {
+		font-size: 30px;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : $screen-desktop-s) {
+	h1 {
+		font-size: 36px;
 	}
 }

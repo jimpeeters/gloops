@@ -1,5 +1,19 @@
 .station {
-	.station-title {
-		text-align: center;
+	.title-section {
+		background-image: url('/images/station.jpg');
+	}
+
+	.info-box {
+		margin: 10px 0;
+		border-left: 3px solid $black;
+		overflow: hidden;
+		background-color: darken($white, 6);
+		display: inline-block;
+
+		p {
+			display: inline-block;
+			padding: 10px 20px 10px 10px;
+			margin-bottom: 0;
+		}
 	}
 }

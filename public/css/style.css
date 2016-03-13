@@ -24,15 +24,27 @@
 p, a, input[type="text"], label {
   font-size: 10px; }
 
+h1 {
+  font-size: 18px; }
+
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
   p, a, input[type="text"], label {
-    font-size: 14px; } }
+    font-size: 14px; }
+  h1 {
+    font-size: 24px; } }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
   p, a, input[type="text"], label {
-    font-size: 16px; } }
+    font-size: 16px; }
+  h1 {
+    font-size: 30px; } }
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+  h1 {
+    font-size: 36px; } }
 
 /*
  *
@@ -2520,6 +2532,22 @@ p, a, input[type="text"], label {
     #registerModal .modal-dialog {
       width: 450px; } }
 
+.title-section {
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  background-position: center; }
+  .title-section h1 {
+    z-index: 100;
+    color: #ffffff;
+    text-align: center;
+    padding: 3%;
+    text-shadow: 1px 1px 1px #040404;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-image: url("/images/dark-dot.png");
+    margin: 0;
+    text-decoration: underline; }
+
 .home .video-container {
   position: relative;
   overflow: hidden;
@@ -2545,7 +2573,8 @@ p, a, input[type="text"], label {
       text-align: center;
       color: #ffffff;
       font-size: 30px;
-      margin-top: 30px; }
+      margin-top: 30px;
+      text-shadow: 1px 1px 1px #040404; }
   .home .video-container .youtube-link {
     position: absolute;
     right: 0;
@@ -2577,8 +2606,19 @@ p, a, input[type="text"], label {
   .home .video-container {
     height: 300px; } }
 
-.station .station-title {
-  text-align: center; }
+.station .title-section {
+  background-image: url("/images/station.jpg"); }
+
+.station .info-box {
+  margin: 10px 0;
+  border-left: 3px solid #040404;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  display: inline-block; }
+  .station .info-box p {
+    display: inline-block;
+    padding: 10px 20px 10px 10px;
+    margin-bottom: 0; }
 
 .center-button {
   display: block;

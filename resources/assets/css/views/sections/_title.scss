@@ -1,3 +1,19 @@
 .title-section {
-	background-image: url('images/station.jpg');
+	//background-image: url('/images/station.jpg');
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+	background-position: center;
+
+  	h1 {
+		z-index: 100;
+		color: $white;
+		text-align: center;
+		padding: 3%;
+		@include text-shadow();
+		background-color: rgba(0, 0, 0, 0.7);
+        background-image: url('/images/dark-dot.png');
+        margin: 0;
+        text-decoration: underline;
+	}
 }

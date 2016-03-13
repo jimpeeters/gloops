@@ -6,6 +6,11 @@
 @import "includes/extends";
 @import "includes/fonts";
 
+//mixins
+@mixin text-shadow() {
+	text-shadow: 1px 1px 1px $black;
+}
+
 
 
 /*
@@ -28,6 +33,7 @@
 @import "views/sections/navigation";
 @import "views/sections/footer";
 @import "views/sections/login";
+@import "views/sections/title";
 
 //views
 @import "views/home";
