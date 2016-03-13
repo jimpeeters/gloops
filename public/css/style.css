@@ -2259,15 +2259,19 @@ p, a, input[type="text"], label {
     display: block;
     margin: 0px auto; }
 
+.header-decoration {
+  display: block;
+  margin: 0 auto;
+  height: 17px;
+  width: 220px; }
+
 .header {
-  margin-top: 5px;
   background: linear-gradient(27deg, #111111 5px, transparent 5px) 0 5px, linear-gradient(207deg, #111111 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
   background-color: #040404;
   background-size: 20px 20px;
   padding: 10px 0;
   border-top: 2px solid #040404;
-  border-left: 2px solid #040404;
-  border-right: 2px solid #040404;
+  border-bottom: 2px solid #040404;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px; }
   .header .logo {
@@ -2277,8 +2281,9 @@ p, a, input[type="text"], label {
 .navigation {
   padding-top: 15px;
   background-color: #E6DCAA;
-  border-left: 2px solid #040404;
-  border-right: 2px solid #040404; }
+  border-left: 7px solid #040404;
+  border-right: 7px solid #040404;
+  border-bottom: 4px solid #040404; }
   .navigation .center-content {
     display: inline-block; }
     .navigation .center-content a {
@@ -2330,6 +2335,9 @@ p, a, input[type="text"], label {
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
+  .header-decoration {
+    height: 25px;
+    width: 350px; }
   .header .logo {
     width: 100px; }
   .navigation #search-input {
@@ -2348,6 +2356,9 @@ p, a, input[type="text"], label {
     padding: 0 5px; } }
 
 @media only screen and (min-width: 992px) {
+  .header-decoration {
+    height: 30px;
+    width: 600px; }
   .navigation .center-content p {
     font-size: 22px; }
   .navigation .center-content #login-text {
@@ -2414,8 +2425,7 @@ p, a, input[type="text"], label {
   width: 30px;
   border-radius: 0 0 10px 10px;
   background: #040404;
-  position: absolute;
-  box-shadow: 8px 1px 9px -4px rgba(0, 0, 0, 0.52); }
+  position: absolute; }
 
 .leg-left {
   left: 10%; }
@@ -2581,8 +2591,8 @@ body {
   font-family: AUdimat; }
 
 .content {
-  border-left: 2px solid #040404;
-  border-right: 2px solid #040404; }
+  border-left: 7px solid #040404;
+  border-right: 7px solid #040404; }
 
 .form-control:focus {
   border-color: #040404;

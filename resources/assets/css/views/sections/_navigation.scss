@@ -1,12 +1,17 @@
+.header-decoration {
+	display: block;
+	margin: 0 auto;
+	height: 17px;
+    width: 220px;
+}
+
 .header{
-	margin-top: 5px;
 	background: linear-gradient(27deg, lighten($black, 5) 5px, transparent 5px) 0 5px, linear-gradient(207deg, lighten($black, 5) 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
     background-color: $black;
     background-size: 20px 20px;
 	padding: 10px 0;
 	border-top: 2px solid $black;
-	border-left: 2px solid $black;
-	border-right: 2px solid $black;
+	border-bottom: 2px solid $black;
 	border-top-right-radius: 15px;
 	border-top-left-radius: 15px;
 
@@ -19,8 +24,9 @@
 .navigation {
 	padding-top: 15px;
 	background-color: $beige;
-	border-left: 2px solid $black;
-	border-right: 2px solid $black;
+	border-left: 7px solid $black;
+	border-right: 7px solid $black;
+	border-bottom: 4px solid $black;
 
 	.center-content {
 
@@ -101,6 +107,12 @@
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : $screen-phone) {
+
+	.header-decoration {
+		height: 25px;
+    	width: 350px;
+	}
+
 	.header .logo {
 		width: 100px;
 	}
@@ -132,6 +144,12 @@
 }
 
 @media only screen and (min-width : $screen-desktop-s) {
+
+	.header-decoration {
+		height: 30px;
+    	width: 600px;
+	}
+
 
 	.navigation {
 		.center-content {

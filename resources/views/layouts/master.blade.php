@@ -19,7 +19,6 @@
 <body>
 
     <div class="container">
-
         <!-- Header -->
         @include('navigation')
 
