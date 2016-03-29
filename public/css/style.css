@@ -17,11 +17,7 @@
   src: url("../fonts/AUdimat-Bold.otf");
   font-weight: bold; }
 
-@font-face {
-  font-family: blowbrush;
-  src: url("../fonts/blowbrush.otf"); }
-
-p, a, input[type="text"], label {
+p, a, input[type="text"], label, span, div {
   font-size: 10px; }
 
 h1 {
@@ -29,14 +25,14 @@ h1 {
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
-  p, a, input[type="text"], label {
+  p, a, input[type="text"], label, span, div {
     font-size: 14px; }
   h1 {
     font-size: 24px; } }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
-  p, a, input[type="text"], label {
+  p, a, input[type="text"], label, span, div {
     font-size: 16px; }
   h1 {
     font-size: 30px; } }
@@ -2240,6 +2236,88 @@ h1 {
   .ghost-button-red:hover, .ghost-button-red:active, .ghost-button-red:focus {
     background-color: #B02F06;
     color: #ffffff; }
+
+.loop-box {
+  background-color: #E6DCAA;
+  padding: 5px 10px;
+  border-radius: 25px;
+  border: 2px solid black;
+  margin: 5px 0; }
+  .loop-box .play-button {
+    float: left;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    line-height: 40px;
+    background-color: #040404;
+    color: #B02F06;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: -20px;
+    transition: all .2s linear; }
+    .loop-box .play-button:hover, .loop-box .play-button:active, .loop-box .play-button:focus {
+      color: #00B286;
+      text-shadow: 0px 0px 6px rgba(0, 178, 134, 0.8);
+      cursor: pointer; }
+    .loop-box .play-button i {
+      line-height: inherit;
+      padding: 0 14px;
+      font-size: 16px; }
+  .loop-box .music {
+    display: none; }
+  .loop-box .loop-title {
+    margin: 0 0 5px 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px; }
+  .loop-box .duration {
+    float: left;
+    width: 20%; }
+  .loop-box .user-info {
+    display: inline-block;
+    width: 80%; }
+    .loop-box .user-info .user-avatar {
+      width: 15px;
+      height: 15px;
+      border-radius: 5%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      float: left;
+      margin-right: 5px; }
+    .loop-box .user-info .user-name {
+      float: left;
+      margin-right: 8px; }
+
+@media only screen and (min-width: 480px) {
+  .loop-box .loop-title {
+    font-size: 16px;
+    /* margin-bottom: 2px; */ } }
+
+@media only screen and (min-width: 768px) {
+  .loop-box {
+    padding: 5px 15px;
+    border-radius: 35px; }
+    .loop-box .play-button {
+      height: 60px;
+      width: 60px;
+      line-height: 60px; }
+      .loop-box .play-button i {
+        line-height: inherit;
+        padding: 0 21px;
+        font-size: 24px; }
+    .loop-box .loop-title {
+      font-size: 20px;
+      margin-bottom: 5px; }
+    .loop-box .user-info .user-avatar {
+      width: 25px;
+      height: 25px; } }
+
+@media only screen and (min-width: 992px) {
+  .loop-box .loop-title {
+    font-size: 24px; } }
 
 .record-cta {
   position: relative;

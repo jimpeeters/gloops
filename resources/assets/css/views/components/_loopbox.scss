@@ -1,0 +1,125 @@
+.loop-box {
+
+	background-color: $beige;
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: 2px solid black;
+    margin: 5px 0;
+
+	.play-button {
+		float:left;
+		height:40px; 
+		width: 40px;
+   		border-radius:100%;
+    	line-height:40px;
+		background-color: $black;
+		color: $red;
+		text-align:center;
+    	vertical-align:middle;
+    	display:inline-block;
+    	margin-left: -20px;
+		transition: all .2s linear;
+
+
+	    &:hover, &:active, &:focus {
+	    	color: $green;
+	    	text-shadow:0px 0px 6px rgba( $green, 0.8);
+	    	cursor: pointer;
+
+	    }
+
+		i {
+			line-height: inherit;
+			padding: 0 14px;
+			font-size: 16px;
+		}
+	}
+
+	.music {
+		display: none;
+	}
+
+	.loop-title {
+		margin: 0 0 5px 0;
+		width: 100%;
+		white-space: nowrap;
+  		overflow: hidden;
+  		text-overflow: ellipsis;
+  		font-size: 14px;
+	}
+
+	.duration {
+		float: left;
+		//margin-right: 5px;
+		width: 20%;
+	}
+
+	.user-info {
+		display: inline-block;
+		width: 80%;
+
+		.user-avatar {
+			width: 15px;
+			height: 15px;
+			border-radius: 5%;
+			background-repeat: no-repeat;
+    		background-size: cover;
+    		float: left;
+    		margin-right: 5px;
+		}
+
+		.user-name {
+			float:left;
+			margin-right: 8px;
+		}
+	}
+}
+
+@media only screen and (min-width : $screen-phone) {
+
+	.loop-box 
+	{
+		.loop-title {
+	  		font-size: 16px;
+	  		/* margin-bottom: 2px; */
+	  	}
+	}
+}
+
+@media only screen and (min-width : $screen-tablet) {
+
+	.loop-box {
+
+	    padding: 5px 15px;
+	    border-radius: 35px;
+
+		.play-button {
+			height:60px; 
+			width: 60px;
+	    	line-height:60px;
+
+			i {
+				line-height: inherit;
+				padding: 0 21px;
+				font-size: 24px;
+			}
+		}
+
+		.loop-title {
+			font-size: 20px;
+			margin-bottom: 5px;
+		}
+
+		.user-info .user-avatar {
+			width: 25px;
+			height: 25px;
+		}
+	}
+
+}
+
+@media only screen and (min-width : $screen-desktop-s) {
+	.loop-box .loop-title {
+  		font-size: 24px;
+	}
+}

@@ -1,0 +1,19 @@
+<div class="row loop-box">
+  <div class="col-md-2">
+    <a class="play-button" ng-click="playLoop()">
+      <i id="play-icon" class="fa fa-2x fa-play"></i>
+    </a>
+    <audio id="music" controls loop>
+      <source src="{{src}}" type="audio/mpeg">
+       Your browser does not support the audio element.
+    </audio>
+  </div>
+  <div class="col-md-8">
+    <h3 class="loop-title">{{loopName}}</h3>
+    <span class="duration">0:09</span>
+    <div class="volume">Volume</div>
+  </div>
+  <div class="col-md-2">
+    <i class="fa fa-star"></i>
+  </div>
+</div>

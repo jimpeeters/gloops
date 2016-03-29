@@ -11,7 +11,7 @@ class CreateLoopsTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
 			$table->string('name', 35);
-			$table->string('loop-path', 255);
+			$table->string('loop_path', 255);
 			$table->integer('FK_category_id')->unsigned();
 			$table->string('FK_user_id');
 		});

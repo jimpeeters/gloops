@@ -21,15 +21,24 @@ elixir(function(mix) {
 
     mix.scripts([
        'app.js'
-    ], 'public/js/app.js');
+    ], 'public/js/angular/app.js');
 
     mix.scripts([
-       'jquery/searchbarHide.js','jquery/loginModalActions.js'
+       'jquery/searchbarHide.js','jquery/loginModalActions.js','jquery/loopActions.js'
     ], 'public/js/jquery.js');
 
+    mix.scripts([
+    	'controllers/LoopController.js'
+    ], 'public/js/angular/controllers/controllers.js');
+
 /*    mix.scripts([
-    	'controllers/navigationController.js'
-    ], 'public/js/controllers.js');*/
+        'directives/loop-player.js'
+    ], 'public/js/angular/directives/directives.js');*/
+
+
+/*    mix.scripts([
+        'modules/angular.audio.js'
+    ], 'public/js/modules.js');*/
 });
 
 //To watch changes in sass files

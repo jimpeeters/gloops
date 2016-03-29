@@ -52,11 +52,18 @@
 <!-- Angular -->
 <script type="text/javascript" src="{{asset('/js/libs/angular.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('/js/libs/angular-animate.min.js')}}"></script>
-<!-- Custom angular -->
-<script type="text/javascript" src="{{asset('/js/app.js')}}"></script>
-<!-- <script type="text/javascript" src="{{asset('/js/controllers.js')}}"></script> -->
 <!-- Bootstrap js -->
 <script type="text/javascript" src="{{asset('js/libs/bootstrap.min.js')}}"></script>
+
+<!-- Angular audio module -->
+<!-- <script src="bower_components/angular-audio/app/angular.audio.js"></script> -->
+
+<!-- Custom angular -->
+<!-- <script type="text/javascript" src="{{asset('/js/modules.js')}}"></script> -->
+<script type="text/javascript" src="{{asset('/js/angular/app.js')}}"></script>
+<!-- <script type="text/javascript" src="{{asset('/js/angular/directives/directives.js')}}"></script> -->
+<script type="text/javascript" src="{{asset('/js/angular/controllers/controllers.js')}}"></script>
+
 
 
 </body>

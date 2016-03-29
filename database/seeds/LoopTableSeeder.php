@@ -17,8 +17,14 @@ class LoopTableSeeder extends Seeder
 
 		array(
 				'name' => 'The Beauty of Discipline',
-				'loop-path' => '/loops/main/loop-1.mp3',
+				'loop_path' => '/loops/main/loop_1.mp3',
 				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+		array(
+				'name' => 'The Beauty of Discipline II',
+				'loop_path' => '/loops/main/loop_2.mp3',
+				'FK_category_id' => '5',
 				'FK_user_id' => '1'
 			),
 		);

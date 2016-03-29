@@ -9,12 +9,6 @@
    font-weight: bold;
 }
 
-@font-face {
-   font-family: blowbrush;
-   src: url('../fonts/blowbrush.otf');
-}
-
-
 //h1 36px 
 //h2 30px
 //h3 24px
@@ -23,7 +17,7 @@
 //h6 12px
 
 //Responsive fonts
-p,a,input[type="text"],label {
+p,a,input[type="text"],label,span,div {
 	font-size: 10px;
 }
 
@@ -33,7 +27,7 @@ h1 {
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : $screen-phone) {
-	p,a,input[type="text"],label {
+	p,a,input[type="text"],label,span,div {
 		font-size: 14px;
 	}
 
@@ -44,7 +38,7 @@ h1 {
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : $screen-tablet) {
-	p,a,input[type="text"],label {
+	p,a,input[type="text"],label,span,div {
 		font-size: 16px;
 	}
 
