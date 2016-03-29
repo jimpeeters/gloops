@@ -6,17 +6,17 @@
 
 <div class="station">
 	<div class="title-section">
-		<h1>YOUR STATION</h1>
+		<h1>STATION</h1>
 	</div>
 
 	@if(Auth::check())
-		<div class="col-md-12">
+		<div class="col-xs-12">
 			<h2>Your Loops</h2>
 		</div>
 
 		@foreach($loops as $loop)
 
-			<div class="col-xs-12 col-sm-6" ng-controller="LoopController">
+			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController">
 				<div class="row loop-box">
 				  	<div class="col-xs-2">
 				    	<a class="play-button" ng-click="playLoop($event)">
@@ -45,10 +45,22 @@
 
 		@endforeach
 
+		<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+			<a class="load-button" href="">
+				<p>Load more <i class="fa fa-plus-circle"></i></p>
+			</a>
+			<hr>
+		</div>
+
+		<div class="col-xs-12">
+			<h2>Add more loops</h2>
+		</div>
+
 	@else
-		<div class="col-md-12">
+		<div class="col-xs-12">
 			<div class="info-box">
 				<p class="station-title"><i class="fa fa-plug"></i> To plug in your own guitar loops managing station you will need to register.</p>
+
 			</div>
 		</div>
 	@endif

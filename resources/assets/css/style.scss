@@ -70,3 +70,38 @@ body{
   border-color: $black;
   box-shadow: inset 0 1px 1px rgba(2, 2, 2, 0.08), 0 0 8px rgba(7, 7, 7, 0.6);
 }
+
+
+//container 
+
+.container {
+	width: 100%;
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : $screen-phone) {
+	.container {
+		width: 95%;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : $screen-tablet) {
+	.container {
+		width: 90%;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : $screen-desktop-s) {
+	.container {
+		width: 85%;
+	}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : $screen-desktop-l) {
+	.container {
+		width: 80%;
+	}
+}
