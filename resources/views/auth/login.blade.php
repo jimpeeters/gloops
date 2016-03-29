@@ -58,7 +58,7 @@
 						{!! Form::password('password_confirmation', array('class' => 'form-control')) !!}
 					</div>
 					<div class="form-group">
-					    {!! Form::label('Profiel Foto') !!}
+					    {!! Form::label('Profile picture') !!}
 					    {!! Form::file('image', null) !!}
 					</div>
 					<center><button href="" type="submit" class="ghost-button-red">Register</a></button>

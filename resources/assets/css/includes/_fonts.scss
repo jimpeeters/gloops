@@ -29,6 +29,14 @@ h2 {
 	font-size: 18px;
 }
 
+h3 {
+	font-size: 16px;
+}
+
+h4 {
+	font-size: 14px;
+}
+
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : $screen-phone) {
 	p,a,input[type="text"],label,span,div {
@@ -41,6 +49,14 @@ h2 {
 
 	h2 {
 		font-size: 22px;
+	}
+
+	h3 {
+		font-size: 18px;
+	}
+
+	h4 {
+		font-size: 16px;
 	}
 }
 
@@ -57,6 +73,14 @@ h2 {
 	h2 {
 		font-size: 28px;
 	}
+
+	h3 {
+		font-size: 24px;
+	}
+
+	h4 {
+		font-size: 22px;
+	}
 }
 
 /* Medium Devices, Desktops */
@@ -67,5 +91,13 @@ h2 {
 
 	h2 {
 		font-size: 34px;
+	}
+
+	h3 {
+		font-size: 30px;
+	}
+
+	h4 {
+		font-size: 28px;
 	}
 }

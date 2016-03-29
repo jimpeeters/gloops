@@ -26,4 +26,16 @@ gloopsApp.controller('LoopController', ['$scope', function($scope) {
 
   };
 }]);
+gloopsApp.controller('AlertController', ['$scope', '$timeout', function($scope, $timeout) {
+
+
+    $scope.closeAlert = function () {
+        $scope.startFade = true;
+        $timeout(function(){
+            $scope.hidden = true;
+        }, 1200);
+        
+    };
+
+}]);
 //# sourceMappingURL=controllers.js.map

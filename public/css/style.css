@@ -20,6 +20,12 @@ h1 {
 h2 {
   font-size: 18px; }
 
+h3 {
+  font-size: 16px; }
+
+h4 {
+  font-size: 14px; }
+
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
   p, a, input[type="text"], label, span, div {
@@ -27,7 +33,11 @@ h2 {
   h1 {
     font-size: 26px; }
   h2 {
-    font-size: 22px; } }
+    font-size: 22px; }
+  h3 {
+    font-size: 18px; }
+  h4 {
+    font-size: 16px; } }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
@@ -36,14 +46,22 @@ h2 {
   h1 {
     font-size: 32px; }
   h2 {
-    font-size: 28px; } }
+    font-size: 28px; }
+  h3 {
+    font-size: 24px; }
+  h4 {
+    font-size: 22px; } }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
   h1 {
     font-size: 38px; }
   h2 {
-    font-size: 34px; } }
+    font-size: 34px; }
+  h3 {
+    font-size: 30px; }
+  h4 {
+    font-size: 28px; } }
 
 /*
  *
@@ -2129,7 +2147,7 @@ h2 {
 .turn-button {
   display: block;
   background-color: #040404;
-  color: #A24611;
+  color: #B02F06;
   border-radius: 50%;
   height: 30px;
   margin: 0;
@@ -2179,11 +2197,10 @@ h2 {
 .round-button {
   font-size: 14px;
   padding: 5px 5px 5px 9px;
-  display: table;
   margin: 0px auto;
   width: 30px;
   height: 30px;
-  color: #A24611;
+  color: #B02F06;
   background-color: black;
   display: inline-block;
   border-radius: 100px;
@@ -2234,15 +2251,15 @@ h2 {
     color: #ffffff; }
 
 .ghost-button-red {
-  color: #A24611;
-  border: 2px solid #A24611; }
+  color: #B02F06;
+  border: 2px solid #B02F06; }
   .ghost-button-red:hover, .ghost-button-red:active, .ghost-button-red:focus {
-    background-color: #A24611;
+    background-color: #B02F06;
     color: #ffffff; }
 
 .load-button {
   text-decoration: none;
-  background: #A24611;
+  background: #B02F06;
   color: #ffffff;
   height: 54px;
   border-radius: 25px;
@@ -2260,7 +2277,7 @@ h2 {
     text-align: center;
     vertical-align: middle; }
   .load-button:hover, .load-button:active, .load-button:focus {
-    background-color: #be5214;
+    background-color: #ce3707;
     color: #ffffff;
     text-decoration: none; }
   @media only screen and (min-width: 768px) {
@@ -2284,7 +2301,7 @@ h2 {
     border-radius: 100%;
     line-height: 40px;
     background-color: #040404;
-    color: #A24611;
+    color: #B02F06;
     text-align: center;
     vertical-align: middle;
     display: inline-block;
@@ -2353,6 +2370,58 @@ h2 {
   .loop-box .loop-title {
     font-size: 24px; } }
 
+.info-box {
+  margin: 10px 0;
+  border-left: 3px solid #040404;
+  overflow: hidden;
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 1.2s ease-out;
+  position: relative; }
+  .info-box p {
+    display: block;
+    padding: 10px 30px 10px 10px;
+    margin-bottom: 0;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-animation: slideIn 1.2s ease-out forwards;
+    animation: slideIn 1.2s ease-out forwards; }
+  .info-box i {
+    padding-right: 15px; }
+  .info-box .close-button {
+    color: #B02F06;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding-right: 0; }
+    .info-box .close-button:hover {
+      cursor: pointer; }
+
+@-webkit-keyframes slideIn {
+  to {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%); } }
+
+@keyframes slideIn {
+  to {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%); } }
+
+.info-box.fade {
+  opacity: 0; }
+
+.info-box.success p {
+  background-color: #a8ffe9; }
+
+.info-box.error p {
+  background-color: #fcc1af; }
+
+.info-box.info p {
+  background-color: #9ccded; }
+
+.info-box.close {
+  display: none; }
+
 .record-cta {
   position: relative;
   background-image: url("/images/record.jpg");
@@ -2372,10 +2441,10 @@ h2 {
   position: relative;
   background-image: url("/images/record.jpg");
   background-size: cover;
+  background-position: center;
   padding-top: 20px;
   padding-bottom: 40px;
-  overflow: hidden;
-  opacity: 1; }
+  overflow: hidden; }
   .register-cta .title {
     text-align: center;
     color: #ffffff; }
@@ -2431,7 +2500,7 @@ h2 {
     width: 6px;
     border-radius: 3px;
     position: absolute;
-    background-color: #A24611; }
+    background-color: #B02F06; }
   .navigation #login-light.bg-green {
     background-color: #00B286; }
   .navigation #login-button.green {
@@ -2452,7 +2521,7 @@ h2 {
     height: 30px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    border: 0 solid #A24611;
+    border: 0 solid #B02F06;
     width: 0;
     padding: 0;
     border: 0; }
@@ -2516,7 +2585,7 @@ h2 {
     .footer .sub-footer a {
       padding: 0 2px;
       margin: 0 2px;
-      color: #A24611;
+      color: #B02F06;
       text-decoration: underline; }
       .footer .sub-footer a:hover {
         text-decoration: none; }
@@ -2538,7 +2607,7 @@ h2 {
       width: 80%;
       padding-left: 20px; }
   .footer .email-link {
-    color: #A24611;
+    color: #B02F06;
     display: inline;
     text-decoration: underline; }
     .footer .email-link i {
@@ -2620,11 +2689,11 @@ h2 {
     background: #040404;
     color: #ffffff; }
     #registerModal .modal-header .close {
-      color: #A24611;
+      color: #B02F06;
       opacity: 1;
       text-shadow: none; }
       #registerModal .modal-header .close:hover {
-        color: #be5214; }
+        color: #ce3707; }
   #registerModal .modal-body {
     background-color: #EDEBDB; }
   #registerModal .modal-footer {
@@ -2633,7 +2702,7 @@ h2 {
     text-align: left; }
     #registerModal .modal-footer a {
       text-decoration: underline;
-      color: #A24611; }
+      color: #B02F06; }
       #registerModal .modal-footer a:hover {
         text-decoration: none; }
   @media only screen and (min-width: 480px) {
@@ -2721,17 +2790,6 @@ h2 {
 .station .title-section {
   background-image: url("/images/station.jpg"); }
 
-.station .info-box {
-  margin: 10px 0;
-  border-left: 3px solid #040404;
-  overflow: hidden;
-  background-color: #f0f0f0;
-  display: inline-block; }
-  .station .info-box p {
-    display: inline-block;
-    padding: 10px 20px 10px 10px;
-    margin-bottom: 0; }
-
 .center-button {
   display: block;
   margin: 0 auto; }
@@ -2744,7 +2802,8 @@ body {
 
 .content {
   border-left: 7px solid #040404;
-  border-right: 7px solid #040404; }
+  border-right: 7px solid #040404;
+  background-color: #EDEBDB; }
 
 .form-control:focus {
   border-color: #040404;

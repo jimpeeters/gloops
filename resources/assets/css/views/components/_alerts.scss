@@ -1,0 +1,60 @@
+.info-box {
+	margin: 10px 0;
+	border-left: 3px solid $black;
+	overflow: hidden;
+	display: inline-block;
+	opacity: 1;
+	transition: opacity 1.2s ease-out;
+	position: relative;
+
+	p {
+		display: block;
+		padding: 10px 30px 10px 10px;
+		margin-bottom: 0;
+		transform: translateX(-100%);
+  		animation: slideIn 1.2s ease-out forwards;
+	}
+
+	i {
+		padding-right: 15px;
+	}
+
+	.close-button {
+		color: $red;
+		position: absolute;
+		right: 5px;
+		top: 5px;
+		padding-right: 0;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	@keyframes slideIn {
+	  to {
+	    transform: translateX(0%);
+	  }
+	}
+}
+
+.info-box.fade{
+    opacity: 0;
+}
+
+.info-box.success p {
+	background-color: lighten($green, 48);
+}
+
+.info-box.error p {
+	background-color: lighten($red, 48);
+}
+
+.info-box.info p {
+	background-color: lighten($blue, 24);
+}
+
+.info-box.close {
+	display: none;
+}
+

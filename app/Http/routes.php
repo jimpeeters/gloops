@@ -50,5 +50,7 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/station', array('as' => 'station', 'uses' => "StationController@index"));
 	//stationData
 	//Route::get('/station/data', 'StationController@getData');
+	//login
+	Route::post('/station/upload', array('as' => 'upload', 'uses' => 'StationController@upload'));
 
 });
