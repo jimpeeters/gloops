@@ -65,21 +65,29 @@
 					       	Your browser does not support the audio element.
 					    </audio>
 				  	</div>
-				  	<div class="col-xs-8">
+				  	<div class="col-xs-7">
 				    	<h3 class="loop-title">{{$loop->name}}</h3>
-				    	<span class="duration">0:09</span>
+				    	<p class="duration">0:09</p>
+				    	<p class="category"><i class="fa fa-music"></i> {{$loop->category->name}}</p>
+				  	</div>
+				  	<div class="col-xs-3">
 				    	<div class="user-info">
 				    		<div class="user-avatar" style="background-image: url({{$loop->user->avatar}})"></div>
 				    		<span class="user-name">{{$loop->user->name}}</span>
-				    		<i class="fa fa-bolt"></i>
-							<span class="reputation-count">53</span>
+							<span class="reputation-count"><i class="fa fa-bolt"></i> 53</span>
 				    	</div>
 				  	</div>
-				  	<div class="col-xs-2">
-				    	<i class="fa fa-star"></i>
+				  	<div class="favourite">
+				  		<i class="fa fa-star-o"></i>
 				  	</div>
 				</div>
+				<div class="labels">
+					<p><span class="label"><i class="fa fa-tag"></i> Happy</span></p>
+					<p><span class="label"><i class="fa fa-tag"></i> Summer</span></p>
+					<p><span class="label"><i class="fa fa-tag"></i> Fun</span></p>
+				</div>
 			</div>
+
 
 		@endforeach
 

@@ -2289,11 +2289,15 @@ h4 {
         font-size: 20px; } }
 
 .loop-box {
-  background-color: #EDEBDB;
+  background-color: #ffffff;
   padding: 5px 10px;
   border-radius: 25px;
   border: 2px solid black;
-  margin: 5px 0; }
+  margin: 5px 0;
+  height: 53px;
+  position: relative; }
+  .loop-box div {
+    height: 100%; }
   .loop-box .play-button {
     float: left;
     height: 40px;
@@ -2318,37 +2322,70 @@ h4 {
   .loop-box .music {
     display: none; }
   .loop-box .loop-title {
-    margin: 0 0 5px 0;
-    width: 100%;
+    height: 50%;
+    margin: 0;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 14px; }
+    text-overflow: ellipsis; }
   .loop-box .duration {
-    float: left;
-    width: 20%; }
-  .loop-box .user-info {
+    width: 30%; }
+  .loop-box .category {
+    width: 70%; }
+  .loop-box .category, .loop-box .duration {
+    padding-top: 5px;
+    height: 50%;
     display: inline-block;
-    width: 80%; }
-    .loop-box .user-info .user-avatar {
-      width: 15px;
-      height: 15px;
-      border-radius: 5%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      float: left;
-      margin-right: 5px; }
-    .loop-box .user-info .user-name {
-      float: left;
-      margin-right: 8px; }
+    float: left;
+    margin-bottom: 0; }
+  .loop-box .user-info .user-avatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 5%;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .loop-box .user-info .user-name {
+    display: none; }
+  .loop-box .favourite {
+    position: absolute;
+    height: 100%;
+    right: 5px;
+    top: 0;
+    display: table;
+    border-left: 1px solid #040404; }
+    .loop-box .favourite i {
+      display: table-cell;
+      vertical-align: middle;
+      padding-left: 5px; }
+      .loop-box .favourite i:hover {
+        cursor: pointer; }
+
+.labels {
+  padding-left: 10px; }
+  .labels .label {
+    background-color: #95a5a6;
+    font-weight: normal; }
+  .labels p {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden; }
 
 @media only screen and (min-width: 480px) {
-  .loop-box .loop-title {
-    font-size: 16px;
-    /* margin-bottom: 2px; */ } }
+  .loop-box .category, .loop-box .duration {
+    padding-top: 3px; }
+  .loop-box .user-info .user-avatar {
+    float: left;
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    height: 30px;
+    width: 30px;
+    margin: 5px 5px 0 0; }
+  .loop-box .user-info .user-name {
+    display: block; } }
 
 @media only screen and (min-width: 768px) {
   .loop-box {
+    height: 74px;
     padding: 5px 15px;
     border-radius: 35px; }
     .loop-box .play-button {
@@ -2359,16 +2396,20 @@ h4 {
         line-height: inherit;
         padding: 0 21px;
         font-size: 24px; }
-    .loop-box .loop-title {
-      font-size: 20px;
-      margin-bottom: 5px; }
+    .loop-box .category, .loop-box .duration {
+      padding-top: 10px; }
     .loop-box .user-info .user-avatar {
-      width: 25px;
-      height: 25px; } }
+      margin: 0; }
+    .loop-box .user-info .reputation-count {
+      display: block;
+      margin-top: -5px;
+      font-size: 12px; }
+  .labels {
+    padding-left: 15px; } }
 
 @media only screen and (min-width: 992px) {
-  .loop-box .loop-title {
-    font-size: 24px; } }
+  .loop-box .user-info .user-avatar {
+    margin-right: 5px; } }
 
 .info-box {
   margin: 10px 0;
@@ -2816,20 +2857,5 @@ body {
 @media only screen and (min-width: 480px) {
   .container {
     width: 95%; } }
-
-/* Small Devices, Tablets */
-@media only screen and (min-width: 768px) {
-  .container {
-    width: 90%; } }
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width: 992px) {
-  .container {
-    width: 85%; } }
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width: 1200px) {
-  .container {
-    width: 80%; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -86,24 +86,3 @@ body{
 		width: 95%;
 	}
 }
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : $screen-tablet) {
-	.container {
-		width: 90%;
-	}
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : $screen-desktop-s) {
-	.container {
-		width: 85%;
-	}
-}
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : $screen-desktop-l) {
-	.container {
-		width: 80%;
-	}
-}

@@ -1,10 +1,16 @@
 .loop-box {
 
-	background-color: $beige;
+	background-color: $white;
     padding: 5px 10px;
     border-radius: 25px;
     border: 2px solid black;
     margin: 5px 0;
+    height: 53px;
+    position: relative;
+
+    div {
+    	height: 100%;
+    }
 
 	.play-button {
 		float:left;
@@ -40,56 +46,111 @@
 	}
 
 	.loop-title {
-		margin: 0 0 5px 0;
-		width: 100%;
+		height: 50%;
+		margin: 0;
 		white-space: nowrap;
   		overflow: hidden;
   		text-overflow: ellipsis;
-  		font-size: 14px;
 	}
 
 	.duration {
+		width: 30%;
+	}
+
+	.category {
+		width: 70%;
+	}
+
+	.category, .duration {
+		padding-top: 5px;
+		height: 50%;
+		display: inline-block;
 		float: left;
-		//margin-right: 5px;
-		width: 20%;
+		margin-bottom: 0;
 	}
 
 	.user-info {
-		display: inline-block;
-		width: 80%;
-
 		.user-avatar {
-			width: 15px;
-			height: 15px;
+			width: 25px;
+			height: 25px;
 			border-radius: 5%;
 			background-repeat: no-repeat;
     		background-size: cover;
-    		float: left;
-    		margin-right: 5px;
 		}
 
 		.user-name {
-			float:left;
-			margin-right: 8px;
+			display: none;
+		}
+	}
+
+	.favourite {
+		position: absolute;
+		height: 100%;
+		//width: 30px;
+		right: 5px;
+		top: 0;
+		display: table;
+		border-left: 1px solid $black;
+
+		i {
+			display: table-cell;
+			vertical-align: middle;
+			padding-left: 5px;
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 	}
 }
 
+.labels {
+	padding-left: 10px;
+
+	.label {
+		background-color: $gray;
+		font-weight: normal;
+	}
+
+	p {
+		display: inline-block;
+		max-width: 100%;
+		overflow: hidden;
+	}
+}
+
+
 @media only screen and (min-width : $screen-phone) {
 
-	.loop-box 
-	{
-		.loop-title {
-	  		font-size: 16px;
-	  		/* margin-bottom: 2px; */
-	  	}
-	}
+ 	.loop-box {
+
+		.category, .duration {
+			padding-top: 3px;
+		}
+
+		.user-info {
+			.user-avatar {
+				float:left;
+				display: inline-block;
+				height: 100%;
+				vertical-align: middle;
+				height: 30px;
+				width: 30px;
+    			margin: 5px 5px 0 0;
+
+			}
+
+			.user-name {
+				display: block;
+			}
+		}
+ 	}
 }
 
 @media only screen and (min-width : $screen-tablet) {
 
-	.loop-box {
-
+ 	.loop-box {
+		height: 74px;
 	    padding: 5px 15px;
 	    border-radius: 35px;
 
@@ -105,21 +166,32 @@
 			}
 		}
 
-		.loop-title {
-			font-size: 20px;
-			margin-bottom: 5px;
+		.category, .duration {
+			padding-top: 10px;
 		}
 
-		.user-info .user-avatar {
-			width: 25px;
-			height: 25px;
+		.user-info {
+			.user-avatar {
+    			margin: 0;
+    		}
+
+			.reputation-count {
+				display: block;
+				margin-top: -5px;
+				font-size: 12px;
+			}
 		}
 	}
+
+	.labels {
+		padding-left: 15px;
+	}
+
 
 }
 
 @media only screen and (min-width : $screen-desktop-s) {
-	.loop-box .loop-title {
-  		font-size: 24px;
-	}
+	 	.loop-box .user-info .user-avatar {
+	  		margin-right: 5px;
+		} 
 }
