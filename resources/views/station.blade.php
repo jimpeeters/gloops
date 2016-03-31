@@ -94,14 +94,8 @@
 
 		@endforeach
 
-		<div class="col-xs-12 col-sm-6 col-sm-offset-3">
-			<a class="load-button" href="">
-				<p>Load more <i class="fa fa-plus-circle"></i></p>
-			</a>
-		</div>
-
-		<div class="col-xs-12">
-			<hr>
+		<div class="col-xs-12 col-sm-4 col-sm-offset-4">
+			<button class="basic-button" href="">Load more</button>
 		</div>
 
 	@else
@@ -130,9 +124,12 @@
 						{!! Form::label('name', 'Name') !!}
 						{!! Form::text('name','',array('class' => 'form-control')) !!}
 					</div>
+
 					<div class="form-group">
-					    {!! Form::label('File') !!}
-					    {!! Form::file('file', null) !!}
+					    <div class="custom-file-upload">
+						    {!! Form::label('file', 'File') !!}
+						    <input type="file" id="file" name="myfiles[]" multiple />
+						</div>
 					</div>
 
 					<div class="form-group">
@@ -153,7 +150,7 @@
 						</select>
 		    		</div>
 	                
-					<button href="" type="submit" class="ghost-button-red">Upload <i class="fa fa-plus-circle"></i></button>
+					<button href="" type="submit" class="basic-button upload-button">Upload</button>
 				{!! Form::close() !!}	
 				<hr>
 		</div>

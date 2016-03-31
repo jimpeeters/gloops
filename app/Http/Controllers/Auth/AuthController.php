@@ -206,7 +206,9 @@ class AuthController extends Controller
         }
 
         $user->save();
-        return redirect('/')->with('success','Thank you for registering to gloops, you can <a href="/station">start</a> recording guitar loops right now!');
+        Auth::login($user);
+        
+        return Redirect::back()->with('success','Thank you for registering to gloops, you can start recording guitar loops right now!');
     }
 
     public function login(request $request)

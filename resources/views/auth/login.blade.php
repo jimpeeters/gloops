@@ -34,7 +34,7 @@
 						{!! Form::label('password', 'Password') !!}
 						{!! Form::password('password', array('class' => 'form-control')) !!}
 					</div>
-					<center><button href="" type="submit" class="ghost-button-red">Login</button></center>
+					<center><button href="" type="submit" class="basic-button">Login</button></center>
 				{!! Form::close() !!}	
 			</div>
 		</div>
@@ -58,10 +58,13 @@
 						{!! Form::password('password_confirmation', array('class' => 'form-control')) !!}
 					</div>
 					<div class="form-group">
-					    {!! Form::label('Profile picture') !!}
-					    {!! Form::file('image', null) !!}
+					    <div class="custom-file-upload">
+						    {!! Form::label('file', 'Profile picture') !!}
+						    <input type="file" id="file" name="myfiles[]" multiple />
+						</div>
 					</div>
-					<center><button href="" type="submit" class="ghost-button-red">Register</a></button>
+
+					<center><button href="" type="submit" class="basic-button">Register</a></button>
 				{!! Form::close() !!}	
 			</div>
 		</div>

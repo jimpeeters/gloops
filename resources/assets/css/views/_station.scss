@@ -2,12 +2,29 @@
 	.title-section {
 		background-image: url('/images/station.jpg');
 	}
-}
 
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : $screen-desktop-l) {
-	.form-control {
-		width: 50%;
+	.upload-button {
+		margin-top: 25px;
 	}
+
+	/* Large Devices, Wide Screens */
+	@media only screen and (min-width : $screen-desktop-l) {
+		.form-control {
+			width: 70%;
+		}
+
+		.file-upload-input {
+			width: 40%;
+		}
+
+		.file-upload-button {
+			width: 30%;
+		}
+
+		.upload-button {
+			width: 70%;
+		}
+
+	}
+
 }

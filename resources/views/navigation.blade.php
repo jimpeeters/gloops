@@ -3,7 +3,6 @@
         <div class="col-xs-4">
              <img class="logo" src="images/logo.png">
         </div>
-  
 </div>
 
 <div class="row navigation">

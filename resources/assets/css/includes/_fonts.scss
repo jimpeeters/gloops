@@ -17,8 +17,12 @@
 //h6 12px
 
 //Responsive fonts
-p,a,input[type="text"],label,span,div {
+p,a,input[type="text"],span,div {
 	font-size: 10px;
+}
+
+label {
+	font-size: 12px;
 }
 
 h1 {

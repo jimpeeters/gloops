@@ -24,7 +24,7 @@ elixir(function(mix) {
     ], 'public/js/angular/app.js');
 
     mix.scripts([
-       'jquery/searchbarHide.js','jquery/loginModalActions.js','jquery/loopActions.js', 'jquery/chosenSelect.js'
+       'jquery/searchbarHide.js','jquery/loginModalActions.js','jquery/loopActions.js', 'jquery/chosenSelect.js', 'jquery/fileUpload.js'
     ], 'public/js/jquery.js');
 
     mix.scripts([
