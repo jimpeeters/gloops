@@ -32,7 +32,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    //protected $redirectTo = '/';
 
     /**
      * Create a new authentication controller instance.
@@ -134,7 +134,7 @@ class AuthController extends Controller
     public function getLogout()
     {
         Auth::logout();
-        return redirect('/')->with('success',"Successvol uitgelogd!");
+        return Redirect::back()->with('success',"You have successfully logged out. We hope to see you again soon!");
     }
 
     //register ------------------------
@@ -206,7 +206,7 @@ class AuthController extends Controller
         }
 
         $user->save();
-        return redirect('/')->with('success','Account successvol aangemaakt!');
+        return redirect('/')->with('success','Thank you for registering to gloops, you can <a href="/station">start</a> recording guitar loops right now!');
     }
 
     public function login(request $request)
@@ -215,11 +215,11 @@ class AuthController extends Controller
 
         if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']]))
         {
-            return Redirect::route('home');
+            return Redirect::back();
         }
         else
         {
-            return Redirect::route('home')->with('loginFail', ['fail']);
+            return Redirect::back()->with('loginFail', ['fail']);
         }
     }
 }

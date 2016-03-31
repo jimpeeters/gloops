@@ -54,7 +54,7 @@
                     <div id="login-light" class="bg-green"></div>
                     <p id="login-text">Logout</p>
                 @else
-                    <a id="login-button" href="#" class="round-button" data-toggle="modal" data-target="#registerModal">
+                    <a id="login-button" href="" class="round-button" data-toggle="modal" data-target="#registerModal">
                         <i class="fa fa-sign-in"></i>
                     </a>
                     <div id="login-light"></div>

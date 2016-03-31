@@ -3,3 +3,11 @@
 		background-image: url('/images/station.jpg');
 	}
 }
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : $screen-desktop-l) {
+	.form-control {
+		width: 50%;
+	}
+}

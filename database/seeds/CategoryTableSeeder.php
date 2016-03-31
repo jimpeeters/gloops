@@ -34,6 +34,10 @@ class CategoryTableSeeder extends Seeder {
 				'name' => 'Alternative'
 			),
 
+		array(
+				'name' => 'Punk'
+			),
+
 		);
 
 		DB::table('categories')->insert($categories);

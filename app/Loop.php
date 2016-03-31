@@ -19,4 +19,9 @@ class Loop extends Model {
         return $this->belongsTo('App\Category', 'FK_category_id');
     }
 
+    public function tags()
+	{
+		return $this->belongsToMany('App\Tag', 'loops_tags', 'FK_loop_id', 'FK_tag_id');
+	}
+
 }

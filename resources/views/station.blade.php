@@ -38,7 +38,7 @@
 		<div class="col-xs-12" ng-controller="AlertController">
 			<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
 				<p>
-					<i class="fa fa-info"></i>If you <a href="">register</a> you have access to this page. Here you can manage your own loop <strong>station</strong> and listen to your own recorded or uploaded loops. 
+					<i class="fa fa-info"></i>If you <a href="" data-toggle="modal" data-target="#registerModal">register</a> you have access to this page. Here you can manage your own loop <strong>station</strong> and listen to your own recorded or uploaded loops. 
 					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
 				</p>
 			</div>
@@ -82,10 +82,13 @@
 				  	</div>
 				</div>
 				<div class="labels">
-					<p><span class="label"><i class="fa fa-tag"></i> Happy</span></p>
-					<p><span class="label"><i class="fa fa-tag"></i> Summer</span></p>
-					<p><span class="label"><i class="fa fa-tag"></i> Fun</span></p>
+					@if(count($loop->tags) > 0)
+						@foreach($loop->tags as $tag)
+							<p><span class="label"><i class="fa fa-tag"></i> {{$tag->name}}</span></p>
+					 	@endforeach
+					@endif
 				</div>
+			
 			</div>
 
 
@@ -106,7 +109,7 @@
 		<div class="col-xs-12" ng-controller="AlertController">
 			<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
 				<p>
-					<i class="fa fa-info"></i>Here you will be able to listen to all your own loops.
+					<i class="fa fa-info"></i>Here you will be able to <strong>manage</strong> all of your own guitar loops.
 					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
 				</p>
 			</div>
@@ -115,12 +118,13 @@
 	@endif
 
 	<div class="col-xs-12">
-		<h2>Add more loops</h2>
+		<h2>Add more guitar loops</h2>
 	</div>
 
 	@if(Auth::check())
 
-		<div class="col-xs-12">
+		<div class="col-xs-12 col-sm-6">
+				<h3>Upload</h3>
 				{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true)) !!}
 					<div class="form-group">
 						{!! Form::label('name', 'Name') !!}
@@ -130,20 +134,51 @@
 					    {!! Form::label('File') !!}
 					    {!! Form::file('file', null) !!}
 					</div>
+
 					<div class="form-group">
-						{!! Form::select('category',$categories ,null,array('class' => 'form-control','id' => 'category')) !!}
-					</div>
+						{!! Form::label('Tags') !!}
+						<select size="5" name="tags[]" class="form-control chosen-select" data-placeholder="Add tags to this guitar loop..." multiple >
+							@foreach ($tags as $name)
+								<option value="{{$name}}">{{$name}}</option>  <!-- Capitalize first letter -->
+							@endforeach
+						</select>
+		    		</div>
+
+		    		<div class="form-group">
+						{!! Form::label('Category') !!}
+						<select name="category" class="form-control chosen-select-dropdown" data-placeholder="Choose a Category">
+							@foreach ($categories as $category)
+								<option value="{{$category}}">{{$category}}</option>  <!-- Capitalize first letter -->
+							@endforeach
+						</select>
+		    		</div>
+	                
 					<button href="" type="submit" class="ghost-button-red">Upload <i class="fa fa-plus-circle"></i></button>
 				{!! Form::close() !!}	
 				<hr>
 		</div>
 
+		<div class="col-xs-12 col-sm-6">
+			<h3>Record</h3>
+		</div>
+
 	@else
 
-		<div class="col-xs-12" ng-controller="AlertController">
+		<div class="col-xs-12 col-sm-6" ng-controller="AlertController">
+			<h3>Upload</h3>
 			<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
 				<p>
-					<i class="fa fa-info"></i>You can upload or record more loops right here!.
+					<i class="fa fa-info"></i>Here you can <strong>upload</strong> your local guitar loops.
+					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+				</p>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-sm-6" ng-controller="AlertController">
+			<h3>Record</h3>
+			<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
+				<p>
+					<i class="fa fa-info"></i>You can also record <strong>new</strong> guitar loops here!
 					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
 				</p>
 			</div>
@@ -161,7 +196,7 @@
 		<div class="col-xs-12" ng-controller="AlertController">
 			<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
 				<p>
-					<i class="fa fa-info"></i>You can browse other loops in the <a href="/library">library</a> and favourite them. Then you can listen to all your favourite loops right here!
+					<i class="fa fa-info"></i>You can browse other loops in the <a href="/library">library</a> and favourite them. Then you can listen to all your <strong>favourite</strong> guitar loops right here!
 					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
 				</p>
 			</div>

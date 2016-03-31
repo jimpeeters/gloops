@@ -19,5 +19,11 @@ class DatabaseSeeder extends Seeder
 
 		$this->call('LoopTableSeeder');
 		$this->command->info('loops table seeded!');
+
+        $this->call('TagTableSeeder');
+        $this->command->info('tags table seeded!');
+
+        $this->call('LoopTagTableSeeder');
+        $this->command->info('loop-tags table seeded!');
     }
 }

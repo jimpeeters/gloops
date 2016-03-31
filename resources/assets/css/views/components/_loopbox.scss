@@ -106,16 +106,20 @@
 
 .labels {
 	padding-left: 10px;
+	min-height: 20px;
+	max-height: 20px;
 
 	.label {
 		background-color: $gray;
 		font-weight: normal;
+		border-radius: 0;
 	}
 
 	p {
 		display: inline-block;
 		max-width: 100%;
 		overflow: hidden;
+		margin-bottom: 0;
 	}
 }
 
@@ -185,8 +189,9 @@
 
 	.labels {
 		padding-left: 15px;
+		min-height: 30px;
+		max-height: 30px;
 	}
-
 
 }
 
@@ -194,4 +199,9 @@
 	 	.loop-box .user-info .user-avatar {
 	  		margin-right: 5px;
 		} 
+
+		.labels {
+			min-height: 35px;
+			max-height: 35px;
+		}
 }

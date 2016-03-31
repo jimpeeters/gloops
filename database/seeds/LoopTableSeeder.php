@@ -17,14 +17,63 @@ class LoopTableSeeder extends Seeder
 
 		array(
 				'name' => 'The Beauty of Discipline',
-				'loop_path' => '/loops/main/loop_1.mp3',
+				'loop_path' => '/loops/main/loop.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '1'
 			),
 		array(
-				'name' => 'The Beauty of Discipline II',
-				'loop_path' => '/loops/main/loop_2.mp3',
+				'name' => 'Happy Beach Moment',
+				'loop_path' => '/loops/main/loop-2.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'I Just Had Fun',
+				'loop_path' => '/loops/main/loop-3.mp3',
+				'FK_category_id' => '2',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'Blues In the Sky',
+				'loop_path' => '/loops/main/loop-4.mp3',
+				'FK_category_id' => '1',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'Clandestino Numero Uno',
+				'loop_path' => '/loops/main/loop-5.mp3',
 				'FK_category_id' => '5',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'Guitar Rumbles',
+				'loop_path' => '/loops/main/loop-6.mp3',
+				'FK_category_id' => '1',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'Climax of Rhythms',
+				'loop_path' => '/loops/main/loop-7.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'Every Sunday',
+				'loop_path' => '/loops/main/loop-8.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'Hear You Me',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
 				'FK_user_id' => '1'
 			),
 		);
