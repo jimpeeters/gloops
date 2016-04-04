@@ -52,21 +52,6 @@
                 <input type="checkbox" name="checkboxG7" id="checkboxG7" class="css-checkbox" ng-click="includeCategory('Punk')"/>
                 <label for="checkboxG7" class="css-label">Punk</label>
             </li>
-            <li class="title">
-                <p>Duration</p>
-            </li>
-            <li>
-                <a href="#">1s - 5s</a>
-            </li>
-            <li>
-                <a href="#">6s - 10s</a>
-            </li>
-            <li>
-                <a href="#">11s - 15s</a>
-            </li>
-            <li>
-                <a href="#">16s - 20s</a>
-            </li>
         </ul>
         <div class="slide-up-toggle" ng-click="sidebarUp = !sidebarUp">
         	<span ng-if="!sidebarUp">Hide filters</span>
@@ -75,11 +60,6 @@
         </div>
     </div>
     <div class="col-xs-12 col-sm-10 loops">
-    	<div class="row">
-    		<div class="col-xs-12">
-    			
-    		</div>
-    	</div>
     	<div class="row">
 			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit | filter:categoryFilter" ng-init="isFavourite=loop.isFavourite">
 				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite }">

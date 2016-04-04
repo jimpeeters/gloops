@@ -28,11 +28,8 @@ gloopsApp.controller('LibraryController', ['$scope', '$http', function($scope, $
         } else {
             $scope.categoryIncludes.push(category);
         }
-        console.log($scope.categoryIncludes);
 
-        $scope.loops.sort(category)
-
-
+        $scope.loops.sort(category);
     }
     
     $scope.categoryFilter = function(loop) {
