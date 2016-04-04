@@ -18,7 +18,7 @@ class StationController extends Controller
     {
         if (Auth::check()) {
             $loops = Loop::where('FK_user_id' , '=' , Auth::user()->id)->get();
-            $categories = ['default'=>'Choose a category'] + Category::orderby('name', 'ASC')->lists('name', 'id')->all();  
+            $categories = Category::orderby('name', 'ASC')->get();  
             $tags = Tag::orderBy('name', 'ASC')->lists('name', 'id');
          //   $loopsFavCheck = Loop::with('favourites');
 //Auction::leftJoin('bidders','auctions.id','=','bidders.FK_auction_id')->
@@ -65,16 +65,14 @@ class StationController extends Controller
         $loop->name = $input['name'];
         $loop->FK_user_id = Auth::user()->id;
 
-        $category = explode(',', $input['category']);
-        $loop->FK_category_id     = $category[0];
-
-
+        $categoryId = $input['category'];
+        $loop->FK_category_id = $categoryId;
 
         //File check and creating upload map
         if ($request->hasFile('file'))
         {
             $file = $request->file('file');
-            $fileName = Auth::user()->name.'.'. $loop->name.$file->getClientOriginalExtension();
+            $fileName = Auth::user()->name.'-'. $loop->name.'.'.$file->getClientOriginalExtension();
             $file->move(base_path().'/public/loops/uploads/',$fileName);
             $loop->loop_path = '/loops/uploads/'.$fileName;
         }

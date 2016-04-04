@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="library" ng-controller="LibraryController as LibCtrl">
+<div class="library" ng-controller="LibraryController">
 
 	<div class="title-section">
 		<h1>LIBRARY</h1>
@@ -25,25 +25,32 @@
                 <p>Category</p>
             </li>
             <li>
-                <a href="#">Blues</a>
+                <input type="checkbox" name="checkboxG1" id="checkboxG1" class="css-checkbox" ng-click="includeCategory('Blues')"/>
+                <label for="checkboxG1" class="css-label">Blues</label>
             </li>
             <li>
-                <a href="#">Pop</a>
+                <input type="checkbox" name="checkboxG2" id="checkboxG2" class="css-checkbox" ng-click="includeCategory('Pop')"/>
+                <label for="checkboxG2" class="css-label">Pop</label>
             </li>
             <li>
-                <a href="#">Rock</a>
+                <input type="checkbox" name="checkboxG3" id="checkboxG3" class="css-checkbox" ng-click="includeCategory('Rock')"/>
+                <label for="checkboxG3" class="css-label">Rock</label>
             </li>
             <li>
-                <a href="#">Country</a>
+                <input type="checkbox" name="checkboxG4" id="checkboxG4" class="css-checkbox" ng-click="includeCategory('Country')"/>
+                <label for="checkboxG4" class="css-label">Country</label>
             </li>
             <li>
-                <a href="#">Flamenco</a>
+                <input type="checkbox" name="checkboxG5" id="checkboxG5" class="css-checkbox" ng-click="includeCategory('Flamenco')"/>
+                <label for="checkboxG5" class="css-label">Flamenco</label>
             </li>
             <li>
-                <a href="#">Alternative</a>
+                <input type="checkbox" name="checkboxG6" id="checkboxG6" class="css-checkbox" ng-click="includeCategory('Alternative')"/>
+                <label for="checkboxG6" class="css-label">Alternative</label>
             </li>
             <li>
-                <a href="#">Punk</a>
+                <input type="checkbox" name="checkboxG7" id="checkboxG7" class="css-checkbox" ng-click="includeCategory('Punk')"/>
+                <label for="checkboxG7" class="css-label">Punk</label>
             </li>
             <li class="title">
                 <p>Duration</p>
@@ -74,7 +81,7 @@
     		</div>
     	</div>
     	<div class="row">
-			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops" ng-init="isFavourite=loop.isFavourite">
+			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit | filter:categoryFilter" ng-init="isFavourite=loop.isFavourite">
 				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite }">
 				  	<div class="col-xs-2">
 				    	<a class="play-button" ng-click="playLoop($event)">
@@ -97,17 +104,23 @@
 							<span class="reputation-count"><i class="fa fa-bolt"></i> 53</span>
 				    	</div>
 				  	</div>
-				  	<div class="favourite" ng-if="loggedIn">
-				  			<i class="fa" ng-class="{ 'fa-star active' : isFavourite, 'fa-star-o' : !isFavourite }" ng-click="favourite(loop.id)"></i>
-				  	</div>
-				  	<div class="favourite" ng-if="!loggedIn">
-				  			<i class="fa fa-star-o"></i>
-				  	</div>
+                    @if(Auth::check())
+    				  	<div class="favourite">
+    				  			<i class="fa" ng-class="{ 'fa-star active' : isFavourite, 'fa-star-o' : !isFavourite }" ng-click="favourite(loop.id)"></i>
+    				  	</div>
+                    @else
+    				  	<div class="favourite">
+    				  			<i class="fa fa-star-o"></i>
+    				  	</div>
+                    @endif
 				</div>
 				<div class="labels">
 					<p ng-repeat="tag in loop.tags"><span class="label"><i class="fa fa-tag"></i> <% tag.name %></span></p>
 				</div>
 			</div>
+            <div class="col-xs-12">
+                <button class="basic-button load-more-button" href="" ng-click="loopLimit = loopLimit + 3">Load more</button>
+            </div>
 		</div>
     </div>
 </div>

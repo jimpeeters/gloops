@@ -6,8 +6,16 @@
     border: 2px solid $black;
     margin: 5px 0;
     height: 53px;
+    opacity: 0;
     position: relative;
     transition: border-color .2s ease-out, background-color 0.2s ease-out;
+    animation: fadeIn 1.2s ease-out forwards;
+
+	@keyframes fadeIn {
+	  to {
+	    opacity: 1;
+	  }
+	}
 
     div {
     	height: 100%;

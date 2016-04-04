@@ -103,8 +103,8 @@
 
 		@endforeach
 
-		<div class="col-xs-12 col-sm-4 col-sm-offset-4">
-			<button class="basic-button" href="">Load more</button>
+		<div class="col-xs-12">
+			<button class="basic-button load-more-button" href="">Load more</button>
 		</div>
 
 	@else
@@ -137,15 +137,15 @@
 					<div class="form-group">
 					    <div class="custom-file-upload">
 						    {!! Form::label('file', 'File') !!}
-						    <input type="file" id="file" name="myfiles[]" multiple />
+						    <input type="file" id="file" name="file"/>
 						</div>
 					</div>
 
 					<div class="form-group">
 						{!! Form::label('Tags') !!}
-						<select size="5" name="tags[]" class="form-control chosen-select" data-placeholder="Add tags to this guitar loop..." multiple >
+						<select size="5" name="tags[]" class="form-control chosen-select" data-placeholder="Add tags to this guitar loop..." multiple>
 							@foreach ($tags as $name)
-								<option value="{{$name}}">{{$name}}</option>  <!-- Capitalize first letter -->
+								<option value="{{$name}}">{{$name}}</option>
 							@endforeach
 						</select>
 		    		</div>
@@ -153,8 +153,9 @@
 		    		<div class="form-group">
 						{!! Form::label('Category') !!}
 						<select name="category" class="form-control chosen-select-dropdown" data-placeholder="Choose a Category">
+							<option value="">Choose a category</option>
 							@foreach ($categories as $category)
-								<option value="{{$category}}">{{$category}}</option>  <!-- Capitalize first letter -->
+								<option value="{{$category->id}}">{{$category->name}}</option>
 							@endforeach
 						</select>
 		    		</div>

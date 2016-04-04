@@ -76,11 +76,20 @@
         padding-top: 15px;
     }
 
+    .load-more-button {
+        width: 100%;
+        margin: 15px auto;
+        display: block;
+    }
 
     /* Small Devices, Tablets */
     @media only screen and (min-width : $screen-tablet) {
         .sidebar {
             padding-right: 15px;
+        }
+
+        .load-more-button {
+            width: 300px;
         }
     }
 
