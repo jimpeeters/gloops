@@ -9,7 +9,6 @@ gloopsApp.controller('LibraryController', ['$scope', '$http', function($scope, $
         }).success(function(data) {
 
             $scope.loops = data;
-            console.log(data);
         });
     };
 
@@ -29,6 +28,11 @@ gloopsApp.controller('LibraryController', ['$scope', '$http', function($scope, $
         } else {
             $scope.categoryIncludes.push(category);
         }
+        console.log($scope.categoryIncludes);
+
+        $scope.loops.sort(category)
+
+
     }
     
     $scope.categoryFilter = function(loop) {
@@ -39,6 +43,9 @@ gloopsApp.controller('LibraryController', ['$scope', '$http', function($scope, $
         
         return loop;
     }
+
+    // Order by
+    $scope.sortParameter = '';
 
     // Load more button
     $scope.loopLimit = 9;

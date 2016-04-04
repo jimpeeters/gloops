@@ -1,20 +1,23 @@
-/*gloopsApp.controller('stationController', ['$scope','$http', function($scope, $http, ngAudio){
+gloopsApp.controller('StationController', ['$scope','$http', function($scope, $http){
 
-    $http({
-        url: 'http://gloop.dev/station/data',
-        dataType: "jsonp",
-        jsonp: "callback"
-    })
-    .success(function(json) {
+  console.log('station controller');
 
-    	//console.log(json[0].loop_path);
-    	$scope.loopPath = json[0].loop_path;
-    	//console.log($scope.loopPath);
-        $scope.audio = ngAudio.load($scope.loopPath);
+    // Get all loops from database
+    $scope.getLoops = function() {
 
-    })
-    .error(function() {
-    	console.log('Lege Json');
-    });
+        $http({
+              method  : 'GET',
+              url     : '/station/data'
+        }).success(function(data) {
 
-}]);*/
+            $scope.loops = data;
+            console.log(data);
+        });
+    };
+
+    $scope.getLoops();
+
+    // Load more button
+    $scope.loopLimit = 9;
+
+}]);

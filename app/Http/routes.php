@@ -34,6 +34,8 @@ Route::group(['middleware' => ['web']], function () {
 		//Upload loop
 		Route::post('/station/upload', array('as' => 'upload', 'uses' => 'StationController@upload'));
 
+		//Station loops
+		Route::get('/station/data', 'StationController@getLoops');
 
 	});
 

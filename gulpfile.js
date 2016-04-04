@@ -28,7 +28,7 @@ elixir(function(mix) {
     ], 'public/js/jquery.js');
 
     mix.scripts([
-    	'controllers/LoopController.js','controllers/AlertController.js', 'controllers/LibraryController.js'
+    	'controllers/LoopController.js','controllers/AlertController.js', 'controllers/LibraryController.js', 'controllers/StationController.js'
     ], 'public/js/angular/controllers/controllers.js');
 
 /*    mix.scripts([

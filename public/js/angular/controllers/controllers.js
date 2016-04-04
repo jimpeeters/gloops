@@ -68,7 +68,6 @@ gloopsApp.controller('LibraryController', ['$scope', '$http', function($scope, $
         }).success(function(data) {
 
             $scope.loops = data;
-            console.log(data);
         });
     };
 
@@ -88,6 +87,11 @@ gloopsApp.controller('LibraryController', ['$scope', '$http', function($scope, $
         } else {
             $scope.categoryIncludes.push(category);
         }
+        console.log($scope.categoryIncludes);
+
+        $scope.loops.sort(category)
+
+
     }
     
     $scope.categoryFilter = function(loop) {
@@ -98,6 +102,9 @@ gloopsApp.controller('LibraryController', ['$scope', '$http', function($scope, $
         
         return loop;
     }
+
+    // Order by
+    $scope.sortParameter = '';
 
     // Load more button
     $scope.loopLimit = 9;
@@ -127,6 +134,29 @@ gloopsApp.controller('LibraryController', ['$scope', '$http', function($scope, $
 */
 
     //$scope.getUser();
+
+}]);
+gloopsApp.controller('StationController', ['$scope','$http', function($scope, $http){
+
+  console.log('station controller');
+
+    // Get all loops from database
+    $scope.getLoops = function() {
+
+        $http({
+              method  : 'GET',
+              url     : '/station/data'
+        }).success(function(data) {
+
+            $scope.loops = data;
+            console.log(data);
+        });
+    };
+
+    $scope.getLoops();
+
+    // Load more button
+    $scope.loopLimit = 9;
 
 }]);
 //# sourceMappingURL=controllers.js.map

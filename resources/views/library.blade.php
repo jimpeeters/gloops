@@ -16,10 +16,10 @@
         		<p>General</p>
         	</li>
             <li>
-                <a href="#">Most popular</a>
+                <a href="">Most popular</a>
             </li>
             <li>
-                <a href="#">Most recent</a>
+                <a href="" ng-click="sortParameter = created_at">Most recent</a>
             </li>
             <li class="title">
                 <p>Category</p>
@@ -94,7 +94,7 @@
 				  	</div>
 				  	<div class="col-xs-7">
 				    	<h3 class="loop-title"><% loop.name %></h3>
-				    	<p class="duration">0:09</p>
+				    	<p class="duration">0:00</p>
 				    	<p class="category"><i class="fa fa-music"></i> <% loop.category.name %></p>
 				  	</div>
 				  	<div class="col-xs-3">

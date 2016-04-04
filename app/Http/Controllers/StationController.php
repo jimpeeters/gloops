@@ -8,40 +8,21 @@ use App\Loop;
 use App\Category;
 use App\Tag;
 use App\LoopTag;
+use App\Favourite;
 use Auth;
 use Validator;
 use Redirect;
+use Response;
 
 class StationController extends Controller
 {
     public function index()
     {
-        if (Auth::check()) {
-            $loops = Loop::where('FK_user_id' , '=' , Auth::user()->id)->get();
-            $categories = Category::orderby('name', 'ASC')->get();  
-            $tags = Tag::orderBy('name', 'ASC')->lists('name', 'id');
-         //   $loopsFavCheck = Loop::with('favourites');
-//Auction::leftJoin('bidders','auctions.id','=','bidders.FK_auction_id')->
-            //dd($loopsFavCheck);
+        $categories = Category::orderby('name', 'ASC')->get();  
+        $tags = Tag::orderBy('name', 'ASC')->lists('name', 'id');
 
-/*            //dd($loops);
-            $favourites = array();
-
-            foreach($loops as $loop)
-            {
-                foreach($loop->favourites as $favourite)
-                {
-                   dd($favourite);
-                }
-            }*/
-
-            return View::make('station')->with('loops', $loops)
-                                        ->with('categories', $categories)
-                                        ->with('tags', $tags);
-        }
-        else {
-            return View::make('station');
-        }
+        return View::make('station')->with('tags' , $tags)
+                                    ->with('categories', $categories);
     }
 
     public function upload(Request $request)
@@ -71,7 +52,7 @@ class StationController extends Controller
         //File check and creating upload map
         if ($request->hasFile('file'))
         {
-            $file = $request->file('file');
+            $file = $request->file('file');            
             $fileName = Auth::user()->name.'-'. $loop->name.'.'.$file->getClientOriginalExtension();
             $file->move(base_path().'/public/loops/uploads/',$fileName);
             $loop->loop_path = '/loops/uploads/'.$fileName;
@@ -97,12 +78,39 @@ class StationController extends Controller
         return redirect('/station')->with('success','Loop successfully added!');
     }
 
-
-/*    public function getData()
+    public function getLoops()
     {
-    	if (Auth::check()) {
-			$loops = Loop::where('FK_user_id' , '=' , Auth::user()->id)->get();
-			return Response::json($loops);
-    	}
-    }*/
+        if(Auth::check())
+        {
+            $loops = Loop::where('FK_user_id' , '=' , Auth::user()->id)->
+                           with('favourites')->
+                           with('user')->
+                           with('category')->
+                           with('tags')->
+                           orderBy('created_at', 'DESC')->get();
+
+            //give property to say wether it is favourited or not        
+            foreach($loops as $loop) 
+            {
+                //check if logged in user has favourited this
+                $user_favorites = Favourite::where('FK_user_id', '=', Auth::user()->id)
+                    ->where('FK_loop_id', '=', $loop->id)
+                    ->first();
+
+                if ($user_favorites == null)
+                {
+                    $loop->isFavourite = false;
+                } 
+                else 
+                {
+                    $loop->isFavourite = true;
+                }
+
+            }
+
+
+
+            return Response::json($loops);
+        }
+    }
 }
