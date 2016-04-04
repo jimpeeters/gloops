@@ -10,7 +10,7 @@
         <div class="col-xs-2">
             <!-- Library -->
             <div class="center-content">
-                <a href="#" class="turn-button tick"></a>
+                <a href="{{route('library')}}" class="turn-button tick"></a>
                 <p>Library</p>
             </div>
 

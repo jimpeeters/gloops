@@ -1,0 +1,88 @@
+.library {
+    .title-section {
+        background-image: url('/images/station.jpg');
+    }
+
+    .sidebar {
+        padding: 0;
+    }
+
+    .sidebar-nav {
+        list-style: none;
+        padding: 0 0 0 15px;
+        background-color: $lightblack;
+        margin-bottom: 0;
+        max-height: 450px;
+        transition: max-height 1s ease-out, padding 1s ease-out;
+        overflow: hidden;
+
+        li {
+
+            a {
+                display: block;
+                text-decoration: none;
+                color: $red;
+
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+
+            p {
+                text-decoration: underline;
+                margin: 0;
+                color: white;
+                font-size: 1.2em;
+            }
+
+            &:first-child{
+                padding-top: 15px;
+            }
+
+            &:last-child {
+                padding-bottom: 15px;
+            }
+
+        }
+
+        .title {
+            padding: 5px 0; 
+        }
+    }
+
+    .sidebar-nav.up {
+        max-height: 0;
+    }
+
+    .slide-up-toggle {
+        background-color: $red;
+        text-align: center;
+        transition: background-color 0.2s ease-out;
+        padding: 5px 0;
+        color: $white;
+
+        &:hover {
+            background-color: lighten($red , 10);
+            cursor: pointer;
+        }
+
+        i {
+            margin: 0 auto;
+        }
+    }
+
+
+    .loops {
+        padding-top: 15px;
+    }
+
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : $screen-tablet) {
+        .sidebar {
+            padding-right: 15px;
+        }
+    }
+
+}
+

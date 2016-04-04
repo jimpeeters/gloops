@@ -24,4 +24,9 @@ class Loop extends Model {
 		return $this->belongsToMany('App\Tag', 'loops_tags', 'FK_loop_id', 'FK_tag_id');
 	}
 
+	public function favourites()
+	{
+		return $this->belongsToMany('App\User', 'favourites', 'FK_loop_id', 'FK_user_id');
+	}
+
 }

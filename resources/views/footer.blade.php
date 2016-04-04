@@ -2,15 +2,15 @@
 		<div class="col-xs-12 col-sm-3">
 			<div class="sub-footer">
 				<h5>Gloops //</h5>
-				<a href="#">Home</a>
-				<a href="#">Library</a>
+				<a href="/">Home</a>
+				<a href="{{route('library')}}">Library</a>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-3">
 			<div class="sub-footer">
 				<h5>Station //</h5>
 				<a href="#">Your account</a>
-				<a href="#">Your station</a>
+				<a href="{{route('station')}}">Your station</a>
 				<a href="#">Record now</a>
 			</div>
 		</div>

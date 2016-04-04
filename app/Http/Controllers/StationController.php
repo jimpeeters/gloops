@@ -20,6 +20,20 @@ class StationController extends Controller
             $loops = Loop::where('FK_user_id' , '=' , Auth::user()->id)->get();
             $categories = ['default'=>'Choose a category'] + Category::orderby('name', 'ASC')->lists('name', 'id')->all();  
             $tags = Tag::orderBy('name', 'ASC')->lists('name', 'id');
+         //   $loopsFavCheck = Loop::with('favourites');
+//Auction::leftJoin('bidders','auctions.id','=','bidders.FK_auction_id')->
+            //dd($loopsFavCheck);
+
+/*            //dd($loops);
+            $favourites = array();
+
+            foreach($loops as $loop)
+            {
+                foreach($loop->favourites as $favourite)
+                {
+                   dd($favourite);
+                }
+            }*/
 
             return View::make('station')->with('loops', $loops)
                                         ->with('categories', $categories)

@@ -28,6 +28,13 @@ Route::group(['middleware' => ['web']], function () {
 	//Logged in
 	Route::group(['middleware' => 'auth'], function () {
 
+		//Favourite loop
+		Route::post('/loop/favourite', array('as' => 'favourite','uses' =>'LoopController@favourite'));
+
+		//Upload loop
+		Route::post('/station/upload', array('as' => 'upload', 'uses' => 'StationController@upload'));
+
+
 	});
 
     //facebook login
@@ -50,7 +57,14 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/station', array('as' => 'station', 'uses' => "StationController@index"));
 	//stationData
 	//Route::get('/station/data', 'StationController@getData');
-	//login
-	Route::post('/station/upload', array('as' => 'upload', 'uses' => 'StationController@upload'));
+
+	//library
+	Route::get('/library', array('as' => 'library', 'uses' => "LibraryController@index"));
+
+	//Library loops 
+	Route::get('/library/data', 'LibraryController@getLoops');
+
+	//get user
+	Route::get('/getuser', 'UserController@getUser');
 
 });

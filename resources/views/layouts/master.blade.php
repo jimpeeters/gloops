@@ -46,12 +46,10 @@
 
     </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/libs/jquery.min.js"><\/script>')</script>
 
 <!-- Chosen Jquery -->
 <script type="text/javascript" src="{{asset('/js/libs/chosen.jquery.min.js')}}"></script>
-
 
 <!-- Custom Jquery -->
 <script type="text/javascript" src="{{asset('/js/jquery.js')}}"></script>

@@ -55,7 +55,11 @@
 		@foreach($loops as $loop)
 
 			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController">
-				<div class="row loop-box">
+				@if(count($loop->favourites) > 0)
+				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite}">
+				@else
+				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite}">
+				@endif
 				  	<div class="col-xs-2">
 				    	<a class="play-button" ng-click="playLoop($event)">
 				      		<i class="fa fa-play"></i>
@@ -78,7 +82,12 @@
 				    	</div>
 				  	</div>
 				  	<div class="favourite">
-				  		<i class="fa fa-star-o"></i>
+						@if(count($loop->favourites) > 0)
+				  			<i class="fa" ng-init="isFavourite=true" ng-class="{ 'fa-star active' : isFavourite, 'fa-star-o' : !isFavourite }" ng-click="favourite({{$loop->id}})"></i>
+				  		@else
+							<i class="fa" ng-init="isFavourite=false" ng-class="{ 'fa-star active' : isFavourite, 'fa-star-o' : !isFavourite }" ng-click="favourite({{$loop->id}})"></i>
+				  		@endif
+				  	
 				  	</div>
 				</div>
 				<div class="labels">
@@ -150,7 +159,7 @@
 						</select>
 		    		</div>
 	                
-					<button href="" type="submit" class="basic-button upload-button">Upload</button>
+					<button type="submit" class="basic-button upload-button">Upload</button>
 				{!! Form::close() !!}	
 				<hr>
 		</div>
@@ -188,6 +197,15 @@
 	</div>
 
 	@if(Auth::check())
+
+			<div class="col-xs-12" ng-controller="AlertController">
+				<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
+					<p>
+						<i class="fa fa-info"></i>You currently have no <strong>favourite guitar loops</strong>.
+						<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+					</p>
+				</div>
+			</div>
 
 	@else
 		<div class="col-xs-12" ng-controller="AlertController">

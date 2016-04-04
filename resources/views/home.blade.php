@@ -6,8 +6,6 @@
 
 <div class="home">
 
-	@include('errors.errors')
-
 	@if (session()->has('success'))
 	    <div class="col-xs-12" ng-controller="AlertController">
 	    	<div class="info-box success" ng-hide="hidden" ng-class="{fade: startFade}">

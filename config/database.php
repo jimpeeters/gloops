@@ -54,14 +54,13 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'gloops'),
-            'username'  => env('DB_USERNAME', 'root'),
-            'password'  => env('DB_PASSWORD', 'root'),
+            'host'      => 'localhost',
+            'database'  => 'gloops',
+            'username'  => 'root',
+            'password'  => '',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
-            'strict'    => false,
         ],
 
         'pgsql' => [

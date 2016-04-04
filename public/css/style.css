@@ -2358,10 +2358,11 @@ h4 {
   background-color: #ffffff;
   padding: 5px 10px;
   border-radius: 25px;
-  border: 2px solid black;
+  border: 2px solid #040404;
   margin: 5px 0;
   height: 53px;
-  position: relative; }
+  position: relative;
+  transition: border-color .2s ease-out, background-color 0.2s ease-out; }
   .loop-box div {
     height: 100%; }
   .loop-box .play-button {
@@ -2376,14 +2377,15 @@ h4 {
     vertical-align: middle;
     display: inline-block;
     margin-left: -20px;
-    transition: all .2s linear; }
+    transition: all .2s ease-out; }
     .loop-box .play-button:hover, .loop-box .play-button:active, .loop-box .play-button:focus {
       color: #00B286;
       text-shadow: 0px 0px 6px rgba(0, 178, 134, 0.8);
       cursor: pointer; }
     .loop-box .play-button i {
+      height: 100%;
+      width: 100%;
       line-height: inherit;
-      padding: 0 14px;
       font-size: 16px; }
   .loop-box .music {
     display: none; }
@@ -2396,7 +2398,10 @@ h4 {
   .loop-box .duration {
     width: 30%; }
   .loop-box .category {
-    width: 70%; }
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
   .loop-box .category, .loop-box .duration {
     padding-top: 5px;
     height: 50%;
@@ -2416,14 +2421,23 @@ h4 {
     height: 100%;
     right: 5px;
     top: 0;
-    display: table;
-    border-left: 1px solid #040404; }
+    display: table; }
     .loop-box .favourite i {
       display: table-cell;
       vertical-align: middle;
-      padding-left: 5px; }
+      padding-left: 5px;
+      transition: color 0.2s ease-out; }
       .loop-box .favourite i:hover {
         cursor: pointer; }
+    .loop-box .favourite i.active {
+      color: #f1c40f; }
+
+.loop-box.favourite {
+  border-color: #f1c40f;
+  background-color: #fef9e8; }
+  .loop-box.favourite .play-button:hover, .loop-box.favourite .play-button:active, .loop-box.favourite .play-button:focus {
+    color: #f1c40f;
+    text-shadow: 0px 0px 6px rgba(241, 196, 15, 0.8); }
 
 .labels {
   padding-left: 10px;
@@ -2437,7 +2451,8 @@ h4 {
     display: inline-block;
     max-width: 100%;
     overflow: hidden;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    margin-right: 5px; }
 
 @media only screen and (min-width: 480px) {
   .loop-box .category, .loop-box .duration {
@@ -2463,8 +2478,6 @@ h4 {
       width: 60px;
       line-height: 60px; }
       .loop-box .play-button i {
-        line-height: inherit;
-        padding: 0 21px;
         font-size: 24px; }
     .loop-box .category, .loop-box .duration {
       padding-top: 10px; }
@@ -2686,7 +2699,7 @@ h4 {
     width: 150px; } }
 
 .footer {
-  background-color: #111111;
+  background-color: #1e1e1e;
   padding: 15px 0;
   border: 2px solid #040404;
   border-bottom-right-radius: 15px;
@@ -2918,6 +2931,56 @@ h4 {
       width: 30%; }
     .station .upload-button {
       width: 70%; } }
+
+.library {
+  /* Small Devices, Tablets */ }
+  .library .title-section {
+    background-image: url("/images/station.jpg"); }
+  .library .sidebar {
+    padding: 0; }
+  .library .sidebar-nav {
+    list-style: none;
+    padding: 0 0 0 15px;
+    background-color: #1e1e1e;
+    margin-bottom: 0;
+    max-height: 450px;
+    transition: max-height 1s ease-out, padding 1s ease-out;
+    overflow: hidden; }
+    .library .sidebar-nav li a {
+      display: block;
+      text-decoration: none;
+      color: #B02F06; }
+      .library .sidebar-nav li a:hover {
+        text-decoration: underline; }
+    .library .sidebar-nav li p {
+      text-decoration: underline;
+      margin: 0;
+      color: white;
+      font-size: 1.2em; }
+    .library .sidebar-nav li:first-child {
+      padding-top: 15px; }
+    .library .sidebar-nav li:last-child {
+      padding-bottom: 15px; }
+    .library .sidebar-nav .title {
+      padding: 5px 0; }
+  .library .sidebar-nav.up {
+    max-height: 0; }
+  .library .slide-up-toggle {
+    background-color: #B02F06;
+    text-align: center;
+    transition: background-color 0.2s ease-out;
+    padding: 5px 0;
+    color: #ffffff; }
+    .library .slide-up-toggle:hover {
+      background-color: #e13c08;
+      cursor: pointer; }
+    .library .slide-up-toggle i {
+      margin: 0 auto; }
+  .library .loops {
+    padding-top: 15px; }
+  @media only screen and (min-width: 768px) {
+    .library .sidebar {
+      padding-right: 15px; } }
 
 .center-button {
   display: block;
