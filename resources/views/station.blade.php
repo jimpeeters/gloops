@@ -47,11 +47,10 @@
 	@endif
 
 	<div class="col-xs-12">
-		<h2>Your Loops</h2>
+		<h2 class="block-title"><i class="fa fa-play"></i> Your Loops</h2>
 	</div>
 
 	@if(Auth::check())
-
 			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit" ng-init="isFavourite=loop.isFavourite">
 				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite }">
 				  	<div class="col-xs-2">
@@ -84,8 +83,17 @@
 				</div>
 			</div>
 
-			<div class="col-xs-12">
+			<div ng-show="loops.length > 9" class="col-xs-12">
 				<button class="basic-button load-more-button" ng-click="loopLimit = loopLimit + 3" href="">Load more</button>
+			</div>
+
+			<div ng-show="loops.length === 0" class="col-xs-12" ng-controller="AlertController">
+				<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
+					<p>
+						<i class="fa fa-info"></i>You currently have no <strong>favourite guitar loops</strong>.
+						<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+					</p>
+				</div>
 			</div>
 
 	@else
@@ -102,13 +110,13 @@
 	@endif
 
 	<div class="col-xs-12">
-		<h2>Add more guitar loops</h2>
+		<h2 class="block-title"><i class="fa fa-plus-square-o"></i> Add more loops</h2>
 	</div>
 
 	@if(Auth::check())
 
 		<div class="col-xs-12 col-sm-6">
-				<h3>Upload</h3>
+				<h4 class="block-title upload">Upload</h4>
 				{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true)) !!}
 					<div class="form-group">
 						{!! Form::label('name', 'Name') !!}
@@ -143,17 +151,17 @@
 	                
 					<button type="submit" class="basic-button upload-button">Upload</button>
 				{!! Form::close() !!}	
-				<hr>
 		</div>
 
 		<div class="col-xs-12 col-sm-6">
-			<h3>Record</h3>
+			<h4 class="block-title">Record</h4>
+			<!--     Record section      -->
 		</div>
 
 	@else
 
 		<div class="col-xs-12 col-sm-6" ng-controller="AlertController">
-			<h3>Upload</h3>
+			<h4 class="block-title upload">Upload</h4>
 			<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
 				<p>
 					<i class="fa fa-info"></i>Here you can <strong>upload</strong> your local guitar loops.
@@ -163,7 +171,7 @@
 		</div>
 
 		<div class="col-xs-12 col-sm-6" ng-controller="AlertController">
-			<h3>Record</h3>
+			<h4 class="block-title">Record</h4>
 			<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
 				<p>
 					<i class="fa fa-info"></i>You can also record <strong>new</strong> guitar loops here!
@@ -175,12 +183,12 @@
 	@endif
 
 	<div class="col-xs-12">
-		<h2>Your favourite loops</h2>
+		<h2 class="block-title"><i class="fa fa-star"></i> Your favourite loops</i></h2>
 	</div>
 
 	@if(Auth::check())
 
-		<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in favouritedLoops track by $index" ng-init="isFavourite=loop.isFavourite">
+		<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in favouritedLoops | limitTo:favouritedLoopsLimit track by $index" ng-init="isFavourite=loop.isFavourite">
 			<div class="row loop-box favourite">
 			  	<div class="col-xs-2">
 			    	<a class="play-button" ng-click="playLoop($event)">
@@ -212,10 +220,14 @@
 			</div>
 		</div>
 
+		<div ng-show="favouritedLoops.length > 6"  class="col-xs-12">
+			<button class="basic-button load-more-button" ng-click="favouritedLoopsLimit = favouritedLoopsLimit + 3" href="">Load more</button>
+		</div>
+
 		<div ng-show="favouritedLoops.length === 0" class="col-xs-12" ng-controller="AlertController">
 			<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
 				<p>
-					<i class="fa fa-info"></i>You currently have no <strong>favourite guitar loops</strong>.
+					<i class="fa fa-info"></i>You currently don't have anny <strong>favourite guitar loops</strong>.
 					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
 				</p>
 			</div>
@@ -231,7 +243,6 @@
 			</div>
 		</div>
 	@endif
-
 
 	@if(!Auth::check())
 		@include('snippets.calltoaction.register')

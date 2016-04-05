@@ -7,7 +7,7 @@
   src: url("../fonts/AUdimat-Regular.otf"); }
 
 @font-face {
-  font-family: AUdimat;
+  font-family: AUdimatBold;
   src: url("../fonts/AUdimat-Bold.otf");
   font-weight: bold; }
 
@@ -2548,10 +2548,11 @@ label.css-label {
   margin: 10px 0;
   border-left: 3px solid #040404;
   overflow: hidden;
-  display: inline-block;
+  display: table;
   opacity: 1;
   transition: opacity 1.2s ease-out;
-  position: relative; }
+  position: relative;
+  width: 100%; }
   .info-box p {
     display: block;
     padding: 10px 30px 10px 10px;
@@ -2596,6 +2597,11 @@ label.css-label {
 .info-box.close {
   display: none; }
 
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  .info-box {
+    width: auto; } }
+
 .record-cta {
   position: relative;
   background-image: url("/images/record.jpg");
@@ -2618,13 +2624,19 @@ label.css-label {
   background-position: center;
   padding-top: 20px;
   padding-bottom: 40px;
-  overflow: hidden; }
+  overflow: hidden;
+  /* Small Devices, Tablets */ }
   .register-cta .title {
     text-align: center;
-    color: #ffffff; }
-  .register-cta a {
-    display: block;
-    margin: 0px auto; }
+    text-transform: uppercase;
+    font-family: AUdimatBold;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #040404; }
+  .register-cta button {
+    width: 150px; }
+  @media only screen and (min-width: 768px) {
+    .register-cta button {
+      width: 350px; } }
 
 .header-decoration {
   display: block;
@@ -2891,7 +2903,8 @@ label.css-label {
   background-size: cover;
   position: relative;
   overflow: hidden;
-  background-position: center; }
+  background-position: center;
+  font-family: AUdimatBold; }
   .title-section h1 {
     z-index: 100;
     color: #ffffff;
@@ -2972,6 +2985,8 @@ label.css-label {
     display: block; }
   .station .upload-button {
     margin-top: 25px; }
+  .station h4 {
+    margin-top: 0px; }
   @media only screen and (min-width: 768px) {
     .station .load-more-button {
       width: 350px; } }
@@ -2988,7 +3003,7 @@ label.css-label {
 .library {
   /* Small Devices, Tablets */ }
   .library .title-section {
-    background-image: url("/images/station.jpg"); }
+    background-image: url("/images/library.jpg"); }
   .library .sidebar {
     padding: 0; }
   .library .sidebar-nav {
@@ -3015,7 +3030,7 @@ label.css-label {
     .library .sidebar-nav li:last-child {
       padding-bottom: 15px; }
     .library .sidebar-nav .title {
-      padding: 5px 0; }
+      padding: 5px 0 10px 0; }
   .library .sidebar-nav.up {
     max-height: 0; }
   .library .slide-up-toggle {
@@ -3077,20 +3092,28 @@ body {
 label {
   width: 100%; }
 
-/* input field
+.tooltip-inner {
+  max-width: 200px;
+  width: 200px; }
 
-input[type="text"] {
-  display: block;
-  margin: 0;
+.block-title {
+  margin: 15px 0 5px 0;
+  border: 2px solid black;
+  border-top: none;
+  border-bottom: none;
+  background-color: #1e1e1e;
+  text-align: left;
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
   width: 100%;
-  font-family: sans-serif;
-  font-size: 18px;
-  appearance: none;
-  box-shadow: none;
-  border-radius: none;
-}
-input[type="text"]:focus {
-  outline: none;
-}*/
+  text-transform: uppercase;
+  font-family: AUdimatBold;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #040404;
+  /* Small Devices, Tablets */ }
+  @media only screen and (min-width: 768px) {
+    .block-title {
+      width: auto;
+      margin: 30px 0 10px 0; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -105,7 +105,7 @@ gloopsApp.controller('LibraryController', ['$scope', '$http', function($scope, $
 
     // Load more button
     $scope.loopLimit = 9;
-
+    
     /*    //Get user 
     $scope.getUser = function() {
 

@@ -9,12 +9,21 @@
 
 	.title {
 		text-align: center;
-		color: $white;
+		text-transform: uppercase;
+	   	font-family: AUdimatBold;
+	   	color: $white;
+	   	@include text-shadow();
 	}
 
-	a{
-		display: block;
-		margin: 0px auto;
+	button {
+		width: 150px;
 	}
+
+	/* Small Devices, Tablets */
+    @media only screen and (min-width : $screen-tablet) {
+		button {
+			width: 350px;
+		}
+    }
 
 }

@@ -24,16 +24,16 @@ elixir(function(mix) {
     ], 'public/js/angular/app.js');
 
     mix.scripts([
-       'jquery/searchbarHide.js','jquery/loginModalActions.js','jquery/chosenSelect.js', 'jquery/fileUpload.js'
+       'jquery/searchbarHide.js','jquery/loginModalActions.js','jquery/chosenSelect.js','jquery/tooltip.js','jquery/fileUpload.js'
     ], 'public/js/jquery.js');
 
     mix.scripts([
     	'controllers/LoopController.js','controllers/AlertController.js', 'controllers/LibraryController.js', 'controllers/StationController.js'
     ], 'public/js/angular/controllers/controllers.js');
 
-/*    mix.scripts([
-        'directives/loop-player.js'
-    ], 'public/js/angular/directives/directives.js');*/
+    mix.scripts([
+        'directives/tooltip.js'
+    ], 'public/js/angular/directives/directives.js');
 
 
 /*    mix.scripts([

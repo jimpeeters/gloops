@@ -61,7 +61,7 @@
     </div>
     <div class="col-xs-12 col-sm-10 loops">
     	<div class="row">
-			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit | filter:categoryFilter" ng-init="isFavourite=loop.isFavourite">
+			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | filter:categoryFilter | limitTo:loopLimit" ng-init="isFavourite=loop.isFavourite">
 				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite }">
 				  	<div class="col-xs-2">
 				    	<a class="play-button" ng-click="playLoop($event)">
@@ -90,7 +90,7 @@
     				  	</div>
                     @else
     				  	<div class="favourite">
-    				  			<i class="fa fa-star-o"></i>
+    				  			<i class="fa fa-star-o" title="Login to favourite this guitar loop!" data-toggle="tooltip" data-placement="top" tooltip></i>
     				  	</div>
                     @endif
 				</div>
@@ -98,7 +98,7 @@
 					<p ng-repeat="tag in loop.tags"><span class="label"><i class="fa fa-tag"></i> <% tag.name %></span></p>
 				</div>
 			</div>
-            <div class="col-xs-12">
+            <div ng-show="loops.length > 9" class="col-xs-12">
                 <button class="basic-button load-more-button" href="" ng-click="loopLimit = loopLimit + 3">Load more</button>
             </div>
 		</div>

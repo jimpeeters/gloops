@@ -67,7 +67,7 @@
 <!-- Custom angular -->
 <!-- <script type="text/javascript" src="{{asset('/js/modules.js')}}"></script> -->
 <script type="text/javascript" src="{{asset('/js/angular/app.js')}}"></script>
-<!-- <script type="text/javascript" src="{{asset('/js/angular/directives/directives.js')}}"></script> -->
+<script type="text/javascript" src="{{asset('/js/angular/directives/directives.js')}}"></script>
 <script type="text/javascript" src="{{asset('/js/angular/controllers/controllers.js')}}"></script>
 
 

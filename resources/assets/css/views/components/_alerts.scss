@@ -2,10 +2,11 @@
 	margin: 10px 0;
 	border-left: 3px solid $black;
 	overflow: hidden;
-	display: inline-block;
+	display: table;
 	opacity: 1;
 	transition: opacity 1.2s ease-out;
 	position: relative;
+	width: 100%;
 
 	p {
 		display: block;
@@ -58,3 +59,10 @@
 	display: none;
 }
 
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : $screen-tablet) {
+	.info-box {
+		width: auto;
+	}
+}
