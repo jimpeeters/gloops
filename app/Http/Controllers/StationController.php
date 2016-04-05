@@ -28,8 +28,10 @@ class StationController extends Controller
     public function upload(Request $request)
     {
          $validator = Validator::make($request->all(), [
-            'name'         => 'required|max:100|min:2',
-            'loop_path'      => 'mimes:mpga,wav'
+            'name'         => 'required|max:100|min:6',
+            'loop_path'      => 'required|mimes:mpga,wav',
+            'category'      => 'required|max:1',
+            'tags'      => 'required|max:5'
         ]);
         
 

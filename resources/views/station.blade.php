@@ -120,7 +120,7 @@
 				{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true)) !!}
 					<div class="form-group">
 						{!! Form::label('name', 'Name') !!}
-						{!! Form::text('name','',array('class' => 'form-control')) !!}
+						{!! Form::text('name','',array('class' => 'form-control', 'required' => 'required')) !!}
 					</div>
 
 					<div class="form-group">
@@ -132,7 +132,7 @@
 
 					<div class="form-group">
 						{!! Form::label('Tags') !!}
-						<select size="5" name="tags[]" class="form-control chosen-select" data-placeholder="Add tags to this guitar loop..." multiple>
+						<select size="5" name="tags[]" class="form-control chosen-select" data-placeholder="Add tags to this guitar loop..." multiple required>
 							@foreach ($tags as $name)
 								<option value="{{$name}}">{{$name}}</option>
 							@endforeach
@@ -141,7 +141,7 @@
 
 		    		<div class="form-group">
 						{!! Form::label('Category') !!}
-						<select name="category" class="form-control chosen-select-dropdown" data-placeholder="Choose a Category">
+						<select name="category" class="form-control chosen-select-dropdown" data-placeholder="Choose a Category" required>
 							<option value="">Choose a category</option>
 							@foreach ($categories as $category)
 								<option value="{{$category->id}}">{{$category->name}}</option>
