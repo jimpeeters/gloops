@@ -26,8 +26,10 @@ gloopsApp.controller('LoopController', ['$scope', '$http', function($scope, $htt
 
     };
 
-    $scope.favourite = function($loopId) {
+    // Toggle favourite loop
+    $scope.favourite = function(loopId) {
 
+        $loopId = loopId;
         $scope.isFavourite = !$scope.isFavourite;
 
         var data = {};

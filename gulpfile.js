@@ -1,5 +1,7 @@
 'use strict';
 
+process.env.DISABLE_NOTIFIER = true;
+
 var elixir = require('laravel-elixir');
 var autoprefixer = require('gulp-autoprefixer'); //for browser compatibility
 
@@ -28,7 +30,7 @@ elixir(function(mix) {
     ], 'public/js/jquery.js');
 
     mix.scripts([
-    	'controllers/LoopController.js','controllers/AlertController.js', 'controllers/LibraryController.js', 'controllers/StationController.js'
+    	'controllers/LoopController.js','controllers/AlertController.js', 'controllers/LibraryController.js', 'controllers/StationController.js', 'controllers/ProfileController.js'
     ], 'public/js/angular/controllers/controllers.js');
 
     mix.scripts([

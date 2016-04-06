@@ -1,54 +1,45 @@
 gloopsApp.controller('StationController', ['$scope','$http', function($scope, $http){
 
+    // Enable deleting
+    $scope.enableDeleting = false;
+
     // Limit on 'your loops'
     $scope.loopLimit = 9;
 
-    // Limit on 'favourited loops'
-    $scope.favouritedLoopsLimit = 6;
-
-    // Get all loops from database
-    $scope.getLoops = function() {
+    // Get all user his loops from database
+    $scope.getUserLoops = function() {
 
         $http({
               method  : 'GET',
-              url     : '/station/data'
+              url     : '/station/getUserLoops'
         }).success(function(data) {
-
             $scope.loops = data;
-            $scope.checkFavouriteLoops();
-            console.log(data);
         });
     };
 
-    $scope.getLoops();
+    $scope.getUserLoops();
 
+    // Delete a loop
+    $scope.deleteLoop = function(loop) {
 
-    $scope.favouritedLoops = [];
+        $loopId = loop.id;
 
-    // Make new array of favourited loops
-    $scope.checkFavouriteLoops = function() {
+        var data = {};
+        $data = {
+            loopId : $loopId
+        };
 
-      var index;
+        $http({
+              method  : 'POST',
+              url     : 'loop/delete',
+              headers : {'Content-Type': 'application/json'},
+              dataType: 'json',
+              data    : $data
+        });
 
-      //check if loop is favourited
-      for (index = 0; index < $scope.loops.length; ++index) {
-          if ($scope.loops[index].isFavourite === true) {
-            // Add loop with isfavourite 'true' to favouritedLoops array
-            $scope.favouritedLoops.push($scope.loops[index]);
-          }
-      }
-  
+        //Remove loop from loops array
+        var i = $.inArray(loop, $scope.loops);
+        $scope.loops.splice(i, 1);
     };
-
-    $scope.filterFavouriteLoops = function(loop) {
-
-        //check if loop is in favouritedLoops array
-        var i = $.inArray(loop, $scope.favouritedLoops);
-        if (i > -1) {
-            $scope.favouritedLoops.splice(i, 1);
-        } else {
-            $scope.favouritedLoops.push(loop);
-        }
-    }
 
 }]);

@@ -28,16 +28,23 @@ Route::group(['middleware' => ['web']], function () {
 	//Logged in
 	Route::group(['middleware' => 'auth'], function () {
 
+		//Logged in user his favourite loops
+		Route::get('/profile/getFavouriteLoops', 'ProfileController@getFavouriteLoops');
+
 		//Favourite loop
 		Route::post('/loop/favourite', array('as' => 'favourite','uses' =>'LoopController@favourite'));
 
 		//Upload loop
 		Route::post('/station/upload', array('as' => 'upload', 'uses' => 'StationController@upload'));
 
-		//Station loops
-		Route::get('/station/data', 'StationController@getLoops');
+		//Logged in user his loops
+		Route::get('/station/getUserLoops', 'StationController@getUserLoops');
+
+		//Delete a loop
+		Route::post('/loop/delete', 'StationController@deleteLoop');
 
 	});
+
 
     //facebook login
     Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
@@ -68,5 +75,8 @@ Route::group(['middleware' => ['web']], function () {
 
 	//get user
 	Route::get('/getuser', 'UserController@getUser');
+
+	//Profile page
+	Route::get('/profile', array('as' => 'profile', 'uses' => "ProfileController@index"));
 
 });

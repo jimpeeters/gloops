@@ -18,6 +18,7 @@ class StationController extends Controller
 {
     public function index()
     {
+
         $categories = Category::orderby('name', 'ASC')->get();  
         $tags = Tag::orderBy('name', 'ASC')->lists('name', 'id');
 
@@ -29,7 +30,7 @@ class StationController extends Controller
     {
          $validator = Validator::make($request->all(), [
             'name'         => 'required|max:100|min:6',
-            'loop_path'      => 'required|mimes:mpga,wav',
+            'loop_path'      => 'mimes:mpga,wav',
             'category'      => 'required|max:1',
             'tags'      => 'required|max:5'
         ]);
@@ -80,7 +81,7 @@ class StationController extends Controller
         return redirect('/station')->with('success','Loop successfully added!');
     }
 
-    public function getLoops()
+    public function getUserLoops()
     {
         if(Auth::check())
         {
@@ -110,9 +111,29 @@ class StationController extends Controller
 
             }
 
-
-
             return Response::json($loops);
         }
+    }
+
+    public function deleteLoop(Request $request)
+    {
+        $input = $request->all();
+        $loop = Loop::findOrFail($input['loopId']);
+
+        //Remove all connections with tags
+        foreach ($loop->loopTags as $tag)
+        {
+          $tag->delete();
+        }
+
+        //Remove all connections with favourites
+        foreach ($loop->loopFavourites as $favourite)
+        {
+          $favourite->delete();
+        }
+
+        $loop->delete();
+
+        return redirect('/station')->with('success','Guitar loop '.$loop->name.' is successfully deleted!');
     }
 }

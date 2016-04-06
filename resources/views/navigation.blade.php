@@ -27,8 +27,8 @@
         <div class="col-xs-2">
             <!-- My Account -->
             <div class="center-content">
-                <a href="#" class="turn-button tick"></a>
-                <p>Account</p>
+                <a href="{{route('profile')}}" class="turn-button tick"></a>
+                <p>Profile</p>
             </div>
         </div>
 
