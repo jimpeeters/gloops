@@ -6,40 +6,37 @@
 @import "includes/extends";
 @import "includes/fonts";
 
-//mixins
+// Mixins
 @mixin text-shadow() {
 	text-shadow: 1px 1px 1px $black;
 }
 
 
 
-/*
- *
- * Make it fancy */
+// Font-awesome
 @import "plugins/font-awesome";
 
 
-/*
- *
- * UI Elements */
+// UI Elements
 @import "ui/buttons";
 @import "ui/checkboxes";
 
-//Components
+// Components
 @import "views/components/loopbox";
 @import "views/components/alerts";
+@import "views/components/confirmation";
 
-//call to action
+// Call to action
 @import "views/components/record";
 @import "views/components/register";
 
-//sections
+// Sections
 @import "views/sections/navigation";
 @import "views/sections/footer";
 @import "views/sections/login";
 @import "views/sections/title";
 
-//views
+// Views
 @import "views/home";
 @import "views/station";
 @import "views/library";
@@ -130,4 +127,11 @@ label {
 		margin: 30px 0 10px 0;
 	}
 
+}
+
+// Blue border
+button, a {
+	&:focus {
+		outline:0;
+	}
 }

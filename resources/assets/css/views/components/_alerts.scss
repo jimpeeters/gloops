@@ -44,11 +44,11 @@
 }
 
 .info-box.success p {
-	background-color: lighten($green, 48);
+	background-color: lighten($green, 24);
 }
 
 .info-box.error p {
-	background-color: lighten($red, 48);
+	background-color: lighten($red, 24);
 }
 
 .info-box.info p {

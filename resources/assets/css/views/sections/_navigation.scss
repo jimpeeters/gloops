@@ -53,7 +53,7 @@
 	#login-button{
 
 		    &:active + #login-light, &:focus + #login-light {
-		    	background-color: $greenblue;
+		    	background-color: $green;
 		    }
 	}
 
@@ -69,11 +69,11 @@
 	}
 
 	#login-light.bg-green {
-		background-color: $greenblue;
+		background-color: $green;
 	}
 
 	#login-button.green {
-		color: $greenblue;
+		color: $green;
 	}
 
 	@media only screen and (min-width : $screen-desktop-s) {

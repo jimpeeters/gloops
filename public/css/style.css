@@ -66,9 +66,6 @@ h4 {
   h4 {
     font-size: 28px; } }
 
-/*
- *
- * Make it fancy */
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2144,9 +2141,6 @@ h4 {
 .fa-percent:before {
   content: ""; }
 
-/*
- *
- * UI Elements */
 .basic-button {
   background-color: #B02F06;
   border: 2px solid #040404;
@@ -2177,8 +2171,8 @@ h4 {
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg); }
   .turn-button:hover, .turn-button:active, .turn-button:focus {
-    color: #00B286;
-    text-shadow: 0px 0px 6px rgba(0, 178, 134, 0.8);
+    color: #27ae60;
+    text-shadow: 0px 0px 6px rgba(39, 174, 96, 0.8);
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   .turn-button:after {
@@ -2224,8 +2218,8 @@ h4 {
   border-radius: 100px;
   transition: all .2s linear; }
   .round-button:hover, .round-button:active, .round-button:focus {
-    color: #00B286;
-    text-shadow: 0px 0px 6px rgba(0, 178, 134, 0.8); }
+    color: #27ae60;
+    text-shadow: 0px 0px 6px rgba(39, 174, 96, 0.8); }
 
 @media only screen and (min-width: 480px) {
   .round-button {
@@ -2262,10 +2256,10 @@ h4 {
     border-radius: 0px; }
 
 .ghost-button-green {
-  color: #00B286;
-  border: 2px solid #00B286; }
+  color: #27ae60;
+  border: 2px solid #27ae60; }
   .ghost-button-green:hover, .ghost-button-green:active, .ghost-button-green:focus {
-    background-color: #00B286;
+    background-color: #27ae60;
     color: #ffffff; }
 
 .ghost-button-red {
@@ -2422,7 +2416,8 @@ label.css-label {
     margin: 0 auto;
     left: 0;
     right: 0;
-    font-size: 1.7em; }
+    font-size: 1.7em;
+    outline: 0; }
   .loop-box .play-button {
     float: left;
     height: 40px;
@@ -2437,8 +2432,8 @@ label.css-label {
     margin-left: -20px;
     transition: all .2s ease-out; }
     .loop-box .play-button:hover, .loop-box .play-button:active, .loop-box .play-button:focus {
-      color: #00B286;
-      text-shadow: 0px 0px 6px rgba(0, 178, 134, 0.8);
+      color: #27ae60;
+      text-shadow: 0px 0px 6px rgba(39, 174, 96, 0.8);
       cursor: pointer; }
     .loop-box .play-button i {
       height: 100%;
@@ -2605,10 +2600,10 @@ label.css-label {
   opacity: 0; }
 
 .info-box.success p {
-  background-color: #a8ffe9; }
+  background-color: #70df9f; }
 
 .info-box.error p {
-  background-color: #fcc1af; }
+  background-color: #f86638; }
 
 .info-box.info p {
   background-color: #9ccded; }
@@ -2620,6 +2615,37 @@ label.css-label {
 @media only screen and (min-width: 768px) {
   .info-box {
     width: auto; } }
+
+.confirmation-modal {
+  /* Extra Small Devices, Phones */
+  /* Small Devices, Tablets */ }
+  .confirmation-modal .modal-header {
+    background: #040404;
+    color: #ffffff; }
+    .confirmation-modal .modal-header .close {
+      color: #B02F06;
+      opacity: 1;
+      text-shadow: none; }
+      .confirmation-modal .modal-header .close:hover {
+        color: #ce3707; }
+  .confirmation-modal .modal-body {
+    background-color: #EDEBDB; }
+  .confirmation-modal .modal-footer {
+    background-color: #040404;
+    color: #ffffff;
+    text-align: left; }
+    .confirmation-modal .modal-footer a {
+      text-decoration: underline;
+      color: #B02F06; }
+      .confirmation-modal .modal-footer a:hover {
+        text-decoration: none; }
+  @media only screen and (min-width: 480px) {
+    .confirmation-modal .modal-dialog {
+      width: 300px;
+      margin: 30px auto; } }
+  @media only screen and (min-width: 768px) {
+    .confirmation-modal .modal-dialog {
+      width: 450px; } }
 
 .record-cta {
   position: relative;
@@ -2696,7 +2722,7 @@ label.css-label {
     .navigation .center-content #login-text {
       padding: 0 3px; }
   .navigation #login-button:active + #login-light, .navigation #login-button:focus + #login-light {
-    background-color: #00B286; }
+    background-color: #27ae60; }
   .navigation #login-light {
     transition: all .4s linear;
     top: 0;
@@ -2707,9 +2733,9 @@ label.css-label {
     position: absolute;
     background-color: #B02F06; }
   .navigation #login-light.bg-green {
-    background-color: #00B286; }
+    background-color: #27ae60; }
   .navigation #login-button.green {
-    color: #00B286; }
+    color: #27ae60; }
   @media only screen and (min-width: 992px) {
     .navigation #login-light {
       margin-left: -12px;
@@ -3136,5 +3162,8 @@ label {
     .block-title {
       width: auto;
       margin: 30px 0 10px 0; } }
+
+button:focus, a:focus {
+  outline: 0; }
 
 /*# sourceMappingURL=style.css.map */

@@ -76,6 +76,62 @@ class LoopTableSeeder extends Seeder
 				'FK_category_id' => '6',
 				'FK_user_id' => '1'
 			),
+
+		array(
+				'name' => 'TEST',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 2',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 3',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 4',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 5',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 6',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 7',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 8',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
 		);
 
 		DB::table('loops')->insert($loops);

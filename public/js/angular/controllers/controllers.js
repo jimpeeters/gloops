@@ -143,6 +143,8 @@ gloopsApp.controller('StationController', ['$scope','$http', function($scope, $h
     // Limit on 'your loops'
     $scope.loopLimit = 9;
 
+    $scope.successMessage = "";
+
     // Get all user his loops from database
     $scope.getUserLoops = function() {
 
@@ -159,13 +161,11 @@ gloopsApp.controller('StationController', ['$scope','$http', function($scope, $h
     // Delete a loop
     $scope.deleteLoop = function(loop) {
 
-        $loopId = loop.id;
-
+        $loopId = loop.id
         var data = {};
         $data = {
             loopId : $loopId
-        };
-
+        }
         $http({
               method  : 'POST',
               url     : 'loop/delete',
@@ -174,11 +174,30 @@ gloopsApp.controller('StationController', ['$scope','$http', function($scope, $h
               data    : $data
         });
 
-        //Remove loop from loops array
+        /*.then(function successCallback(response) {
+
+                // Send successmessage
+                $scope.successMessage = "You have successfully removed";
+                
+            
+            }, function errorCallback(response) {
+
+                // Send error message
+
+                // Include loop back in array
+                $scope.loops.push(loop);
+            
+            });*/
+
+        
+
+        // Remove loop from loops array
         var i = $.inArray(loop, $scope.loops);
         $scope.loops.splice(i, 1);
-    };
 
+
+
+    }  
 }]);
 gloopsApp.controller('ProfileController', ['$scope', '$http', function($scope, $http) {
 

@@ -64,7 +64,7 @@
 						</div>
 					</div>
 
-					<center><button href="" type="submit" class="basic-button">Register</a></button>
+					<button href="" type="submit" class="basic-button">Register</a></button>
 				{!! Form::close() !!}	
 			</div>
 		</div>

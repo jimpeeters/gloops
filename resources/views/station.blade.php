@@ -52,8 +52,24 @@
 
 	@if(Auth::check())
 			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit track by $index" ng-init="isFavourite=loop.isFavourite">
+				<!-- Confirmation modal -->
+				<div id="confirmationModal<% loop.id %>" class="confirmation-modal modal" role="dialog">
+				  	<div class="modal-dialog">
+					    <div class="modal-content">
+						    <div class="modal-header">
+						      	<button type="button" class="close" data-dismiss="modal">&times;</button>
+						    </div>
+						    <div class="modal-body">
+						    	<h4>Are you sure you want to delete '<% loop.name %>' ?</h4>
+								<button class="basic-button" href="" ng-click="deleteLoop(loop)" data-dismiss="modal">Yes</button>
+								<button class="basic-button" href="" data-dismiss="modal">No</button>
+						  	</div>
+						</div>
+				  	</div>
+				</div>
+				<!-- /Confirmation modal -->
 				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite, 'deletable' : enableDeleting }">
-					<a href="" ng-click="deleteLoop(loop)" class="delete-button" ng-show="enableDeleting">
+					<a href="" data-toggle="modal" data-target="#confirmationModal<% loop.id %>" class="delete-button" ng-show="enableDeleting">
 						<i class="fa fa-trash"></i>
 					</a>
 				  	<div class="col-xs-2">
@@ -91,14 +107,17 @@
 				<button class="basic-button load-more-button" ng-click="loopLimit = loopLimit + 3" href="">Load more</button>
 			</div>
 
-			<div class="col-xs-12">
-				<button class="basic-button remove-button" ng-click="enableDeleting = !enableDeleting" href=""><i class="fa fa-trash"></i> Remove loops</button>
+			<div ng-show="loops.length > 0" class="col-xs-12">
+				<button class="basic-button remove-button" ng-click="enableDeleting = !enableDeleting" href="">
+					<i ng-show="!enableDeleting" class="fa fa-trash"></i> 
+					<span ng-show="!enableDeleting">Remove loops</span><span ng-show="enableDeleting">Cancel removal</span>
+				</button>
 			</div>
 
 			<div ng-show="loops.length === 0" class="col-xs-12" ng-controller="AlertController">
 				<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
 					<p>
-						<i class="fa fa-info"></i>You currently have no <strong>favourite guitar loops</strong>.
+						<i class="fa fa-info"></i>You currently have no <strong>guitar loops</strong>.
 						<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
 					</p>
 				</div>
@@ -197,4 +216,3 @@
 </div>
 
 @stop
-

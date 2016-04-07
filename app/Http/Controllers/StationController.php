@@ -13,6 +13,7 @@ use Auth;
 use Validator;
 use Redirect;
 use Response;
+use Storage;
 
 class StationController extends Controller
 {
@@ -29,7 +30,7 @@ class StationController extends Controller
     public function upload(Request $request)
     {
          $validator = Validator::make($request->all(), [
-            'name'         => 'required|max:100|min:6',
+            'name'         => 'required|alpha_num|max:100|min:6|unique:loops,name',
             'loop_path'      => 'mimes:mpga,wav',
             'category'      => 'required|max:1',
             'tags'      => 'required|max:5'
@@ -120,6 +121,8 @@ class StationController extends Controller
         $input = $request->all();
         $loop = Loop::findOrFail($input['loopId']);
 
+        $loopPath = $loop->loop_path;
+
         //Remove all connections with tags
         foreach ($loop->loopTags as $tag)
         {
@@ -134,6 +137,10 @@ class StationController extends Controller
 
         $loop->delete();
 
-        return redirect('/station')->with('success','Guitar loop '.$loop->name.' is successfully deleted!');
+        //Remove file from public folder
+        $loopPath = str_replace('/', '\\', $loopPath);
+        unlink(base_path().'\\public'.$loopPath); 
+
+        //return redirect('/station')->with('success','Guitar loop '.$loop->name.' is successfully deleted!');
     }
 }
