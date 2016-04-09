@@ -17,7 +17,7 @@
 	  }
 	}
 
-    div {
+    .loopbox-section {
     	height: 100%;
     }
 
@@ -111,6 +111,18 @@
 		.user-name {
 			display: none;
 		}
+
+		.rank-text {
+			width: 25px;
+			margin: 3px 0 0 0;
+			
+			.rank-icon {
+				width: 10px;
+				height: 10px;
+				float: left;
+				margin: 1px 1px 0 0;
+			}
+		}
 	}
 
 	.favourite {
@@ -202,11 +214,21 @@
 				height: 30px;
 				width: 30px;
     			margin: 5px 5px 0 0;
-
 			}
 
 			.user-name {
-				display: block;
+				display: flex;
+				margin-bottom: 0;
+			}
+
+			.rank-text {
+				width: auto;
+				display: flex;
+				margin: 0;
+				
+				.rank-icon {
+					margin-top: 5px;
+				}
 			}
 		}
  	}
@@ -229,20 +251,30 @@
 			}
 		}
 
-		.category, .duration {
-			padding-top: 10px;
-		}
-
 		.user-info {
 			.user-avatar {
     			margin: 0;
+    			float: none;
     		}
 
-			.reputation-count {
+    		.user-name {
+    			margin-top: -2px;
+    		}
+
+    		.rank-text {
+    			margin-top: -7px;
+
+    			.rank-icon {
+					margin-top: 6px;
+				}
+    		}
+
+
+
+			/* .rank-count {
 				display: block;
 				margin-top: -5px;
-				font-size: 12px;
-			}
+			} */
 		}
 	}
 

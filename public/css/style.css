@@ -2402,7 +2402,7 @@ label.css-label {
 @keyframes fadeIn {
   to {
     opacity: 1; } }
-  .loop-box div {
+  .loop-box .loopbox-section {
     height: 100%; }
   .loop-box .delete-button {
     text-align: center;
@@ -2469,6 +2469,14 @@ label.css-label {
     background-size: cover; }
   .loop-box .user-info .user-name {
     display: none; }
+  .loop-box .user-info .rank-text {
+    width: 25px;
+    margin: 3px 0 0 0; }
+    .loop-box .user-info .rank-text .rank-icon {
+      width: 10px;
+      height: 10px;
+      float: left;
+      margin: 1px 1px 0 0; }
   .loop-box .favourite {
     position: absolute;
     height: 100%;
@@ -2525,7 +2533,18 @@ label.css-label {
     width: 30px;
     margin: 5px 5px 0 0; }
   .loop-box .user-info .user-name {
-    display: block; } }
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 0; }
+  .loop-box .user-info .rank-text {
+    width: auto;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0; }
+    .loop-box .user-info .rank-text .rank-icon {
+      margin-top: 5px; } }
 
 @media only screen and (min-width: 768px) {
   .loop-box {
@@ -2538,14 +2557,20 @@ label.css-label {
       line-height: 60px; }
       .loop-box .play-button i {
         font-size: 24px; }
-    .loop-box .category, .loop-box .duration {
-      padding-top: 10px; }
-    .loop-box .user-info .user-avatar {
-      margin: 0; }
-    .loop-box .user-info .reputation-count {
-      display: block;
-      margin-top: -5px;
-      font-size: 12px; }
+    .loop-box .user-info {
+      /* .rank-count {
+				display: block;
+				margin-top: -5px;
+			} */ }
+      .loop-box .user-info .user-avatar {
+        margin: 0;
+        float: none; }
+      .loop-box .user-info .user-name {
+        margin-top: -2px; }
+      .loop-box .user-info .rank-text {
+        margin-top: -7px; }
+        .loop-box .user-info .rank-text .rank-icon {
+          margin-top: 6px; }
   .labels {
     padding-left: 15px;
     min-height: 30px;

@@ -72,7 +72,7 @@
 					<a href="" data-toggle="modal" data-target="#confirmationModal<% loop.id %>" class="delete-button" ng-show="enableDeleting">
 						<i class="fa fa-trash"></i>
 					</a>
-				  	<div class="col-xs-2">
+				  	<div class="col-xs-2 loopbox-section">
 				    	<a class="play-button" ng-click="playLoop($event)">
 				      		<i class="fa fa-play"></i>
 				   		</a>
@@ -81,16 +81,18 @@
 					       	Your browser does not support the audio element.
 					    </audio>
 				  	</div>
-				  	<div class="col-xs-7">
+				  	<div class="col-xs-7 loopbox-section">
 				    	<h3 class="loop-title"><% loop.name %></h3>
 				    	<p class="duration">0:00</p>
 				    	<p class="category"><i class="fa fa-music"></i> <% loop.category.name %></p>
 				  	</div>
-				  	<div class="col-xs-3">
+				  	<div class="col-xs-3 loopbox-section">
 				    	<div class="user-info">
 				    		<div class="user-avatar" style="background-image: url(<% loop.user.avatar %>)"></div>
-				    		<span class="user-name"><% loop.user.name %></span>
-							<span class="reputation-count"><i class="fa fa-bolt"></i> 53</span>
+				    		<p class="user-name"><% loop.user.name %></p>
+							<p class="rank-text">
+								<img class="rank-icon" src="images/rankIcons/<% ratingIcon %>" alt="This users rank medal"> <% loop.user.rating %>
+							</p>
 				    	</div>
 				  	</div>
     				<div class="favourite">

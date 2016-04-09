@@ -81,21 +81,21 @@ class LoopTableSeeder extends Seeder
 				'name' => 'TEST',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
-				'FK_user_id' => '1'
+				'FK_user_id' => '2'
 			),
 
 		array(
 				'name' => 'TEST 2',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
-				'FK_user_id' => '1'
+				'FK_user_id' => '2'
 			),
 
 		array(
 				'name' => 'TEST 3',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
-				'FK_user_id' => '1'
+				'FK_user_id' => '2'
 			),
 
 		array(
@@ -128,6 +128,90 @@ class LoopTableSeeder extends Seeder
 
 		array(
 				'name' => 'TEST 8',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 9',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 10',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 11',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 12',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 13',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 14',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 15',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 16',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 17',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 18',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 19',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '1'
+			),
+
+		array(
+				'name' => 'TEST 20',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '1'

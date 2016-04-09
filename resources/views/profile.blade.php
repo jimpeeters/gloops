@@ -13,6 +13,7 @@
 	@if(Auth::check())
 
 		<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in favouriteLoops | limitTo:loopLimit track by $index" ng-init="isFavourite=loop.isFavourite">
+
 			<div class="row loop-box favourite">
 			  	<div class="col-xs-2">
 			    	<a class="play-button" ng-click="playLoop($event)">
@@ -31,8 +32,10 @@
 			  	<div class="col-xs-3">
 			    	<div class="user-info">
 			    		<div class="user-avatar" style="background-image: url(<% loop.user.avatar %>)"></div>
-			    		<span class="user-name"><% loop.user.name %></span>
-						<span class="reputation-count"><i class="fa fa-bolt"></i> 53</span>
+			    		<p class="user-name"><% loop.user.name %></p>
+                        <p class="rank-text">
+                            <img class="rank-icon" src="images/rankIcons/<% ratingIcon %>" alt="This users rank medal"> <% loop.user.rating %>
+                        </p>
 			    	</div>
 			  	</div>
 				<div class="favourite">

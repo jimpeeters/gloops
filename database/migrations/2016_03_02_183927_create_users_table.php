@@ -14,6 +14,7 @@ class CreateUsersTable extends Migration {
 			$table->string('email', 255)->unique();
 			$table->string('facebook_id')->nullable();
 			$table->string('avatar');
+			$table->integer('rating');
 			$table->rememberToken();
 			$table->timestamps();
 			$table->boolean('facebookAccount');

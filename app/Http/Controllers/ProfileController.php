@@ -17,7 +17,11 @@ class ProfileController extends Controller
 
     public function index()
     {
-        return View::make('profile');
+        $user = User::with('loops');
+
+        //$user = Auth::user();
+
+        return View::make('profile')->with('user', $user);
     }
 
     public function getFavouriteLoops()
@@ -28,6 +32,7 @@ class ProfileController extends Controller
                            with('user')->
                            with('category')->
                            with('tags')->
+                           where('FK_user_id', '=', Auth::user()->id)->
                            orderBy('created_at', 'DESC')->get();
 
             $favouritedLoops = array();
@@ -53,6 +58,7 @@ class ProfileController extends Controller
 
             return Response::json($favouritedLoops);
         }
+
     }
     
 }

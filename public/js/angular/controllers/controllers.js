@@ -46,6 +46,30 @@ gloopsApp.controller('LoopController', ['$scope', '$http', function($scope, $htt
         });
     };
 
+
+    $scope.ratingIcon = "";
+
+    function setRatingIcon() {
+
+        if($scope.loop.user.rating < 20) {
+            $scope.ratingIcon = "rank_1.png";
+        }
+        else if($scope.loop.user.rating >= 20 && $scope.loop.user.rating < 50) {
+            $scope.ratingIcon = "rank_2.png";
+        }
+        else if($scope.loop.user.rating >= 50 && $scope.loop.user.rating < 100) {
+            $scope.ratingIcon = "rank_3.png";
+        }
+        else if($scope.loop.user.rating >= 100 && $scope.loop.user.rating < 250) {
+            $scope.ratingIcon = "rank_4.png";
+        }
+        else if($scope.loop.user.rating >= 250 ) {
+            $scope.ratingIcon = "rank_5.png";
+        }
+    }
+
+    setRatingIcon();
+
 }]);
 gloopsApp.controller('AlertController', ['$scope', '$timeout', function($scope, $timeout) {
 
@@ -212,6 +236,7 @@ gloopsApp.controller('ProfileController', ['$scope', '$http', function($scope, $
               url     : '/profile/getFavouriteLoops'
         }).success(function(data) {
             $scope.favouriteLoops = data;
+            console.log(data);
         });
     };
 

@@ -11,6 +11,7 @@ gloopsApp.controller('ProfileController', ['$scope', '$http', function($scope, $
               url     : '/profile/getFavouriteLoops'
         }).success(function(data) {
             $scope.favouriteLoops = data;
+            console.log(data);
         });
     };
 
