@@ -21,7 +21,8 @@ class UserTableSeeder extends Seeder
 				'email' => 'jim.peeters.93@gmail.com',
 				'avatar' => '/images/profilePictures/admin.jpg',
 				'facebookAccount' => false,
-				'rating' => 0
+				'rating' => 0,
+				'rank' => 1
 
 			),
 
@@ -31,7 +32,8 @@ class UserTableSeeder extends Seeder
 				'email' => 'dummy@hotmail.com',
 				'avatar' => '/images/profilePictures/dummy.jpg',
 				'facebookAccount' => false,
-				'rating' => 0
+				'rating' => 0,
+				'rank' => 1
 			),
 
 		);

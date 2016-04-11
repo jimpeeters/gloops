@@ -51,7 +51,7 @@
 	</div>
 
 	@if(Auth::check())
-			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit track by $index" ng-init="isFavourite=loop.isFavourite">
+			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit track by loop.id" ng-init="isFavourite=loop.isFavourite">
 				<!-- Confirmation modal -->
 				<div id="confirmationModal<% loop.id %>" class="confirmation-modal modal" role="dialog">
 				  	<div class="modal-dialog">
@@ -91,7 +91,7 @@
 				    		<div class="user-avatar" style="background-image: url(<% loop.user.avatar %>)"></div>
 				    		<p class="user-name"><% loop.user.name %></p>
 							<p class="rank-text">
-								<img class="rank-icon" src="images/rankIcons/<% ratingIcon %>" alt="This users rank medal"> <% loop.user.rating %>
+								<img class="rank-icon" src="images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>
 							</p>
 				    	</div>
 				  	</div>

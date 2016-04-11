@@ -1,5 +1,8 @@
 gloopsApp.controller('ProfileController', ['$scope', '$http', function($scope, $http) {
 
+    // Toggle Login/Register view
+    $scope.loginView = true;
+
     // Limit on loops
     $scope.loopLimit = 9;
 

@@ -16,7 +16,7 @@ gloopsApp.controller('LibraryController', ['$scope', '$http', function($scope, $
     $scope.getLoops();
 
     // Sidebar toggle
-    $scope.sidebarUp = false;
+    $scope.sidebarUp = true;
 
     // Filters
     $scope.categoryIncludes = [];

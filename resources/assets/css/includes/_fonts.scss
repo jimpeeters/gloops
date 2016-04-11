@@ -6,7 +6,6 @@
 @font-face {
    font-family: AUdimatBold;
    src: url('../fonts/AUdimat-Bold.otf');
-   font-weight: bold;
 }
 
 //h1 36px 
@@ -39,6 +38,12 @@ h3 {
 
 h4 {
 	font-size: 14px;
+}
+
+//bold titles
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: AUdimatBold;
 }
 
 

@@ -46,7 +46,7 @@
 
     </div>
 
-<script>window.jQuery || document.write('<script src="js/libs/jquery.min.js"><\/script>')</script>
+<script src="{{asset('/js/libs/jquery.min.js')}}"></script>
 
 <!-- Chosen Jquery -->
 <script type="text/javascript" src="{{asset('/js/libs/chosen.jquery.min.js')}}"></script>

@@ -44,9 +44,7 @@ class LoopController extends Controller
                 // Increase users rating
                 $ownersRating ++;
                 $owner->rating = $ownersRating;
-                $owner->save();
             }
-            
         }
         else 
         {
@@ -59,9 +57,27 @@ class LoopController extends Controller
                 // Decrease users rating
                 $ownersRating --;
                 $owner->rating = $ownersRating;
-                $owner->save();
             }
         }
+
+        // Check for rank
+        if($ownersRating < 20) {
+            $owner->rank = 1;
+        }
+        else if($ownersRating >= 20 && $ownersRating < 50) {
+            $owner->rank = 2;
+        }
+        else if($ownersRating >= 50 && $ownersRating < 100) {
+            $owner->rank = 3;
+        }
+        else if($ownersRating >= 100 && $ownersRating < 250) {
+            $owner->rank = 4;
+        }
+        else if($ownersRating >= 250 ) {
+            $owner->rank = 5;
+        }
+
+        $owner->save();
     }
 
 }

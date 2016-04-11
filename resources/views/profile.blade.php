@@ -4,15 +4,84 @@
 
 @section('content')
 
-<div class="station" ng-controller="ProfileController">
+<div class="profile" ng-controller="ProfileController">
 
-	<div class="col-xs-12">
-		<h2 class="block-title"><i class="fa fa-star"></i> Your favourite loops</i></h2>
+	<div class="title-section">
+		<h1>PROFILE</h1>
 	</div>
+
+	@if (session()->has('success'))
+        <div class="col-xs-12" ng-controller="AlertController">
+        	<div class="info-box success" ng-hide="hidden" ng-class="{fade: startFade}">
+				<p>
+					<i class="fa fa-check"></i>{{ Session::get('success') }}
+					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+				</p>
+			</div>
+        </div>
+    @endif
 
 	@if(Auth::check())
 
-		<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in favouriteLoops | limitTo:loopLimit track by $index" ng-init="isFavourite=loop.isFavourite">
+		<div class="col-xs-12">
+			<center>
+				<div class="profile-picture" style="background-image: url({{ Auth::user()->avatar }})">
+					<img class="profile-rank-icon" src="images/rankIcons/rank_{{ Auth::user()->rank }}.png" alt="This users rank {{ Auth::user()->rank }} medal">
+				</div>
+				<h2 class="profile-name">{{ Auth::user()->name }}</h2>
+				<ul class="profile-rank">
+					<li class="filled"></li>
+					@if(Auth::user()->rank > 1 && Auth::user()->rank < 3)
+						<li class="filled"></li>
+					@else
+						<li></li>
+					@endif
+
+					@if(Auth::user()->rank > 2 && Auth::user()->rank < 4)
+						<li class="filled"></li>
+					@else
+						<li></li>
+					@endif
+
+					@if(Auth::user()->rank > 3 && Auth::user()->rank < 5)
+						<li class="filled"></li>
+					@else
+						<li></li>
+					@endif
+
+					@if(Auth::user()->rank > 4)
+						<li class="filled"></li>
+					@else
+						<li></li>
+					@endif
+					
+				</ul>
+				<ul class="profile-rank-info">
+					<li>
+						<img class="profile-rank-icon" src="images/rankIcons/rank_1.png" alt="Rank 1 icon">
+					</li>
+					<li>
+						<img class="profile-rank-icon" src="images/rankIcons/rank_2.png" alt="Rank 2 icon">
+					</li>
+					<li>
+						<img class="profile-rank-icon" src="images/rankIcons/rank_3.png" alt="Rank 3 icon">
+					</li>
+					<li>
+						<img class="profile-rank-icon" src="images/rankIcons/rank_4.png" alt="Rank 4 icon">
+					</li>
+					<li>
+						<img class="profile-rank-icon" src="images/rankIcons/rank_5.png" alt="Rank 5 icon">
+					</li>
+				</ul>
+			</center>
+		</div>
+		
+
+		<div class="col-xs-12">
+			<h2 class="block-title"><i class="fa fa-star"></i> Your favourite loops</i></h2>
+		</div>
+
+		<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in favouriteLoops | limitTo:loopLimit track by loop.id" ng-init="isFavourite=loop.isFavourite">
 
 			<div class="row loop-box favourite">
 			  	<div class="col-xs-2">
@@ -34,7 +103,7 @@
 			    		<div class="user-avatar" style="background-image: url(<% loop.user.avatar %>)"></div>
 			    		<p class="user-name"><% loop.user.name %></p>
                         <p class="rank-text">
-                            <img class="rank-icon" src="images/rankIcons/<% ratingIcon %>" alt="This users rank medal"> <% loop.user.rating %>
+                            <img class="rank-icon" src="images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>
                         </p>
 			    	</div>
 			  	</div>
@@ -58,6 +127,69 @@
 					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
 				</p>
 			</div>
+		</div>
+
+	@else
+
+		@if (count($errors) > 0)
+	        <div class="col-xs-12 col-md-6 col-md-offset-3" ng-controller="AlertController">
+	        	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
+	        		@foreach ($errors->all() as $error)
+						<p>
+							<i class="fa fa-times"></i>{{ $error }}
+							<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+						</p>
+					@endforeach
+				</div>
+	        </div>
+		@endif
+
+		<div ng-show="!loginView" class="col-xs-12 col-md-6 col-md-offset-3">
+			{!! Form::open(array('route' => 'register', 'method' => 'POST','files' => true)) !!}
+				<div class="form-group">
+					{!! Form::label('name', 'Name') !!}
+					{!! Form::text('name','',array('class' => 'form-control', 'required' => 'required')) !!}
+				</div>
+				<div class="form-group">
+					{!! Form::label('email', 'Email') !!}
+					{!! Form::text('email','',array('class' => 'form-control', 'required' => 'required')) !!}
+				</div>
+				<div class="form-group">
+					{!! Form::label('password', 'Password') !!}
+					{!! Form::password('password', array('class' => 'form-control', 'required' => 'required')) !!}
+				</div>
+				<div class="form-group">
+					{!! Form::label('password_confirmation', 'Confirm Password') !!}
+					{!! Form::password('password_confirmation', array('class' => 'form-control', 'required' => 'required')) !!}
+				</div>
+				<div class="form-group">
+				    <div class="custom-file-upload">
+					    {!! Form::label('file', 'Profile picture') !!}
+					    <input type="file" id="file" name="myfiles[]" multiple />
+					</div>
+				</div>
+
+				<button href="" type="submit" class="basic-button">Register</a></button>
+			{!! Form::close() !!}	
+		</div>
+
+		<div ng-show="loginView" class="col-xs-12 col-md-6 col-md-offset-3">
+			{!! Form::open(array('route' => 'login', 'method' => 'POST')) !!}
+				<div class="form-group">
+					{!! Form::label('email', 'Email') !!}
+					{!! Form::text('email','',array('class' => 'form-control', 'required' => 'required')) !!}
+				</div>
+				<div class="form-group">
+					{!! Form::label('password', 'Password') !!}
+					{!! Form::password('password', array('class' => 'form-control', 'required' => 'required')) !!}
+				</div>
+				<center><button href="" type="submit" class="basic-button">Login</button></center>
+			{!! Form::close() !!}	
+		</div>
+
+		<div class="col-xs-12 col-md-6 col-md-offset-3 toggle-text">
+			<p ng-show="loginView">You don't have an account yet? <a ng-click="loginView = false" href="">Register now</a></p>
+		    <p ng-show="!loginView">You already have an account? <a ng-click="loginView = true"  href="">Login now</a></p>
 		</div>
 
 	@endif
