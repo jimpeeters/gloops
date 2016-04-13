@@ -13,7 +13,7 @@
         <div class="col-xs-12" ng-controller="AlertController">
         	<div class="info-box success" ng-hide="hidden" ng-class="{fade: startFade}">
 				<p>
-					<i class="fa fa-check"></i>{{ Session::get('success') }}
+					<i class="fa fa-check alert-type-icon"></i>{{ Session::get('success') }}
 					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
 				</p>
 			</div>
@@ -25,7 +25,7 @@
         	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
         		@foreach ($errors->all() as $error)
 					<p>
-						<i class="fa fa-times"></i>{{ $error }}
+						<i class="fa fa-times alert-type-icon"></i>{{ $error }}
 						<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
 					</p>
 				@endforeach
@@ -38,7 +38,7 @@
 		<div class="col-xs-12" ng-controller="AlertController">
 			<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
 				<p>
-					<i class="fa fa-info"></i>If you <a href="" data-toggle="modal" data-target="#registerModal">register</a> you have access to this page. Here you can manage your own loop <strong>station</strong> and listen to your own recorded or uploaded loops. 
+					<i class="fa fa-info alert-type-icon"></i>If you <a href="" data-toggle="modal" data-target="#registerModal">register</a> you have access to this page. Here you can manage your own loop <strong>station</strong> and listen to your own recorded or uploaded loops. 
 					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
 				</p>
 			</div>
@@ -119,7 +119,7 @@
 			<div ng-show="loops.length === 0" class="col-xs-12" ng-controller="AlertController">
 				<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
 					<p>
-						<i class="fa fa-info"></i>You currently have no <strong>guitar loops</strong>.
+						<i class="fa fa-info alert-type-icon"></i>You currently have no <strong>guitar loops</strong>.
 						<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
 					</p>
 				</div>
@@ -130,7 +130,7 @@
 		<div class="col-xs-12" ng-controller="AlertController">
 			<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
 				<p>
-					<i class="fa fa-info"></i>Here you will be able to <strong>manage</strong> all of your own guitar loops.
+					<i class="fa fa-info alert-type-icon"></i>Here you will be able to <strong>manage</strong> all of your own guitar loops.
 					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
 				</p>
 			</div>
@@ -193,7 +193,7 @@
 			<h4 class="block-title upload">Upload</h4>
 			<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
 				<p>
-					<i class="fa fa-info"></i>Here you can <strong>upload</strong> your local guitar loops.
+					<i class="fa fa-info alert-type-icon"></i>Here you can <strong>upload</strong> your local guitar loops.
 					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
 				</p>
 			</div>
@@ -203,7 +203,7 @@
 			<h4 class="block-title">Record</h4>
 			<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
 				<p>
-					<i class="fa fa-info"></i>You can also record <strong>new</strong> guitar loops here!
+					<i class="fa fa-info alert-type-icon"></i>You can also record <strong>new</strong> guitar loops here!
 					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
 				</p>
 			</div>

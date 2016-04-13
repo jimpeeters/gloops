@@ -184,6 +184,7 @@ class AuthController extends Controller
         $user->name = $input['name'];
         $user->email    = $input['email'];
         $user->rating = 0;
+        $user->rank = 1;
 
         /* if($request->has('facebook'))
         {
@@ -198,9 +199,10 @@ class AuthController extends Controller
 
         $user->facebookAccount  = false;
         $user->password         = \Hash::make($input['password']);
-        if ($request->hasFile('image'))
+
+        if ($request->hasFile('file'))
         {
-            $file = $request->file('image');
+            $file = $request->file('file');
             $imageName = $user->email.'.'.$file->getClientOriginalExtension();
             $file->move(base_path().'/public/images/profilePictures/',$imageName);
             $user->avatar = '/images/profilePictures/'.$imageName;

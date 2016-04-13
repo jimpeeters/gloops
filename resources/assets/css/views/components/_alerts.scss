@@ -10,14 +10,17 @@
 
 	p {
 		display: block;
-		padding: 10px 30px 10px 10px;
+		padding: 10px 30px 10px 30px;
 		margin-bottom: 0;
 		transform: translateX(-100%);
   		animation: slideIn 1.2s ease-out forwards;
+  		position: relative;
 	}
 
-	i {
-		padding-right: 15px;
+	.alert-type-icon {
+		position: absolute;
+		top: 14px;
+    	left: 10px;
 	}
 
 	.close-button {

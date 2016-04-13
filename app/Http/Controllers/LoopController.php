@@ -30,9 +30,9 @@ class LoopController extends Controller
         $owner = User::find($loop->FK_user_id);
         $ownersRating = $owner->rating;
 
-        if ($favouriteCheck === null) 
+        if ($favouriteCheck == null) 
         {
-            // Not favourited yet
+            // Favourite this loop
             $favourite = new Favourite();
             $favourite->FK_loop_id = $input['loopId'];
             $favourite->FK_user_id =  Auth::user()->id;
@@ -44,11 +44,30 @@ class LoopController extends Controller
                 // Increase users rating
                 $ownersRating ++;
                 $owner->rating = $ownersRating;
+
+                // Check for rank
+                if($ownersRating < 20) {
+                    $owner->rank = 1;
+                }
+                else if($ownersRating >= 20 && $ownersRating < 50) {
+                    $owner->rank = 2;
+                }
+                else if($ownersRating >= 50 && $ownersRating < 100) {
+                    $owner->rank = 3;
+                }
+                else if($ownersRating >= 100 && $ownersRating < 500) {
+                    $owner->rank = 4;
+                }
+                else if($ownersRating >= 500 ) {
+                    $owner->rank = 5;
+                }
+
+                $owner->save();
             }
         }
         else 
         {
-            // Favourited
+            // Remove favourited
             $favouriteCheck->delete();
 
             // Don't influence rating when it's your own loop
@@ -57,27 +76,27 @@ class LoopController extends Controller
                 // Decrease users rating
                 $ownersRating --;
                 $owner->rating = $ownersRating;
+
+                // Check for rank
+                if($ownersRating < 20) {
+                    $owner->rank = 1;
+                }
+                else if($ownersRating >= 20 && $ownersRating < 50) {
+                    $owner->rank = 2;
+                }
+                else if($ownersRating >= 50 && $ownersRating < 100) {
+                    $owner->rank = 3;
+                }
+                else if($ownersRating >= 100 && $ownersRating < 250) {
+                    $owner->rank = 4;
+                }
+                else if($ownersRating >= 250 ) {
+                    $owner->rank = 5;
+                }
+
+                $owner->save();
             }
         }
-
-        // Check for rank
-        if($ownersRating < 20) {
-            $owner->rank = 1;
-        }
-        else if($ownersRating >= 20 && $ownersRating < 50) {
-            $owner->rank = 2;
-        }
-        else if($ownersRating >= 50 && $ownersRating < 100) {
-            $owner->rank = 3;
-        }
-        else if($ownersRating >= 100 && $ownersRating < 250) {
-            $owner->rank = 4;
-        }
-        else if($ownersRating >= 250 ) {
-            $owner->rank = 5;
-        }
-
-        $owner->save();
     }
 
 }

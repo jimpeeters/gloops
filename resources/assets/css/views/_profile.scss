@@ -13,13 +13,33 @@
     	background-size: cover;
     	border: 2px solid $black;
     	position: relative;
+    	display: table;
 
     	.profile-rank-icon {
     		position: absolute;
     		right: -5px;
     		bottom: 0;
-
     	}
+
+    	&:hover {
+    		.profile-edit {
+    			opacity: 1;
+    		}
+    	}
+	}
+
+	.profile-edit {
+		opacity: 0;
+		transition: opacity 0.2s ease-out;
+		display: table-cell;
+		vertical-align: middle;
+		font-size: 3em;
+		color: $red;
+
+		&:hover {
+			color: $red;
+		}
+
 	}
 
 	.profile-name {

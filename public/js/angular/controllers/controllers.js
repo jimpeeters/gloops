@@ -201,9 +201,6 @@ gloopsApp.controller('StationController', ['$scope','$http', function($scope, $h
 }]);
 gloopsApp.controller('ProfileController', ['$scope', '$http', function($scope, $http) {
 
-    // Toggle Login/Register view
-    $scope.loginView = true;
-
     // Limit on loops
     $scope.loopLimit = 9;
 
@@ -215,7 +212,6 @@ gloopsApp.controller('ProfileController', ['$scope', '$http', function($scope, $
               url     : '/profile/getFavouriteLoops'
         }).success(function(data) {
             $scope.favouriteLoops = data;
-            console.log(data);
         });
     };
 

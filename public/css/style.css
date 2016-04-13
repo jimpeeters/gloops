@@ -2597,14 +2597,17 @@ label.css-label {
   width: 100%; }
   .info-box p {
     display: block;
-    padding: 10px 30px 10px 10px;
+    padding: 10px 30px 10px 30px;
     margin-bottom: 0;
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
     -webkit-animation: slideIn 1.2s ease-out forwards;
-    animation: slideIn 1.2s ease-out forwards; }
-  .info-box i {
-    padding-right: 15px; }
+    animation: slideIn 1.2s ease-out forwards;
+    position: relative; }
+  .info-box .alert-type-icon {
+    position: absolute;
+    top: 14px;
+    left: 10px; }
   .info-box .close-button {
     color: #B02F06;
     position: absolute;
@@ -3140,11 +3143,24 @@ label.css-label {
   background-repeat: no-repeat;
   background-size: cover;
   border: 2px solid #040404;
-  position: relative; }
+  position: relative;
+  display: table; }
   .profile .profile-picture .profile-rank-icon {
     position: absolute;
     right: -5px;
     bottom: 0; }
+  .profile .profile-picture:hover .profile-edit {
+    opacity: 1; }
+
+.profile .profile-edit {
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 3em;
+  color: #B02F06; }
+  .profile .profile-edit:hover {
+    color: #B02F06; }
 
 .profile .profile-name {
   margin: 0 0 15px 0; }

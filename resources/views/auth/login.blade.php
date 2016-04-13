@@ -60,7 +60,7 @@
 					<div class="form-group">
 					    <div class="custom-file-upload">
 						    {!! Form::label('file', 'Profile picture') !!}
-						    <input type="file" id="file" name="myfiles[]" multiple />
+						    <input type="file" id="file" name="file" multiple />
 						</div>
 					</div>
 

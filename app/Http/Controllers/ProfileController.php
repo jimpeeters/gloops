@@ -11,6 +11,8 @@ use Response;
 use View;
 use App\Loop;
 use App\Favourite;
+use Validator;
+use Redirect;
 
 class ProfileController extends Controller
 {
@@ -26,21 +28,21 @@ class ProfileController extends Controller
 
     public function getFavouriteLoops()
     {
+        // Your favourite loops are private
         if(Auth::check())
         {
             $loops = Loop::with('favourites')->
                            with('user')->
                            with('category')->
                            with('tags')->
-                           where('FK_user_id', '=', Auth::user()->id)->
                            orderBy('created_at', 'DESC')->get();
 
             $favouritedLoops = array();
 
-            //give property to say wether it is favourited or not        
+            // Give property to say wether it is favourited or not        
             foreach($loops as $loop) 
             {
-                //check if logged in user has favourited this
+                // Check if logged in user has favourited this
                 $user_favorites = Favourite::where('FK_user_id', '=', Auth::user()->id)
                     ->where('FK_loop_id', '=', $loop->id)
                     ->first();
@@ -59,6 +61,49 @@ class ProfileController extends Controller
             return Response::json($favouritedLoops);
         }
 
+    }
+
+    public function update(request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name'         => 'max:100|min:2|unique:users,name',
+            'avatar'         => 'mimes:png,jpeg'
+        ]);
+        
+        if ($validator->fails()) 
+        {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        $input = $request->all();
+        $user = User::findOrFail(Auth::user()->id);
+        
+        // If user typed a new name
+        if($input['name'] != null)
+        {
+            $user->name = $input['name'];
+        }
+
+
+        if ($request->hasFile('file'))
+        {
+            // Delete current picture
+            $userAvatarPath = $user->avatar;
+            $imagePath = str_replace('/', '\\', $userAvatarPath);
+            unlink(base_path().'\\public'.$imagePath); 
+
+            // Save new picture
+            $file = $request->file('file');
+            $imageName = $user->email.'.'.$file->getClientOriginalExtension();
+            $file->move(base_path().'/public/images/profilePictures/',$imageName);
+            $user->avatar = '/images/profilePictures/'.$imageName;
+        }
+
+        $user->save();
+
+        return Redirect::back()->with('success','Your profile has been successfully changed!');
     }
     
 }

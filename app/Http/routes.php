@@ -28,20 +28,23 @@ Route::group(['middleware' => ['web']], function () {
 	//Logged in
 	Route::group(['middleware' => 'auth'], function () {
 
-		//Logged in user his favourite loops
+		//Get logged in user his favourite loops
 		Route::get('/profile/getFavouriteLoops', 'ProfileController@getFavouriteLoops');
 
-		//Favourite loop
+		//Favourite a loop
 		Route::post('/loop/favourite', array('as' => 'favourite','uses' =>'LoopController@favourite'));
 
-		//Upload loop
+		//Upload a loop
 		Route::post('/station/upload', array('as' => 'upload', 'uses' => 'StationController@upload'));
 
-		//Logged in user his loops
+		//Get logged in user his loops
 		Route::get('/station/getUserLoops', 'StationController@getUserLoops');
 
 		//Delete a loop
 		Route::post('/loop/delete', 'StationController@deleteLoop');
+
+		//Update a user
+		Route::post('/profile/update', array('as' => 'updateUser', 'uses' => 'ProfileController@update'));
 
 	});
 
