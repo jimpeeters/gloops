@@ -31,6 +31,11 @@ class LoopTagTableSeeder extends Seeder {
 			),
 
 		array(
+				'FK_loop_id' => '2',
+				'FK_tag_id' => '9'
+			),
+
+		array(
 				'FK_loop_id' => '3',
 				'FK_tag_id' => '1'
 			),
@@ -38,6 +43,11 @@ class LoopTagTableSeeder extends Seeder {
 		array(
 				'FK_loop_id' => '3',
 				'FK_tag_id' => '14'
+			),
+
+		array(
+				'FK_loop_id' => '3',
+				'FK_tag_id' => '9'
 			),
 
 		array(
@@ -56,6 +66,11 @@ class LoopTagTableSeeder extends Seeder {
 			),
 
 		array(
+				'FK_loop_id' => '5',
+				'FK_tag_id' => '9'
+			),
+
+		array(
 				'FK_loop_id' => '6',
 				'FK_tag_id' => '32'
 			),
@@ -66,8 +81,18 @@ class LoopTagTableSeeder extends Seeder {
 			),
 
 		array(
+				'FK_loop_id' => '6',
+				'FK_tag_id' => '9'
+			),
+
+		array(
 				'FK_loop_id' => '7',
 				'FK_tag_id' => '14'
+			),
+
+		array(
+				'FK_loop_id' => '7',
+				'FK_tag_id' => '9'
 			),
 
 		array(
@@ -76,8 +101,48 @@ class LoopTagTableSeeder extends Seeder {
 			),
 
 		array(
+				'FK_loop_id' => '8',
+				'FK_tag_id' => '9'
+			),
+
+		array(
 				'FK_loop_id' => '9',
 				'FK_tag_id' => '2'
+			),
+
+		array(
+				'FK_loop_id' => '9',
+				'FK_tag_id' => '9'
+			),
+
+		array(
+				'FK_loop_id' => '10',
+				'FK_tag_id' => '17'
+			),
+
+		array(
+				'FK_loop_id' => '10',
+				'FK_tag_id' => '9'
+			),
+
+		array(
+				'FK_loop_id' => '11',
+				'FK_tag_id' => '9'
+			),
+
+		array(
+				'FK_loop_id' => '12',
+				'FK_tag_id' => '4'
+			),
+
+		array(
+				'FK_loop_id' => '12',
+				'FK_tag_id' => '9'
+			),
+
+		array(
+				'FK_loop_id' => '12',
+				'FK_tag_id' => '14'
 			),
 
 		);

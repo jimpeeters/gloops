@@ -57,7 +57,7 @@ class StationController extends Controller
         if ($request->hasFile('file'))
         {
             $file = $request->file('file');            
-            $fileName = Auth::user()->name.'-'. $loop->name.'.'.$file->getClientOriginalExtension();
+            $fileName = Auth::user()->email.'-'. $loop->name.'.'.$file->getClientOriginalExtension();
             $file->move(base_path().'/public/loops/uploads/',$fileName);
             $loop->loop_path = '/loops/uploads/'.$fileName;
         }
