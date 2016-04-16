@@ -1,17 +1,3 @@
-gloopsApp.directive('tooltip', function(){
-    return {
-        restrict: 'A',
-        link: function(scope, element, attrs){
-            $(element).hover(function(){
-                // on mouseenter
-                $(element).tooltip('show');
-            }, function(){
-                // on mouseleave
-                $(element).tooltip('hide');
-            });
-        }
-    };
-});
 /*
 A simple AngularJS directive to render a smooth scroll effect
 Usage: <element smooth-scroll target='id' [offset='value']></element>
@@ -124,4 +110,3 @@ gloopsApp.directive('smoothScroll', [
     };
   }
 ])
-//# sourceMappingURL=directives.js.map

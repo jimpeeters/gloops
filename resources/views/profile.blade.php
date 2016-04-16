@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="profile">
+<div class="profile" ng-controller="ProfileController">
 
 	<div class="title-section">
 		<h1>PROFILE</h1>
@@ -27,7 +27,7 @@
 			<center>
 				<div class="profile-picture" style="background-image: url({{ Auth::user()->avatar }})" title="Edit your profile picture" data-toggle="tooltip" data-placement="left" tooltip>
 					<img class="profile-rank-icon" src="images/rankIcons/rank_{{ Auth::user()->rank }}.png" alt="This users rank {{ Auth::user()->rank }} medal">
-					<a class="profile-edit" href=""><i class="fa fa-pencil"></i></a>
+					<a class="profile-edit" href="" smooth-scroll target="edit-section"><i class="fa fa-pencil"></i></a>
 				</div>
 				<h2 class="profile-name">{{ Auth::user()->name }}</h2>
 				<ul class="profile-rank" title="Gain more rating to rank up" data-toggle="tooltip" data-placement="left" tooltip>
@@ -87,8 +87,6 @@
 			<h2 class="block-title"><i class="fa fa-star"></i> Your favourite loops</i></h2>
 		</div>
 
-		<div ng-controller="ProfileController">
-
 			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in favouriteLoops | limitTo:loopLimit track by loop.id" ng-init="isFavourite=loop.isFavourite">
 
 				<div class="row loop-box favourite">
@@ -137,10 +135,8 @@
 				</div>
 			</div>
 
-		</div>
-
 		<div class="col-xs-12">
-			<h2 class="block-title"><i class="fa fa-pencil"></i> Edit your profile</i></h2>
+			<h2 class="block-title" id="edit-section"><i class="fa fa-pencil"></i> Edit your profile</i></h2>
 		</div>
 
 		@if (count($errors) > 0)

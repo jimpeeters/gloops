@@ -34,7 +34,7 @@ elixir(function(mix) {
     ], 'public/js/angular/controllers/controllers.js');
 
     mix.scripts([
-        'directives/tooltip.js'
+        'directives/tooltip.js', 'directives/smoothScroll.js'
     ], 'public/js/angular/directives/directives.js');
 
 
