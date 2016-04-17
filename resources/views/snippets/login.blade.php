@@ -11,6 +11,14 @@
     </div>
 @endif
 
+<div ng-show="!loginView" class="col-xs-12 col-md-6 col-md-offset-3">
+	<h2 class="block-title">Register</h2>
+</div>
+
+<div ng-show="loginView" class="col-xs-12 col-md-6 col-md-offset-3">
+	<h2 class="block-title">Login</h2>
+</div>
+
 <div ng-show="loginView" class="col-xs-12 col-md-6 col-md-offset-3" ng-controller="AlertController">
 	<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
 		<p>

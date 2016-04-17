@@ -32,6 +32,10 @@
             	margin-top: 30px;
 				@include text-shadow();
             }
+
+            button {
+            	width: 150px;
+            }
 		}
 
 		.youtube-link {
@@ -77,6 +81,10 @@
 			margin-top: 75px;
 			margin-bottom: 20px;
 		}
+
+		.video-layer button {
+			width: 300px;
+		} 
 	}
 }
 

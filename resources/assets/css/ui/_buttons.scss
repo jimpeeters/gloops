@@ -1,5 +1,6 @@
 // Basic Button
 .basic-button {
+	line-height: 30px;
 	background-color: $red;
 	border: 2px solid $black;
 	display: inline-block;
@@ -14,6 +15,8 @@
 
 	&:hover, &:active, &:focus {
 		background-color: lighten($red , 10);
+		text-decoration: none;
+		color: $white;
 	}
 }
 
@@ -128,61 +131,12 @@
 	}
 }
 
-//Ghost button white
-.ghost-button-white {
-  background-color: rgba(255, 255, 255, 0);
-  font-size: 16px;
-  display: inline-block;
-  width: 200px;
-  padding: 8px;
-  color: $white;
-  border: 2px solid $white;
-  text-align: center;
-  outline: none;
-  text-decoration: none;
-  transition: background-color 0.2s ease-out, color 0.2s ease-out, border-radius 0.2s ease-out;
-  border-radius: 5px;
-
-  &:hover, &:active, &:focus{
-  	background-color: $white;
-  	color: $black;
-  	transition: background-color 0.3s ease-in, color 0.3s ease-in, border-radius 0.3s ease-in;
-  	text-decoration: none;
-  	border-radius: 0px;
-  }
-}
-
-.ghost-button-green {
-	@extend .ghost-button-white;
-
-	color: $green;
-  	border: 2px solid $green;
-
-	&:hover, &:active, &:focus{
-		background-color: $green;
-  		color: $white;
-	}
-}
-
-.ghost-button-red {
-	@extend .ghost-button-white;
-
-	color: $red;
-  	border: 2px solid $red;
-
-	&:hover, &:active, &:focus{
-		background-color: $red;
-  		color: $white;
-	}
-}
-
 //Load more button
 
 .load-button {
 	text-decoration: none;
 	background: $red;
 	color: $white;
-	//padding: 20px;
 	height: 54px;
 	border-radius: 25px;
 	width: 100%;

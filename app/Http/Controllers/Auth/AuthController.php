@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Socialite;
 use Redirect;
+use View;
 
 class AuthController extends Controller
 {
@@ -135,6 +136,12 @@ class AuthController extends Controller
     {
         Auth::logout();
         return Redirect::back()->with('success',"You have successfully logged out. We hope to see you again soon!");
+    }
+
+    //get register page ------------
+    public function getRegister()
+    {
+        return View::make('auth.register');
     }
 
     //register ------------------------

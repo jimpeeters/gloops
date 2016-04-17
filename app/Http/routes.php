@@ -49,34 +49,37 @@ Route::group(['middleware' => ['web']], function () {
 	});
 
 
-    //facebook login
+    //Facebook login
     Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
 	Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
 
-	//register
+	//Get register page
+	Route::get('/register', array('as' => 'getRegister', 'uses' => 'Auth\AuthController@getRegister'));
+
+	//Register
 	Route::post('/register', array('as' => 'register', 'uses' => 'Auth\AuthController@register'));
 
-	//login
+	//Login
 	Route::post('/login', array('as' => 'login', 'uses' => 'Auth\AuthController@login'));
 
-	//uitloggen
+	//Uitloggen
 	Route::get('auth/logout', array('as' => 'getLogout','uses' => 'Auth\AuthController@getLogout'));
 
-	//home
+	//Home
 	Route::get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
 
-	//station
+	//Station
 	Route::get('/station', array('as' => 'station', 'uses' => "StationController@index"));
 	//stationData
 	//Route::get('/station/data', 'StationController@getData');
 
-	//library
+	//Library
 	Route::get('/library', array('as' => 'library', 'uses' => "LibraryController@index"));
 
 	//Library loops 
 	Route::get('/library/data', 'LibraryController@getLoops');
 
-	//get user
+	//Get user
 	Route::get('/getuser', 'UserController@getUser');
 
 	//Profile page

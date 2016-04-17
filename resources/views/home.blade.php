@@ -38,10 +38,10 @@
 		<div class="video-layer">
 			@if(Auth::check())
 				<h1>Record now</h1>
-				<a href="" class="ghost-button-white center-button">Your station</a>
+				<center><a href="{{ route('station') }}" class="basic-button">Your station</button></a>
 			@else
 				<h1>Join now</h1>
-				<a href="" class="ghost-button-white center-button">Register</a>
+				<center><a href="{{ route('getRegister') }}" class="basic-button">Register</button></a>
 			@endif
 		</div>
 		<a target="_blank" class="youtube-link" href="/">

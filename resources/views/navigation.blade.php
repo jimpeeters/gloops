@@ -12,7 +12,7 @@
         <div class="col-xs-2">
             <!-- Library -->
             <div class="center-content">
-                <a href="{{route('library')}}" class="turn-button tick"></a>
+                <a href="{{ route('library') }}" class="turn-button tick"></a>
                 <p>Library</p>
             </div>
 
@@ -20,14 +20,14 @@
         <div class="col-xs-2">
             <!-- My Loops -->
             <div class="center-content">
-                <a href="{{route('station')}}" class="turn-button tick"></a>
+                <a href="{{ route('station') }}" class="turn-button tick"></a>
                 <p>Station</p>
             </div>
         </div>
         <div class="col-xs-2">
             <!-- My Account -->
             <div class="center-content">
-                <a href="{{route('profile')}}" class="turn-button tick"></a>
+                <a href="{{ route('profile') }}" class="turn-button tick"></a>
                 <p>Profile</p>
             </div>
         </div>
