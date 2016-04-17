@@ -27,8 +27,7 @@ class LibraryController extends Controller
                with('category')->
                with('tags')->
                groupBy('loops.id')->
-               orderBy('count','DESC')->
-               orderBy('created_at', 'DESC')->get();
+               orderBy('count','DESC')->get();
 
         //only do this check when user is logged in (else you dont have favourites)
         if(Auth::check())

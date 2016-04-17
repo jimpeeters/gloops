@@ -30,7 +30,7 @@ elixir(function(mix) {
     ], 'public/js/jquery.js');
 
     mix.scripts([
-    	'controllers/LoopController.js','controllers/AlertController.js', 'controllers/LibraryController.js', 'controllers/StationController.js', 'controllers/ProfileController.js'
+    	'controllers/LoopController.js','controllers/AlertController.js', 'controllers/LibraryController.js', 'controllers/StationController.js', 'controllers/ProfileController.js', 'controllers/HomeController.js'
     ], 'public/js/angular/controllers/controllers.js');
 
     mix.scripts([

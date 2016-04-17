@@ -68,6 +68,9 @@ Route::group(['middleware' => ['web']], function () {
 	//Home
 	Route::get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
 
+	//Get best Loops
+	Route::get('/getBestLoops', 'HomeController@getBestLoops');
+
 	//Station
 	Route::get('/station', array('as' => 'station', 'uses' => "StationController@index"));
 	//stationData
