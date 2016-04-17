@@ -44,6 +44,12 @@
 
 //helper classes ----------------
 
+//use font instead of font-weight
+strong {
+  font-weight: normal;
+  font-family: AUdimatBold;
+}
+
 //Center button
 .center-button {
 	display: block;

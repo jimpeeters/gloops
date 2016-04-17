@@ -33,7 +33,7 @@
 				@include text-shadow();
             }
 
-            button {
+            a {
             	width: 150px;
             }
 		}
@@ -49,6 +49,24 @@
 
 			&:hover{
 				background-color: lighten($black, 5);
+			}
+		}
+	}
+
+	.information {
+		margin: 30px 0;
+		display: inline-block;
+
+		i {
+			padding-bottom: 15px;
+			color: $black;
+		}
+
+		p {
+			text-align: center;
+
+			strong {
+				color: $red;
 			}
 		}
 	}
@@ -82,7 +100,7 @@
 			margin-bottom: 20px;
 		}
 
-		.video-layer button {
+		.video-layer a {
 			width: 300px;
 		} 
 	}

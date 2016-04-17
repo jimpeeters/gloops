@@ -135,8 +135,8 @@
 				</div>
 			</div>
 
-		<div class="col-xs-12">
-			<h2 class="block-title" id="edit-section"><i class="fa fa-pencil"></i> Edit your profile</i></h2>
+		<div class="col-xs-12" id="edit-section">
+			<h2 class="block-title"><i class="fa fa-pencil"></i> Edit your profile</i></h2>
 		</div>
 
 		@if (count($errors) > 0)

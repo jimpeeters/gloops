@@ -10,6 +10,9 @@
   font-family: AUdimatBold;
   src: url("../fonts/AUdimat-Bold.otf"); }
 
+body {
+  color: #040404; }
+
 p, a, input[type="text"], span, div {
   font-size: 10px; }
 
@@ -2988,7 +2991,7 @@ label.css-label {
       font-size: 30px;
       margin-top: 30px;
       text-shadow: 1px 1px 1px #040404; }
-    .home .video-container .video-layer button {
+    .home .video-container .video-layer a {
       width: 150px; }
   .home .video-container .youtube-link {
     position: absolute;
@@ -3000,6 +3003,17 @@ label.css-label {
     transition: background-color 0.2s ease-out; }
     .home .video-container .youtube-link:hover {
       background-color: #111111; }
+
+.home .information {
+  margin: 30px 0;
+  display: inline-block; }
+  .home .information i {
+    padding-bottom: 15px;
+    color: #040404; }
+  .home .information p {
+    text-align: center; }
+    .home .information p strong {
+      color: #B02F06; }
 
 @media only screen and (min-width: 480px) {
   .home .video-container {
@@ -3016,7 +3030,7 @@ label.css-label {
     .home .video-container .video-layer h1 {
       margin-top: 75px;
       margin-bottom: 20px; }
-    .home .video-container .video-layer button {
+    .home .video-container .video-layer a {
       width: 300px; } }
 
 @media only screen and (min-width: 992px) {
@@ -3226,6 +3240,10 @@ label.css-label {
   .profile .profile-picture {
     width: 300px;
     height: 300px; } }
+
+strong {
+  font-weight: normal;
+  font-family: AUdimatBold; }
 
 .center-button {
   display: block;
