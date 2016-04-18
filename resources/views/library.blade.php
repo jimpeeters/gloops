@@ -67,8 +67,8 @@
 				    	<a class="play-button" ng-click="playLoop($event)">
 				      		<i class="fa fa-play"></i>
 				   		</a>
-					    <audio class="music" controls loop>
-					      	<source src="<% loop.loop_path %>" type="audio/mpeg">
+					    <audio class="music" controls preload loop>
+					      	<source src="<% loop.loop_path %>" type="audio/ogg">
 					       	Your browser does not support the audio element.
 					    </audio>
 				  	</div>

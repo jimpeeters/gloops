@@ -66,11 +66,16 @@ body{
 	font-family: AUdimat;
 }
 
-//border amplifier
+//guitar amp look
 .content {
-	border-left: 7px solid $black;
-	border-right: 7px solid $black;
 	background-color: $beige;
+}
+
+@media only screen and (min-width : $screen-phone) {
+  .content {
+    border-left: 7px solid $black;
+    border-right: 7px solid $black;
+  }
 }
 
 

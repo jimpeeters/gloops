@@ -52,7 +52,7 @@ class StationController extends Controller
 
         $categoryId = $input['category'];
         $loop->FK_category_id = $categoryId;
-
+        
         //File check and creating upload map
         if ($request->hasFile('file'))
         {

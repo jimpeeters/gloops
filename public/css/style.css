@@ -2687,20 +2687,14 @@ label.css-label {
       width: 350px; } }
 
 .header-decoration {
-  display: block;
-  margin: 0 auto;
-  height: 17px;
-  width: 220px; }
+  display: none; }
 
 .header {
   background: linear-gradient(27deg, #111111 5px, transparent 5px) 0 5px, linear-gradient(207deg, #111111 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
   background-color: #040404;
   background-size: 20px 20px;
   padding: 10px 0;
-  border-top: 2px solid #040404;
-  border-bottom: 2px solid #040404;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px; }
+  border-bottom: 1px solid #040404; }
   .header .logo {
     width: 70px;
     height: auto; }
@@ -2708,9 +2702,7 @@ label.css-label {
 .navigation {
   padding-top: 15px;
   background-color: #EDEBDB;
-  border-left: 7px solid #040404;
-  border-right: 7px solid #040404;
-  border-bottom: 4px solid #040404; }
+  border-bottom: 1px solid #040404; }
   .navigation .center-content {
     display: inline-block; }
     .navigation .center-content a {
@@ -2763,6 +2755,20 @@ label.css-label {
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
   .header-decoration {
+    display: block;
+    margin: 0 auto;
+    height: 17px;
+    width: 220px; }
+  .header {
+    border-top: 2px solid #040404;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom: 4px solid #040404; }
+  .navigation {
+    border-left: 7px solid #040404;
+    border-right: 7px solid #040404;
+    border-bottom: 4px solid #040404; }
+  .header-decoration {
     height: 25px;
     width: 350px; }
   .header .logo {
@@ -2806,9 +2812,7 @@ label.css-label {
 .footer {
   background-color: #1e1e1e;
   padding: 15px 0;
-  border: 2px solid #040404;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px; }
+  border-top: 1px solid #040404; }
   .footer .sub-footer {
     border-bottom: 1px solid #ffffff; }
     .footer .sub-footer h5, .footer .sub-footer a {
@@ -2848,38 +2852,39 @@ label.css-label {
       padding-right: 5px; }
 
 .leg-left, .leg-right {
-  height: 10px;
-  width: 30px;
-  border-radius: 0 0 10px 10px;
-  background: #040404;
-  position: absolute; }
-
-.leg-left {
-  left: 10%; }
-
-.leg-right {
-  right: 10%; }
+  display: none; }
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
-  .footer .sub-footer h5 {
-    font-size: 1.3em;
-    min-width: 120px; }
-  .footer .search form {
-    margin: 20px 0; }
-  .footer .search form .search-input {
-    margin-left: -20px;
-    height: 40px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    padding-left: 30px;
-    width: 60%; }
-  .footer .search form .search-button {
-    width: 40px; }
+  .footer {
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: 2px solid #040404; }
+    .footer .sub-footer h5 {
+      font-size: 1.3em;
+      min-width: 120px; }
+    .footer .search form {
+      margin: 20px 0; }
+    .footer .search form .search-input {
+      margin-left: -20px;
+      height: 40px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      padding-left: 30px;
+      width: 60%; }
+    .footer .search form .search-button {
+      width: 40px; }
   .leg-left, .leg-right {
+    display: block;
     height: 15px;
     width: 40px;
-    border-radius: 0 0 10px 10px; } }
+    border-radius: 0 0 10px 10px;
+    background: #040404;
+    position: absolute; }
+  .leg-left {
+    left: 10%; }
+  .leg-right {
+    right: 10%; } }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
@@ -2957,12 +2962,15 @@ label.css-label {
     z-index: 100;
     color: #ffffff;
     text-align: center;
-    padding: 3%;
+    padding: 15px 0;
     text-shadow: 1px 1px 1px #040404;
     background-color: rgba(0, 0, 0, 0.7);
     background-image: url("/images/dark-dot.png");
     margin: 0;
     text-decoration: underline; }
+  @media only screen and (min-width: 480px) {
+    .title-section h1 {
+      padding: 3%; } }
 
 .home .video-container {
   position: relative;
@@ -3005,7 +3013,7 @@ label.css-label {
       background-color: #111111; }
 
 .home .information {
-  margin: 60px 0;
+  margin-top: 15px;
   display: inline-block; }
   .home .information i {
     padding-bottom: 15px;
@@ -3014,6 +3022,8 @@ label.css-label {
     text-align: center; }
     .home .information p strong {
       color: #B02F06; }
+    .home .information p:last-child {
+      margin-bottom: 0; }
 
 @media only screen and (min-width: 480px) {
   .home .video-container {
@@ -3023,6 +3033,9 @@ label.css-label {
       font-size: 36px; }
     .home .video-container .video-layer a {
       width: 300px; }
+  .home .information {
+    margin-top: 60px;
+    margin-bottom: 45px; }
   .home .information p {
     padding-left: 90px;
     padding-right: 90px; } }
@@ -3262,9 +3275,12 @@ body {
   font-family: AUdimat; }
 
 .content {
-  border-left: 7px solid #040404;
-  border-right: 7px solid #040404;
   background-color: #EDEBDB; }
+
+@media only screen and (min-width: 480px) {
+  .content {
+    border-left: 7px solid #040404;
+    border-right: 7px solid #040404; } }
 
 .form-control {
   padding: 5px;

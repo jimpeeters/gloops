@@ -2,9 +2,8 @@
 
 	background-color: $lightblack;
 	padding: 15px 0;
-	border: 2px solid $black;
-	border-bottom-right-radius: 15px;
-	border-bottom-left-radius: 15px;
+	border-top: 1px solid $black;
+	
 
     .sub-footer {
 
@@ -69,26 +68,16 @@
 }
 
 .leg-left , .leg-right {
-	 height:10px;
-     width:30px;
-     border-radius: 0 0 10px 10px;
-     background:$black;
-     position: absolute;
-     //box-shadow: 8px 1px 9px -4px rgba(0, 0, 0, 0.52);
-}
-
-.leg-left {
-	left: 10%;
-}
-
-.leg-right {
-	right: 10%;
+    display: none;
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : $screen-phone) {
 
 	.footer {
+		border-bottom-right-radius: 15px;
+		border-bottom-left-radius: 15px;
+		border: 2px solid $black;
 
 		.sub-footer {
 
@@ -119,9 +108,20 @@
 	}
 
 	.leg-left , .leg-right {
-		 height:15px;
-	     width:40px;
-	     border-radius: 0 0 10px 10px;
+		display: block;
+		height:15px;
+	    width:40px;
+	    border-radius: 0 0 10px 10px;
+	    background:$black;
+     	position: absolute;
+	}
+
+	.leg-left {
+		left: 10%;
+	}
+
+	.leg-right {
+		right: 10%;
 	}
 }
 

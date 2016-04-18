@@ -3,6 +3,7 @@ gloopsApp.controller('LoopController', ['$scope', '$http', function($scope, $htt
     $scope.playLoop = function($event) {
 
         var music = $event.currentTarget.nextElementSibling;
+        music.preload = "auto";
         var playBtnIcon = $event.target;
         var duration = $event.currentTarget.parentElement.nextElementSibling.children[1];
 

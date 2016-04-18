@@ -2,7 +2,7 @@
 	<div class="register-cta">
 		<h1 class="title">Why would u still wait?</h1>
 		<center>
-			<a href="{{ route('getRegister') }}" class="basic-button">Register Now</button>
+			<a href="{{ route('getRegister') }}" class="basic-button">Register Now</a>
 		</center>
 	</div>
 </div>

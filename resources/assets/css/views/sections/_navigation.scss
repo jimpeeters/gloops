@@ -1,8 +1,5 @@
 .header-decoration {
-	display: block;
-	margin: 0 auto;
-	height: 17px;
-    width: 220px;
+	display: none;
 }
 
 .header{
@@ -10,10 +7,7 @@
     background-color: $black;
     background-size: 20px 20px;
 	padding: 10px 0;
-	border-top: 2px solid $black;
-	border-bottom: 2px solid $black;
-	border-top-right-radius: 15px;
-	border-top-left-radius: 15px;
+	border-bottom: 1px solid $black;
 
 	.logo {
 		width: 70px;
@@ -24,9 +18,7 @@
 .navigation {
 	padding-top: 15px;
 	background-color: $beige;
-	border-left: 7px solid $black;
-	border-right: 7px solid $black;
-	border-bottom: 4px solid $black;
+	border-bottom: 1px solid $black;
 
 	.center-content {
 
@@ -107,6 +99,26 @@
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : $screen-phone) {
+
+	.header-decoration {
+		display: block;
+		margin: 0 auto;
+		height: 17px;
+	    width: 220px;
+	}
+
+	.header{
+		border-top: 2px solid $black;
+		border-top-right-radius: 15px;
+		border-top-left-radius: 15px;
+		border-bottom: 4px solid $black;
+	}
+
+	.navigation {
+		border-left: 7px solid $black;
+		border-right: 7px solid $black;
+		border-bottom: 4px solid $black;
+	}
 
 	.header-decoration {
 		height: 25px;

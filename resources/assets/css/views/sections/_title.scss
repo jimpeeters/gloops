@@ -10,11 +10,18 @@
 		z-index: 100;
 		color: $white;
 		text-align: center;
-		padding: 3%;
+		padding: 15px 0;
 		@include text-shadow();
 		background-color: rgba(0, 0, 0, 0.7);
         background-image: url('/images/dark-dot.png');
         margin: 0;
         text-decoration: underline;
 	}
+
+	@media only screen and (min-width : $screen-phone) {
+		h1 {
+			padding: 3%;
+		}
+	}
 }
+
