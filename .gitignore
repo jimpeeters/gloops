@@ -6,12 +6,8 @@
 
 public/video/*
 public/images/profilePictures
-public/images/station.jpg
-public/images/record.jpg
-public/images/library.jpg
-public/images/profile.jpg
 public/resources/assets
-public/loops
+public/loops/uploads
 
 #need to be compiled with gulp 
 
