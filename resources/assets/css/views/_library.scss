@@ -12,7 +12,7 @@
         padding: 0 0 0 15px;
         background-color: $lightblack;
         margin-bottom: 0;
-        max-height: 450px;
+        max-height: 0;
         transition: max-height 1s ease-out, padding 1s ease-out;
         overflow: hidden;
 
@@ -50,8 +50,8 @@
         }
     }
 
-    .sidebar-nav.up {
-        max-height: 0;
+    .sidebar-nav.down {
+        max-height: 450px;
     }
 
     .slide-up-toggle {

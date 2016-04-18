@@ -11,7 +11,7 @@
 	</div>
 
 	<div class="col-xs-12 col-sm-2 sidebar">
-        <ul class="sidebar-nav" ng-class="{ 'up' : sidebarUp }">
+        <ul class="sidebar-nav" ng-class="{ 'down' : !sidebarUp }">
         	<li class="title">
         		<p>General</p>
         	</li>
@@ -54,8 +54,8 @@
             </li>
         </ul>
         <div class="slide-up-toggle" ng-click="sidebarUp = !sidebarUp">
-        	<span ng-if="!sidebarUp">Hide filters</span>
-        	<span ng-if="sidebarUp">Show filters</span>
+        	<span ng-show="!sidebarUp">Hide filters</span>
+        	<span ng-show="sidebarUp">Show filters</span>
            	<i class="fa" ng-class="{ 'fa-arrow-up' : !sidebarUp, 'fa-arrow-down' : sidebarUp }"></i>
         </div>
     </div>

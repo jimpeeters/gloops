@@ -3093,7 +3093,7 @@ label.css-label {
     padding: 0 0 0 15px;
     background-color: #1e1e1e;
     margin-bottom: 0;
-    max-height: 450px;
+    max-height: 0;
     transition: max-height 1s ease-out, padding 1s ease-out;
     overflow: hidden; }
     .library .sidebar-nav li a {
@@ -3113,8 +3113,8 @@ label.css-label {
       padding-bottom: 15px; }
     .library .sidebar-nav .title {
       padding: 5px 0 10px 0; }
-  .library .sidebar-nav.up {
-    max-height: 0; }
+  .library .sidebar-nav.down {
+    max-height: 450px; }
   .library .slide-up-toggle {
     background-color: #B02F06;
     text-align: center;
