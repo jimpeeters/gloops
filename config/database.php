@@ -55,7 +55,7 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => '127.0.0.1',
-            'database'  => 'c9',
+            'database'  => 'gloops',
             'username'  => 'root',
             'password'  => '',
             'charset'   => 'utf8',

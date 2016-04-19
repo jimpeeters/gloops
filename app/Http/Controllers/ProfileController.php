@@ -91,8 +91,8 @@ class ProfileController extends Controller
         {
             // Delete current picture
             $userAvatarPath = $user->avatar;
-            $imagePath = str_replace('\\', '/', $userAvatarPath);
-            unlink(base_path().'\public'.$imagePath); 
+            $imagePath = str_replace('/', '\\', $userAvatarPath);
+            unlink(base_path().'\\public'.$imagePath); 
 
             // Save new picture
             $file = $request->file('file');

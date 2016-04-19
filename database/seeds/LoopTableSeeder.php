@@ -51,7 +51,7 @@ class LoopTableSeeder extends Seeder
 
 		array(
 				'name' => 'Guitar Rumbles',
-				'loop_path' => '/loops/main/loop-6.mp3',
+				'loop_path' => '/loops/main/loop-6.ogg',
 				'FK_category_id' => '1',
 				'FK_user_id' => '1'
 			),

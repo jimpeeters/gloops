@@ -6,6 +6,9 @@ gloopsApp.controller('LoopController', ['$scope', '$http', function($scope, $htt
         music.preload = "auto";
         var playBtnIcon = $event.target;
         var duration = $event.currentTarget.parentElement.nextElementSibling.children[1];
+        
+        console.log(music.currentSrc);
+ 
 
         if (music.paused) {
             music.play();
