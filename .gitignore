@@ -1,25 +1,16 @@
 /vendor
 /node_modules
 .env
-
-#temporary ignore 
-
 public/video/*
 public/loops/uploads
-
-#need to be compiled with gulp 
-
-/public/css/style.css
-/public/css/style.css.map
-/public/js/angular/app.js
-/public/js/angular/app.js.map
-/public/js/jquery.js
-/public/js/jquery.js.map
-/public/js/angular/controllers/controllers.js
-/public/js/angular/controllers/controllers.js.map
-/public/js/angular/directives/directives.js
-/public/js/angular/directives/directives.js.map
-
-
-#database file for different hosts
-/config/database.php
+public/css/style.css
+public/css/style.css.map
+public/js/angular/app.js
+public/js/angular/app.js.map
+public/js/jquery.js
+public/js/jquery.js.map
+public/js/angular/controllers/controllers.js
+public/js/angular/controllers/controllers.js.map
+public/js/angular/directives/directives.js
+public/js/angular/directives/directives.js.map
+config/database.php
