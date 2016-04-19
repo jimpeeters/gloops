@@ -1,10 +1,15 @@
 .library {
     .title-section {
         background-image: url('/images/library.jpg');
+        margin-bottom: 0;
     }
 
     .sidebar {
         padding: 0;
+    }
+    
+    .sidebar-nav.mobile {
+        max-height: 0;
     }
 
     .sidebar-nav {
@@ -12,7 +17,6 @@
         padding: 0 0 0 15px;
         background-color: $lightblack;
         margin-bottom: 0;
-        max-height: 0;
         transition: max-height 1s ease-out, padding 1s ease-out;
         overflow: hidden;
 

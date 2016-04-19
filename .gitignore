@@ -21,3 +21,7 @@ public/js/angular/controllers/controllers.js
 public/js/angular/controllers/controllers.js.map
 public/js/angular/directives/directives.js
 public/js/angular/directives/directives.js.map
+
+
+#database file for different hosts
+config/database.php

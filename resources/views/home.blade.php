@@ -50,17 +50,17 @@
 	</div>
 
 	<section class="information">
-		<div class="col-xs-12 col-sm-4">
+		<div class="col-xs-12 col-sm-4 information-record">
 			<center><i class="fa fa-microphone fa-5x" aria-hidden="true"></i></center>
 			<p>Start by <strong>recording</strong> or <strong>uploading</strong> your guitar loops in your own loop <strong>station</strong>, where you can manage all your personal loops.</p>
 		</div>
 
-		<div class="col-xs-12 col-sm-4">
+		<div class="col-xs-12 col-sm-4 information-library">
 			<center><i class="fa fa-music fa-5x" aria-hidden="true"></i></center>
 			<p>Your guitar loops will end up in the gloops <strong>library</Strong>. Here you can listen and <strong>favourite</strong> as many guitar loops as you want.</p>
 		</div>
 
-		<div class="col-xs-12 col-sm-4">
+		<div class="col-xs-12 col-sm-4 information-reputation">
 			<center><i class="fa fa-bolt fa-5x" aria-hidden="true"></i></center>
 			<p>Gain <strong>reputation</strong> when people favourite your loops. That way you will distinguish yourself from a regular user in the community.</p>
 		</div>
@@ -109,9 +109,6 @@
 			<p ng-repeat="tag in loop.tags"><span class="label"><i class="fa fa-tag"></i> <% tag.name %></span></p>
 		</div>
 	</div>
-
 </div>
-
-
 
 @stop

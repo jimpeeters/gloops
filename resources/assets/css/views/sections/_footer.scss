@@ -67,7 +67,7 @@
     }
 }
 
-.leg-left , .leg-right {
+.legs {
     display: none;
 }
 
@@ -106,9 +106,12 @@
 			} 
 		}
 	}
+	
+	.legs {
+		display: block;
+	}
 
 	.leg-left , .leg-right {
-		display: block;
 		height:15px;
 	    width:40px;
 	    border-radius: 0 0 10px 10px;

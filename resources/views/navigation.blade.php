@@ -2,7 +2,7 @@
 <div class="row header">
         <div class="col-xs-4">
             <a href="/">
-             <img class="logo" src="images/logo.png" alt="Gloops Logo">
+             <img class="logo" src="images/Logo.png" alt="Gloops Logo">
             </a>
         </div>
 </div>
@@ -12,7 +12,7 @@
         <div class="col-xs-2">
             <!-- Library -->
             <div class="center-content">
-                <a href="{{ route('library') }}" class="turn-button tick"></a>
+                <a href="{{ route('library') }}" class="turn-button tick {{{ (Request::is('library') ? 'on' : '') }}}"></a>
                 <p>Library</p>
             </div>
 
@@ -20,14 +20,14 @@
         <div class="col-xs-2">
             <!-- My Loops -->
             <div class="center-content">
-                <a href="{{ route('station') }}" class="turn-button tick"></a>
+                <a href="{{ route('station') }}" class="turn-button tick {{{ (Request::is('station') ? 'on' : '') }}}"></a>
                 <p>Station</p>
             </div>
         </div>
         <div class="col-xs-2">
             <!-- My Account -->
             <div class="center-content">
-                <a href="{{ route('profile') }}" class="turn-button tick"></a>
+                <a href="{{ route('profile') }}" class="turn-button tick {{{ (Request::is('profile') ? 'on' : '') }}}"></a>
                 <p>Profile</p>
             </div>
         </div>

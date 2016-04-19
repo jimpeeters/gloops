@@ -150,23 +150,11 @@
 		width: 120px;
 	}
 
-	.navigation #login-text{
-		padding: 0 5px;
-	}
-}
-
-@media only screen and (min-width : $screen-desktop-s) {
-
-	.header-decoration {
-		height: 30px;
-    	width: 600px;
-	}
-
-
 	.navigation {
 		.center-content {
 			p {
 				font-size: 22px;
+				margin-top: 5px;
 			}
 
 			#login-text {
@@ -184,6 +172,14 @@
 		#search-input[placeholder]{
 			font-size: 16px;
 		}
+	}
+}
+
+@media only screen and (min-width : $screen-desktop-s) {
+
+	.header-decoration {
+		height: 30px;
+    	width: 600px;
 	}
 }
 

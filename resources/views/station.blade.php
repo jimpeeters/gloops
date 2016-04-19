@@ -117,8 +117,8 @@
 			<h2 class="block-title"><i class="fa fa-plus-square-o"></i> Add more loops</h2>
 		</div>
 
-		<div class="col-xs-12 col-sm-6">
-				<h4 class="block-title upload">Upload</h4>
+		<div class="col-xs-12 col-sm-6 upload-section">
+				<h4 class="block-title">Upload</h4>
 				{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true)) !!}
 					<div class="form-group">
 						{!! Form::label('name', 'Name') !!}

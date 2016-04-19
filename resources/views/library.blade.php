@@ -9,9 +9,9 @@
 	<div class="title-section">
 		<h1>LIBRARY</h1>
 	</div>
-
-	<div class="col-xs-12 col-sm-2 sidebar">
-        <ul class="sidebar-nav" ng-class="{ 'down' : !sidebarUp }">
+	
+	<div class="col-sm-2 hidden-xs sidebar">
+	   <ul class="sidebar-nav">
         	<li class="title">
         		<p>General</p>
         	</li>
@@ -20,6 +20,57 @@
             </li>
             <li>
                 <a href="" ng-click="sortParameter = created_at">Most recent</a>
+            </li>
+            <li>
+                <a href="">Your loops</a>
+            </li>
+            <li class="title">
+                <p>Category</p>
+            </li>
+            <li>
+                <input type="checkbox" name="checkboxG1" id="checkboxG1" class="css-checkbox" ng-click="includeCategory('Blues')"/>
+                <label for="checkboxG1" class="css-label">Blues</label>
+            </li>
+            <li>
+                <input type="checkbox" name="checkboxG2" id="checkboxG2" class="css-checkbox" ng-click="includeCategory('Pop')"/>
+                <label for="checkboxG2" class="css-label">Pop</label>
+            </li>
+            <li>
+                <input type="checkbox" name="checkboxG3" id="checkboxG3" class="css-checkbox" ng-click="includeCategory('Rock')"/>
+                <label for="checkboxG3" class="css-label">Rock</label>
+            </li>
+            <li>
+                <input type="checkbox" name="checkboxG4" id="checkboxG4" class="css-checkbox" ng-click="includeCategory('Country')"/>
+                <label for="checkboxG4" class="css-label">Country</label>
+            </li>
+            <li>
+                <input type="checkbox" name="checkboxG5" id="checkboxG5" class="css-checkbox" ng-click="includeCategory('Flamenco')"/>
+                <label for="checkboxG5" class="css-label">Flamenco</label>
+            </li>
+            <li>
+                <input type="checkbox" name="checkboxG6" id="checkboxG6" class="css-checkbox" ng-click="includeCategory('Alternative')"/>
+                <label for="checkboxG6" class="css-label">Alternative</label>
+            </li>
+            <li>
+                <input type="checkbox" name="checkboxG7" id="checkboxG7" class="css-checkbox" ng-click="includeCategory('Punk')"/>
+                <label for="checkboxG7" class="css-label">Punk</label>
+            </li>
+        </ul>
+	</div>
+
+	<div class="col-xs-12 hidden-sm hidden-md hidden-lg sidebar">
+        <ul class="sidebar-nav mobile" ng-class="{ 'down' : !sidebarUp }">
+        	<li class="title">
+        		<p>General</p>
+        	</li>
+            <li>
+                <a href="">Most popular</a>
+            </li>
+            <li>
+                <a href="" ng-click="sortParameter = created_at">Most recent</a>
+            </li>
+            <li>
+                <a href="">Your loops</a>
             </li>
             <li class="title">
                 <p>Category</p>

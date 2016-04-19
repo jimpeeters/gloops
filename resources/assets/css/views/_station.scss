@@ -27,20 +27,23 @@
 
 	/* Large Devices, Wide Screens */
 	@media only screen and (min-width : $screen-desktop-l) {
-		.form-control {
-			width: 70%;
-		}
-
-		.file-upload-input {
-			width: 40%;
-		}
-
-		.file-upload-button {
-			width: 30%;
-		}
-
-		.upload-button {
-			width: 70%;
+		
+		.upload-section {
+			.form-control {
+				width: 70%;
+			}
+	
+			.file-upload-input {
+				width: 40%;
+			}
+	
+			.file-upload-button {
+				width: 30%;
+			}
+	
+			.upload-button {
+				width: 70%;
+			}
 		}
 
 	}

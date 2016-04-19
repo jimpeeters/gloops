@@ -68,10 +68,10 @@
 			strong {
 				color: $red;
 			}
-
-			&:last-child {
-				margin-bottom: 0;
-			}
+		}
+		
+		.information-reputation p {
+			margin-bottom: 0;
 		}
 	}
 

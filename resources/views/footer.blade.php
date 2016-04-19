@@ -49,7 +49,7 @@
 			<p class="copyright-text">&copy; 2013 Studio6, Inc. All rights reserved</p>
 		</div>
 </div>
-<div class="row">
+<div class="legs row">
 	<div class="col-xs-12">
 		<div class="leg-left"></div>
 		<div class="leg-right"></div>
