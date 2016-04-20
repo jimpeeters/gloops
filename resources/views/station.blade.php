@@ -157,7 +157,7 @@
 
 		<div class="col-xs-12 col-sm-6">
 			<h4 class="block-title">Record</h4>
-			<!--     Record section      -->
+			<p>Coming soon...</p>
 		</div>
 
 	@else

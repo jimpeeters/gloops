@@ -41,11 +41,21 @@ gloopsApp.controller('LibraryController', ['$scope', '$http', function($scope, $
         return loop;
     }
 
-    // Order by
-    $scope.sortParameter = '';
+    // Order by most recent
+    $scope.mostRecent = false;
 
     // Load more button
     $scope.loopLimit = 9;
+    
+    // Category toggles
+    $scope.categoryBlues = false;
+    $scope.categoryPop = false;
+    $scope.categoryRock = false;
+    $scope.categoryCountry = false;
+    $scope.categoryFlamenco = false;
+    $scope.categoryAlternative = false;
+    $scope.categoryPunk = false;
+    
     
     /*    //Get user 
     $scope.getUser = function() {

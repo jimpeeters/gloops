@@ -21,22 +21,26 @@
         overflow: hidden;
 
         li {
+            padding-bottom: 5px;
+            
+            i, a {
+                color: $red;
+                display: inline-block;
+            }
+            
+            i {
+                font-size: 1.4em;
+                padding-right: 2px;
+            }
 
             a {
-                display: block;
                 text-decoration: none;
-                color: $red;
+                font-size: 1.2em;
 
                 &:hover{
                     text-decoration: underline;
+                    cursor: pointer;
                 }
-            }
-
-            p {
-                text-decoration: underline;
-                margin: 0;
-                color: white;
-                font-size: 1.2em;
             }
 
             &:first-child{
@@ -51,6 +55,13 @@
 
         .title {
             padding: 5px 0 10px 0; 
+            color: $white;
+            font-family: AUdimatBold;
+            text-decoration: underline;
+            
+            p {
+                font-size: 1.5em;
+            }
         }
     }
 

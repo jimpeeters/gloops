@@ -48,3 +48,4 @@ elixir.Task.find('sass').watch('./resources/assets/css/**/*.scss');
 
 
 //console.log(elixir);
+// run gulp scripts and gulp sass

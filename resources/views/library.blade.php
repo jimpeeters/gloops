@@ -16,44 +16,57 @@
         		<p>General</p>
         	</li>
             <li>
+                <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i class="fa fa-square-o" aria-hidden="true"></i>
                 <a href="">Most popular</a>
             </li>
             <li>
-                <a href="" ng-click="sortParameter = created_at">Most recent</a>
+                <i ng-click="mostRecent = !mostRecent" ng-show="mostRecent" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="mostRecent = !mostRecent" ng-show="!mostRecent" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="mostRecent = !mostRecent"  ng-class="{ 'underline' : mostRecent }">Most recent</a>
             </li>
             <li>
+                <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i class="fa fa-square-o" aria-hidden="true"></i>
                 <a href="">Your loops</a>
             </li>
             <li class="title">
                 <p>Category</p>
             </li>
             <li>
-                <input type="checkbox" name="checkboxG1" id="checkboxG1" class="css-checkbox" ng-click="includeCategory('Blues')"/>
-                <label for="checkboxG1" class="css-label">Blues</label>
+                <i ng-click="categoryBlues = !categoryBlues; includeCategory('Blues')" ng-show="categoryBlues" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="categoryBlues = !categoryBlues; includeCategory('Blues')" ng-show="!categoryBlues" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryBlues = !categoryBlues; includeCategory('Blues')" ng-class="{ 'underline' : categoryBlues }">Blues</a>
             </li>
             <li>
-                <input type="checkbox" name="checkboxG2" id="checkboxG2" class="css-checkbox" ng-click="includeCategory('Pop')"/>
-                <label for="checkboxG2" class="css-label">Pop</label>
+                <i ng-click="categoryPop = !categoryPop; includeCategory('Pop')" ng-show="categoryPop" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="categoryPop = !categoryPop; includeCategory('Pop')" ng-show="!categoryPop" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryPop = !categoryPop; includeCategory('Pop')" ng-class="{ 'underline' : categoryPop }">Pop</a>
             </li>
             <li>
-                <input type="checkbox" name="checkboxG3" id="checkboxG3" class="css-checkbox" ng-click="includeCategory('Rock')"/>
-                <label for="checkboxG3" class="css-label">Rock</label>
+                <i ng-click="categoryRock = !categoryRock; includeCategory('Rock')" ng-show="categoryRock" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="categoryRock = !categoryRock; includeCategory('Rock')" ng-show="!categoryRock" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryRock = !categoryRock; includeCategory('Rock')" ng-class="{ 'underline' : categoryRock }">Rock</a>
             </li>
             <li>
-                <input type="checkbox" name="checkboxG4" id="checkboxG4" class="css-checkbox" ng-click="includeCategory('Country')"/>
-                <label for="checkboxG4" class="css-label">Country</label>
+                <i ng-click="categoryCountry = !categoryCountry; includeCategory('Country')" ng-show="categoryCountry" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="categoryCountry = !categoryCountry; includeCategory('Country')" ng-show="!categoryCountry" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryCountry = !categoryCountry; includeCategory('Country')" ng-class="{ 'underline' : categoryCountry }">Country</a>
             </li>
             <li>
-                <input type="checkbox" name="checkboxG5" id="checkboxG5" class="css-checkbox" ng-click="includeCategory('Flamenco')"/>
-                <label for="checkboxG5" class="css-label">Flamenco</label>
+                <i ng-click="categoryFlamenco = !categoryFlamenco; includeCategory('Flamenco')" ng-show="categoryFlamenco" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="categoryFlamenco = !categoryFlamenco; includeCategory('Flamenco')" ng-show="!categoryFlamenco" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryFlamenco = !categoryFlamenco; includeCategory('Flamenco')" ng-class="{ 'underline' : categoryFlamenco }">Flamenco</a>
             </li>
             <li>
-                <input type="checkbox" name="checkboxG6" id="checkboxG6" class="css-checkbox" ng-click="includeCategory('Alternative')"/>
-                <label for="checkboxG6" class="css-label">Alternative</label>
+                <i ng-click="categoryAlternative = !categoryAlternative; includeCategory('Alternative')" ng-show="categoryAlternative" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="categoryAlternative = !categoryAlternative; includeCategory('Alternative')" ng-show="!categoryAlternative" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryAlternative = !categoryAlternative; includeCategory('Alternative')" ng-class="{ 'underline' : categoryAlternative }">Alternative</a>
             </li>
             <li>
-                <input type="checkbox" name="checkboxG7" id="checkboxG7" class="css-checkbox" ng-click="includeCategory('Punk')"/>
-                <label for="checkboxG7" class="css-label">Punk</label>
+                <i ng-click="categoryPunk = !categoryPunk; includeCategory('Punk')" ng-show="categoryPunk" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="categoryPunk = !categoryPunk; includeCategory('Punk')" ng-show="!categoryPunk" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryPunk = !categoryPunk; includeCategory('Punk')" ng-class="{ 'underline' : categoryPunk }">Punk</a>
             </li>
         </ul>
 	</div>
@@ -64,44 +77,57 @@
         		<p>General</p>
         	</li>
             <li>
+                <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i class="fa fa-square-o" aria-hidden="true"></i>
                 <a href="">Most popular</a>
             </li>
             <li>
-                <a href="" ng-click="sortParameter = created_at">Most recent</a>
+                <i ng-click="mostRecent = !mostRecent" ng-show="mostRecent" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="mostRecent = !mostRecent" ng-show="!mostRecent" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="mostRecent = !mostRecent" ng-class="{ 'underline' : mostRecent }">Most recent</a>
             </li>
             <li>
+                <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i class="fa fa-square-o" aria-hidden="true"></i>
                 <a href="">Your loops</a>
             </li>
             <li class="title">
                 <p>Category</p>
             </li>
             <li>
-                <input type="checkbox" name="checkboxG1" id="checkboxG1" class="css-checkbox" ng-click="includeCategory('Blues')"/>
-                <label for="checkboxG1" class="css-label">Blues</label>
+                <i ng-click="categoryBlues = !categoryBlues; includeCategory('Blues')" ng-show="categoryBlues" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="categoryBlues = !categoryBlues; includeCategory('Blues')" ng-show="!categoryBlues" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryBlues = !categoryBlues; includeCategory('Blues')" ng-class="{ 'underline' : categoryBlues }">Blues</a>
             </li>
             <li>
-                <input type="checkbox" name="checkboxG2" id="checkboxG2" class="css-checkbox" ng-click="includeCategory('Pop')"/>
-                <label for="checkboxG2" class="css-label">Pop</label>
+                <i ng-click="categoryPop = !categoryPop; includeCategory('Pop')" ng-show="categoryPop" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="categoryPop = !categoryPop; includeCategory('Pop')" ng-show="!categoryPop" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryPop = !categoryPop; includeCategory('Pop')" ng-class="{ 'underline' : categoryPop }">Pop</a>
             </li>
             <li>
-                <input type="checkbox" name="checkboxG3" id="checkboxG3" class="css-checkbox" ng-click="includeCategory('Rock')"/>
-                <label for="checkboxG3" class="css-label">Rock</label>
+                <i ng-click="categoryRock = !categoryRock; includeCategory('Rock')" ng-show="categoryRock" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="categoryRock = !categoryRock; includeCategory('Rock')" ng-show="!categoryRock" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryRock = !categoryRock; includeCategory('Rock')" ng-class="{ 'underline' : categoryRock }">Rock</a>
             </li>
             <li>
-                <input type="checkbox" name="checkboxG4" id="checkboxG4" class="css-checkbox" ng-click="includeCategory('Country')"/>
-                <label for="checkboxG4" class="css-label">Country</label>
+                <i ng-click="categoryCountry = !categoryCountry; includeCategory('Country')" ng-show="categoryCountry" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="categoryCountry = !categoryCountry; includeCategory('Country')" ng-show="!categoryCountry" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryCountry = !categoryCountry; includeCategory('Country')" ng-class="{ 'underline' : categoryCountry }">Country</a>
             </li>
             <li>
-                <input type="checkbox" name="checkboxG5" id="checkboxG5" class="css-checkbox" ng-click="includeCategory('Flamenco')"/>
-                <label for="checkboxG5" class="css-label">Flamenco</label>
+                <i ng-click="categoryFlamenco = !categoryFlamenco; includeCategory('Flamenco')" ng-show="categoryFlamenco" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="categoryFlamenco = !categoryFlamenco; includeCategory('Flamenco')" ng-show="!categoryFlamenco" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryFlamenco = !categoryFlamenco; includeCategory('Flamenco')" ng-class="{ 'underline' : categoryFlamenco }">Flamenco</a>
             </li>
             <li>
-                <input type="checkbox" name="checkboxG6" id="checkboxG6" class="css-checkbox" ng-click="includeCategory('Alternative')"/>
-                <label for="checkboxG6" class="css-label">Alternative</label>
+                <i ng-click="categoryAlternative = !categoryAlternative; includeCategory('Alternative')" ng-show="categoryAlternative" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="categoryAlternative = !categoryAlternative; includeCategory('Alternative')" ng-show="!categoryAlternative" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryAlternative = !categoryAlternative; includeCategory('Alternative')" ng-class="{ 'underline' : categoryAlternative }">Alternative</a>
             </li>
             <li>
-                <input type="checkbox" name="checkboxG7" id="checkboxG7" class="css-checkbox" ng-click="includeCategory('Punk')"/>
-                <label for="checkboxG7" class="css-label">Punk</label>
+                <i ng-click="categoryPunk = !categoryPunk; includeCategory('Punk')" ng-show="categoryPunk" class="fa fa-check-square-o" aria-hidden="true"></i>
+                <i ng-click="categoryPunk = !categoryPunk; includeCategory('Punk')" ng-show="!categoryPunk" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryPunk = !categoryPunk; includeCategory('Punk')" ng-class="{ 'underline' : categoryPunk }">Punk</a>
             </li>
         </ul>
         <div class="slide-up-toggle" ng-click="sidebarUp = !sidebarUp">
@@ -112,7 +138,7 @@
     </div>
     <div class="col-xs-12 col-sm-10 loops">
     	<div class="row">
-			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | filter:categoryFilter | limitTo:loopLimit" ng-init="isFavourite=loop.isFavourite">
+			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | filter:categoryFilter | orderBy: '-created_at':mostRecent | limitTo:loopLimit" ng-init="isFavourite=loop.isFavourite">
 				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite }">
 				  	<div class="col-xs-2">
 				    	<a class="play-button" ng-click="playLoop($event)">
