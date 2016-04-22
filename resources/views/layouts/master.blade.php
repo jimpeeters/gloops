@@ -21,11 +21,14 @@
 
 <body>
 
-    <div class="container">
+    <div class="container" ng-controller="MainController">
         <!-- Header -->
         @include('navigation')
+        
+        <!-- Overheating reward -->
+        @include('reward-modals.overheating')
 
-        <div class="row content">
+        <div class="row content" ng-class="{ 'overheating' : isOverheating() }">
 
         	@yield('content')
 
@@ -56,6 +59,7 @@
 <!-- Custom angular -->
 <!-- <script type="text/javascript" src="{{asset('/js/modules.js')}}"></script> -->
 <script type="text/javascript" src="{{asset('/js/angular/app.js')}}"></script>
+<script type="text/javascript" src="{{asset('/js/angular/services/services.js')}}"></script>
 <script type="text/javascript" src="{{asset('/js/angular/directives/directives.js')}}"></script>
 <script type="text/javascript" src="{{asset('/js/angular/controllers/controllers.js')}}"></script>
 

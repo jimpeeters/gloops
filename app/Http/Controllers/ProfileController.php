@@ -106,4 +106,24 @@ class ProfileController extends Controller
         return Redirect::back()->with('success','Your profile has been successfully changed!');
     }
     
+    public function earnOverheatingReward() 
+    {
+        if(Auth::check())
+        {
+            $thisUser = User::with('loops');
+            $user = Auth::user();
+            
+            if($user->earnedReward1 == false)
+            {
+                $user->earnedReward1 = true;
+                $currentRating = $user->rating;
+                $newRating = $currentRating + 10;
+                $user->rating = $newRating;
+                $user->save();
+            }
+            
+            return redirect()->route('profile')->with('user', $thisUser)->with('success','You have gained 10 rating with the overheating reward!');
+        }
+    }
+    
 }

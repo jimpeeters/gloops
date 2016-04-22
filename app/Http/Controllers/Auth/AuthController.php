@@ -192,6 +192,9 @@ class AuthController extends Controller
         $user->email    = $input['email'];
         $user->rating = 0;
         $user->rank = 1;
+        
+        //rewards
+        $user->earnedReward1 = false;
 
         /* if($request->has('facebook'))
         {

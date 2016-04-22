@@ -7,7 +7,7 @@
         </div>
 </div>
 
-<div class="row navigation">
+<div class="row navigation" ng-class="{ 'overheating' : isOverheating() }">
 
         <div class="col-xs-2">
             <!-- Library -->

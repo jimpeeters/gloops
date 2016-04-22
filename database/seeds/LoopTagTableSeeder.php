@@ -144,6 +144,16 @@ class LoopTagTableSeeder extends Seeder {
 				'FK_loop_id' => '12',
 				'FK_tag_id' => '14'
 			),
+			
+		array(
+				'FK_loop_id' => '13',
+				'FK_tag_id' => '1'
+			),
+			
+		array(
+				'FK_loop_id' => '13',
+				'FK_tag_id' => '9'
+			),
 
 		);
 

@@ -28,9 +28,13 @@ elixir(function(mix) {
     mix.scripts([
        'jquery/searchbarHide.js','jquery/loginModalActions.js','jquery/chosenSelect.js','jquery/tooltip.js','jquery/fileUpload.js'
     ], 'public/js/jquery.js');
+    
+    mix.scripts([
+        'services/RewardService.js'
+    ], 'public/js/angular/services/services.js');
 
     mix.scripts([
-    	'controllers/LoopController.js','controllers/AlertController.js', 'controllers/LibraryController.js', 'controllers/StationController.js', 'controllers/ProfileController.js', 'controllers/HomeController.js'
+    	'controllers/LoopController.js','controllers/AlertController.js', 'controllers/LibraryController.js', 'controllers/StationController.js', 'controllers/ProfileController.js', 'controllers/HomeController.js', 'controllers/MainController.js'
     ], 'public/js/angular/controllers/controllers.js');
 
     mix.scripts([

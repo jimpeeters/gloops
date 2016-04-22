@@ -111,10 +111,10 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST',
-				'loop_path' => '/loops/main/loop-9.mp3',
+				'name' => 'Always Gold',
+				'loop_path' => '/loops/main/loop-13.wav',
 				'FK_category_id' => '6',
-				'FK_user_id' => '2',
+				'FK_user_id' => '1',
 				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 

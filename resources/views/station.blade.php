@@ -61,7 +61,7 @@
 					<i class="fa fa-trash"></i>
 				</a>
 			  	<div class="col-xs-2 loopbox-section">
-			    	<a class="play-button" ng-click="playLoop($event)">
+			    	<a class="play-button" ng-click="playLoop($event);">
 			      		<i class="fa fa-play"></i>
 			   		</a>
 				    <audio class="music" controls preload loop>

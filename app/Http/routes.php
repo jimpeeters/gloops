@@ -45,6 +45,12 @@ Route::group(['middleware' => ['web']], function () {
 
 		//Update a user
 		Route::post('/profile/update', array('as' => 'updateUser', 'uses' => 'ProfileController@update'));
+		
+		//Earn a reward
+		Route::get('/profile/reward/overheating', array('as' => 'overheating', 'uses' => 'ProfileController@earnOverheatingReward'));
+		
+		//Profile page
+		Route::get('/profile', array('as' => 'profile', 'uses' => "ProfileController@index"));
 
 	});
 
@@ -84,8 +90,5 @@ Route::group(['middleware' => ['web']], function () {
 
 	//Get user
 	Route::get('/getuser', 'UserController@getUser');
-
-	//Profile page
-	Route::get('/profile', array('as' => 'profile', 'uses' => "ProfileController@index"));
 
 });

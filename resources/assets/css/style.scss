@@ -33,7 +33,7 @@
 // Sections
 @import "views/sections/navigation";
 @import "views/sections/footer";
-@import "views/sections/login";
+@import "views/sections/modal";
 @import "views/sections/title";
 
 // Views
@@ -43,6 +43,19 @@
 @import "views/profile";
 
 //helper classes ----------------
+
+//Overheating
+.content.overheating, .navigation.overheating {
+  animation-duration: 1s;
+	animation-name: overheating;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes overheating {
+      0%   {background-color: $beige;}
+	  100%  {background-color: lighten($red,45);}
+}
 
 .underline {
   text-decoration: underline !important;

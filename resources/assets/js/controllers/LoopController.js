@@ -1,4 +1,4 @@
-gloopsApp.controller('LoopController', ['$scope', '$http', function($scope, $http) {
+gloopsApp.controller('LoopController', ['$scope', '$http', 'RewardService', function($scope, $http, RewardService) {
 
     $scope.playLoop = function($event) {
 
@@ -7,17 +7,20 @@ gloopsApp.controller('LoopController', ['$scope', '$http', function($scope, $htt
         var playBtnIcon = $event.target;
         var duration = $event.currentTarget.parentElement.nextElementSibling.children[1];
         
-        console.log(music.currentSrc);
- 
-
         if (music.paused) {
             music.play();
             playBtnIcon.className = "fa fa-pause";
+            
+            // Increase overheating (reward)
+            RewardService.increaseOverheating();
 
         } 
         else { 
             music.pause();
             playBtnIcon.className = "fa fa-play";
+            
+            // Decrease overheating (reward)
+            RewardService.decreaseOverheating();
         }
 
         function pad(n) {
