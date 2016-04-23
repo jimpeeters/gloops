@@ -217,11 +217,15 @@ class AuthController extends Controller
             $file->move(base_path().'/public/images/profilePictures/',$imageName);
             $user->avatar = '/images/profilePictures/'.$imageName;
         }
+        else
+        {
+            $user->avatar = 'images/profilePictures/default.png';
+        }
 
         $user->save();
         Auth::login($user);
         
-        return Redirect::back()->with('success','Thank you for registering to gloops, you can start recording guitar loops right now!');
+        return redirect()->route('home')->with('success','Thank you for registering to gloops, you can start recording guitar loops right now!');
     }
 
     public function login(request $request)
