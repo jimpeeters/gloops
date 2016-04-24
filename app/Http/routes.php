@@ -48,12 +48,11 @@ Route::group(['middleware' => ['web']], function () {
 		
 		//Earn a reward
 		Route::get('/profile/reward/overheating', array('as' => 'overheating', 'uses' => 'ProfileController@earnOverheatingReward'));
-		
-		//Profile page
-		Route::get('/profile', array('as' => 'profile', 'uses' => "ProfileController@index"));
 
 	});
 
+	//Profile page
+	Route::get('/profile', array('as' => 'profile', 'uses' => "ProfileController@index"));
 
     //Facebook login
     Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
@@ -67,6 +66,9 @@ Route::group(['middleware' => ['web']], function () {
 
 	//Login
 	Route::post('/login', array('as' => 'login', 'uses' => 'Auth\AuthController@login'));
+
+	//Login (with modal)
+	Route::post('/login/modal', array('as' => 'loginModal', 'uses' => 'Auth\AuthController@loginModal'));
 
 	//Uitloggen
 	Route::get('auth/logout', array('as' => 'getLogout','uses' => 'Auth\AuthController@getLogout'));

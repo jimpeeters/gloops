@@ -158,8 +158,7 @@ class AuthController extends Controller
             'validLocation' => 'accepted'
         ]);
     }*/
-
-       $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'name'         => 'required|max:100|min:2',
             'password'      => 'required|confirmed|min:6',
             'email'         => 'email|required|unique:users,email',
@@ -180,7 +179,12 @@ class AuthController extends Controller
                         ->withErrors($validator)
                         ->withInput();
             }*/
+
+            // To toggle register view in station and profile
+            $registerMessages = '';
+
             return redirect()->back()
+                        ->with('registerMessages', $registerMessages)
                         ->withErrors($validator)
                         ->withInput();
         }
@@ -228,17 +232,64 @@ class AuthController extends Controller
         return redirect()->route('home')->with('success','Thank you for registering to gloops, you can start recording guitar loops right now!');
     }
 
+    // Login from normal page
     public function login(request $request)
     {   
+        $validator = Validator::make($request->all(), [
+            'email'         => 'required|email',
+            'password'      => 'required'
+        ]);
+
         $input = $request->all();
 
-        if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']]))
+        if ($validator->fails()) 
         {
-            return Redirect::back();
+            // If validator fails
+            return Redirect::back()->withErrors($validator)->withInput();                                                             
         }
         else
+        {            
+            if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']]))
+            {
+                // If login succeeds
+                return Redirect::back()->with('success','You have successfully logged in!');
+            }
+            else
+            {
+                // If login fails
+                return Redirect::back()->withErrors(array('Oops! The email or password you entered is incorrect.')); 
+            }
+        }
+    }
+
+    // Login from modal
+    public function loginModal(request $request)
+    {   
+        $validator = Validator::make($request->all(), [
+            'email'         => 'required|email',
+            'password'      => 'required'
+        ]);
+
+        $input = $request->all();
+        $loginModal = '';
+
+        if ($validator->fails()) 
         {
-            return Redirect::back()->with('loginFail', ['fail']);
+            // If validator fails
+            return Redirect::back()->withErrors($validator)->withInput()->with('loginModal', $loginModal);                                                             
+        }
+        else
+        {            
+            if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']]))
+            {
+                // If login succeeds
+                return Redirect::back()->with('success','You have successfully logged in!');
+            }
+            else
+            {
+                // If login fails
+                return Redirect::back()->withErrors(array('Oops! The email or password you entered is incorrect.'))->with('loginModal', $loginModal); 
+            }
         }
     }
 }

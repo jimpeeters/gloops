@@ -38,7 +38,17 @@
 
     </div>
 
+<!-- Jquery library -->
 <script src="{{asset('/js/libs/jquery.min.js')}}"></script>
+
+<!-- Open login modal with error messages -->
+@if(session()->has('loginModal'))
+    <script>
+        $(document).ready(function() {
+            $('#loginModal').modal('show');
+        });
+    </script>
+@endif
 
 <!-- Chosen Jquery -->
 <script type="text/javascript" src="{{asset('/js/libs/chosen.jquery.min.js')}}"></script>
