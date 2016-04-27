@@ -50,6 +50,9 @@
     </script>
 @endif
 
+<!-- Seamless loop library -->
+<script type="text/javascript" src="{{asset('/js/libs/seamlessLoop.js')}}"></script>
+
 <!-- Chosen Jquery -->
 <script type="text/javascript" src="{{asset('/js/libs/chosen.jquery.min.js')}}"></script>
 

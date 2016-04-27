@@ -1,6 +1,6 @@
 'use strict';
 
-//process.env.DISABLE_NOTIFIER = true;
+process.env.DISABLE_NOTIFIER = true;
 
 var elixir = require('laravel-elixir');
 var autoprefixer = require('gulp-autoprefixer'); //for browser compatibility

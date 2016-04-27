@@ -145,7 +145,7 @@
 				      		<i class="fa fa-play"></i>
 				   		</a>
 					    <audio class="music" controls preload loop>
-					      	<source src="<% loop.loop_path %>" type="audio/ogg">
+					      	<source src="<% loop.loop_path %>" type="audio/wav">
 					       	Your browser does not support the audio element.
 					    </audio>
 				  	</div>
