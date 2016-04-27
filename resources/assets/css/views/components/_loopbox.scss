@@ -68,8 +68,16 @@
 		}
 	}
 
-	.music {
-		display: none;
+	.gapless-block {
+		display: none !important;
+		
+		.g5position, .g5inside {
+			display: none;
+		}
+	}
+	
+	#transportbar, #g5buttons {
+		display: none !important;
 	}
 
 	.loop-title {

@@ -141,13 +141,10 @@
 			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | filter:categoryFilter | orderBy: '-created_at':mostRecent | limitTo:loopLimit" ng-init="isFavourite=loop.isFavourite">
 				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite }">
 				  	<div class="col-xs-2">
-				    	<a class="play-button" ng-click="playLoop($event)">
+				    	<a class="play-button" ng-click="playLoop(loop, $event)">
 				      		<i class="fa fa-play"></i>
 				   		</a>
-					    <audio class="music" controls preload loop>
-					      	<source src="<% loop.loop_path %>" type="audio/wav">
-					       	Your browser does not support the audio element.
-					    </audio>
+					    <div class="gapless-block" id="gapless_<% loop.id %>" /></div>
 				  	</div>
 				  	<div class="col-xs-7">
 				    	<h3 class="loop-title"><% loop.name %></h3>

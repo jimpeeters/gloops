@@ -76,10 +76,7 @@
 		    	<a class="play-button" ng-click="playLoop($event)">
 		      		<i class="fa fa-play"></i>
 		   		</a>
-			    <audio class="music" controls preload loop>
-			      	<source src="<% loop.loop_path %>" type="audio/mpeg">
-			       	Your browser does not support the audio element.
-			    </audio>
+			    <div class="gapless-block" id="gapless_<% loop.id %>" /></div>
 		  	</div>
 		  	<div class="col-xs-7">
 		    	<h3 class="loop-title"><% loop.name %></h3>
