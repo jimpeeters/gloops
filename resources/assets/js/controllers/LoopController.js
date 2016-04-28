@@ -6,16 +6,15 @@ gloopsApp.controller('LoopController', ['$scope', '$http', 'RewardService', func
 
     $scope.playLoop = function(loop, $event) {
         
-        var music = $event.currentTarget.nextElementSibling;
+        //var music = $event.currentTarget.nextElementSibling;
         var playBtnIcon = $event.target;
-        var duration = $event.currentTarget.parentElement.nextElementSibling.children[1];
+        //var duration = $event.currentTarget.parentElement.nextElementSibling.children[1];
         
         // If loop is not initialised yet
         if($scope.isInit == false) {
         
             $scope.player = new Gapless5("gapless_" + loop.id);
             $scope.player.loop = true;
-            debugger;
             $scope.player.addTrack(loop.loop_path);
             $scope.isInit = true;
         }
@@ -41,13 +40,13 @@ gloopsApp.controller('LoopController', ['$scope', '$http', 'RewardService', func
             RewardService.decreaseOverheating();
         }
         
-        function pad(n) {
+/*        function pad(n) {
             return (n < 10) ? ("0" + n) : n;
-        }
+        }*/
 
-        music.ontimeupdate = function() {
+/*        music.ontimeupdate = function() {
           duration.innerHTML = '0:' + pad(Math.round(music.currentTime));
-        }
+        }*/
         
         /*        this.getLength = function() { return endpos; }        */
 

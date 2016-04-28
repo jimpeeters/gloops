@@ -91,7 +91,7 @@
 
 				<div class="row loop-box favourite">
 				  	<div class="col-xs-2">
-				    	<a class="play-button" ng-click="playLoop($event)">
+				    	<a class="play-button" ng-click="playLoop(loop, $event)">
 				      		<i class="fa fa-play"></i>
 				   		</a>
 					    <div class="gapless-block" id="gapless_<% loop.id %>" /></div>
