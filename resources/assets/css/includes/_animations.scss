@@ -1,0 +1,41 @@
+// Overheating
+.content.overheating, .navigation.overheating {
+  animation-duration: 1s;
+	animation-name: overheating;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes overheating {
+      0%   {background-color: $beige;}
+	  100%  {background-color: lighten($red,45);}
+}
+
+// The starting CSS styles for the enter animation
+.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+// The finishing CSS styles for the enter animation 
+.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+// Now the element will fade out before it is removed from the DOM
+.ng-leave {
+  transition:0.5s linear all;
+  opacity:1;
+}
+.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.ng-enter-stagger {
+  // This will have a 100ms delay between each successive leave animation
+  transition-delay: 0.1s;
+
+  // As of 1.4.4, this must always be set: it signals ngAnimate
+  // to not accidentally inherit a delay property from another CSS class
+  transition-duration: 0s;
+}

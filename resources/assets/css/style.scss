@@ -1,17 +1,15 @@
 /*
  *
  * Project Essentials */
-//@import "includes/reset";
 @import "includes/variables";
-@import "includes/extends";
 @import "includes/fonts";
+@import "includes/helpers";
+@import "includes/animations";
 
 // Mixins
 @mixin text-shadow() {
 	text-shadow: 1px 1px 1px $black;
 }
-
-
 
 // Font-awesome
 @import "plugins/font-awesome";
@@ -19,7 +17,6 @@
 
 // UI Elements
 @import "ui/buttons";
-@import "ui/checkboxes";
 
 // Components
 @import "views/components/loopbox";
@@ -42,62 +39,39 @@
 @import "views/library";
 @import "views/profile";
 
-//helper classes ----------------
 
-//Overheating
-.content.overheating, .navigation.overheating {
-  animation-duration: 1s;
-	animation-name: overheating;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+// Font
+body {
+	font-family: AUdimat;
 }
 
-@keyframes overheating {
-      0%   {background-color: $beige;}
-	  100%  {background-color: lighten($red,45);}
+// Container 
+.container {
+	width: 100%;
+	
+	@media only screen and (min-width : $screen-phone) {
+    	width: 95%;
+    }
 }
 
-.underline {
-  text-decoration: underline !important;
-}
-
-//use font instead of font-weight
-strong {
-  font-weight: normal;
-  font-family: AUdimatBold;
-}
-
-//Center button
+// Center button
 .center-button {
 	display: block;
 	margin: 0 auto;
 }
 
-//bootstrap full screen
-.padding-0 {
-    padding: 0;
-}
-
-//font
-body{
-	font-family: AUdimat;
-}
-
-//guitar amp look
+// Guitar amp look
 .content {
 	background-color: $beige;
 	padding-bottom: 15px;
+	
+	@media only screen and (min-width : $screen-phone) {
+        border-left: 7px solid $black;
+        border-right: 7px solid $black;
+    }
 }
 
-@media only screen and (min-width : $screen-phone) {
-  .content {
-    border-left: 7px solid $black;
-    border-right: 7px solid $black;
-  }
-}
-
-
-//forms
+// Forms
 .form-control {
 	padding: 5px;
 	border: 2px solid $black;
@@ -110,65 +84,15 @@ body{
   box-shadow: none;
 }
 
-//container 
-.container {
-	width: 100%;
-}
-
-/* Extra Small Devices, Phones */ 
-@media only screen and (min-width : $screen-phone) {
-	.container {
-		width: 95%;
-	}
-}
-
-//Label
+// Label
 .label {
 	font-family: AUdimatBold;
 	width: 100%;
 	padding: .5em;
 }
 
-//tooltip styling
+// Tooltip styling
 .tooltip-inner {
     max-width: 200px;
     width: 200px; 
-}
-
-// Blue border
-button, a {
-	&:focus {
-		outline:0;
-	}
-}
-
-// Animations
-
-/* The starting CSS styles for the enter animation */
-.ng-enter {
-  transition:0.5s linear all;
-  opacity:0;
-}
-
-/* The finishing CSS styles for the enter animation */
-.ng-enter.ng-enter-active {
-  opacity:1;
-}
-
-/* now the element will fade out before it is removed from the DOM */
-.ng-leave {
-  transition:0.5s linear all;
-  opacity:1;
-}
-.ng-leave.ng-leave-active {
-  opacity:0;
-}
-
-.ng-enter-stagger {
-  /* this will have a 100ms delay between each successive leave animation */
-  transition-delay: 0.1s;
-
-  /* As of 1.4.4, this must always be set: it signals ngAnimate
-    to not accidentally inherit a delay property from another CSS class */
-  transition-duration: 0s;
 }

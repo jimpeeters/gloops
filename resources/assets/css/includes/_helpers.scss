@@ -1,0 +1,29 @@
+// Underline text
+.underline {
+  text-decoration: underline !important;
+}
+
+// Use font instead of font-weight
+strong {
+  font-weight: normal;
+  font-family: AUdimatBold;
+}
+
+// Bootstrap full screen
+.padding-0 {
+    padding: 0;
+}
+
+// Remove blue border outline
+button, a {
+	&:focus {
+		outline:0;
+	}
+}
+
+.truncate {
+  //width meegeven
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

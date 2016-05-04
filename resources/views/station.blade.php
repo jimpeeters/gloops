@@ -78,7 +78,7 @@
 			    		<div class="user-avatar" style="background-image: url(<% loop.user.avatar %>)"></div>
 			    		<p class="user-name"><% loop.user.name %></p>
 						<p class="rank-text">
-							<img class="rank-icon" src="images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>
+							<img class="rank-icon" ng-src="images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>
 						</p>
 			    	</div>
 			  	</div>
@@ -156,7 +156,9 @@
 
 		<div class="col-xs-12 col-sm-6">
 			<h4 class="block-title">Record</h4>
-			<p>Coming soon...</p>
+			<div class="col-xs-12">
+
+			</div>
 		</div>
 
 	@else

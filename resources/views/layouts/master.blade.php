@@ -59,7 +59,6 @@
 <!-- Custom Jquery -->
 <script type="text/javascript" src="{{asset('/js/jquery.js')}}"></script>
 
-<!-- <script src="js/libs/modernizr.min.js"></script> -->
 <!-- Angular -->
 <script type="text/javascript" src="{{asset('/js/libs/angular.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('/js/libs/angular-animate.min.js')}}"></script>
@@ -75,8 +74,6 @@
 <script type="text/javascript" src="{{asset('/js/angular/services/services.js')}}"></script>
 <script type="text/javascript" src="{{asset('/js/angular/directives/directives.js')}}"></script>
 <script type="text/javascript" src="{{asset('/js/angular/controllers/controllers.js')}}"></script>
-
-
 
 </body>
 </html>
