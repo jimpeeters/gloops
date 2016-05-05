@@ -25,18 +25,3 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
-
-bronnen : 
-
-https://github.com/nusofthq/Recordmp3js
-http://audior.ec/blog/recording-mp3-using-only-html5-and-javascript-recordmp3-js/
-https://github.com/daaain/JSSoundRecorder
-http://stackoverflow.com/questions/7330023/gapless-looping-audio-html5
-https://github.com/Hivenfour/SeamlessLoop
-https://forestmist.org/blog/html5-audio-loops
-https://bugzilla.mozilla.org/show_bug.cgi?id=654787
-https://github.com/regosen/Gapless-5
-http://stackoverflow.com/questions/36720440/how-can-i-remove-the-gap-when-the-song-replays-in-the-html-audio-tag
-https://p5js.org/examples/examples/Sound__Record_Save_Audio.php
-
-http://logbon72.github.io/angular-recorder/

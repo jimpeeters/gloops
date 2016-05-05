@@ -66,6 +66,7 @@
         </div>
 </div>
 
-<!-- Register modal -->
-
-@include('auth.login')
+<!-- Login modal -->
+@if(!Request::is('record'))
+    @include('auth.login')
+@endif

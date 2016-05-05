@@ -26,7 +26,7 @@ elixir(function(mix) {
     ], 'public/js/angular/app.js');
 
     mix.scripts([
-       'jquery/searchbarHide.js','jquery/chosenSelect.js','jquery/tooltip.js','jquery/fileUpload.js'
+       'jquery/searchbarHide.js','jquery/chosenSelect.js','jquery/fileUpload.js'
     ], 'public/js/jquery.js');
     
     mix.scripts([

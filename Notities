@@ -1,0 +1,56 @@
+
+// ----------- Gebruikte bronnen   -----------
+
+https://github.com/nusofthq/Recordmp3js
+http://audior.ec/blog/recording-mp3-using-only-html5-and-javascript-recordmp3-js/
+https://github.com/daaain/JSSoundRecorder
+http://stackoverflow.com/questions/7330023/gapless-looping-audio-html5
+https://github.com/Hivenfour/SeamlessLoop
+https://forestmist.org/blog/html5-audio-loops
+https://bugzilla.mozilla.org/show_bug.cgi?id=654787
+https://github.com/regosen/Gapless-5
+http://stackoverflow.com/questions/36720440/how-can-i-remove-the-gap-when-the-song-replays-in-the-html-audio-tag
+https://p5js.org/examples/examples/Sound__Record_Save_Audio.php
+http://logbon72.github.io/angular-recorder/
+https://github.com/bbcrd/peaks.js/tree/master
+
+// -----------  Inhoud eindwerk   -----------
+
+Omschrijving
+    ‣ concept - doelgroep
+    ‣ functionaliteit
+    (use cases, user
+    stories,…)
+    ‣ screenshots
+    ‣ URL
+
+Planning en Timesheets
+
+Usability test report(s)
+
+Technische documentatie (met verplicht volgende items)
+    ‣ Wireframes/Mockup(s)
+    ‣ Sitemap
+    ‣ Gebruikte technologieën/architectuur overzichtsfiguur
+    ‣ Database schema
+    ‣ Stukje codes waar je fier op bent (HTML, CSS, Javascript, PHP,…)
+
+Conclusie - Evaluatie
+
+
+// -----------  Scenario Demo Reel  -----------
+
+REAL VIDEO
+
+(? fade out van versterker met loop pedaal naar gsm met gloops website open?)
+1: Site openen, naar station gaan en loop recorden. (stil geluid)
+2: Loop bijknippen en opslaan
+3: Buiten stappen met gitaar door bos
+: Loop afspelen (vanaf nu wordt loop op achtergrond heel de tijd afgespeeld)
+: 
+
+ANIMATED VIDEO
+
+'Gloops logo'
+'Do you love playing on the guitar?'
+'Do you love playing with loops/backing tracks on your guitar?'

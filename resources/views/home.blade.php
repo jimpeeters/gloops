@@ -32,16 +32,16 @@
 	
 	<div class="col-xs-12 video-container padding-0">
 		<video class="home-video" poster="" autoplay="true" muted loop>
-			<source src="video/home.mp4" type="video/mp4">
+			<source src="" type="video/mp4">
 		<!-- 	<source src="video/home.webm" type="video/webm"> -->
 		</video>
 		<div class="video-layer">
 			@if(Auth::check())
 				<h1>Record now</h1>
-				<center><a href="{{ route('station') }}" class="basic-button">Your station</button></a>
+				<center><a href="https://gloops-alpha-jimpeeters.c9users.io/record" class="basic-button">Record</a></center>
 			@else
 				<h1>Join now</h1>
-				<center><a href="{{ route('getRegister') }}" class="basic-button">Register</button></a>
+				<center><a href="{{ route('getRegister') }}" class="basic-button">Register</a></center>
 			@endif
 		</div>
 		<a target="_blank" class="youtube-link" href="/">
