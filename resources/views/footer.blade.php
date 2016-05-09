@@ -1,4 +1,4 @@
-<div class="footer row">
+<div class="row footer">
 		<div class="col-xs-12 col-sm-3">
 			<div class="sub-footer">
 				<h5>Gloops //</h5>
@@ -49,7 +49,7 @@
 			<p class="copyright-text">&copy; 2013 Studio6, Inc. All rights reserved</p>
 		</div>
 </div>
-<div class="legs row">
+<div class="row legs">
 	<div class="col-xs-12">
 		<div class="leg-left"></div>
 		<div class="leg-right"></div>

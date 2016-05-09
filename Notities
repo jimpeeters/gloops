@@ -54,3 +54,11 @@ ANIMATED VIDEO
 'Gloops logo'
 'Do you love playing on the guitar?'
 'Do you love playing with loops/backing tracks on your guitar?'
+
+
+
+// ----------- Informatie over project  -----------
+
+Bower packages: angular-audio-recorder + angular
+Libraries: bootstrap (only grid and some functionalities) + gapless5.js + chosen-select.js + jquery + peaks.js
+Gulp: convert all javascript and scss from resources in laravel app to single files in public folder.

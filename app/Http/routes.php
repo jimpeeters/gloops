@@ -95,6 +95,9 @@ Route::group(['middleware' => ['web']], function () {
 	
 	// Get Record page
 	//Route::get('/record', array('as' => 'record', 'uses' => "RecordController@index", 'https' => true));
-	Route::get('/record', ['uses' => 'RecordController@index', 'https' => true]);
-	
+	Route::get('/record', ['as' => 'record', 'uses' => 'RecordController@index', 'https' => true]);
+
+	Route::get('/test', function () {
+	    return view('welcome');
+	});
 });
