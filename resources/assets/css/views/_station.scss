@@ -18,14 +18,12 @@
 		margin-top: 0px
 	}
 
-	/* Small Devices, Tablets */
     @media only screen and (min-width : $screen-tablet) {
 		.load-more-button, .remove-button {
 			width: 350px;
 		}
     }
 
-	/* Large Devices, Wide Screens */
 	@media only screen and (min-width : $screen-desktop-l) {
 		
 		.upload-section {

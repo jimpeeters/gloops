@@ -34,15 +34,21 @@
 
         <div class="col-xs-2">
             <!-- Search -->
-            <form>
-                <div class="center-content">
-                    <a href="#" id="search-button" class="round-button">
-                        <i class="fa fa-search"></i>
-                    </a>
-                    <input type="text" id="search-input" class="closed" placeholder="Search loops"/>
-                    <p>Search</p>
-                </div>
-            </form>
+            <div class="center-content">
+                <a href="#" id="search-button" class="round-button">
+                    <i class="fa fa-search"></i>
+                </a>
+                <input 
+                    type="text" 
+                    ng-model="query" 
+                    ng-model-options='{ debounce: 500 }' 
+                    id="search-input" 
+                    ng-change="setQueryValue(query); searchOnTags(query); searchOnCategory(query)" 
+                    class="closed" 
+                    placeholder="Search loops"
+                    />
+                <p>Search</p>
+            </div>
 
         </div>
 

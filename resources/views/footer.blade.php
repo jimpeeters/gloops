@@ -38,7 +38,14 @@
 		            <a href="" class="round-button search-button">
 		                <i class="fa fa-search"></i>
 		            </a>
-		            <input class="search-input" placeholder="..."/>
+		            <input 
+			            class="search-input"
+			            type="text" 
+	                    ng-model="query" 
+	                    ng-model-options='{ debounce: 500 }' 
+	                    id="search-input" 
+	                    ng-change="setQueryValue(query); searchOnTags(query); searchOnCategory(query)"
+	                    placeholder="Search loops"/>
 			    </form>
 			</div>
 		</div>

@@ -33,7 +33,13 @@ endif-->
 
         <div class="row content" ng-class="{ 'overheating' : isOverheating() }">
 
-        	@yield('content')
+            <div ng-show="!isSearching">
+        	   @yield('content')
+            </div>
+
+            <div ng-show="isSearching" class="search">
+               @include('search-results')
+            </div>
 
         </div>
 

@@ -15,7 +15,7 @@ strong {
 }
 
 // Remove blue border outline
-button, a {
+button, a, input {
 	&:focus {
 		outline:0;
 	}

@@ -144,7 +144,7 @@
 				    	<a class="play-button" ng-click="playLoop(loop, $event)">
 				      		<i class="fa fa-play"></i>
 				   		</a>
-					    <div class="gapless-block" id="gapless_<% loop.id %>" /></div>
+					    <div class="gapless-block" id="gapless_<% loop.id %>"></div>
 				  	</div>
 				  	<div class="col-xs-7">
 				    	<h3 class="loop-title"><% loop.name %></h3>

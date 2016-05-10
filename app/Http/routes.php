@@ -97,6 +97,12 @@ Route::group(['middleware' => ['web']], function () {
 	//Route::get('/record', array('as' => 'record', 'uses' => "RecordController@index", 'https' => true));
 	Route::get('/record', ['as' => 'record', 'uses' => 'RecordController@index', 'https' => true]);
 
+	// Search on tags
+	Route::get('/search/tags/{query}', array('as' => 'searchOnTags', 'uses' => 'MainController@searchOnTags')); 
+
+	// Search on category
+	Route::get('/search/category/{query}', array('as' => 'searchOnCategory', 'uses' => 'MainController@searchOnCategory')); 
+
 	Route::get('/test', function () {
 	    return view('welcome');
 	});
