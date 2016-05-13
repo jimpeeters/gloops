@@ -4,6 +4,16 @@
 		background-image: url('/images/profile.jpg');
 	}
 
+	.load-more-button {
+		width: 100%;
+		margin: 15px auto;
+    	display: block;
+
+    	@media only screen and (min-width : $screen-tablet) {
+			width: 350px;
+	    }
+	}
+
 	.profile-picture {
 		margin: 15px 0 10px 0;
 		width: 75px;

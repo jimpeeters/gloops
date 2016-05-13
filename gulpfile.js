@@ -43,7 +43,8 @@ elixir(function(mix) {
         'controllers/ProfileController.js',
         'controllers/HomeController.js',
         'controllers/MainController.js',
-        'controllers/RecordController.js'
+        'controllers/RecordController.js',
+        'controllers/SpecificuserController.js'
     ], 'public/js/angular/controllers/controllers.js');
 
     mix.scripts([

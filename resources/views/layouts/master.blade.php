@@ -75,7 +75,9 @@ if(!Request::is('record'))-->
     <!--- Wave display -->
     <!-- <script src="{{asset('/bower_components/wavesurfer.js/dist/wavesurfer.min.js')}}"></script> -->
     
+    <!-- angular animation -->
     <script type="text/javascript" src="{{asset('/js/libs/angular-animate.min.js')}}"></script>
+
     <!-- Bootstrap js -->
     <script type="text/javascript" src="{{asset('js/libs/bootstrap.min.js')}}"></script>
     

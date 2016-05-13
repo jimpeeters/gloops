@@ -38,6 +38,11 @@ class User extends Model implements AuthenticatableContract,
         return 'remember_token';
     }
 
+    public function loops()
+    {
+        return $this->hasMany('App\Loop', 'FK_user_id');
+    }
+
 /*    public function favouritedLoops()
     {
         return $this->belongsToMany('App\Favourite', 'favourites', 'FK_user_id', 'FK_loop_id');

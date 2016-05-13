@@ -19,11 +19,7 @@ class ProfileController extends Controller
 
     public function index()
     {
-        $user = User::with('loops');
-
-        //$user = Auth::user();
-
-        return View::make('profile')->with('user', $user);
+        return View::make('profile');
     }
 
     public function getFavouriteLoops()

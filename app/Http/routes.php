@@ -101,7 +101,13 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/search/tags/{query}', array('as' => 'searchOnTags', 'uses' => 'MainController@searchOnTags')); 
 
 	// Search on category
-	Route::get('/search/category/{query}', array('as' => 'searchOnCategory', 'uses' => 'MainController@searchOnCategory')); 
+	Route::get('/search/category/{query}', array('as' => 'searchOnCategory', 'uses' => 'MainController@searchOnCategory'));
+
+	// Get specific user page
+	Route::get('/user/{name}', array('as' => 'specificUser', 'uses' => 'UserController@getSpecificUser'));
+
+	// Get specific users loops
+	Route::get('/user/loops/{id}', array('as' => 'specificUserLoops', 'uses' => 'UserController@getSpecificUserLoops'));
 
 	Route::get('/test', function () {
 	    return view('welcome');

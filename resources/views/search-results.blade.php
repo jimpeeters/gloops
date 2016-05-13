@@ -22,7 +22,9 @@
 	  	</div>
 	  	<div class="col-xs-3">
 	    	<div class="user-info">
-	    		<div class="user-avatar" style="background-image: url(<% loop.user.avatar %>)"></div>
+	    		<a href="/user/<% loop.user.name %>">
+	    			<div class="user-avatar" style="background-image: url(<% loop.user.avatar %>)"></div>
+	    		</a>
 	    		<p class="user-name"><% loop.user.name %></p>
                 <p class="rank-text">
                     <img class="rank-icon" ng-src="images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>
@@ -77,7 +79,9 @@
 	  	</div>
 	  	<div class="col-xs-3">
 	    	<div class="user-info">
-	    		<div class="user-avatar" style="background-image: url(<% loop.user.avatar %>)"></div>
+	    		<a href="/user/<% loop.user.name %>">
+	    			<div class="user-avatar" style="background-image: url(<% loop.user.avatar %>)"></div>
+	    		</a>
 	    		<p class="user-name"><% loop.user.name %></p>
                 <p class="rank-text">
                     <img class="rank-icon" ng-src="images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>

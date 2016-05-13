@@ -95,7 +95,7 @@ gloopsApp.controller('LoopController', ['$scope', '$http', 'RewardService', func
 
         $http({
               method  : 'POST',
-              url     : 'loop/favourite',
+              url     : '/loop/favourite',
               headers : {'Content-Type': 'application/json'},
               dataType: 'json',
               data    : $data

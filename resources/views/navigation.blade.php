@@ -1,8 +1,8 @@
-<img class="header-decoration" src="images/header-decoration.png">
+<img class="header-decoration" src="/images/header-decoration.png">
 <div class="row header">
         <div class="col-xs-4">
             <a href="/">
-             <img class="logo" src="images/Logo.png" alt="Gloops Logo">
+             <img class="logo" src="/images/Logo.png" alt="Gloops Logo">
             </a>
         </div>
 </div>
