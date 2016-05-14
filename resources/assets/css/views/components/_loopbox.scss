@@ -226,8 +226,14 @@
 			}
 
 			.user-name {
-				display: flex;
-				margin-bottom: 0;
+				display: block;
+				margin-bottom: 2px;
+				text-overflow: ellipsis;
+			    overflow: hidden;
+			    width: 28px;
+			    white-space: nowrap;
+			    font-size: 0.7em;
+			    padding-top: 5px;
 			}
 
 			.rank-text {
@@ -267,8 +273,10 @@
     		}
 
     		.user-name {
-    			margin-top: -2px;
-    		}
+			    width: 50px;
+			    font-size: 0.9em;
+			    padding-top: 0px;
+			}
 
     		.rank-text {
     			margin-top: -7px;
