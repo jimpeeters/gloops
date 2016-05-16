@@ -41,7 +41,7 @@
 		.youtube-link {
 			position: absolute;
 			right: 0;
-			bottom: 0;
+			top: 0;
 			background: $black;
 			color: $white;
 			padding: 10px 15px;
@@ -54,9 +54,10 @@
 	}
 
 	.information {
-		margin-top: 45px;
-		margin-bottom: 30px;
+		padding: 45px 0 30px 0;
 		display: inline-block;
+		position: relative;
+		border-bottom: 1px solid darken($beige, 10);
 
 		i {
 			padding-bottom: 15px;
@@ -78,7 +79,6 @@
 			margin-bottom: 0;
 		}
 	}
-
 }
 
 @media only screen and (min-width : $screen-phone) {
@@ -101,13 +101,12 @@
 		}
 
 		.information {
-			margin-top: 60px;
-			margin-bottom: 45px;
-		}
+			padding: 45px 0;
 
-		.information p {
-			padding-left: 90px;
-			padding-right: 90px;
+			p {
+				padding-left: 90px;
+				padding-right: 90px;
+			}
 		}
 	}
 }
@@ -129,9 +128,50 @@
 			} 
 		}
 
-		.information p {
-			padding-left: 0;
-			padding-right: 0;
+		.information {
+
+			p {
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			#left-top-corner, #right-top-corner, #left-bottom-corner, #right-bottom-corner {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				z-index: 100;
+				position: absolute;
+			}
+
+			#left-top-corner {
+				border-width: 45px 45px 0 0;
+				border-color: $black transparent transparent transparent;
+				left: 0;
+				top: 0;
+			}
+
+			#right-top-corner {
+				border-width: 0 45px 45px 0;
+				border-color: transparent $black transparent transparent;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+
+			#left-bottom-corner {
+				border-width: 45px 0 0 45px;
+				border-color: transparent transparent transparent $black;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+
+			#right-bottom-corner {
+				border-width: 0 0 45px 45px;
+				border-color: transparent transparent $black transparent;
+				bottom: 0;
+				right: 0;
+			}
 		}
 	}
 }

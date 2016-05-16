@@ -50,6 +50,8 @@
 	</div>
 
 	<section class="information">
+		<div id="left-top-corner"></div>
+		<div id="right-top-corner"></div>
 		<div class="col-xs-12 col-sm-4 information-record">
 			<center><i class="fa fa-microphone fa-5x" aria-hidden="true"></i></center>
 			<p>Start by <strong>recording</strong> or <strong>uploading</strong> your guitar loops in your own loop <strong>station</strong>, where you can manage all your personal loops.</p>
@@ -64,6 +66,8 @@
 			<center><i class="fa fa-bolt fa-5x" aria-hidden="true"></i></center>
 			<p>Gain <strong>reputation</strong> when people favourite your loops. That way you will distinguish yourself from a regular user in the community.</p>
 		</div>
+		<div id="left-bottom-corner"></div>
+		<div id="right-bottom-corner"></div>
 	</section>
 
 	<div class="col-xs-12" id="edit-section">
