@@ -376,7 +376,6 @@ this.onerror = null;
 this.onfinishedtrack = null;
 this.onfinishedall = null;
 
-
 // INTERNAL HELPERS
 
 var getUIPos = function () {
@@ -396,13 +395,11 @@ var getFormattedTime = function (inMS) {
     var minutes = Math.floor(inMS / 60000);
     var seconds_full = (inMS - (minutes * 60000)) / 1000;
     var seconds = Math.floor(seconds_full);
-    var csec = Math.floor((seconds_full - seconds) * 100);
     
-    if (minutes < 10) { minutes = "0" + minutes; }
+    //if (minutes < 10) { minutes = "0" + minutes; }
     if (seconds < 10) { seconds = "0" + seconds; }
-    if (csec < 10) { csec = "0" + csec; }
     
-    return minutes + ':' + seconds + '.' + csec;
+    return minutes + ':' + seconds;
 };
 
 var getTotalPositionText = function () {
@@ -421,6 +418,7 @@ var getTotalPositionText = function () {
 		text = getFormattedTime(srcLength);
 	}
 	return text;
+
 };
 
 var runCallback = function (cb) {
@@ -485,7 +483,7 @@ this.setGain = function (uiPos) {
 
 this.scrub = function (uiPos) {
 	scrubPosition = getSoundPos(uiPos);
-	$("#currentPosition" + that.id).html(getFormattedTime(scrubPosition));
+	$(elem_id + "_duration").html(getFormattedTime(scrubPosition));
 	enableButton('prev', that.loop || (trackIndex != 0 || scrubPosition != 0));
 	if (!isScrubbing)
 	{
@@ -891,7 +889,7 @@ var Tick = function(tickMS) {
 				soundPos = scrubPosition;
 			}
 			$("#transportbar" + that.id).val(getUIPos());
-			$("#currentPosition" + that.id).html(getFormattedTime(soundPos));
+			$("#" + elem_id + "_duration").html(getFormattedTime(soundPos));
 		}
 	}
 	window.setTimeout(function () { Tick(tickMS); }, tickMS);

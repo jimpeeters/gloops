@@ -70,7 +70,7 @@
 			  	</div>
 			  	<div class="col-xs-7 loopbox-section">
 			    	<h3 class="loop-title"><% loop.name %></h3>
-			    	<p class="duration">0:00</p>
+			    	<p class="duration" id="gapless_<% loop.id %>_duration">0:00</p>
 			    	<p class="category"><i class="fa fa-music"></i> <% loop.category.name %></p>
 			  	</div>
 			  	<div class="col-xs-3 loopbox-section">
