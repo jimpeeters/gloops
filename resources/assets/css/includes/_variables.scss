@@ -1,16 +1,13 @@
 
 // Main colors
-$beige: #EDEBDB;
-$red: #B02F06;
-$brown: #6E5541;
-$yellow: #f1c40f;
-$blue: #3498db;
+$red: #c0392b;   //rood
+$green: #27ae60; //groen
+$gray: #1E1E1E; //gray
+$black: #141414;
+$white: #ecf0f1;
 
-$black: #040404;
-$lightblack: lighten($black, 10);
-$gray: #95a5a6;
-$white: #ffffff;
-$green: #27ae60;
+$blue: #3498db;
+$yellow: #f1c40f;
 
 // Media queries
 $screen-phone: 480px;

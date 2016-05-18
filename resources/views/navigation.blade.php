@@ -1,4 +1,3 @@
-<img class="header-decoration" src="/images/header-decoration.png">
 <div class="row header">
         <div class="col-xs-4">
             <a href="/">

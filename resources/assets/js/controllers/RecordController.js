@@ -3,9 +3,10 @@ gloopsApp.controller('RecordController', function ($scope, $timeout) {
   	$scope.timeLimit = 60;
 
   	$scope.startEdit = function() {
-  		//initialize Peaks.js
-        var p = Peaks.init({
-          	  	  /** REQUIRED OPTIONS **/
+
+  		(function(Peaks){
+		    $scope.peaks = Peaks.init({
+		    	  /** REQUIRED OPTIONS **/
 				  // Containing element
 				  container: document.getElementById('peaks-container'),
 
@@ -83,12 +84,17 @@ gloopsApp.controller('RecordController', function ($scope, $timeout) {
 				    color: "#00ff00",
 				    labelText: "My Second label"
 				  }]
-        });
-	/*
-		    p.on('segments.ready', function(){
-	  // do something when segments are ready to be displayed
-	});*/
+		    });
+			/*
+				    p.on('segments.ready', function(){
+			  // do something when segments are ready to be displayed
+			});*/
+		})(peaks.js);
+		$scope.peaks.segments.add(0, 1, true);
   	}
+
+
+
 
 })	
 .config(function (recorderServiceProvider) {

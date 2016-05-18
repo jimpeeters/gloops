@@ -1,9 +1,7 @@
 .footer {
-
-	background-color: $lightblack;
+	background-color: $gray;
 	padding: 15px 0;
 	border-top: 1px solid $black;
-	
 
     .sub-footer {
 
@@ -21,7 +19,7 @@
     	a {
     		padding: 0 2px;
     		margin: 0 2px;
-	        color: $red;
+	        color: $white;
 	        text-decoration: underline;
 	        &:hover{
 	            text-decoration: none;
@@ -57,27 +55,22 @@
 
     .email-link {
 
-    	i{
+    	i {
     		padding-right: 5px;
     	}
 
-    	color: $red;
+    	color: $white;
         display: inline;
         text-decoration : underline;
     }
 }
 
-.legs {
-    display: none;
-}
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : $screen-phone) {
 
 	.footer {
-		border-bottom-right-radius: 15px;
-		border-bottom-left-radius: 15px;
-		border: 2px solid $black;
+		border-top: 2px solid $black;
 
 		.sub-footer {
 
@@ -88,7 +81,7 @@
 		}
 
 
-		.search{
+		.search {
 			form {
 				margin: 20px 0;
 			}
@@ -106,33 +99,12 @@
 			} 
 		}
 	}
-	
-	.legs {
-		display: block;
-	}
-
-	.leg-left , .leg-right {
-		height:15px;
-	    width:40px;
-	    border-radius: 0 0 10px 10px;
-	    background:$black;
-     	position: absolute;
-	}
-
-	.leg-left {
-		left: 10%;
-	}
-
-	.leg-right {
-		right: 10%;
-	}
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : $screen-tablet) {
 
 	.footer {
-
 		.sub-footer{
 			border-bottom: none;
 
@@ -152,11 +124,12 @@
 			margin-right: 10px;
 		}
 
-		.copyright-text{
+		.copyright-text {
 			float: right;
 			width: 100%;
 			text-align: right;
 			margin-right: 10px;
+			color: $white;
 		}
 	}
 }
@@ -164,9 +137,7 @@
 /* Medium Devices, Desktops */
 @media only screen and (min-width : $screen-desktop-s) {
 	.footer {
-
-		.search{
-
+		.search {
 			form .search-input {
 			    margin-left: -30px;
 			    height: 60px;
@@ -175,15 +146,10 @@
 			    padding-left: 40px;
 			    width: 100%;
 			}
-			form .search-button{
+
+			form .search-button {
 			    width: 60px;
 			} 
 		}
-	}
-
-	.leg-left , .leg-right {
-		 height:25px;
-	     width:60px;
-	     border-radius: 0 0 15px 15px;
 	}
 }

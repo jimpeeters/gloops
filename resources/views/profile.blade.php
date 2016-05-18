@@ -6,11 +6,11 @@
 
 <div class="profile" ng-controller="ProfileController">
 
-	<div class="title-section">
-		<h1>PROFILE</h1>
-	</div>
-
 	@if(Auth::check())
+
+		<div class="title-section" style="background-image: url({{ Auth::user()->avatar }})">
+			<h1>PROFILE</h1>
+		</div>
 
 		@if (session()->has('success'))
 	        <div class="col-xs-12" ng-controller="AlertController">
@@ -174,6 +174,10 @@
 		</div>
 
 	@else
+
+		<div class="title-section">
+			<h1>PROFILE</h1>
+		</div>
 
 		@include('snippets.login')
 

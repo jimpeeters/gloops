@@ -14,7 +14,7 @@
 	text-align: center;
 
 	&:hover, &:active, &:focus {
-		background-color: lighten($red , 10);
+		background-color: darken($red , 10);
 		text-decoration: none;
 		color: $white;
 	}
@@ -164,7 +164,7 @@
 	}
 
 	&:hover, &:active, &:focus{
-		background-color: lighten($red, 6);
+		background-color: darken($red, 6);
   		color: $white;
   		text-decoration: none;
 	}
@@ -229,6 +229,6 @@
     float: left; /* IE 9 Fix */
     transition: background-color 0.2s ease-out;
     &:hover {
-        background-color: lighten($red, 10);
+        background-color: darken($red, 10);
     }
 }

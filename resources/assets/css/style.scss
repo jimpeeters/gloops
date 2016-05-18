@@ -50,10 +50,6 @@ body {
 // Container 
 .container {
 	width: 100%;
-	
-	@media only screen and (min-width : $screen-phone) {
-    	width: 95%;
-    }
 }
 
 // Center button
@@ -64,13 +60,8 @@ body {
 
 // Guitar amp look
 .content {
-	background-color: $beige;
+	background-color: $white;
 	padding-bottom: 15px;
-	
-	@media only screen and (min-width : $screen-phone) {
-        border-left: 2px solid $black;
-        border-right: 2px solid $black;
-    }
 }
 
 // Forms

@@ -7,8 +7,7 @@ $( "#search-button" ).click(function() {
 		{
 	    	$( "#search-input" ).animate({
 		    	width: 150+'%',
-			    paddingLeft: 80+'%',
-			    border: 1
+			    paddingLeft: 80+'%'
 			}, 1000, function() {
 			    $("#search-input").removeClass( "closed" );
 			    $("#search-input").addClass( "open" );
@@ -18,8 +17,7 @@ $( "#search-button" ).click(function() {
 	    {
 	    	$( "#search-input" ).animate({
 		    	width: 150+'%',
-			    paddingLeft: 40+'%',
-			    border: 1
+			    paddingLeft: 40+'%'
 			}, 1000, function() {
 			    $("#search-input").removeClass( "closed" );
 			    $("#search-input").addClass( "open" ); 
@@ -31,8 +29,7 @@ $( "#search-button" ).click(function() {
 	{
 	  $( "#search-input" ).animate({
 		    	width: 0,
-			    paddingLeft: 0,
-			    border: 0
+			    paddingLeft: 0
 		}, 1000, function() {
 		    $("#search-input").removeClass( "open" );
 		    $("#search-input").addClass( "closed" ); 

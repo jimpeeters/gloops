@@ -67,24 +67,24 @@
       <script src="/bower_components/requirejs/require.js"></script>
       <script>
         requirejs.config({
-		  paths: {
-		    peaks: 'bower_components/peaks.js/src/main',
-		    EventEmitter: 'bower_components/eventemitter2/lib/eventemitter2',
-		    Kinetic: 'bower_components/KineticJS/kinetic',
-		    'waveform-data': 'bower_components/waveform-data/dist/waveform-data.min'
-		  }
-		});
-        // requires it
-		require(['peaks'], function (Peaks) {
-		  var p = Peaks.init({
-		    container: document.querySelector('#peaks-container'),
-		    mediaElement: document.querySelector('audio')
-		  });
+      		  paths: {
+      		    peaks: 'bower_components/peaks.js/src/main',
+      		    EventEmitter: 'bower_components/eventemitter2/lib/eventemitter2',
+      		    Kinetic: 'bower_components/KineticJS/kinetic',
+      		    'waveform-data': 'bower_components/waveform-data/dist/waveform-data.min'
+      		  }
+      		});
+              // requires it
+      		require(['peaks'], function (Peaks) {
+      		  var p = Peaks.init({
+      		    container: document.querySelector('#peaks-container'),
+      		    mediaElement: document.querySelector('audio')
+      		  });
 
-		  p.on('segments.ready', function(){
-		    // do something when segments are ready to be displayed
-		  });
-		});
+      		  p.on('segments.ready', function(){
+      		    // do something when segments are ready to be displayed
+      		  });
+      		});
       </script>
   </body>
 </html>

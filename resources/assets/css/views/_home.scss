@@ -6,6 +6,7 @@
 		background-color: rgba(15, 14, 14, 0.56);
         z-index: 2;
         overflow: hidden;
+        border-bottom: 1px solid $black;
 
 		.home-video {
 			//transform: translateX(-30%); //mee spelen met echte video
@@ -57,7 +58,7 @@
 		padding: 45px 0 30px 0;
 		display: inline-block;
 		position: relative;
-		border-bottom: 1px solid darken($beige, 10);
+		border-bottom: 1px solid darken($white, 10);
 
 		i {
 			padding-bottom: 15px;
@@ -87,6 +88,7 @@
 
 		.video-container {
 			height: 200px;
+			border-bottom: 2px solid $black;
 
 			.video-layer {
 				h1 {

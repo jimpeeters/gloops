@@ -32,8 +32,8 @@
 	
 	<div class="col-xs-12 video-container padding-0">
 		<video class="home-video" poster="" autoplay="true" muted loop>
-			<source src="" type="video/mp4">
-		<!-- 	<source src="video/home.webm" type="video/webm"> -->
+			<source src="video/home.mp4" type="video/mp4">
+		   <!--  <source src="video/home.webm" type="video/webm"> -->
 		</video>
 		<div class="video-layer">
 			@if(Auth::check())

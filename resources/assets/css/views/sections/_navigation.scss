@@ -1,10 +1,5 @@
-.header-decoration {
-	display: none;
-}
-
-.header{
-	background: linear-gradient(27deg, lighten($black, 5) 5px, transparent 5px) 0 5px, linear-gradient(207deg, lighten($black, 5) 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-    background-color: $black;
+.header {
+    background-color: $gray;
     background-size: 20px 20px;
 	padding: 10px 0;
 	border-bottom: 1px solid $black;
@@ -17,19 +12,19 @@
 
 .navigation {
 	padding-top: 15px;
-	background-color: $beige;
+	background-color: $white;
 	border-bottom: 1px solid $black;
 
 	.center-content {
 
 		display: inline-block;
 
-		a{
+		a {
 			display: block;
 			margin: 0 auto;
 		}		
 
-		p{
+		p {
 			clear:both;
 			text-align: left;
 			text-transform: uppercase;
@@ -42,8 +37,7 @@
 		}
 	}
 
-	#login-button{
-
+	#login-button {
 		    &:active + #login-light, &:focus + #login-light {
 		    	background-color: $green;
 		    }
@@ -89,40 +83,21 @@
 	    height: 30px;
 	    border-top-right-radius: 15px;
 	    border-bottom-right-radius: 15px;
-	    border: 0 solid $red;
 	    width: 0;
 	    padding: 0;
-	    border: 0;
+	    border: 1px solid $black;
 	}
 
 }
 
-/* Extra Small Devices, Phones */ 
 @media only screen and (min-width : $screen-phone) {
 
-	.header-decoration {
-		display: block;
-		margin: 0 auto;
-		height: 17px;
-	    width: 220px;
-	}
-
-	.header{
-		border-top: 2px solid $black;
-		border-top-right-radius: 15px;
-		border-top-left-radius: 15px;
+	.header {
 		border-bottom: 2px solid $black;
 	}
 
 	.navigation {
-		border-left: 2px solid $black;
-		border-right: 2px solid $black;
 		border-bottom: 2px solid $black;
-	}
-
-	.header-decoration {
-		height: 25px;
-    	width: 350px;
 	}
 
 	.header .logo {
@@ -143,8 +118,6 @@
 	}
 }
 
-
-/* Small Devices, Tablets */
 @media only screen and (min-width : $screen-tablet) {
 	.header .logo {
 		width: 120px;
@@ -169,21 +142,12 @@
 		    border-bottom-right-radius: 30px;
 		}
 
-		#search-input[placeholder]{
+		#search-input[placeholder] {
 			font-size: 16px;
 		}
 	}
 }
 
-@media only screen and (min-width : $screen-desktop-s) {
-
-	.header-decoration {
-		height: 30px;
-    	width: 600px;
-	}
-}
-
-/* Large Devices, Wide Screens */
 @media only screen and (min-width : $screen-desktop-l) {
 	.header .logo {
 		width: 170px;
