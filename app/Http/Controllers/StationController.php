@@ -29,51 +29,129 @@ class StationController extends Controller
 
     public function getEdit($id)
     {
-        $loop = Loop::with('favourites')->
-                        with('user')->
-                        with('category')->
-                        with('tags')->findOrFail($id);
-
-        // Check is this loop is from logged in user
-        if(Auth::user()->id != $loop->FK_user_id)
+        if(Auth::check())
         {
-            return View::make('errors.401');
+            $loop = Loop::with('favourites')->
+                            with('user')->
+                            with('category')->
+                            with('tags')->findOrFail($id);
+
+            // Check is this loop is from logged in user
+            if(Auth::user()->id != $loop->FK_user_id)
+            {
+                return View::make('errors.401');
+            }
+            else
+            {
+                $tags = Tag::orderBy('name', 'ASC')->lists('name', 'id');
+                $categories = Category::orderby('name', 'ASC')->get();
+
+                // Check if logged in user has favourited this
+                $user_favorites = Favourite::where('FK_user_id', '=', Auth::user()->id)
+                    ->where('FK_loop_id', '=', $loop->id)
+                    ->first();
+
+                if ($user_favorites == null)
+                {
+                    $loop->isFavourite = false;
+                } 
+                else 
+                {
+                    $loop->isFavourite = true;
+                }
+
+                return View::make('station-edit')->with('loop', $loop)
+                                                 ->with('tags', $tags)
+                                                 ->with('categories', $categories);
+            }
         }
         else
         {
-            $tags = Tag::orderBy('name', 'ASC')->lists('name', 'id');
-            $categories = Category::orderby('name', 'ASC')->get();
-
-            // Check if logged in user has favourited this
-            $user_favorites = Favourite::where('FK_user_id', '=', Auth::user()->id)
-                ->where('FK_loop_id', '=', $loop->id)
-                ->first();
-
-            if ($user_favorites == null)
-            {
-                $loop->isFavourite = false;
-            } 
-            else 
-            {
-                $loop->isFavourite = true;
-            }
-
-            return View::make('station-edit')->with('loop', $loop)
-                                             ->with('tags', $tags)
-                                             ->with('categories', $categories);
+            return View::make('errors.401');
         }
     }
 
     public function edit(Request $request)
     {
+        // Getting formdata
+        $input = $request->all();
 
+        // Validation
+        $validator = Validator::make($request->all(), [
+            'name'         => 'required|regex:/([A-Za-z0-9 ])+/|max:100|min:6|unique:loops,name,'.$input['id'],
+            'loop_path'      => 'mimes:mpga',
+            'category'      => 'required|max:1',
+            'tags'      => 'required|max:5'
+        ]);
+
+        if ($validator->fails()) 
+        {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        // Find loop to update
+        $loop = Loop::findOrFail($input['id']);
+
+        // Update name and category
+        $loop->name = $input['name'];
+        $categoryId = $input['category'];
+        $loop->FK_category_id = $categoryId;
+
+        // File check
+        if ($request->hasFile('file'))
+        {
+            $loopPath = $loop->loop_path;
+            $filePath = str_replace('/', '\\', $loopPath);
+            // Delete original mp3
+            unlink(base_path().'\\public'.$filePath);
+
+            $file = $request->file('file');           
+            $fileName = Auth::user()->email.'-'. $loop->name.'.'.$file->getClientOriginalExtension();
+            $file->move(base_path().'/public/loops/uploads/',$fileName);
+            $loop->loop_path = '/loops/uploads/'.$fileName;
+        }
+
+        // Reset tags
+        $currentTags = LoopTag::where('FK_loop_id', '=', $loop->id)->get(); 
+        foreach($currentTags as $currentTag) 
+        {
+            $currentTag->delete();
+        }
+
+        // Update tags to loop
+        $tags = $input['tags']; 
+        if (isset($tags))
+        {
+            foreach($tags as $tag) 
+            {
+                $specificTag =  Tag::where('name', '=', $tag)->first();
+
+                $loopTag = new LoopTag;
+                $loopTag->FK_loop_id = $loop->id;
+                $loopTag->FK_tag_id = $specificTag->id;
+                $loopTag->save();
+            }
+        }
+
+        $loop->save();
+
+        $categories = Category::orderby('name', 'ASC')->get();  
+        $tags = Tag::orderBy('name', 'ASC')->lists('name', 'id');
+
+        return redirect()->back()->with('success','Loop successfully edited!')
+                                 ->with('loop', $loop)
+                                 ->with('tags', $tags)
+                                 ->with('categories', $categories);
     }
 
     public function upload(Request $request)
     {
-         $validator = Validator::make($request->all(), [
-            'name'         => 'required|alpha_num|max:100|min:6|unique:loops,name',
-            'loop_path'      => 'mimes:mpga,wav',
+        // Validation
+        $validator = Validator::make($request->all(), [
+            'name'         => 'required|regex:/([A-Za-z0-9 ])+/|max:100|min:6|unique:loops,name',
+            'loop_path'      => 'mimes:mpga',
             'category'      => 'required|max:1',
             'tags'      => 'required|max:5'
         ]);
@@ -95,7 +173,7 @@ class StationController extends Controller
         $categoryId = $input['category'];
         $loop->FK_category_id = $categoryId;
         
-        //File check and creating upload map
+        // File check and creating upload map
         if ($request->hasFile('file'))
         {
             $file = $request->file('file');            
@@ -106,7 +184,7 @@ class StationController extends Controller
 
         $loop->save();
 
-        //add tags to loop
+        // Add tags to loop
         $tags = $input['tags']; 
         if (isset($tags))
         {

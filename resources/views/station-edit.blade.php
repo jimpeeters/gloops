@@ -9,6 +9,32 @@
 		<h2 class="block-title"><i class="fa fa-pencil"></i> Edit this loop</h2>
 	</div>
 
+	@if (count($errors) > 0)
+	    <div class="col-xs-12 col-lg-6 col-lg-offset-3" ng-controller="AlertController">
+	    	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
+	    		@foreach ($errors->all() as $key => $error)
+					<p>
+						<i class="fa fa-times alert-type-icon"></i>{{ $error }}
+						@if($key == 0)
+							<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+						@endif
+					</p>
+				@endforeach
+			</div>
+	    </div>
+	@endif
+
+	@if (session()->has('success'))
+        <div class="col-xs-12 col-lg-6 col-lg-offset-3" ng-controller="AlertController">
+        	<div class="info-box success" ng-hide="hidden" ng-class="{fade: startFade}">
+				<p>
+					<i class="fa fa-check alert-type-icon"></i>{{ Session::get('success') }}
+					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+				</p>
+			</div>
+        </div>
+    @endif
+
 	<div class="col-xs-12 col-md-offset-3 col-md-6" ng-controller="LoopController" ng-init="isFavourite={{ $loop->isFavourite }}">
 		<div class="row loop-box" ng-class="{ 'favourite' : isFavourite }">
 		  	<div class="col-xs-2 loopbox-section">
@@ -63,10 +89,10 @@
 						@foreach($loop->tags as $looptag)
 							@if($name == $looptag->name)
 								<option value="{{$name}}" selected>{{$name}}</option>
-							@else
-								<option value="{{$name}}">{{$name}}</option>
+								<?php continue 2; ?>
 							@endif
 						@endforeach
+						<option value="{{$name}}">{{$name}}</option>
 					@endforeach
 				</select>
 			</div>
@@ -84,6 +110,8 @@
 					@endforeach
 				</select>
 			</div>
+
+			<input type="hidden" name="id" value="{{ $loop->id }}">
 		    
 			<button type="submit" class="basic-button upload-button">Upload</button>
 		{!! Form::close() !!}

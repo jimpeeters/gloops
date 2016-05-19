@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="error">
+<div class="error-page">
 	<div class="col-xs-12">
 		<h1>401 - Unauthorized</h1>
 		<p>You have no access to this page!</p>
