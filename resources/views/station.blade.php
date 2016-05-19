@@ -42,11 +42,12 @@
 		</div>
 
 		<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit track by loop.id" ng-init="isFavourite=loop.isFavourite">
-			<!-- Confirmation modal -->
+			<!-- Confirmation modal delete -->
 			<div id="confirmationModal<% loop.id %>" class="confirmation-modal modal" role="dialog">
 			  	<div class="modal-dialog">
 				    <div class="modal-content">
 					    <div class="modal-header">
+					    	<h2>Delete</h2>
 					      	<button type="button" class="close" data-dismiss="modal">&times;</button>
 					    </div>
 					    <div class="modal-body">
@@ -57,10 +58,13 @@
 					</div>
 			  	</div>
 			</div>
-			<!-- /Confirmation modal -->
-			<div class="row loop-box" ng-class="{ 'favourite' : isFavourite, 'deletable' : enableDeleting }">
+			<!-- /Confirmation modal delete-->
+			<div class="row loop-box" ng-class="{ 'favourite' : isFavourite, 'deletable' : enableDeleting, 'editable' : enableEditing }">
 				<a href="" data-toggle="modal" data-target="#confirmationModal<% loop.id %>" class="delete-button" ng-show="enableDeleting">
 					<i class="fa fa-trash"></i>
+				</a>
+				<a href="/station/edit/<% loop.id %>"class="edit-button" ng-show="enableEditing">
+					<i class="fa fa-pencil"></i>
 				</a>
 			  	<div class="col-xs-2 loopbox-section">
 			    	<a class="play-button" ng-click="playLoop(loop, $event)">
@@ -97,9 +101,16 @@
 		</div>
 
 		<div ng-show="loops.length > 0" class="col-xs-12">
-			<button class="basic-button remove-button" ng-click="enableDeleting = !enableDeleting" href="">
+			<button class="basic-button remove-button" ng-click="enableDeleting = !enableDeleting; enableEditing = false" href="">
 				<i ng-show="!enableDeleting" class="fa fa-trash"></i> 
 				<span ng-show="!enableDeleting">Remove loops</span><span ng-show="enableDeleting">Cancel removal</span>
+			</button>
+		</div>
+
+		<div ng-show="loops.length > 0" class="col-xs-12">
+			<button class="basic-button editing-button" ng-click="enableEditing = !enableEditing; enableDeleting = false" href="">
+				<i ng-show="!enableEditing" class="fa fa-pencil"></i> 
+				<span ng-show="!enableEditing">Edit loops</span><span ng-show="enableEditing">Cancel editing</span>
 			</button>
 		</div>
 

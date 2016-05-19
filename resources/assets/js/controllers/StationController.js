@@ -2,6 +2,7 @@ gloopsApp.controller('StationController', ['$scope','$http', function($scope, $h
 
     // Enable deleting
     $scope.enableDeleting = false;
+    $scope.enableEditing = false;
 
     // Limit on 'your loops'
     $scope.loopLimit = 9;
@@ -59,11 +60,6 @@ gloopsApp.controller('StationController', ['$scope','$http', function($scope, $h
         $scope.loops.splice(i, 1);
     }
     
-    
     // Earn station overhit reward
     $scope.loopsPlaying = 0;
-    
-    $scope.checkReward = function() {
-        console.log('test');
-    }
 }]);

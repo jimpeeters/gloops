@@ -37,6 +37,12 @@ Route::group(['middleware' => ['web']], function () {
 		// Upload a loop
 		Route::post('/station/upload', array('as' => 'upload', 'uses' => 'StationController@upload'));
 
+		// Get edit loop page
+		Route::get('/station/edit/{id}', array('as' => 'getEdit', 'uses' => 'StationController@getEdit'));
+
+		// Edit a loop
+		Route::post('/station/edit/loop', array('as' => 'edit', 'uses' => 'StationController@edit'));
+
 		// Get logged in user his loops
 		Route::get('/station/getUserLoops', 'StationController@getUserLoops');
 

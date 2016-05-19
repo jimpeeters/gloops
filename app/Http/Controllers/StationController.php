@@ -27,6 +27,48 @@ class StationController extends Controller
                                     ->with('categories', $categories);
     }
 
+    public function getEdit($id)
+    {
+        $loop = Loop::with('favourites')->
+                        with('user')->
+                        with('category')->
+                        with('tags')->findOrFail($id);
+
+        // Check is this loop is from logged in user
+        if(Auth::user()->id != $loop->FK_user_id)
+        {
+            return View::make('errors.401');
+        }
+        else
+        {
+            $tags = Tag::orderBy('name', 'ASC')->lists('name', 'id');
+            $categories = Category::orderby('name', 'ASC')->get();
+
+            // Check if logged in user has favourited this
+            $user_favorites = Favourite::where('FK_user_id', '=', Auth::user()->id)
+                ->where('FK_loop_id', '=', $loop->id)
+                ->first();
+
+            if ($user_favorites == null)
+            {
+                $loop->isFavourite = false;
+            } 
+            else 
+            {
+                $loop->isFavourite = true;
+            }
+
+            return View::make('station-edit')->with('loop', $loop)
+                                             ->with('tags', $tags)
+                                             ->with('categories', $categories);
+        }
+    }
+
+    public function edit(Request $request)
+    {
+
+    }
+
     public function upload(Request $request)
     {
          $validator = Validator::make($request->all(), [
