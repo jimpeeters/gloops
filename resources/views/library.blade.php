@@ -16,11 +16,6 @@
         		<p>General</p>
         	</li>
             <li>
-                <i class="fa fa-check-square" aria-hidden="true"></i>
-                <i class="fa fa-square-o" aria-hidden="true"></i>
-                <a href="">Most popular</a>
-            </li>
-            <li>
                 <i ng-click="mostRecent = !mostRecent" ng-show="mostRecent" class="fa fa-check-square" aria-hidden="true"></i>
                 <i ng-click="mostRecent = !mostRecent" ng-show="!mostRecent" class="fa fa-square-o" aria-hidden="true"></i>
                 <a ng-click="mostRecent = !mostRecent"  ng-class="{ 'underline' : mostRecent }">Most recent</a>
@@ -76,11 +71,6 @@
         	<li class="title">
         		<p>General</p>
         	</li>
-            <li>
-                <i class="fa fa-check-square" aria-hidden="true"></i>
-                <i class="fa fa-square-o" aria-hidden="true"></i>
-                <a href="">Most popular</a>
-            </li>
             <li>
                 <i ng-click="mostRecent = !mostRecent" ng-show="mostRecent" class="fa fa-check-square" aria-hidden="true"></i>
                 <i ng-click="mostRecent = !mostRecent" ng-show="!mostRecent" class="fa fa-square-o" aria-hidden="true"></i>
