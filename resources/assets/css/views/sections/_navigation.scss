@@ -3,10 +3,23 @@
     background-size: 20px 20px;
 	padding: 10px 0;
 	border-bottom: 1px solid $black;
+	position: relative;
+
+	a {
+		display: inline-block;
+	}
 
 	.logo {
 		width: 70px;
 		height: auto;
+	}
+
+	.quote {
+		display: inline-block;
+		color: white;
+		font-style: italic;
+		padding: 5px 0;
+		margin: 0;
 	}
 }
 
@@ -118,9 +131,15 @@
 	}
 }
 
-@media only screen and (min-width : $screen-tablet) {
-	.header .logo {
-		width: 120px;
+@media only screen and (min-width : $screen-desktop-s) {
+	.header {
+		.quote {
+			padding-top: 15px;
+		}
+
+		.logo {
+			width: 120px;
+		}
 	}
 
 	.navigation {

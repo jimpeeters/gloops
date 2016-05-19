@@ -1,9 +1,13 @@
 <div class="row header">
-        <div class="col-xs-4">
-            <a href="/">
-             <img class="logo" src="/images/Logo.png" alt="Gloops Logo">
-            </a>
-        </div>
+    <div class="col-xs-4">
+        <a href="/">
+            <img class="logo" src="/images/Logo.png" alt="Gloops Logo">
+        </a>
+    </div>
+    <div class="col-xs-8 col-sm-offset-4 col-sm-4">
+        <p class="quote visible-xs-sm hidden-md hidden-lg">"Listen, share, and manage guitar loops. Start jamming right now!"</p>
+        <p class="quote visible-md-lg hidden-xs hidden-sm">"A place to listen, share, and manage guitar loops. Start jamming on guitar loops right now!"</p>
+    </div>
 </div>
 
 <div class="row navigation" ng-class="{ 'overheating' : isOverheating() }">

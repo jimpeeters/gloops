@@ -79,7 +79,7 @@
 	}
 }
 
-@media only screen and (min-width : $screen-tablet) {
+@media only screen and (min-width : $screen-desktop-s) {
 
 	.turn-button{
 		height: 60px;
@@ -127,7 +127,7 @@
 
 }
 
-@media only screen and (min-width : $screen-tablet) {
+@media only screen and (min-width : $screen-desktop-s) {
 
 	.round-button{
 		padding: 14px 5px 5px 20px;

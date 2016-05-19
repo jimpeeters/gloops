@@ -20,9 +20,10 @@
     		padding: 0 2px;
     		margin: 0 2px;
 	        color: white;
-	        text-decoration: underline;
+	        text-decoration: none;
+	        
 	        &:hover{
-	            text-decoration: none;
+	            text-decoration: underline;
 	        }
 	    }
     }
@@ -62,6 +63,10 @@
     	color: white;
         display: inline;
         text-decoration : underline;
+    }
+
+    .copyright-text{
+    	color: white;
     }
 }
 
@@ -129,7 +134,6 @@
 			width: 100%;
 			text-align: right;
 			margin-right: 10px;
-			color: white;
 		}
 	}
 }
