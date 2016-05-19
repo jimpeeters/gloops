@@ -17,7 +17,7 @@ class UserTableSeeder extends Seeder
 
 		array(
 				'name' => 'Admin',
-				'password' => Hash::make('root'),
+				'password' => Hash::make('rootroot'),
 				'email' => 'jim.peeters.93@gmail.com',
 				'avatar' => '/images/profilePictures/admin.jpg',
 				'facebookAccount' => false,
@@ -29,7 +29,7 @@ class UserTableSeeder extends Seeder
 
 		array(
 				'name' => 'Dummy',
-				'password' => Hash::make('root'),
+				'password' => Hash::make('rootroot'),
 				'email' => 'dummy@hotmail.com',
 				'avatar' => '/images/profilePictures/dummy.jpg',
 				'facebookAccount' => false,

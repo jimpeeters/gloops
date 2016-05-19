@@ -61,9 +61,14 @@ class ProfileController extends Controller
 
     public function update(request $request)
     {
+        $input = $request->all();
+
         $validator = Validator::make($request->all(), [
-            'name'         => 'max:100|min:2|unique:users,name',
-            'avatar'         => 'mimes:png,jpeg'
+            'name'         => 'required|max:100|min:2|unique:users,name,'.$input['id'],
+            'avatar'         => 'mimes:png,jpeg',
+            'oldpassword'      => 'min:6',
+            'newpassword'      => 'min:6',
+            'email'         => 'required|email|unique:users,email,'.$input['id']
         ]);
         
         if ($validator->fails()) 
@@ -73,13 +78,23 @@ class ProfileController extends Controller
                         ->withInput();
         }
 
-        $input = $request->all();
         $user = User::findOrFail(Auth::user()->id);
         
-        // If user typed a new name
-        if($input['name'] != null)
+        $user->name = $input['name'];
+        $user->email = $input['email'];
+
+        // If users has filled in old and new password
+        if ($input['newpassword'] != null && $input['oldpassword'] != null)
         {
-            $user->name = $input['name'];
+            // Check if old password is correct
+            if( \Hash::check($input['oldpassword'], $user->password) )
+            {
+                $user->password = \Hash::make($input['password']);
+            }
+            else
+            {
+                return redirect()->back()->with('error', 'Your old password is incorrect');
+            }
         }
 
 

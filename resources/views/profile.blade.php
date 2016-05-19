@@ -156,11 +156,34 @@
 		    </div>
 		@endif
 
+		@if (session()->has('error'))
+	        <div class="col-xs-12" ng-controller="AlertController">
+	        	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
+					<p>
+						<i class="fa fa-check alert-type-icon"></i>{{ Session::get('error') }}
+						<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+					</p>
+				</div>
+	        </div>
+	    @endif
+
 		<div class="col-xs-12 col-md-6">
 			{!! Form::open(array('route' => 'updateUser', 'method' => 'POST','files' => true)) !!}
 				<div class="form-group">
 					{!! Form::label('name', 'Name') !!}
-					{!! Form::text('name', '', array('class' => 'form-control', 'placeholder' => 'You may choose to type a new name')) !!}
+					{!! Form::text('name', Auth::user()->name , array('class' => 'form-control', 'placeholder' => 'You may choose to type a new name')) !!}
+				</div>
+				<div class="form-group">
+					{!! Form::label('email', 'Email') !!}
+					{!! Form::text('email', Auth::user()->email ,array('class' => 'form-control')) !!}
+				</div>
+				<div class="form-group">
+					{!! Form::label('oldpassword', 'Old password') !!}
+					{!! Form::password('oldpassword', array('class' => 'form-control')) !!}
+				</div>
+				<div class="form-group">
+					{!! Form::label('newpassword', 'New password') !!}
+					{!! Form::password('newpassword', array('class' => 'form-control')) !!}
 				</div>
 				<div class="form-group">
 				    <div class="custom-file-upload">
@@ -168,6 +191,8 @@
 					    <input type="file" id="file" name="file" multiple />
 					</div>
 				</div>
+
+				<input type="hidden" name="id" value="{{ Auth::user()->id }}">
 
 				<button type="submit" class="basic-button">Edit</button>
 			{!! Form::close() !!}	
