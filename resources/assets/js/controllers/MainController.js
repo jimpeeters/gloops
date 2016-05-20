@@ -1,9 +1,9 @@
-gloopsApp.controller('MainController', ['$scope', '$http', 'RewardService',  function($scope, $http, RewardService) {
+gloopsApp.controller('MainController', ['$scope', '$http', 'OverheatingService',  function($scope, $http, OverheatingService) {
     
-    $scope.isOverheating = RewardService.isOverheating;
+    $scope.isOverheating = OverheatingService.isOverheating;
     
     $scope.isOverheating = function () {
-        return RewardService.isOverheating;
+        return OverheatingService.isOverheating;
     };
 
 

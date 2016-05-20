@@ -62,8 +62,8 @@ endif-->
         <!-- Header -->
         @include('navigation')
         
-        <!-- Overheating reward -->
-        @include('reward-modals.overheating')
+        <!-- Overheating -->
+        @include('snippets.overheating')
 
         <div class="row content" ng-class="{ 'overheating' : isOverheating() }">
 

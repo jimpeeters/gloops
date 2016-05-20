@@ -22,8 +22,7 @@ class UserTableSeeder extends Seeder
 				'avatar' => '/images/profilePictures/admin.jpg',
 				'facebookAccount' => false,
 				'rating' => 0,
-				'rank' => 1,
-				'earnedReward1' => false
+				'rank' => 1
 
 			),
 
@@ -34,8 +33,7 @@ class UserTableSeeder extends Seeder
 				'avatar' => '/images/profilePictures/dummy.jpg',
 				'facebookAccount' => false,
 				'rating' => 0,
-				'rank' => 1,
-				'earnedReward1' => false
+				'rank' => 1
 			),
 
 		);

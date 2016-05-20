@@ -1,6 +1,4 @@
-gloopsApp.service("RewardService", function() {
-    
-    // Station overheating reward
+gloopsApp.service("OverheatingService", function() {
     
     this.playingLoops = 0;
     this.isOverheating = false;

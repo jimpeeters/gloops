@@ -32,7 +32,7 @@ elixir(function(mix) {
     ], 'public/js/jquery.js');
     
     mix.scripts([
-        'services/RewardService.js'
+        'services/OverheatingService.js'
     ], 'public/js/angular/services/services.js');
 
     mix.scripts([

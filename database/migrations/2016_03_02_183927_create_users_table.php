@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration {
 			$table->rememberToken();
 			$table->timestamps();
 			$table->boolean('facebookAccount');
-			$table->boolean('earnedReward1');
 		});
 	}
 

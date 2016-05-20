@@ -59,7 +59,4 @@ gloopsApp.controller('StationController', ['$scope','$http', function($scope, $h
         var i = $.inArray(loop, $scope.loops);
         $scope.loops.splice(i, 1);
     }
-    
-    // Earn station overhit reward
-    $scope.loopsPlaying = 0;
 }]);

@@ -1,4 +1,4 @@
-gloopsApp.controller('LoopController', ['$scope', '$http', 'RewardService', function($scope, $http, RewardService) {
+gloopsApp.controller('LoopController', ['$scope', '$http', 'OverheatingService', function($scope, $http, OverheatingService) {
     
     // is loop playing
     $scope.isPlaying = false;
@@ -6,9 +6,7 @@ gloopsApp.controller('LoopController', ['$scope', '$http', 'RewardService', func
 
     $scope.playLoop = function(loop, $event) {
         
-        //var music = $event.currentTarget.nextElementSibling;
         var playBtnIcon = $event.target;
-        //var duration = $event.currentTarget.parentElement.nextElementSibling.children[1];
         
         // If loop is not initialised yet
         if($scope.isInit == false) {
@@ -26,8 +24,8 @@ gloopsApp.controller('LoopController', ['$scope', '$http', 'RewardService', func
             
             playBtnIcon.className = "fa fa-pause";
         
-            // Increase overheating (reward)
-            RewardService.increaseOverheating();
+            // Increase overheating
+            OverheatingService.increaseOverheating();
         }
         // If loop is playing
         else {
@@ -36,50 +34,9 @@ gloopsApp.controller('LoopController', ['$scope', '$http', 'RewardService', func
             
             playBtnIcon.className = "fa fa-play";
         
-            // Decrease overheating (reward)
-            RewardService.decreaseOverheating();
+            // Decrease overheating
+            OverheatingService.decreaseOverheating();
         }
-        
-/*        function pad(n) {
-            return (n < 10) ? ("0" + n) : n;
-        }*/
-
-/*        music.ontimeupdate = function() {
-          duration.innerHTML = '0:' + pad(Math.round(music.currentTime));
-        }*/
-        
-        /*        this.getLength = function() { return endpos; }        */
-
-        /* OLD WAY (with gaps)
-        var music = $event.currentTarget.nextElementSibling;
-        music.preload = "auto";
-        var playBtnIcon = $event.target;
-        var duration = $event.currentTarget.parentElement.nextElementSibling.children[1];
-        
-        if (music.paused) {
-            music.play();
-            playBtnIcon.className = "fa fa-pause";
-            
-            // Increase overheating (reward)
-            RewardService.increaseOverheating();
-
-        } 
-        else { 
-            music.pause();
-            playBtnIcon.className = "fa fa-play";
-            
-            // Decrease overheating (reward)
-            RewardService.decreaseOverheating();
-        }
-
-        function pad(n) {
-            return (n < 10) ? ("0" + n) : n;
-        }
-
-        music.ontimeupdate = function() {
-          duration.innerHTML = '0:' + pad(Math.round(music.currentTime));
-        }*/
-
     };
 
     // Toggle favourite loop
