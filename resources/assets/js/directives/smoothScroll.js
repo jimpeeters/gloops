@@ -61,9 +61,6 @@ gloopsApp.directive('smoothScroll', [
         return;
       }
       speed = Math.round(distance / 100);
-      if (speed >= 20) {
-        speed = 5;
-      }
       step = Math.round(distance / 25);
       leapY = (stopY > startY ? startY + step : startY - step);
       timer = 0;

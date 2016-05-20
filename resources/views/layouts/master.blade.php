@@ -153,5 +153,16 @@ endif  -->
     </script>
 @endif
 
+<!-- In profile view scroll with update message -->
+@if(session()->has('updateMessage') && Request::is('profile'))
+    <script>
+        $(document).ready(function() {
+            $('html, body').animate({
+                scrollTop: $("#edit-section-title").offset().top -180
+            }, 700);
+        });
+    </script>
+@endif
+
 </body>
 </html>

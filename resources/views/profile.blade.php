@@ -139,7 +139,7 @@
 			</div>
 		</div>
 
-		<div class="col-xs-12" id="edit-section">
+		<div class="col-xs-12" id="edit-section-title">
 			<h2 class="block-title"><i class="fa fa-pencil"></i> Edit your profile</i></h2>
 		</div>
 
@@ -167,7 +167,7 @@
 	        </div>
 	    @endif
 
-		<div class="col-xs-12 col-md-6">
+		<div class="col-xs-12 col-md-6"  id="edit-section">
 			{!! Form::open(array('route' => 'updateUser', 'method' => 'POST','files' => true)) !!}
 				<div class="form-group">
 					{!! Form::label('name', 'Name') !!}
@@ -207,7 +207,6 @@
 		@include('snippets.login')
 
 	@endif
-
 </div>
 
 @stop

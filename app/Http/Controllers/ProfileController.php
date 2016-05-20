@@ -75,7 +75,8 @@ class ProfileController extends Controller
         {
             return redirect()->back()
                         ->withErrors($validator)
-                        ->withInput();
+                        ->withInput()
+                        ->with('updateMessage','update message');
         }
 
         $user = User::findOrFail(Auth::user()->id);
@@ -93,7 +94,7 @@ class ProfileController extends Controller
             }
             else
             {
-                return redirect()->back()->with('error', 'Your old password is incorrect');
+                return redirect()->back()->with('error', 'Your old password is incorrect')->with('updateMessage','update message');
             }
         }
 

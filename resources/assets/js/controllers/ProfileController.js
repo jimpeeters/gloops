@@ -1,4 +1,4 @@
-gloopsApp.controller('ProfileController', ['$scope', '$http', '$location', '$anchorScroll', function($scope, $http, $location, $anchorScroll) {
+gloopsApp.controller('ProfileController', ['$scope', '$http', function($scope, $http) {
 
     // Limit on loops
     $scope.loopLimit = 9;
