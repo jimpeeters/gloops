@@ -27,7 +27,7 @@ class HomeController extends Controller
                with('category')->
                with('tags')->
                groupBy('loops.id')->
-               orderBy('count','DESC')->take(4)->get();
+               orderBy('count','DESC')->take(6)->get();
 
 
 

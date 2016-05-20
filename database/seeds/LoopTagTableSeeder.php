@@ -155,6 +155,21 @@ class LoopTagTableSeeder extends Seeder {
 				'FK_tag_id' => '9'
 			),
 
+		array(
+				'FK_loop_id' => '14',
+				'FK_tag_id' => '11'
+			),
+
+		array(
+				'FK_loop_id' => '14',
+				'FK_tag_id' => '14'
+			),
+
+		array(
+				'FK_loop_id' => '14',
+				'FK_tag_id' => '1'
+			),
+
 		);
 
 		DB::table('loops_tags')->insert($connections);

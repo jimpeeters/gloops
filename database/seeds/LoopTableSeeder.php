@@ -20,16 +20,14 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '1',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 9789
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 		array(
 				'name' => 'Happy Beach Moment',
 				'loop_path' => '/loops/main/loop-2.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '1',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 8330
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -37,8 +35,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-3.mp3',
 				'FK_category_id' => '2',
 				'FK_user_id' => '1',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 4833
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -46,8 +43,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-4.mp3',
 				'FK_category_id' => '1',
 				'FK_user_id' => '1',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 20582
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -55,8 +51,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-5.mp3',
 				'FK_category_id' => '5',
 				'FK_user_id' => '1',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 21011
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -64,8 +59,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-6.mp3',
 				'FK_category_id' => '1',
 				'FK_user_id' => '1',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 3295
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -73,8 +67,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-7.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '1',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 6578
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -82,8 +75,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-8.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '1',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 4994
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -91,8 +83,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '1',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -100,8 +91,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-10.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '1',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 3530
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -109,8 +99,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-11.mp3',
 				'FK_category_id' => '3',
 				'FK_user_id' => '1',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 19561
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -118,8 +107,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-12.mp3',
 				'FK_category_id' => '2',
 				'FK_user_id' => '1',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 28136
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -127,8 +115,15 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-13.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '1',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 5851
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
+			),
+
+		array(
+				'name' => 'Stand by me',
+				'loop_path' => '/loops/main/loop-14.mp3',
+				'FK_category_id' => '3',
+				'FK_user_id' => '1',
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -136,8 +131,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -145,8 +139,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -154,8 +147,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -163,8 +155,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -172,8 +163,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -181,8 +171,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -190,8 +179,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -199,8 +187,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -208,8 +195,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -217,8 +203,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -226,8 +211,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -235,8 +219,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -244,8 +227,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -253,8 +235,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -262,8 +243,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -271,8 +251,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -280,8 +259,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -289,8 +267,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 
 		array(
@@ -298,8 +275,7 @@ class LoopTableSeeder extends Seeder
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
-				'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-				'duration' => 17042
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
 			),
 		);
 
