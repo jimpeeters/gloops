@@ -74,8 +74,3 @@
 
         </div>
 </div>
-
-<!-- Login modal -->
-@if(!Request::is('record'))
-    @include('auth.login')
-@endif

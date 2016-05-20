@@ -135,7 +135,7 @@ class AuthController extends Controller
     public function getLogout()
     {
         Auth::logout();
-        return Redirect::back()->with('success',"You have successfully logged out. We hope to see you again soon!");
+        return Redirect::back()->with('successfullLogout',"You have successfully logged out. We hope to see you again soon!");
     }
 
     //get register page ------------

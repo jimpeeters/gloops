@@ -44,6 +44,21 @@ endif-->
 <body>
 
     <div class="container" ng-controller="MainController">
+
+        <!-- Login modal when not logged in -->
+        @if(!Auth::check())
+
+            @include('auth.login')
+
+        @endif
+
+        <!-- Open logout modal when session-->
+        @if(session()->has('successfullLogout'))
+
+            @include('auth.logout')
+
+        @endif
+
         <!-- Header -->
         @include('navigation')
         
@@ -125,6 +140,15 @@ endif  -->
     <script>
         $(document).ready(function() {
             $('#loginModal').modal('show');
+        });
+    </script>
+@endif
+
+<!-- Open logout modal-->
+@if(session()->has('successfullLogout'))
+    <script>
+        $(document).ready(function() {
+            $('#logoutModal').modal('show');
         });
     </script>
 @endif

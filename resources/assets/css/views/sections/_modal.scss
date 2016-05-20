@@ -11,6 +11,8 @@
 		color: $red;
 		opacity: 1;
 		text-shadow: none;
+		font-size: 32px;
+		
 		&:hover {
 			color:lighten($red,6);
 		}
