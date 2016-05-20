@@ -34,6 +34,11 @@
             i {
                 font-size: 1.4em;
                 padding-right: 2px;
+
+                &:hover{
+                    cursor: pointer;
+                    color: lighten($red, 10);
+                }
             }
 
             a {
@@ -98,6 +103,14 @@
         width: 100%;
         margin: 15px auto;
         display: block;
+    }
+
+    @media only screen and (min-width : $screen-phone) {
+
+        .loops {
+            min-height: 466px;
+        }
+
     }
 
     /* Small Devices, Tablets */

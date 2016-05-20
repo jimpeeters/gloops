@@ -20,11 +20,13 @@
                 <i ng-click="mostRecent = !mostRecent" ng-show="!mostRecent" class="fa fa-square-o" aria-hidden="true"></i>
                 <a ng-click="mostRecent = !mostRecent"  ng-class="{ 'underline' : mostRecent }">Most recent</a>
             </li>
-            <li>
-                <i class="fa fa-check-square" aria-hidden="true"></i>
-                <i class="fa fa-square-o" aria-hidden="true"></i>
-                <a href="">Your loops</a>
-            </li>
+            @if(Auth::check())
+                <li>
+                    <i ng-show="yourLoopfilterOn" class="fa fa-check-square" aria-hidden="true"></i>
+                    <i ng-show="!yourLoopfilterOn" class="fa fa-square-o" aria-hidden="true"></i>
+                    <a ng-class="{ 'underline' : yourLoopfilterOn }" ng-click="activateYourLoopFilter({{ Auth::user()->id }})">Your loops</a>
+                </li>
+            @endif
             <li class="title">
                 <p>Category</p>
             </li>
@@ -76,11 +78,13 @@
                 <i ng-click="mostRecent = !mostRecent" ng-show="!mostRecent" class="fa fa-square-o" aria-hidden="true"></i>
                 <a ng-click="mostRecent = !mostRecent" ng-class="{ 'underline' : mostRecent }">Most recent</a>
             </li>
-            <li>
-                <i class="fa fa-check-square" aria-hidden="true"></i>
-                <i class="fa fa-square-o" aria-hidden="true"></i>
-                <a href="">Your loops</a>
-            </li>
+            @if(Auth::check())
+                <li>
+                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                    <i class="fa fa-square-o" aria-hidden="true"></i>
+                    <a href="">Your loops</a>
+                </li>
+            @endif
             <li class="title">
                 <p>Category</p>
             </li>
@@ -128,7 +132,7 @@
     </div>
     <div class="col-xs-12 col-sm-10 loops">
     	<div class="row">
-			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | filter:categoryFilter | orderBy: '-created_at':mostRecent | limitTo:loopLimit" ng-init="isFavourite=loop.isFavourite">
+			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | filter:categoryFilter | filter:(!filterLoopsUserId ? '' : yourLoopFilter) | orderBy: '-created_at':mostRecent | limitTo:loopLimit" ng-init="isFavourite=loop.isFavourite">
 				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite }">
 				  	<div class="col-xs-2">
 				    	<a class="play-button" ng-click="playLoop(loop, $event)">
@@ -166,7 +170,7 @@
 					<p ng-repeat="tag in loop.tags"><span class="label"><i class="fa fa-tag"></i> <% tag.name %></span></p>
 				</div>
 			</div>
-            <div ng-show="loops.length > 9" class="col-xs-12">
+            <div ng-show="loops.length > 9 && loopLimit < loops.length" class="col-xs-12">
                 <button class="basic-button load-more-button" href="" ng-click="loopLimit = loopLimit + 3">Load more</button>
             </div>
 		</div>
