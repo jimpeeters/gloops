@@ -1,12 +1,12 @@
 // Underline text
 .underline {
-  text-decoration: underline !important;
+    text-decoration: underline !important;
 }
 
 // Use font instead of font-weight
 strong {
-  font-weight: normal;
-  font-family: AUdimatBold;
+    font-weight: normal;
+    font-family: AUdimatBold;
 }
 
 // Bootstrap full screen
@@ -22,8 +22,18 @@ button, a, input {
 }
 
 .truncate {
-  //width meegeven
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    //width meegeven
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.black-link {
+    color: $black;
+    text-decoration: underline;
+
+        &:hover{
+            text-decoration: none;
+            color: lighten($black, 15);
+        }
 }

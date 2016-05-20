@@ -80,9 +80,9 @@
             </li>
             @if(Auth::check())
                 <li>
-                    <i class="fa fa-check-square" aria-hidden="true"></i>
-                    <i class="fa fa-square-o" aria-hidden="true"></i>
-                    <a href="">Your loops</a>
+                    <i ng-show="yourLoopfilterOn" class="fa fa-check-square" aria-hidden="true"></i>
+                    <i ng-show="!yourLoopfilterOn" class="fa fa-square-o" aria-hidden="true"></i>
+                    <a ng-class="{ 'underline' : yourLoopfilterOn }" ng-click="activateYourLoopFilter({{ Auth::user()->id }})">Your loops</a>
                 </li>
             @endif
             <li class="title">
@@ -132,7 +132,7 @@
     </div>
     <div class="col-xs-12 col-sm-10 loops">
     	<div class="row">
-			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | filter:categoryFilter | filter:(!filterLoopsUserId ? '' : yourLoopFilter) | orderBy: '-created_at':mostRecent | limitTo:loopLimit" ng-init="isFavourite=loop.isFavourite">
+			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | filter:categoryFilter | filter:(!filterLoopsUserId ? '' : yourLoopFilter) | orderBy: '-created_at':mostRecent | limitTo:loopLimit as filtered_result" ng-init="isFavourite=loop.isFavourite">
 				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite }">
 				  	<div class="col-xs-2">
 				    	<a class="play-button" ng-click="playLoop(loop, $event)">
@@ -170,7 +170,18 @@
 					<p ng-repeat="tag in loop.tags"><span class="label"><i class="fa fa-tag"></i> <% tag.name %></span></p>
 				</div>
 			</div>
-            <div ng-show="loops.length > 9 && loopLimit < loops.length" class="col-xs-12">
+            <div ng-show="filtered_result <= 0" class="col-xs-12" ng-controller="AlertController">
+                <div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
+                    <p>
+                        <i class="fa fa-info alert-type-icon"></i>There are <strong>no loops</strong> with these filters available!
+                        @if(Auth::check())
+                            <a class="black-link" href="{{ route('station') }}">Start adding more loops right now!</a>
+                        @endif
+                        <i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+                    </p>
+                </div>
+            </div>
+            <div ng-show="loops.length > 9 && filtered_result > 0" class="col-xs-12">
                 <button class="basic-button load-more-button" href="" ng-click="loopLimit = loopLimit + 3">Load more</button>
             </div>
 		</div>
