@@ -15,6 +15,7 @@ gloopsApp.controller('MainController', ['$scope', '$http', 'OverheatingService',
     // Search limits for load more buttons
 	$scope.searchTagsLimit = 6;
 	$scope.searchCategoryLimit = 6;
+    $scope.searchLoopnameLimit = 6;
 
     // Searching state
     $scope.isSearching = false;
@@ -53,6 +54,19 @@ gloopsApp.controller('MainController', ['$scope', '$http', 'OverheatingService',
 	            $scope.searchResultsCategory = data;
 	        });
     	}
+    }
+
+    // Search a loop based on loopname
+    $scope.searchOnLoopname = function(query) {
+
+        if (query.length > 0) {
+           $http({
+                  method  : 'GET',
+                  url     : '/search/loopname/' + query
+            }).success(function(data) {
+                $scope.searchResultsLoopname = data;
+            });
+        }
     }
 
 }]);

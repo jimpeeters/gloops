@@ -37,3 +37,8 @@ button, a, input {
             color: lighten($black, 15);
         }
 }
+
+// Mixins
+@mixin text-shadow() {
+    text-shadow: 1px 1px 1px $black;
+}

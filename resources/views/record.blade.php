@@ -4,52 +4,54 @@
 
 @section('content')
 <div class="record">
+
+	<div class="title-section">
+		<h1>RECORD</h1>
+	</div>
+
 	<div class="col-xs-12">
 		<div ng-controller='RecordController'>
-		    <h1>Record your audio</h1>
-		
 		    <ng-audio-recorder id="mainAudio" audio-model="recorded" show-player="false" time-limit="timeLimit">
 		        <div ng-if="recorder.isAvailable">
+
+		        	<a class="record-button btn-floating waves-effect waves-light btn-large red" ng-click="recorder.startRecord()" type="button" ng-hide="recorder.status.isDenied === true || recorder.status.isRecording || recorder.status.isConverting">
+		        		<i class="fa fa-microphone"></i>
+		        	</a>
+
+		        	<a class="pauze-button btn-floating waves-effect waves-light btn-large red" ng-click="recorder.stopRecord()" type="button" ng-hide="recorder.status.isRecording === false">
+		        		<i class="fa fa-stop"></i>
+		        	</a>
+					
+		        	<div class="preloader-wrapper big active" ng-show="recorder.status.isConverting">
+					    <div class="spinner-layer spinner-blue-only">
+						     <div class="circle-clipper left">
+						        <div class="circle"></div>
+						    </div><div class="gap-patch">
+						        <div class="circle"></div>
+						    </div><div class="circle-clipper right">
+						        <div class="circle"></div>
+						    </div>
+					    </div>
+					</div>
 		
 		            <div ng-if="recorder.status.isDenied === true" style="color: red;">
 		                You need to grant permission for this application to USE your microphone.
 		            </div>
-		            <button ng-click="recorder.startRecord()" type="button"
-		                    ng-disabled="recorder.status.isDenied === true || recorder.status.isRecording">
-		                Start Record
-		            </button>
-		            <button ng-click="recorder.stopRecord()" type="button" ng-disabled="recorder.status.isRecording === false">
-		                Stop Record
-		            </button>
+
+		            <a class="btn-floating waves-effect waves-light btn-large red" ng-click="recorder.status.isPlaying ? recorder.playbackPause() : recorder.playbackResume()" type="button" ng-disabled="recorder.status.isRecording || !recorder.audioModel" ng-class="{ 'disabled' : recorder.status.isRecording || !recorder.audioModel }">
+		        		<i class="fa fa-<% recorder.status.isStopped || recorder.status.isPaused ? 'play' : 'pause' %>"></i>
+		        	</a>
+
+		        	<a class="btn-floating waves-effect waves-light btn-large red" ng-click="recorder.save()" ng-disabled="recorder.status.isRecording || !recorder.audioModel" ng-class="{ 'disabled' : recorder.status.isRecording || !recorder.audioModel }">
+		        		<i class="fa fa-download"></i>
+		        	</a>
 		
-		            <button ng-click="recorder.status.isPlaying ? recorder.playbackPause() : recorder.playbackResume()"
-		                    type="button" ng-disabled="recorder.status.isRecording || !recorder.audioModel">
-		                <% recorder.status.isStopped || recorder.status.isPaused ? 'Play' : 'Pause' %>
-		            </button>
-		
-		            <button ng-click="recorder.save()" ng-disabled="recorder.status.isRecording || !recorder.audioModel">
-		                Download
-		            </button>
-		
-		            <div style="max-width: 600px">
-		                <div ng-show="recorder.status.isConverting">
-		                    Please wait while your recording is processed.
-		                </div>
-		
-		                <div ng-show="recorder.isHtml5 && recorder.status.isRecording">
-		                    <ng-audio-recorder-analyzer></ng-audio-recorder-analyzer>
-		                </div>
-		                <br/>
-		            </div>
-		
-		            <h2 style="font-family: sans-serif; text-align: center; width: 60px; border-radius: 20px;
-		        border: solid 2px #333; padding: 20px 10px;" ng-if="recorder.status.isRecording">
+		            <h2 ng-if="recorder.status.isRecording">
 		                <% recorder.elapsedTime > 9 ? recorder.elapsedTime : ('0'+recorder.elapsedTime) %>
 		            </h2>
 		
 		
-		            <h2 style="font-family: sans-serif; text-align: center; border: solid 2px #333; padding: 20px 10px;"
-		                ng-if="recorder.status.isRecording">
+		            <h2 ng-if="recorder.status.isRecording">
 		                Remaining Time: <% recorder.timeLimit - recorder.elapsedTime %>
 		            </h2>
 		        </div>
@@ -63,11 +65,6 @@
 		            use this feature.
 		        </div>
 		    </ng-audio-recorder>
-
-
-			<button ng-click="startEdit()">Start Editing</button>
-
-			<div id="peaks-container"></div>
 
 		</div>
 	</div>

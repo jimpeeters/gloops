@@ -1,19 +1,19 @@
-/*
- *
- * Project Essentials */
+// Materialize
+@import "../materialize/sass/components/color";
+@import "../materialize/sass/components/variables";
+@import "../materialize/sass/components/buttons";
+@import "../materialize/sass/components/global";
+@import "../materialize/sass/components/preloader";
+
+
+// Project Essentials
 @import "includes/variables";
 @import "includes/fonts";
 @import "includes/helpers";
 @import "includes/animations";
 
-// Mixins
-@mixin text-shadow() {
-	text-shadow: 1px 1px 1px $black;
-}
-
 // Font-awesome
 @import "plugins/font-awesome";
-
 
 // UI Elements
 @import "ui/buttons";

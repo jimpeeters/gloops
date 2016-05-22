@@ -44,7 +44,7 @@
 	                    ng-model="query" 
 	                    ng-model-options='{ debounce: 500 }' 
 	                    id="search-input" 
-	                    ng-change="setQueryValue(query); searchOnTags(query); searchOnCategory(query)"
+	                    ng-change="setQueryValue(query); searchOnTags(query); searchOnCategory(query); searchOnLoopname(query)"
 	                    placeholder="Search loops"/>
 			    </form>
 			</div>

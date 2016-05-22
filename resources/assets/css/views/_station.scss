@@ -10,6 +10,18 @@
     	display: block;
 	}
 
+	.record-button {
+		margin: 30px auto 30px auto;
+		display: block;
+		width: 100px;
+		height: 100px;
+
+		i {
+			font-size: 3rem;
+			line-height: 100px;
+		}
+	}
+
 	.upload-button {
 		margin-top: 25px;
 	}
@@ -46,7 +58,7 @@
 		// Deletable loop
 		&.deletable {
 			border-color: $red;
-			background-color: lighten($red, 45);
+			background-color: lighten($red, 30);
 
 			&:hover {
 				.delete-button i {
@@ -71,6 +83,10 @@
     @media only screen and (min-width : $screen-tablet) {
 		.load-more-button, .remove-button, .editing-button {
 			width: 350px;
+		}
+
+		.record-button {
+			margin: 130px auto 0 auto;
 		}
     }
 

@@ -109,6 +109,9 @@ Route::group(['middleware' => ['web']], function () {
 	// Search on category
 	Route::get('/search/category/{query}', array('as' => 'searchOnCategory', 'uses' => 'MainController@searchOnCategory'));
 
+	//Search on loopname
+	Route::get('/search/loopname/{query}', array('as' => 'searchOnLoops', 'uses' => 'MainController@searchOnLoopname'));
+	
 	// Get specific user page
 	Route::get('/user/{name}', array('as' => 'specificUser', 'uses' => 'UserController@getSpecificUser'));
 

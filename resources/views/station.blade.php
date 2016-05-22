@@ -167,7 +167,10 @@
 
 		<div class="col-xs-12 col-sm-6">
 			<h4 class="block-title"><i class="fa fa-microphone"></i> Record</h4>
-			<a class="basic-button" href="https://gloops-alpha-jimpeeters.c9users.io/record">Record now   <i class="fa fa-chevron-right"></i></a>
+
+			<a href="https://gloops-alpha-jimpeeters.c9users.io/record" class="record-button btn-floating waves-effect waves-light btn-large red">
+		        <i class="fa fa-microphone"></i>
+		    </a>
 		</div>
 
 	@else

@@ -1,0 +1,18 @@
+.record {
+	.record-button, .pauze-button {
+		margin: 0 auto;
+		display: block;
+		width: 100px;
+		height: 100px;
+
+		i {
+			line-height: 100px;
+			font-size: 2em;
+		}
+	}
+
+	.preloader-wrapper {
+		margin: 0 auto;
+		display: block;
+	}
+}

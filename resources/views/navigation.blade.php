@@ -46,7 +46,7 @@
                     ng-model="query" 
                     ng-model-options='{ debounce: 500 }' 
                     id="search-input" 
-                    ng-change="setQueryValue(query); searchOnTags(query); searchOnCategory(query)" 
+                    ng-change="setQueryValue(query); searchOnTags(query); searchOnCategory(query); searchOnLoopname(query)" 
                     class="closed" 
                     placeholder="Search loops"
                     />
@@ -58,7 +58,7 @@
         <div class="col-xs-2 col-xs-offset-2">
             <div class="center-content">
                 @if(Auth::check())
-                    <a id="login-button" href="{{route('getLogout')}}" class="round-button green">
+                    <a id="login-button" href="{{route('getLogout')}}" class="round-button green-button">
                         <i class="fa fa-sign-out"></i>
                     </a>
                     <div id="login-light" class="bg-green"></div>
