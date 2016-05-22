@@ -151,7 +151,7 @@ endif  -->
     <script>
         $(document).ready(function() {
             $('html, body').animate({
-                scrollTop: $("#edit-section-title").offset().top -180
+                scrollTop: $("#edit-section").offset().top -135
             }, 700);
         });
     </script>

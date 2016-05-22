@@ -23,7 +23,7 @@
         <div class="col-xs-2">
             <!-- My Loops -->
             <div class="center-content">
-                <a href="{{ route('station') }}" class="turn-button tick {{{ (Request::is('station') ? 'on' : '') }}}"></a>
+                <a href="https://gloops-alpha-jimpeeters.c9users.io/station" class="turn-button tick {{{ (Request::is('station') ? 'on' : '') }}}"></a>
                 <p>Station</p>
             </div>
         </div>

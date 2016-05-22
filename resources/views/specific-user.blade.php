@@ -12,7 +12,6 @@
 	<div class="col-xs-12">
 		<center>
 			<div class="profile-picture" style="background-image: url({{ $user->avatar }})">
-				<img class="profile-rank-icon" src="/images/rankIcons/rank_{{ $user->rank }}.png" alt="This users rank {{ $user->rank }} medal">
 			</div>
 			<h2 class="profile-name">{{ $user->name }}</h2>
 			<ul class="profile-rank" title="This user has {{$user->rating}} reputation" data-toggle="tooltip" data-placement="left" tooltip>

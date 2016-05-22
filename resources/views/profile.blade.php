@@ -26,8 +26,9 @@
 		<div class="col-xs-12">
 			<center>
 				<div class="profile-picture" style="background-image: url({{ Auth::user()->avatar }})" title="Edit your profile picture" data-toggle="tooltip" data-placement="left" tooltip>
-					<img class="profile-rank-icon" src="/images/rankIcons/rank_{{ Auth::user()->rank }}.png" alt="This users rank {{ Auth::user()->rank }} medal">
-					<a class="profile-edit" href="" smooth-scroll target="edit-section"><i class="fa fa-pencil"></i></a>
+					<a class="btn-floating waves-effect waves-light btn-small red profile-edit" smooth-scroll target="edit-profile-form">
+			    		<i class="fa fa-pencil"></i>
+			    	</a>
 				</div>
 				<h2 class="profile-name">{{ Auth::user()->name }}</h2>
 				<ul class="profile-rank" title="Gain more rating to rank up" data-toggle="tooltip" data-placement="left" tooltip>
@@ -89,7 +90,7 @@
 		
 
 		<div class="col-xs-12">
-			<h2 class="block-title"><i class="fa fa-star"></i> Your favourite loops</i></h2>
+			<h2 class="title"><span>Your favourite loops</span></h2>
 		</div>
 
 		<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in favouriteLoops | limitTo:loopLimit track by loop.id" ng-init="isFavourite=loop.isFavourite">
@@ -139,56 +140,53 @@
 			</div>
 		</div>
 
-		<div class="col-xs-12" id="edit-section-title">
-			<h2 class="block-title"><i class="fa fa-pencil"></i> Edit your profile</i></h2>
-		</div>
+		<div class="col-xs-12 col-sm-6 col-sm-offset-3" id="edit-section">
+			<h2 class="title"><span>Edit your profile</span></h2>
+			@if(count($errors) > 0)
+			    <div ng-controller="AlertController">
+			    	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
+			    		@foreach ($errors->all() as $error)
+							<p>
+								<i class="fa fa-times alert-type-icon"></i>{{ $error }}
+								<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+							</p>
+						@endforeach
+					</div>
+			    </div>
+			@endif
 
-		@if(count($errors) > 0)
-		    <div class="col-xs-12" ng-controller="AlertController">
-		    	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
-		    		@foreach ($errors->all() as $error)
+			@if (session()->has('error'))
+		        <div ng-controller="AlertController">
+		        	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
 						<p>
-							<i class="fa fa-times alert-type-icon"></i>{{ $error }}
+							<i class="fa fa-check alert-type-icon"></i>{{ Session::get('error') }}
 							<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
 						</p>
-					@endforeach
-				</div>
-		    </div>
-		@endif
+					</div>
+		        </div>
+		    @endif
 
-		@if (session()->has('error'))
-	        <div class="col-xs-12" ng-controller="AlertController">
-	        	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
-					<p>
-						<i class="fa fa-check alert-type-icon"></i>{{ Session::get('error') }}
-						<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
-					</p>
-				</div>
-	        </div>
-	    @endif
-
-		<div class="col-xs-12 col-md-6"  id="edit-section">
-			{!! Form::open(array('route' => 'updateUser', 'method' => 'POST','files' => true)) !!}
+			{!! Form::open(array('route' => 'updateUser','id' => 'edit-profile-form',  'method' => 'POST','files' => true)) !!}
 				<div class="form-group">
 					{!! Form::label('name', 'Name') !!}
-					{!! Form::text('name', Auth::user()->name , array('class' => 'form-control', 'placeholder' => 'You may choose to type a new name')) !!}
+					{!! Form::text('name', Auth::user()->name , array('class' => 'form-control', 'placeholder' => 'You may choose to type a new name', 'required' => 'required')) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::label('email', 'Email') !!}
-					{!! Form::text('email', Auth::user()->email ,array('class' => 'form-control')) !!}
+					{!! Form::text('email', Auth::user()->email ,array('class' => 'form-control','required' => 'required')) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::label('oldpassword', 'Old password') !!}
-					{!! Form::password('oldpassword', array('class' => 'form-control')) !!}
+					{!! Form::password('oldpassword', array('class' => 'form-control' , 'placeholder' => 'Old password')) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::label('newpassword', 'New password') !!}
-					{!! Form::password('newpassword', array('class' => 'form-control')) !!}
+					{!! Form::password('newpassword', array('class' => 'form-control','placeholder' => 'New password')) !!}
 				</div>
 				<div class="form-group">
 				    <div class="custom-file-upload">
 					    {!! Form::label('file', 'Profile picture') !!}
-					    <input type="file" id="file" name="file" multiple />
+					    <input type="file" id="file" name="file" placeholder="Upload an mp3 file" multiple />
 					</div>
 				</div>
 

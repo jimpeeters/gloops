@@ -10,8 +10,7 @@
 			<div class="sub-footer">
 				<h5>Station //</h5>
 				<a href="{{route('profile')}}">Your account</a>
-				<a href="{{route('station')}}">Your station</a>
-				<a href="https://gloops-alpha-jimpeeters.c9users.io/record">Record now</a>
+				<a href="https://gloops-alpha-jimpeeters.c9users.io/station">Your station</a>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-3">

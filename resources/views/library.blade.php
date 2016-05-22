@@ -175,7 +175,7 @@
                     <p>
                         <i class="fa fa-info alert-type-icon"></i>There are <strong>no loops</strong> with these filters available!
                         @if(Auth::check())
-                            <a class="black-link" href="{{ route('station') }}">Start adding more loops right now!</a>
+                            <a class="black-link" href="https://gloops-alpha-jimpeeters.c9users.io/station">Start adding more loops right now!</a>
                         @endif
                         <i ng-click="closeAlert()" class="fa fa-times close-button"></i>
                     </p>

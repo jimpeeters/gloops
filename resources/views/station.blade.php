@@ -22,21 +22,6 @@
 	        </div>
 	    @endif
 
-		@if (count($errors) > 0)
-		    <div class="col-xs-12 col-lg-6 col-lg-offset-3" ng-controller="AlertController">
-		    	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
-		    		@foreach ($errors->all() as $key => $error)
-						<p>
-							<i class="fa fa-times alert-type-icon"></i>{{ $error }}
-							@if($key == 0)
-								<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
-							@endif
-						</p>
-					@endforeach
-				</div>
-		    </div>
-		@endif
-
 		<div class="col-xs-12">
 			<h2 class="title"><span>Your loops</span></h2>
 		</div>
@@ -59,13 +44,15 @@
 			  	</div>
 			</div>
 			<!-- /Confirmation modal delete-->
-			<div class="row loop-box" ng-class="{ 'favourite' : isFavourite, 'deletable' : enableDeleting, 'editable' : enableEditing }">
-				<a href="" data-toggle="modal" data-target="#confirmationModal<% loop.id %>" class="delete-button" ng-show="enableDeleting">
-					<i class="fa fa-trash"></i>
-				</a>
-				<a href="/station/edit/<% loop.id %>"class="edit-button" ng-show="enableEditing">
-					<i class="fa fa-pencil"></i>
-				</a>
+			<div class="row loop-box" ng-class="{ 'favourite' : isFavourite, 'deletable' : enableDeleting, 'editable' : enableEditing }">				
+				<a class="btn-floating waves-effect waves-light btn-small red darken-2 delete-button" data-toggle="modal" data-target="#confirmationModal<% loop.id %>" ng-show="enableDeleting">
+		    		<i class="fa fa-trash"></i> 
+		    	</a>
+
+		    	<a class="btn-floating waves-effect waves-light btn-small blue edit-button" href="/station/edit/<% loop.id %>" ng-show="enableEditing">
+		    		<i class="fa fa-pencil"></i> 
+		    	</a>
+
 			  	<div class="col-xs-2 loopbox-section">
 			    	<a class="play-button" ng-click="playLoop(loop, $event)">
 			      		<i class="fa fa-play"></i>
@@ -95,15 +82,19 @@
 			</div>
 		</div>
 		<div ng-show="loops.length > 0" class="col-xs-12 action-buttons">
-			<a class="btn-floating waves-effect waves-light btn-small red" ng-click="enableDeleting = !enableDeleting; enableEditing = false">
-	    		<i ng-show="enableDeleting" class="fa fa-times"></i>
-	    		<i ng-show="!enableDeleting" class="fa fa-trash"></i> 
-	    	</a>
-			<a class="btn-floating waves-effect waves-light btn-small red" ng-click="enableEditing = !enableEditing; enableDeleting = false">
-	    		<i ng-show="enableEditing" class="fa fa-times"></i>
-	    		<i ng-show="!enableEditing" class="fa fa-pencil"></i> 
-	    	</a>
-	    	<button ng-show="loops.length > 9" class="basic-button load-more-button" ng-click="loopLimit = loopLimit + 3" href="">Load more</button>
+			<button ng-show="loops.length > 9" class="basic-button load-more-button" ng-click="loopLimit = loopLimit + 3" href="">Load more</button>
+			<div class="button-wrapper">
+				<a class="delete btn-floating waves-effect waves-light btn-small red darken-2" ng-click="enableDeleting = !enableDeleting; enableEditing = false">
+		    		<i ng-show="enableDeleting" class="fa fa-times"></i>
+		    		<i ng-show="!enableDeleting" class="fa fa-trash"></i> 
+		    	</a>
+		    </div>
+		    <div class="button-wrapper">
+				<a class="edit btn-floating waves-effect waves-light btn-small blue" ng-click="enableEditing = !enableEditing; enableDeleting = false">
+		    		<i ng-show="enableEditing" class="fa fa-times"></i>
+		    		<i ng-show="!enableEditing" class="fa fa-pencil"></i> 
+		    	</a>
+	    	</div>
 		</div>
 
 		<div ng-show="loops.length === 0" class="col-xs-12" ng-controller="AlertController">
@@ -117,40 +108,56 @@
 
 		<div class="col-xs-12 col-sm-6 col-sm-offset-3 upload-section">
 			<h2 class="title"><span>Start uploading</span></h2>
-				{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true)) !!}
-					<div class="form-group">
-						{!! Form::label('name', 'Name') !!}
-						{!! Form::text('name','',array('class' => 'form-control', 'required' => 'required')) !!}
+
+			@if (count($errors) > 0)
+			    <div ng-controller="AlertController">
+			    	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
+			    		@foreach ($errors->all() as $key => $error)
+							<p>
+								<i class="fa fa-times alert-type-icon"></i>{{ $error }}
+								@if($key == 0)
+									<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+								@endif
+							</p>
+						@endforeach
 					</div>
+			    </div>
+			@endif
 
-					<div class="form-group">
-					    <div class="custom-file-upload">
-						    {!! Form::label('file', 'File') !!}
-						    <input type="file" id="file" name="file"/>
-						</div>
+			{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true)) !!}
+				<div class="form-group">
+					{!! Form::label('name', 'Name') !!}
+					{!! Form::text('name','',array('class' => 'form-control', 'required' => 'required')) !!}
+				</div>
+
+				<div class="form-group">
+				    <div class="custom-file-upload">
+					    {!! Form::label('file', 'File') !!}
+					    <input type="file" id="file" name="file"/>
 					</div>
+				</div>
 
-					<div class="form-group">
-						{!! Form::label('Tags') !!}
-						<select size="5" name="tags[]" class="form-control chosen-select" data-placeholder="Add tags to this guitar loop..." multiple required>
-							@foreach ($tags as $name)
-								<option value="{{$name}}">{{$name}}</option>
-							@endforeach
-						</select>
-		    		</div>
+				<div class="form-group">
+					{!! Form::label('Tags') !!}
+					<select size="5" name="tags[]" class="form-control chosen-select" data-placeholder="Add tags to this guitar loop..." multiple required>
+						@foreach ($tags as $name)
+							<option value="{{$name}}">{{$name}}</option>
+						@endforeach
+					</select>
+	    		</div>
 
-		    		<div class="form-group">
-						{!! Form::label('Category') !!}
-						<select name="category" class="form-control chosen-select-dropdown" data-placeholder="Choose a Category" required>
-							<option value="">Choose a category</option>
-							@foreach ($categories as $category)
-								<option value="{{$category->id}}">{{$category->name}}</option>
-							@endforeach
-						</select>
-		    		</div>
-	                
-					<button type="submit" class="basic-button upload-button">Upload</button>
-				{!! Form::close() !!}	
+	    		<div class="form-group">
+					{!! Form::label('Category') !!}
+					<select name="category" class="form-control chosen-select-dropdown" data-placeholder="Choose a Category" required>
+						<option value="">Choose a category</option>
+						@foreach ($categories as $category)
+							<option value="{{$category->id}}">{{$category->name}}</option>
+						@endforeach
+					</select>
+	    		</div>
+                
+				<button type="submit" class="basic-button upload-button">Upload</button>
+			{!! Form::close() !!}	
 
 			<h2 class="title division-title"><span>Or recording</span></h2>
 

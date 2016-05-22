@@ -28,15 +28,39 @@
 	.action-buttons {
 		position: relative;
 
-		a {
-			margin: 15px 5px 0 0;
-			position: absolute;
-			right: 15px;
-
-			&:first-child {
-				right: 65px;
-			}
+		.button-wrapper {
+			width: 50%;
+			display: inline-block;
+			float:left;
 		}
+
+		a {
+			display: block;
+		}
+
+		.delete {
+			float: right;
+			margin-right: 5px;
+		}
+
+		.edit {
+			float: left;
+			margin-left: 5px;
+		}
+
+		@media only screen and (min-width : $screen-tablet) {
+			a {
+				margin: 15px 5px 0 0;
+				position: absolute;
+				right: 15px;
+				top: 0;
+			}
+
+			.delete {
+				right: 65px;
+				margin-left: none;
+			}
+	    }
 	}
 
 	.upload-button {
@@ -50,50 +74,21 @@
 	.loop-box {
 		// Delete and edit button in a loop
 		.delete-button, .edit-button {
-			text-align: center;
 			position: absolute;
-			top: 15px;
-			z-index: 50;
-			width: 50px;
-			height: 60px;
-			overflow: hidden;
-			margin: 0 auto;
-			left: 0;
-			right: 0;
-			font-size: 1.7em;
-			outline:0;
-		}
-
-		.delete-button {
-			color: $red;
-		}
-
-		.edit-button {
-			color: $blue;
+			left: calc(50% - 17px);
+			top: calc(50% - 17px);
 		}
 
 		// Deletable loop
 		&.deletable {
-			border-color: $red;
-			background-color: lighten($red, 30);
-
-			&:hover {
-				.delete-button i {
-					color: red;
-				}
-			}
+			border-color: #D32F2F;
+			background-color: lighten(#D32F2F, 30);
 		}
 
 		// Editable loop
 		&.editable {
 			border-color: $blue;
 			background-color: lighten($blue, 35);
-
-			&:hover {
-				.edit-button i {
-					color: blue;
-				}
-			}
 		}
 	}
 

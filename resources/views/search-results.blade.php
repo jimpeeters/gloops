@@ -3,7 +3,7 @@
 </div>
 
 <div class="col-xs-12">
-	<h2 class="block-title"><i class="fa fa-play-circle"></i> Search on loopname</h2>
+	<h2 class="title"><span>Search on loopname</span></h2>
 </div>
 
 <div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in searchResultsLoopname | limitTo:searchLoopnameLimit" ng-init="isFavourite=loop.isFavourite">
@@ -61,7 +61,7 @@
 </div>
 
 <div class="col-xs-12">
-	<h2 class="block-title"><i class="fa fa-tag"></i> Search on tags</h2>
+	<h2 class="title"><span>Search on tags</span></h2>
 </div>
 
 <div ng-show="searchResultsTags.length > 0" class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in searchResultsTags | limitTo:searchTagsLimit" ng-init="isFavourite=loop.isFavourite">
@@ -118,7 +118,7 @@
 </div>
 
 <div class="col-xs-12">
-	<h2 class="block-title"><i class="fa fa-music"></i> Search on category</h2>
+	<h2 class="title"><span>Search on category</span></h2>
 </div>
 
 <div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in searchResultsCategory | limitTo:searchCategoryLimit" ng-init="isFavourite=loop.isFavourite">
