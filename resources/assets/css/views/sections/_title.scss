@@ -6,7 +6,6 @@
 	overflow: hidden;
 	background-position: center;
 	font-family: AUdimatBold;
-	margin-bottom: 15px;
 
   	h1 {
 		z-index: 100;
@@ -15,7 +14,6 @@
 		padding: 15px 0;
 		@include text-shadow();
 		background-color: rgba(0, 0, 0, 0.7);
-        background-image: url('/images/dark-dot.png');
         margin: 0;
 	}
 }
@@ -41,3 +39,24 @@
 	}
 }
 
+.title {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    
+    &:before {
+        border-top: 2px solid $gray;
+        content:"";
+        margin: 0 auto; 
+        position: absolute; 
+        top: 50%; left: 0; right: 0; bottom: 0;
+        width: 95%;
+        z-index: -1;
+    }
+
+    span { 
+        background: $white; 
+        padding: 0 15px;
+        font-size: 3rem;
+    }
+}

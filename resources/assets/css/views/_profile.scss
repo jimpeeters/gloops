@@ -1,4 +1,6 @@
 .profile {
+	overflow: hidden;
+	padding-bottom: 45px;
 
 	.title-section {
 		background-image: url('/images/profile.jpg');
@@ -21,7 +23,6 @@
 		border-radius: 100%;
 		background-repeat: no-repeat;
     	background-size: cover;
-    	border: 2px solid $black;
     	position: relative;
     	display: table;
 

@@ -38,7 +38,7 @@
 		@endif
 
 		<div class="col-xs-12">
-			<h2 class="block-title"><i class="fa fa-play"></i> Your Loops</h2>
+			<h2 class="title"><span>Your loops</span></h2>
 		</div>
 
 		<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit track by loop.id" ng-init="isFavourite=loop.isFavourite">
@@ -94,24 +94,16 @@
 				<p ng-repeat="tag in loop.tags"><span class="label"><i class="fa fa-tag"></i> <% tag.name %></span></p>
 			</div>
 		</div>
-		<!-- Hier confirm message  -->
-
-		<div ng-show="loops.length > 9" class="col-xs-12">
-			<button class="basic-button load-more-button" ng-click="loopLimit = loopLimit + 3" href="">Load more</button>
-		</div>
-
-		<div ng-show="loops.length > 0" class="col-xs-12">
-			<button class="basic-button remove-button" ng-click="enableDeleting = !enableDeleting; enableEditing = false" href="">
-				<i ng-show="!enableDeleting" class="fa fa-trash"></i> 
-				<span ng-show="!enableDeleting">Remove loops</span><span ng-show="enableDeleting">Cancel removal</span>
-			</button>
-		</div>
-
-		<div ng-show="loops.length > 0" class="col-xs-12">
-			<button class="basic-button editing-button" ng-click="enableEditing = !enableEditing; enableDeleting = false" href="">
-				<i ng-show="!enableEditing" class="fa fa-pencil"></i> 
-				<span ng-show="!enableEditing">Edit loops</span><span ng-show="enableEditing">Cancel editing</span>
-			</button>
+		<div ng-show="loops.length > 0" class="col-xs-12 action-buttons">
+			<a class="btn-floating waves-effect waves-light btn-small red" ng-click="enableDeleting = !enableDeleting; enableEditing = false">
+	    		<i ng-show="enableDeleting" class="fa fa-times"></i>
+	    		<i ng-show="!enableDeleting" class="fa fa-trash"></i> 
+	    	</a>
+			<a class="btn-floating waves-effect waves-light btn-small red" ng-click="enableEditing = !enableEditing; enableDeleting = false">
+	    		<i ng-show="enableEditing" class="fa fa-times"></i>
+	    		<i ng-show="!enableEditing" class="fa fa-pencil"></i> 
+	    	</a>
+	    	<button ng-show="loops.length > 9" class="basic-button load-more-button" ng-click="loopLimit = loopLimit + 3" href="">Load more</button>
 		</div>
 
 		<div ng-show="loops.length === 0" class="col-xs-12" ng-controller="AlertController">
@@ -123,12 +115,8 @@
 			</div>
 		</div>
 
-		<div class="col-xs-12">
-			<h2 class="block-title"><i class="fa fa-plus-square-o"></i> Add more loops</h2>
-		</div>
-
-		<div class="col-xs-12 col-sm-6 upload-section">
-				<h4 class="block-title">Upload</h4>
+		<div class="col-xs-12 col-sm-6 col-sm-offset-3 upload-section">
+			<h2 class="title"><span>Start uploading</span></h2>
 				{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true)) !!}
 					<div class="form-group">
 						{!! Form::label('name', 'Name') !!}
@@ -163,14 +151,12 @@
 	                
 					<button type="submit" class="basic-button upload-button">Upload</button>
 				{!! Form::close() !!}	
-		</div>
 
-		<div class="col-xs-12 col-sm-6">
-			<h4 class="block-title"><i class="fa fa-microphone"></i> Record</h4>
+			<h2 class="title division-title"><span>Or recording</span></h2>
 
-			<a href="https://gloops-alpha-jimpeeters.c9users.io/record" class="record-button btn-floating waves-effect waves-light btn-large red">
-		        <i class="fa fa-microphone"></i>
-		    </a>
+			<a class="record-button btn-floating waves-effect waves-light btn-large red" href="" data-toggle="modal" data-target="#recordModal"><i class="fa fa-microphone"></i></a>
+			@include('record')
+
 		</div>
 
 	@else

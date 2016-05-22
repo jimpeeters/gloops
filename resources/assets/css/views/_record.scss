@@ -1,4 +1,8 @@
 .record {
+
+	overflow: hidden;
+	padding: 15px 0;
+
 	.record-button, .pauze-button {
 		margin: 0 auto;
 		display: block;
@@ -7,7 +11,7 @@
 
 		i {
 			line-height: 100px;
-			font-size: 2em;
+			font-size: 3rem;
 		}
 	}
 
@@ -15,4 +19,17 @@
 		margin: 0 auto;
 		display: block;
 	}
+
+	.button-record-options {
+		margin-left: calc(50% + 20px);
+	}
+
+	.time  {
+		text-align: center;
+	}
+
+	.progress {
+		margin: 15px 0;
+	}
+
 }
