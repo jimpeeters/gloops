@@ -116,5 +116,36 @@ class ProfileController extends Controller
         $user->save();
 
         return Redirect::back()->with('success','Your profile has been successfully changed!');
-    }   
+    }
+
+    // Administrator options
+    public function admin()
+    {
+        if(Auth::user()->id == 1)
+        {
+            $users = User::where('id', '!=', '1')->with('loops')->get();
+            return View::make('admin-options')->with('users', $users);
+        }
+        else
+        {
+            return View::make('admin-options');
+        }
+    }
+
+    public function deleteUser($id)
+    {
+        if(Auth::user()->id == 1)
+        {
+            $user = User::findOrFail($id);
+            $userName = $user->name;
+            $user->delete();
+
+            return Redirect::back()->with('success','You have sucessfully deleted ' . $userName . '.');
+        }
+        else
+        {
+            return View::make('admin-options');
+        }
+
+    }
 }

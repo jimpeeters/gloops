@@ -55,6 +55,12 @@ Route::group(['middleware' => ['web']], function () {
 		// Overheating Reward
 		Route::get('/profile/reward/overheating', array('as' => 'overheating', 'uses' => 'ProfileController@earnOverheatingReward'));
 
+		// Get admin options page
+		Route::get('/admin', 'ProfileController@admin');
+
+		// Delete a user
+		Route::get('/admin/user/delete/{id}',  'ProfileController@deleteUser');
+
 	});
 
 	// Get Profile page
@@ -69,6 +75,9 @@ Route::group(['middleware' => ['web']], function () {
 
 	// Register
 	Route::post('/register', array('as' => 'register', 'uses' => 'Auth\AuthController@register'));
+
+	// Login
+	Route::get('/login', array('as' => 'getLogin', 'uses' => 'Auth\AuthController@getRegister'));
 
 	// Login
 	Route::post('/login', array('as' => 'login', 'uses' => 'Auth\AuthController@login'));

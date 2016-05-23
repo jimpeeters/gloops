@@ -4,27 +4,25 @@
 
 @section('content')
 
-	<div class="title-section" style="background-image: url('/images/register.jpg');">
-		<h1>REGISTER</h1>
-	</div>
-
-	@if (count($errors) > 0)
-	    <div class="col-xs-12 col-lg-6 col-lg-offset-3" ng-controller="AlertController">
-	    	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
-	    		@foreach ($errors->all() as $key => $error)
-					<p>
-						<i class="fa fa-times alert-type-icon"></i>{{ $error }}
-						@if($key == 0)
-							<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
-						@endif
-					</p>
-				@endforeach
-			</div>
-	    </div>
-	@endif
-
 	<div class="register">
 		<div class="col-xs-12 col-lg-6 col-lg-offset-3">
+			<h2 class="title"><span>Register</span></h2>
+			
+			@if (count($errors) > 0)
+			    <div ng-controller="AlertController">
+			    	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
+			    		@foreach ($errors->all() as $key => $error)
+							<p>
+								<i class="fa fa-times alert-type-icon"></i>{{ $error }}
+								@if($key == 0)
+									<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+								@endif
+							</p>
+						@endforeach
+					</div>
+			    </div>
+			@endif
+
 			{!! Form::open(array('route' => 'register', 'method' => 'POST','files' => true)) !!}
 				<div class="form-group">
 					{!! Form::label('name', 'Name') !!}

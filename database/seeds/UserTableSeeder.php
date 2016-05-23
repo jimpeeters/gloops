@@ -27,9 +27,49 @@ class UserTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'Dummy',
+				'name' => 'Bobby',
 				'password' => Hash::make('rootroot'),
 				'email' => 'dummy@hotmail.com',
+				'avatar' => '/images/profilePictures/dummy.jpg',
+				'facebookAccount' => false,
+				'rating' => 0,
+				'rank' => 1
+			),
+
+		array(
+				'name' => 'RockingJohny',
+				'password' => Hash::make('rootroot'),
+				'email' => 'dummy2@hotmail.com',
+				'avatar' => '/images/profilePictures/dummy.jpg',
+				'facebookAccount' => false,
+				'rating' => 0,
+				'rank' => 1
+			),
+
+		array(
+				'name' => 'Ricky',
+				'password' => Hash::make('rootroot'),
+				'email' => 'dummy3@hotmail.com',
+				'avatar' => '/images/profilePictures/dummy.jpg',
+				'facebookAccount' => false,
+				'rating' => 0,
+				'rank' => 1
+			),
+
+		array(
+				'name' => 'Tom Rocker',
+				'password' => Hash::make('rootroot'),
+				'email' => 'dummy4@hotmail.com',
+				'avatar' => '/images/profilePictures/dummy.jpg',
+				'facebookAccount' => false,
+				'rating' => 0,
+				'rank' => 1
+			),
+
+		array(
+				'name' => 'Gino Pietermaai',
+				'password' => Hash::make('rootroot'),
+				'email' => 'dummy5@hotmail.com',
 				'avatar' => '/images/profilePictures/dummy.jpg',
 				'facebookAccount' => false,
 				'rating' => 0,

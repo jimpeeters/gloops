@@ -52,6 +52,11 @@
 			<a class="email-link" href="#">
 				<i class="fa fa-envelope-o"></i>jim.peeters.93&amp;gmail.com
 			</a>
-			<p class="copyright-text">&copy; 2013 Studio6, Inc. All rights reserved</p>
+			
+			@if(Auth::check() && Auth::user()->id == 1)
+				<a class="copyright-text" href="/admin">Admin options</a>
+			@else
+				<p class="copyright-text">&copy; 2013 Studio6, Inc. All rights reserved</p>
+			@endif
 		</div>
 </div>
