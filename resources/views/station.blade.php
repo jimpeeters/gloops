@@ -5,9 +5,6 @@
 @section('content')
 
 <div class="station" ng-controller="StationController">
-	<div class="title-section">
-		<h1>STATION</h1>
-	</div>
 
 	@if(Auth::check())
 
@@ -127,7 +124,7 @@
 			{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true)) !!}
 				<div class="form-group">
 					{!! Form::label('name', 'Name') !!}
-					{!! Form::text('name','',array('class' => 'form-control', 'required' => 'required')) !!}
+					{!! Form::text('name','',array('class' => 'form-control', 'required' => 'required', 'placeholder' => 'Name your loop')) !!}
 				</div>
 
 				<div class="form-group">

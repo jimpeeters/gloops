@@ -5,10 +5,6 @@
 @section('content')
 
 <div class="library" ng-controller="LibraryController">
-
-	<div class="title-section">
-		<h1>LIBRARY</h1>
-	</div>
 	
 	<div class="col-sm-2 hidden-xs sidebar">
 	   <ul class="sidebar-nav">

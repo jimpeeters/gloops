@@ -3,10 +3,6 @@
 	overflow: hidden;
 	padding-bottom: 45px;
 
-	.title-section {
-		background-image: url('/images/station.jpg');
-	}
-
 	.load-more-button, .remove-button, .editing-button {
 		width: 100%;
 		margin: 15px auto;
@@ -102,10 +98,6 @@
 		}
     }
 
-    .title {
-    	margin: 30px 0;
-    }
-
     .division-title {
 
 	    span {
@@ -121,6 +113,10 @@
 }
 
 .station-edit {
+
+	overflow: hidden;
+	padding: 45px 0;
+	
 	.block-title {
 		margin-bottom: 30px;
 	}

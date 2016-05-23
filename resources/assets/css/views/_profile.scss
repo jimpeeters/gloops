@@ -2,10 +2,6 @@
 	overflow: hidden;
 	padding-bottom: 45px;
 
-	.title-section {
-		background-image: url('/images/profile.jpg');
-	}
-
 	.load-more-button {
 		width: 100%;
 		margin: 15px auto;
@@ -34,8 +30,16 @@
 	}
 
 	.profile-edit {
-		display: block;
-		float: right;
+		position: absolute;
+		left: calc(50% + 20px);
+
+	    @media only screen and (min-width : $screen-phone) {
+			left: calc(50% + 50px);
+	    }
+
+	    @media only screen and (min-width : $screen-desktop-s) {
+			left: calc(50% + 100px);
+	    }
 	}
 
 	.profile-name {

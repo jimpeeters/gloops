@@ -5,11 +5,11 @@
 @endif
 
 <div ng-show="!loginView" class="col-xs-12 col-lg-6 col-lg-offset-3">
-	<h2 class="block-title">Register</h2>
+	<h2 class="title"><span>Register</span></h2>
 </div>
 
 <div ng-show="loginView" class="col-xs-12 col-lg-6 col-lg-offset-3">
-	<h2 class="block-title">Login</h2>
+	<h2 class="title"><span>Login</span></h2>
 </div>
 
 @if (count($errors) > 0)
@@ -52,19 +52,19 @@
 	{!! Form::open(array('route' => 'register', 'method' => 'POST','files' => true)) !!}
 		<div class="form-group">
 			{!! Form::label('name', 'Name') !!}
-			{!! Form::text('name','',array('class' => 'form-control', 'required' => 'required')) !!}
+			{!! Form::text('name','',array('class' => 'form-control', 'required' => 'required', 'placeholder' => 'Name')) !!}
 		</div>
 		<div class="form-group">
 			{!! Form::label('email', 'Email') !!}
-			{!! Form::text('email','',array('class' => 'form-control', 'required' => 'required')) !!}
+			{!! Form::text('email','',array('class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email' )) !!}
 		</div>
 		<div class="form-group">
 			{!! Form::label('password', 'Password') !!}
-			{!! Form::password('password', array('class' => 'form-control', 'required' => 'required')) !!}
+			{!! Form::password('password', array('class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password')) !!}
 		</div>
 		<div class="form-group">
 			{!! Form::label('password_confirmation', 'Confirm Password') !!}
-			{!! Form::password('password_confirmation', array('class' => 'form-control', 'required' => 'required')) !!}
+			{!! Form::password('password_confirmation', array('class' => 'form-control', 'required' => 'required', 'placeholder' => 'Confirm your password')) !!}
 		</div>
 		<div class="form-group">
 		    <div class="custom-file-upload">

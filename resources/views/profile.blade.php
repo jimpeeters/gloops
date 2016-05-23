@@ -8,10 +8,6 @@
 
 	@if(Auth::check())
 
-		<div class="title-section" style="background-image: url({{ Auth::user()->avatar }})">
-			<h1>PROFILE</h1>
-		</div>
-
 		@if (session()->has('success'))
 	        <div class="col-xs-12" ng-controller="AlertController">
 	        	<div class="info-box success" ng-hide="hidden" ng-class="{fade: startFade}">
@@ -24,6 +20,7 @@
 	    @endif
 
 		<div class="col-xs-12">
+			<h2 class="title"><span>Your profile</span></h2>
 			<center>
 				<div class="profile-picture" style="background-image: url({{ Auth::user()->avatar }})" title="Edit your profile picture" data-toggle="tooltip" data-placement="left" tooltip>
 					<a class="btn-floating waves-effect waves-light btn-small red profile-edit" smooth-scroll target="edit-profile-form">

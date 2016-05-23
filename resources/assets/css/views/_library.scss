@@ -4,7 +4,6 @@
     overflow: hidden;
 
     .title-section {
-        background-image: url('/images/library.jpg');
         margin-bottom: 0;
     }
 
@@ -50,19 +49,11 @@
                     cursor: pointer;
                 }
             }
-
-            &:first-child{
-                padding-top: 15px;
-            }
-
-            &:last-child {
-                padding-bottom: 15px;
-            }
-
         }
 
         .title {
-            padding: 5px 0 10px 0; 
+            padding: 0;
+            margin: 15px 0 10px 0;
             color: $white;
             font-family: AUdimatBold;
             text-align: left;
@@ -109,7 +100,7 @@
     @media only screen and (min-width : $screen-phone) {
 
         .loops {
-            min-height: 488px;
+            min-height: 510px;
         }
 
     }

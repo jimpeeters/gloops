@@ -7,15 +7,11 @@ gloopsApp.controller('MainController', ['$scope', '$http', 'OverheatingService',
     };
 
 
-    // Search arrays
-    $scope.searchResultsTags = '';
-    $scope.searchResultsCategory = '';
-    $scope.searchResultsLoopname = '';
+    // Search array
+    $scope.searchResults = '';
 
-    // Search limits for load more buttons
-	$scope.searchTagsLimit = 6;
-	$scope.searchCategoryLimit = 6;
-    $scope.searchLoopnameLimit = 6;
+    // Search limit for load more buttons
+	$scope.loopLimit = 6;
 
     // Searching state
     $scope.isSearching = false;
@@ -33,7 +29,7 @@ gloopsApp.controller('MainController', ['$scope', '$http', 'OverheatingService',
 	              method  : 'GET',
 	              url     : '/search/tags/' + query
 	        }).success(function(data) {
-	            $scope.searchResultsTags = data;
+	            $scope.searchResults = data;
 	            // Change searching state
 	            $scope.isSearching = true;
 	        });
@@ -51,7 +47,7 @@ gloopsApp.controller('MainController', ['$scope', '$http', 'OverheatingService',
 	              method  : 'GET',
 	              url     : '/search/category/' + query
 	        }).success(function(data) {
-	            $scope.searchResultsCategory = data;
+	            $scope.searchResults = $scope.searchResults.concat(data);
 	        });
     	}
     }
@@ -64,7 +60,7 @@ gloopsApp.controller('MainController', ['$scope', '$http', 'OverheatingService',
                   method  : 'GET',
                   url     : '/search/loopname/' + query
             }).success(function(data) {
-                $scope.searchResultsLoopname = data;
+                $scope.searchResults = $scope.searchResults.concat(data);
             });
         }
     }

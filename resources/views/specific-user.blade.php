@@ -5,11 +5,8 @@
 @section('content')
 <div class="profile" ng-controller="SpecificuserController" ng-init="getSpecificUserLoops({{ $user->id }})">
 
-	<div class="title-section" style="background-image: url({{ $user->avatar }})">
-		<h1>{{ $user->name }}</h1>
-	</div>
-
 	<div class="col-xs-12">
+		<h2 class="title"><span>{{ $user->name }}</span></h2>
 		<center>
 			<div class="profile-picture" style="background-image: url({{ $user->avatar }})">
 			</div>
@@ -72,7 +69,7 @@
 	</div>
 
 	<div class="col-xs-12">
-		<h2 class="block-title"><i class="fa fa-star"></i> Most popular loops</i></h2>
+		<h2 class="title"><span>Most popular loops</span></h2>
 	</div>
 
 	<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in popularLoops | limitTo:loopLimit track by loop.id" ng-init="isFavourite=loop.isFavourite">
@@ -117,6 +114,15 @@
 
 	<div ng-show="popularLoops.length > 9" class="col-xs-12">
 		<button class="basic-button load-more-button" href="" ng-click="loopLimit = loopLimit + 3">Load more</button>
+	</div>
+
+	<div ng-show="popularLoops.length === 0" class="col-xs-12" ng-controller="AlertController">
+		<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
+			<p>
+				<i class="fa fa-info alert-type-icon"></i>This user seems to have <strong>no popular loops</strong>.
+				<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+			</p>
+		</div>
 	</div>
 
 </div>

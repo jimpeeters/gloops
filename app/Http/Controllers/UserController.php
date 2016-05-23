@@ -57,22 +57,25 @@ class UserController extends Controller
 		                groupBy('loops.id')->
 		                orderBy('count','DESC')->get();
 
-
-		// Give property to say wether it is favourited or not        
-        foreach($loops as $loop) 
+        //Only a logged in user has favourite loops
+        if(Auth::check())
         {
-            // Check if logged in user has favourited this
-            $user_favorites = Favourite::where('FK_user_id', '=', Auth::user()->id)
-                ->where('FK_loop_id', '=', $loop->id)
-                ->first();
+    		// Give property to say wether it is favourited or not        
+            foreach($loops as $loop) 
+            {
+                // Check if logged in user has favourited this
+                $user_favorites = Favourite::where('FK_user_id', '=', Auth::user()->id)
+                    ->where('FK_loop_id', '=', $loop->id)
+                    ->first();
 
-            if ($user_favorites == null)
-            {
-                $loop->isFavourite = false;
-            } 
-            else 
-            {
-                $loop->isFavourite = true;
+                if ($user_favorites == null)
+                {
+                    $loop->isFavourite = false;
+                } 
+                else 
+                {
+                    $loop->isFavourite = true;
+                }
             }
         }
 

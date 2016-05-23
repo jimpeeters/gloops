@@ -1,52 +1,11 @@
-// Page titles
-.title-section {
-	//background-image: url('/images/station.jpg');
-	background-size: cover;
-	position: relative;
-	overflow: hidden;
-	background-position: center;
-	font-family: AUdimatBold;
-
-  	h1 {
-		z-index: 100;
-		color: white;
-		text-align: center;
-		padding: 15px 0;
-		@include text-shadow();
-		background-color: rgba(0, 0, 0, 0.7);
-        margin: 0;
-	}
-}
-
-// Block titles 
-.block-title {
- 	margin: 15px 0 5px 0;
-    border-left: 3px solid $black;
-    background-color: $gray;
-    text-align: left;
-    display: inline-block;
-    padding: 10px 10px 10px 10px;
-    width: 100%;
-    text-transform: uppercase;
-   	font-family: AUdimatBold;
-   	color: white;
-   	@include text-shadow();
-
-   	/* Small Devices, Tablets */
-	@media only screen and (min-width : $screen-tablet) {
-		width: auto;
-		margin: 30px 0 10px 0;
-	}
-}
-
 .title {
     position: relative;
     z-index: 1;
     text-align: center;
-    margin: 15px 0;
+    margin: 30px 0 30px 0;
     
     &:before {
-        border-top: 2px solid $gray;
+        border-top: 1px solid $gray;
         content:"";
         margin: 0 auto; 
         position: absolute; 
@@ -58,6 +17,10 @@
     span { 
         background: $white; 
         padding: 0 15px;
-        font-size: 3rem;
+        font-size: 2rem;
+
+        @media only screen and (min-width : $screen-phone) {
+            font-size: 3.5rem;
+        }
     }
 }
