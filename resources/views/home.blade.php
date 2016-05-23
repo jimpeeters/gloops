@@ -69,10 +69,10 @@
 		<div id="left-bottom-corner"></div>
 		<div id="right-bottom-corner"></div>
 	</section>
-
-	<div class="col-xs-12" id="edit-section">
-		<h2 class="block-title"><i class="fa fa-star"></i> Most favourited</i></h2>
-	</div>
+	
+	<div class="col-xs-12">
+			<h2 class="title"><span>Popular loops</span></h2>
+		</div>
 
 	<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops" ng-init="isFavourite=loop.isFavourite">
 		<div class="row loop-box" ng-class="{ 'favourite' : isFavourite }">

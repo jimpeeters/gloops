@@ -6,17 +6,18 @@
 <meta name="description" content="With gloops you can play guitar while listening to guitar loops. They serve as guitar backing tracks to jam with. You can also upload and manage your own guitar loops in a station. There is also a way to share your favourite loops with friends.">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
-<!-- if(!Request::is('record')) -->
+@if(!Request::is('station')) 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{asset('/css/libs/bootstrap.min.css')}}">
     <!-- Chosen select  -->
     <link rel="stylesheet" href="{{asset('/css/libs/chosen.css')}}">
     <!-- Custom css -->
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
-<!--else
+@else
   <link rel="stylesheet" href="{{secure_asset('/css/libs/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('/css/style.css')}}"> 
-endif-->
+  <link rel="stylesheet" href="{{secure_asset('/css/libs/chosen.css')}}">
+  <link rel="stylesheet" href="{{secure_asset('/css/style.css')}}"> 
+@endif
 
 <!-- icon -->
 <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
@@ -81,8 +82,8 @@ endif-->
 
     </div>
 
-<!-- Load all assets over http when not on recording
-if(!Request::is('record'))-->
+<!-- Load all assets over http when not on recording -->
+@if(!Request::is('station'))
 
     <!-- Jquery library -->
     <script src="{{asset('/js/libs/jquery.min.js')}}"></script>
@@ -115,18 +116,20 @@ if(!Request::is('record'))-->
     <script type="text/javascript" src="{{asset('/js/angular/directives/directives.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/angular/controllers/controllers.js')}}"></script>
     
-<!-- else
-   <script src="{{secure_asset('/js/libs/jquery.min.js')}}"></script>
-    <script type="text/javascript" src="{{secure_asset('/js/libs/angular.min.js')}}"></script>
+@else
+    <script src="{{secure_asset('/js/libs/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{secure_asset('/bower_components/angular/angular.min.js')}}"></script>
     <script type="text/javascript" src="{{secure_asset('/js/libs/gapless5.js')}}"></script>
+    <script type="text/javascript" src="{{secure_asset('/js/libs/chosen.jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{secure_asset('/js/jquery.js')}}"></script>
-    <script type="text/javascript" src="http://wzrd.in/standalone/peaks.js"></script>
     <script src="{{secure_asset('/bower_components/angularAudioRecorder/dist/angular-audio-recorder.js')}}"></script>
-    <script src="{{secure_asset('/bower_components/peaks.js/src/main.js')}}"></script>
     <script type="text/javascript" src="{{secure_asset('/js/libs/angular-animate.min.js')}}"></script>
     <script type="text/javascript" src="{{secure_asset('js/libs/bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{secure_asset('/js/angular/app.js')}}"></script>
-endif  -->
+    <script type="text/javascript" src="{{secure_asset('/js/angular/services/services.js')}}"></script>
+    <script type="text/javascript" src="{{secure_asset('/js/angular/directives/directives.js')}}"></script>
+    <script type="text/javascript" src="{{secure_asset('/js/angular/controllers/controllers.js')}}"></script>
+@endif  
 
 <!-- Open login modal with error messages -->
 @if(session()->has('loginModal'))
