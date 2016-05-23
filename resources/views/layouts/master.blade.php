@@ -78,7 +78,10 @@
 
         </div>
 
+        @include('snippets.videos-modal')
+
         @include('footer')
+
 
     </div>
 
@@ -159,6 +162,11 @@
         });
     </script>
 @endif
+<script>
+    $( "#activate-modal" ).click(function() {
+        $( '#video-modal' ).openModal();
+    });
+</script>
 
 </body>
 </html>

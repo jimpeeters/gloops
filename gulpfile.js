@@ -28,7 +28,9 @@ elixir(function(mix) {
     mix.scripts([
        'jquery/searchbarHide.js',
        'jquery/chosenSelect.js',
-       'jquery/fileUpload.js'
+       'jquery/fileUpload.js',
+       'jquery/velocity.min.js',
+       'jquery/leanModal.js'
     ], 'public/js/jquery.js');
     
     mix.scripts([
