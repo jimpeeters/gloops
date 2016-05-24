@@ -1,5 +1,5 @@
 <div class="col-xs-12 col-md-offset-3 col-md-6">
-	<h2 class="title"><span>Search results</span></h2>
+	<h2 class="title">Search results</h2>
 </div>
 
 <div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in searchResults | limitTo:loopLimit" ng-init="isFavourite=loop.isFavourite">

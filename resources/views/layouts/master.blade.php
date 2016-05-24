@@ -6,7 +6,7 @@
 <meta name="description" content="With gloops you can play guitar while listening to guitar loops. They serve as guitar backing tracks to jam with. You can also upload and manage your own guitar loops in a station. There is also a way to share your favourite loops with friends.">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
-@if(!Request::is('station')) 
+@if(!Request::is('test')) 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{asset('/css/libs/bootstrap.min.css')}}">
     <!-- Chosen select  -->
@@ -61,7 +61,7 @@
         @endif
 
         <!-- Header -->
-        @include('navigation')
+        @include('sections.navigation')
         
         <!-- Overheating -->
         @include('snippets.overheating')
@@ -80,13 +80,13 @@
 
         @include('snippets.videos-modal')
 
-        @include('footer')
+        @include('sections.footer')
 
 
     </div>
 
 <!-- Load all assets over http when not on recording -->
-@if(!Request::is('station'))
+@if(!Request::is('test'))
 
     <!-- Jquery library -->
     <script src="{{asset('/js/libs/jquery.min.js')}}"></script>

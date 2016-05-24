@@ -43,6 +43,10 @@
 						        	<a class="btn-floating waves-effect waves-light btn-small red" ng-click="recorder.save()" ng-disabled="recorder.status.isRecording || !recorder.audioModel" ng-class="{ 'disabled' : recorder.status.isRecording || !recorder.audioModel }">
 						        		<i class="fa fa-download"></i>
 						        	</a>
+
+						        	<a id="save-record-to-form" class="btn-floating waves-effect waves-light btn-small red" ng-disabled="recorder.status.isRecording || !recorder.audioModel" ng-click="recorder.upload()" ng-class="{ 'disabled' : recorder.status.isRecording || !recorder.audioModel }">
+						        		<i class="fa fa-save"></i>
+						        	</a>
 					        	</div>
 					
 					            <h2 class="time" ng-if="recorder.status.isRecording">
@@ -50,8 +54,8 @@
 					            </h2>
 					
 					            <div ng-if="recorder.status.isRecording" class="progress">
-								      <div class="determinate" style="width: <% (recorder.elapsedTime / 60) * 100 %>%"></div>
-								  </div>
+							      <div class="determinate" style="width: <% (recorder.elapsedTime / 60) * 100 %>%"></div>
+							  </div>
 					        </div>
 					
 					

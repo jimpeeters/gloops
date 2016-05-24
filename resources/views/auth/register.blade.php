@@ -6,7 +6,7 @@
 
 	<div class="register">
 		<div class="col-xs-12 col-lg-6 col-lg-offset-3">
-			<h2 class="title"><span>Register</span></h2>
+			<h2 class="title">Register</h2>
 			
 			@if (count($errors) > 0)
 			    <div ng-controller="AlertController">

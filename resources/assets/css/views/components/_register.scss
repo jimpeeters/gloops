@@ -1,30 +1,8 @@
-.register-cta {
+section.login-register {
+	overflow: hidden;
 	position: relative;
-	background-image: url('/images/record.jpg');
-	background-size: cover;
-	background-position: center;
-	padding-top: 20px;
-	padding-bottom: 40px;
-	overflow:hidden;
-
-	.title {
-		text-align: center;
-		text-transform: uppercase;
-	   	font-family: AUdimatBold;
-	   	color: $white;
-	   	@include text-shadow();
-	}
-
-	button {
-		width: 150px;
-	}
-
-	/* Small Devices, Tablets */
-    @media only screen and (min-width : $screen-tablet) {
-		button {
-			width: 350px;
-		}
-    }
+	width: 100%;
+	padding-bottom: 45px;
 }
 
 .register {

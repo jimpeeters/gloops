@@ -53,7 +53,7 @@
 	
 	<section class="popular">
 		<div class="col-xs-12">
-			<h2 class="title"><span>Popular loops</span></h2>
+			<h2 class="title">Popular loops</h2>
 		</div>
 		<i class="fa fa-star star-background"></i>
 		<i class="fa fa-star star-background-2"></i>
@@ -127,17 +127,7 @@
 		</div>
 	</section>
 
-	<section class="tutorial">
-		<div class="col-xs-12 col-md-8">
-			<h2>LEARN TO JAM</h2>
-			<p>Start watching video tutorials on how to jam on loops.</p>
-		</div>
-		<div class="col-xs-12 col-md-4">
-			<a id="activate-modal" class="btn-floating waves-effect waves-light btn-large red darken-2 play-button">
-		    	<i class="fa fa-play"></i> 
-		    </a>
-		</div>
-	</section>
+	@include('sections.tutorial')
 </div>
 
 @stop

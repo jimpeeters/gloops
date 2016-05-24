@@ -9,7 +9,7 @@
 	<div class="admin">
 		<div class="col-xs-12">
 
-		<h2 class="title"><span>Admin section</span></h2>
+		<h2 class="title">Admin section</h2>
 
 			@if (session()->has('success'))
 		        <div ng-controller="AlertController">

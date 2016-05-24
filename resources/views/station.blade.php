@@ -19,92 +19,96 @@
 	        </div>
 	    @endif
 
-		<div class="col-xs-12">
-			<h2 class="title"><span>Your loops</span></h2>
-		</div>
+	    <section class="your-loops">
 
-		<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit track by loop.id" ng-init="isFavourite=loop.isFavourite">
-			<!-- Confirmation modal delete -->
-			<div id="confirmationModal<% loop.id %>" class="confirmation-modal modal" role="dialog">
-			  	<div class="modal-dialog">
-				    <div class="modal-content">
-					    <div class="modal-header">
-					    	<h2>Delete</h2>
-					      	<button type="button" class="close" data-dismiss="modal">&times;</button>
-					    </div>
-					    <div class="modal-body">
-					    	<h4>Are you sure you want to delete '<% loop.name %>' ?</h4>
-							<button class="basic-button" href="" ng-click="deleteLoop(loop)" data-dismiss="modal">Yes</button>
-							<button class="basic-button" href="" data-dismiss="modal">No</button>
-					  	</div>
-					</div>
-			  	</div>
+			<div class="col-xs-12">
+				<h2 class="title">Your loops</h2>
 			</div>
-			<!-- /Confirmation modal delete-->
-			<div class="row loop-box" ng-class="{ 'favourite' : isFavourite, 'deletable' : enableDeleting, 'editable' : enableEditing }">				
-				<a class="btn-floating waves-effect waves-light btn-small red darken-2 delete-button" data-toggle="modal" data-target="#confirmationModal<% loop.id %>" ng-show="enableDeleting">
-		    		<i class="fa fa-trash"></i> 
-		    	</a>
 
-		    	<a class="btn-floating waves-effect waves-light btn-small blue edit-button" href="http://gloops-alpha-jimpeeters.c9users.io/station/edit/<% loop.id %>" ng-show="enableEditing">
-		    		<i class="fa fa-pencil"></i> 
-		    	</a>
+			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit track by loop.id" ng-init="isFavourite=loop.isFavourite">
+				<!-- Confirmation modal delete -->
+				<div id="confirmationModal<% loop.id %>" class="confirmation-modal modal" role="dialog">
+				  	<div class="modal-dialog">
+					    <div class="modal-content">
+						    <div class="modal-header">
+						    	<h2>Delete</h2>
+						      	<button type="button" class="close" data-dismiss="modal">&times;</button>
+						    </div>
+						    <div class="modal-body">
+						    	<h4>Are you sure you want to delete '<% loop.name %>' ?</h4>
+								<button class="basic-button" href="" ng-click="deleteLoop(loop)" data-dismiss="modal">Yes</button>
+								<button class="basic-button" href="" data-dismiss="modal">No</button>
+						  	</div>
+						</div>
+				  	</div>
+				</div>
+				<!-- /Confirmation modal delete-->
+				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite, 'deletable' : enableDeleting, 'editable' : enableEditing }">				
+					<a class="btn-floating waves-effect waves-light btn-small red darken-2 delete-button" data-toggle="modal" data-target="#confirmationModal<% loop.id %>" ng-show="enableDeleting">
+			    		<i class="fa fa-trash"></i> 
+			    	</a>
 
-			  	<div class="col-xs-2 loopbox-section">
-			    	<a class="play-button" ng-click="playLoop(loop, $event)">
-			      		<i class="fa fa-play"></i>
-			   		</a>
-				    <div class="gapless-block" id="gapless_<% loop.id %>"></div>
-			  	</div>
-			  	<div class="col-xs-7 loopbox-section">
-			    	<h3 class="loop-title"><% loop.name %></h3>
-			    	<p class="duration" id="gapless_<% loop.id %>_duration">0:00</p>
-			    	<p class="category"><i class="fa fa-music"></i> <% loop.category.name %></p>
-			  	</div>
-			  	<div class="col-xs-3 loopbox-section">
-			    	<div class="user-info">
-			    		<div class="user-avatar" style="background-image: url(<% loop.user.avatar %>)"></div>
-			    		<p class="user-name"><% loop.user.name %></p>
-						<p class="rank-text">
-							<img class="rank-icon" ng-src="/images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>
-						</p>
-			    	</div>
-			  	</div>
-				<div class="favourite">
-				  	<i class="fa" ng-class="{ 'fa-star active' : isFavourite, 'fa-star-o' : !isFavourite }" ng-click="favourite(loop.id);"></i>
+			    	<a class="btn-floating waves-effect waves-light btn-small blue edit-button" href="http://gloops-alpha-jimpeeters.c9users.io/station/edit/<% loop.id %>" ng-show="enableEditing">
+			    		<i class="fa fa-pencil"></i> 
+			    	</a>
+
+				  	<div class="col-xs-2 loopbox-section">
+				    	<a class="play-button" ng-click="playLoop(loop, $event)">
+				      		<i class="fa fa-play"></i>
+				   		</a>
+					    <div class="gapless-block" id="gapless_<% loop.id %>"></div>
+				  	</div>
+				  	<div class="col-xs-7 loopbox-section">
+				    	<h3 class="loop-title"><% loop.name %></h3>
+				    	<p class="duration" id="gapless_<% loop.id %>_duration">0:00</p>
+				    	<p class="category"><i class="fa fa-music"></i> <% loop.category.name %></p>
+				  	</div>
+				  	<div class="col-xs-3 loopbox-section">
+				    	<div class="user-info">
+				    		<div class="user-avatar" style="background-image: url(<% loop.user.avatar %>)"></div>
+				    		<p class="user-name"><% loop.user.name %></p>
+							<p class="rank-text">
+								<img class="rank-icon" ng-src="/images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>
+							</p>
+				    	</div>
+				  	</div>
+					<div class="favourite">
+					  	<i class="fa" ng-class="{ 'fa-star active' : isFavourite, 'fa-star-o' : !isFavourite }" ng-click="favourite(loop.id);"></i>
+					</div>
+				</div>
+				<div class="labels">
+					<p ng-repeat="tag in loop.tags"><span class="label"><i class="fa fa-tag"></i> <% tag.name %></span></p>
 				</div>
 			</div>
-			<div class="labels">
-				<p ng-repeat="tag in loop.tags"><span class="label"><i class="fa fa-tag"></i> <% tag.name %></span></p>
+			<div ng-show="loops.length > 0" class="col-xs-12 action-buttons">
+				<button ng-show="loops.length > 9" class="basic-button load-more-button" ng-click="loopLimit = loopLimit + 3" href="">Load more</button>
+				<div class="button-wrapper">
+					<a class="delete btn-floating waves-effect waves-light btn-small red darken-2" ng-click="enableDeleting = !enableDeleting; enableEditing = false">
+			    		<i ng-show="enableDeleting" class="fa fa-times"></i>
+			    		<i ng-show="!enableDeleting" class="fa fa-trash"></i> 
+			    	</a>
+			    </div>
+			    <div class="button-wrapper">
+					<a class="edit btn-floating waves-effect waves-light btn-small blue" ng-click="enableEditing = !enableEditing; enableDeleting = false">
+			    		<i ng-show="enableEditing" class="fa fa-times"></i>
+			    		<i ng-show="!enableEditing" class="fa fa-pencil"></i> 
+			    	</a>
+		    	</div>
 			</div>
-		</div>
-		<div ng-show="loops.length > 0" class="col-xs-12 action-buttons">
-			<button ng-show="loops.length > 9" class="basic-button load-more-button" ng-click="loopLimit = loopLimit + 3" href="">Load more</button>
-			<div class="button-wrapper">
-				<a class="delete btn-floating waves-effect waves-light btn-small red darken-2" ng-click="enableDeleting = !enableDeleting; enableEditing = false">
-		    		<i ng-show="enableDeleting" class="fa fa-times"></i>
-		    		<i ng-show="!enableDeleting" class="fa fa-trash"></i> 
-		    	</a>
-		    </div>
-		    <div class="button-wrapper">
-				<a class="edit btn-floating waves-effect waves-light btn-small blue" ng-click="enableEditing = !enableEditing; enableDeleting = false">
-		    		<i ng-show="enableEditing" class="fa fa-times"></i>
-		    		<i ng-show="!enableEditing" class="fa fa-pencil"></i> 
-		    	</a>
-	    	</div>
-		</div>
 
-		<div ng-show="loops.length === 0" class="col-xs-12" ng-controller="AlertController">
-			<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
-				<p>
-					<i class="fa fa-info alert-type-icon"></i>You currently have no <strong>guitar loops</strong>.
-					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
-				</p>
+			<div ng-show="loops.length === 0" class="col-xs-12" ng-controller="AlertController">
+				<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
+					<p>
+						<i class="fa fa-info alert-type-icon"></i>You currently have no <strong>guitar loops</strong>.
+						<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+					</p>
+				</div>
 			</div>
-		</div>
+
+		</section>
 
 		<div class="col-xs-12 col-sm-6 col-sm-offset-3 upload-section">
-			<h2 class="title"><span>Start uploading</span></h2>
+			<h2 class="title">Start uploading</h2>
 
 			@if (count($errors) > 0)
 			    <div ng-controller="AlertController">

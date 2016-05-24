@@ -1,0 +1,55 @@
+.tutorial {
+	overflow: hidden;
+	position: relative;
+	background: linear-gradient(30deg,$red 0,$red 60%,lighten($red, 10) 60%,lighten($red, 10) 100%);
+	padding: 60px 0;
+	border-bottom: none;
+	width: 100%;
+
+	.play-button {
+		display: block;
+		margin: 20px auto 0 auto;
+		width: 80px;
+		height: 80px;
+
+
+		i {
+			line-height: 80px;
+			font-size: 4rem;
+		}
+	}
+
+	h2 {
+		font-size: 4em;
+		margin-left: 15px;
+		color: white;
+	}
+
+	p {
+		font-size: 2em;
+		margin-left: 15px;
+		color: darken($red, 45);
+	}
+}
+
+@media only screen and (min-width : $screen-tablet) {
+
+	.tutorial {
+		.play-button {
+			display: block;
+			margin: 15px auto 0 auto;
+			width: 120px;
+			height: 120px;
+
+
+			i {
+				line-height: 120px;
+				font-size: 5rem;
+			}
+		}
+
+		p {
+			width: 70%;
+		}
+	}
+}

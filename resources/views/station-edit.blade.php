@@ -6,7 +6,7 @@
 <div class="station-edit">
 
 	<div class="col-xs-12 col-md-offset-3 col-md-6">
-		<h2 class="title"><span>Edit this loop</span></h2>
+		<h2 class="title">Edit this loop</h2>
 	</div>
 
 	@if (count($errors) > 0)

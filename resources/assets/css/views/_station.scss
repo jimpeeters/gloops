@@ -3,10 +3,83 @@
 	overflow: hidden;
 	padding-bottom: 45px;
 
-	.load-more-button, .remove-button, .editing-button {
-		width: 100%;
-		margin: 15px auto;
-    	display: block;
+	section.your-loops {
+		overflow: hidden;
+		position: relative;
+		border-bottom: 1px solid darken($white, 10);
+		display: inline-block;
+		padding-bottom: 30px;
+
+		.load-more-button, .remove-button, .editing-button {
+			width: 100%;
+			margin: 15px auto;
+	    	display: block;
+		}
+
+		.action-buttons {
+				position: relative;
+
+				.button-wrapper {
+					width: 50%;
+					display: inline-block;
+					float:left;
+				}
+
+				a {
+					display: block;
+				}
+
+				.delete {
+					float: right;
+					margin-right: 5px;
+				}
+
+				.edit {
+					float: left;
+					margin-left: 5px;
+				}
+
+				@media only screen and (min-width : $screen-tablet) {
+					a {
+						margin: 15px 5px 0 0;
+						position: absolute;
+						right: 15px;
+						top: 0;
+					}
+
+					.delete {
+						right: 65px;
+						margin-left: none;
+					}
+			    }
+		}
+
+		.loop-box {
+			// Delete and edit button in a loop
+			.delete-button, .edit-button {
+				position: absolute;
+				left: calc(50% - 17px);
+				top: calc(50% - 17px);
+			}
+
+			// Deletable loop
+			&.deletable {
+				border-color: #D32F2F;
+				background-color: lighten(#D32F2F, 30);
+			}
+
+			// Editable loop
+			&.editable {
+				border-color: $blue;
+				background-color: lighten($blue, 35);
+			}
+		}
+
+		@media only screen and (min-width : $screen-tablet) {
+			.load-more-button, .remove-button, .editing-button {
+				width: 350px;
+			}
+		}
 	}
 
 	.record-button {
@@ -21,77 +94,11 @@
 		}
 	}
 
-	.action-buttons {
-		position: relative;
-
-		.button-wrapper {
-			width: 50%;
-			display: inline-block;
-			float:left;
-		}
-
-		a {
-			display: block;
-		}
-
-		.delete {
-			float: right;
-			margin-right: 5px;
-		}
-
-		.edit {
-			float: left;
-			margin-left: 5px;
-		}
-
-		@media only screen and (min-width : $screen-tablet) {
-			a {
-				margin: 15px 5px 0 0;
-				position: absolute;
-				right: 15px;
-				top: 0;
-			}
-
-			.delete {
-				right: 65px;
-				margin-left: none;
-			}
-	    }
-	}
-
 	.upload-button {
 		margin-top: 25px;
 	}
 
-	h4 {
-		margin-top: 0px
-	}
-
-	.loop-box {
-		// Delete and edit button in a loop
-		.delete-button, .edit-button {
-			position: absolute;
-			left: calc(50% - 17px);
-			top: calc(50% - 17px);
-		}
-
-		// Deletable loop
-		&.deletable {
-			border-color: #D32F2F;
-			background-color: lighten(#D32F2F, 30);
-		}
-
-		// Editable loop
-		&.editable {
-			border-color: $blue;
-			background-color: lighten($blue, 35);
-		}
-	}
-
     @media only screen and (min-width : $screen-tablet) {
-		.load-more-button, .remove-button, .editing-button {
-			width: 350px;
-		}
 
 		.record-button {
 			margin: 15px auto;
@@ -108,12 +115,9 @@
 	        width: 75%;
 	    }
     }
-
-
 }
 
 .station-edit {
-
 	overflow: hidden;
 	padding-bottom: 45px;
 	

@@ -380,6 +380,9 @@ var RecorderController = function (element, service, recorderUtils, $scope, $tim
 
   };
 
+  control.upload = function () {
+    var songPath = document.getElementById("recorded-audio-mainAudio").src;
+  }
 
   control.save = function (fileName) {
     if (!service.isAvailable() || status.isRecording || !control.audioModel) {

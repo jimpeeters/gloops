@@ -1,27 +1,14 @@
 .title {
-    position: relative;
-    z-index: 1;
     text-align: center;
     margin: 30px 0 30px 0;
     text-transform: uppercase;
-    
-    &:before {
-        border-top: 1px solid $gray;
-        content:"";
-        margin: 0 auto; 
-        position: absolute; 
-        top: 50%; left: 0; right: 0; bottom: 0;
-        width: 95%;
-        z-index: -1;
+    font-size: 3rem;
+
+    @media only screen and (min-width : $screen-phone) {
+        font-size: 4rem;
     }
 
-    span { 
-        background: $white; 
-        padding: 0 15px;
-        font-size: 2rem;
-
-        @media only screen and (min-width : $screen-phone) {
-            font-size: 4rem;
-        }
+    @media only screen and (min-width : $screen-desktop-s) {
+        font-size: 5rem;
     }
 }

@@ -6,7 +6,7 @@
 <div class="profile" ng-controller="SpecificuserController" ng-init="getSpecificUserLoops({{ $user->id }})">
 
 	<div class="col-xs-12">
-		<h2 class="title"><span>{{ $user->name }}</span></h2>
+		<h2 class="title">{{ $user->name }}</h2>
 		<center>
 			<div class="profile-picture" style="background-image: url({{ $user->avatar }})">
 			</div>
@@ -69,7 +69,7 @@
 	</div>
 
 	<div class="col-xs-12">
-		<h2 class="title"><span>Most popular loops</span></h2>
+		<h2 class="title">Most popular loops</h2>
 	</div>
 
 	<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in popularLoops | limitTo:loopLimit track by loop.id" ng-init="isFavourite=loop.isFavourite">
