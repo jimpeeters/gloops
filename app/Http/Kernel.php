@@ -34,6 +34,10 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
         ],
+
+        'https' => [
+            \App\Http\Middleware\HttpsProtocol::class,
+        ],
     ];
 
     /**
