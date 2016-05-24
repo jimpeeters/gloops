@@ -15,7 +15,7 @@
     RewriteRule ^ index.php [L]
     
     # Redirect specific route to HTTPS
-    RewriteRule ^yourroute$ https://www.gloops-alpha-jimpeeters.c9users.io/record [L,R=301]
+    RewriteRule ^yourroute$ https://www.gloops-alpha-jimpeeters.c9users.io/station [L,R=301]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .

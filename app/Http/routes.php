@@ -63,14 +63,6 @@ Route::group(['middleware' => ['web']], function () {
 
 	});
 
-	// Custom middleware maded for https redirect
-	Route::group(['middleware' => ['https']], function () {
-
-		// Get Station page
-		Route::get('/station', array('as' => 'station', 'uses' => "StationController@index"));
-		
-	});
-
 	// Get Profile page
 	Route::get('/profile', array('as' => 'profile', 'uses' => "ProfileController@index"));
 
@@ -102,6 +94,8 @@ Route::group(['middleware' => ['web']], function () {
 	// Get best Loops
 	Route::get('/getBestLoops', 'HomeController@getBestLoops');
 
+	// Get Station page
+	Route::get('/station', array('as' => 'station', 'uses' => "StationController@index"));
 	//stationData
 	//Route::get('/station/data', 'StationController@getData');
 

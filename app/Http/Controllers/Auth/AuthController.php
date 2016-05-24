@@ -135,7 +135,7 @@ class AuthController extends Controller
     public function getLogout()
     {
         Auth::logout();
-        return Redirect::back()->with('successfullLogout',"You have successfully logged out. We hope to see you again soon!");
+        return Redirect::route('home')->with('successfullLogout',"You have successfully logged out. We hope to see you again soon!");
     }
 
     //get register page ------------
@@ -249,12 +249,12 @@ class AuthController extends Controller
             if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']]))
             {
                 // If login succeeds
-                return Redirect::back()->with('success','You have successfully logged in!');
+                return Redirect::route('home')->with('success','You have successfully logged in!');
             }
             else
             {
                 // If login fails
-                return Redirect::back()->withErrors(array('Oops! The email or password you entered is incorrect.')); 
+                return Redirect::route('home')->withErrors(array('Oops! The email or password you entered is incorrect.')); 
             }
         }
     }
@@ -280,12 +280,12 @@ class AuthController extends Controller
             if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']]))
             {
                 // If login succeeds
-                return Redirect::back()->with('success','You have successfully logged in!');
+                return Redirect::route('home')->with('success','You have successfully logged in!');
             }
             else
             {
                 // If login fails
-                return Redirect::back()->withErrors(array('Oops! The email or password you entered is incorrect.'))->with('loginModal', $loginModal); 
+                return Redirect::route('home')->withErrors(array('Oops! The email or password you entered is incorrect.'))->with('loginModal', $loginModal); 
             }
         }
     }
