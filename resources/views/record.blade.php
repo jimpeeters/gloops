@@ -11,11 +11,11 @@
 					    <ng-audio-recorder id="mainAudio" audio-model="recorded" show-player="false" time-limit="timeLimit">
 					        <div ng-if="recorder.isAvailable">
 
-					        	<a class="record-button btn-floating waves-effect waves-light btn-large red" ng-click="recorder.startRecord()" type="button" ng-hide="recorder.status.isDenied === true || recorder.status.isRecording || recorder.status.isConverting">
+					        	<a class="record-button-modal btn-floating waves-effect waves-light btn-large red" ng-click="recorder.startRecord()" type="button" ng-hide="recorder.status.isDenied === true || recorder.status.isRecording || recorder.status.isConverting">
 					        		<i class="fa fa-microphone"></i>
 					        	</a>
 
-					        	<a class="pauze-button btn-floating waves-effect waves-light btn-large red" ng-click="recorder.stopRecord()" type="button" ng-hide="recorder.status.isRecording === false">
+					        	<a class="pauze-button-modal btn-floating waves-effect waves-light btn-large red" ng-click="recorder.stopRecord()" type="button" ng-hide="recorder.status.isRecording === false">
 					        		<i class="fa fa-stop"></i>
 					        	</a>
 								
@@ -42,10 +42,6 @@
 
 						        	<a class="btn-floating waves-effect waves-light btn-small red" ng-click="recorder.save()" ng-disabled="recorder.status.isRecording || !recorder.audioModel" ng-class="{ 'disabled' : recorder.status.isRecording || !recorder.audioModel }">
 						        		<i class="fa fa-download"></i>
-						        	</a>
-
-						        	<a id="save-record-to-form" class="btn-floating waves-effect waves-light btn-small red" ng-disabled="recorder.status.isRecording || !recorder.audioModel" ng-click="recorder.upload()" ng-class="{ 'disabled' : recorder.status.isRecording || !recorder.audioModel }">
-						        		<i class="fa fa-save"></i>
 						        	</a>
 					        	</div>
 					
