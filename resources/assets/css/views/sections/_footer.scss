@@ -5,7 +5,7 @@
 
     .sub-footer {
 
-    	border-bottom: 1px solid white;
+    	border-bottom: 1px solid $white;
 
     	h5, a {
     		display: inline-block;
@@ -19,7 +19,7 @@
     	a {
     		padding: 0 2px;
     		margin: 0 2px;
-	        color: white;
+	        color: $red;
 	        text-decoration: none;
 	        
 	        &:hover{
@@ -60,13 +60,13 @@
     		padding-right: 5px;
     	}
 
-    	color: white;
+    	color: $red;
         display: inline;
         text-decoration : underline;
     }
 
     .copyright-text{
-    	color: white;
+    	color: $red;
     }
 }
 

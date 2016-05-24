@@ -195,10 +195,6 @@
 
 	@else
 
-		<div class="title-section">
-			<h1>PROFILE</h1>
-		</div>
-
 		@include('snippets.login')
 
 	@endif

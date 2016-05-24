@@ -1,6 +1,6 @@
 <div class="row header">
     <div class="col-xs-4">
-        <a href="/">
+        <a href="{{ route('home') }}">
             <img class="logo" src="/images/Logo.png" alt="Gloops Logo">
         </a>
     </div>

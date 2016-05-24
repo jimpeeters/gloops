@@ -4,6 +4,7 @@
 				<h5>Gloops //</h5>
 				<a href="{{route('home')}}">Home</a>
 				<a href="{{route('library')}}">Library</a>
+				<a href="" id="activate-modal-2">Videos</a>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-3">
