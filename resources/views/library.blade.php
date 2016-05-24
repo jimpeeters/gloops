@@ -137,7 +137,7 @@
 					    <div class="gapless-block" id="gapless_<% loop.id %>"></div>
 				  	</div>
 				  	<div class="col-xs-7">
-				    	<h3 class="loop-sub-title"><% loop.name %></h3>
+				    	<h3 class="loop-title"><% loop.name %></h3>
 				    	<p class="duration" id="gapless_<% loop.id %>_duration">0:00</p>
 				    	<p class="category"><i class="fa fa-music"></i> <% loop.category.name %></p>
 				  	</div>
@@ -158,7 +158,7 @@
     				  	</div>
                     @else
     				  	<div class="favourite">
-    				  			<i class="fa fa-star-o" sub-title="Login to favourite this guitar loop!" data-toggle="tooltip" data-placement="top" tooltip></i>
+    				  			<i class="fa fa-star-o" title="Login to favourite this guitar loop!" data-toggle="tooltip" data-placement="top" tooltip></i>
     				  	</div>
                     @endif
 				</div>
