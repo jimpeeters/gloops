@@ -19,7 +19,7 @@
 	        </div>
 	    @endif
 
-	    <section class="your-loops">
+	    <section class="your-loops" ng-init="getUserLoops()">
 
 			<div class="col-xs-12">
 				<h2 class="title">Your loops</h2>

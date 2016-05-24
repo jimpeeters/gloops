@@ -20,8 +20,6 @@ gloopsApp.controller('StationController', ['$scope','$http', function($scope, $h
         });
     };
 
-    $scope.getUserLoops();
-
     // Delete a loop
     $scope.deleteLoop = function(loop) {
 
