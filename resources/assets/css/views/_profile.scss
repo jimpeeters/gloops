@@ -158,7 +158,6 @@
 		position: relative;
 		width: 100%;
     	overflow: hidden;
-    	display: inline-block;
 
 		.heart-background {
 			position: absolute;
@@ -189,4 +188,24 @@
 		}
 	}
 
+	section.delete-account {
+		position: relative;
+		width: 100%;
+    	overflow: hidden;
+    	background-color: lighten(#df3e3e, 20);
+    	text-align: center;
+    	padding-bottom: 10px;
+
+    	.title {
+    		margin-bottom: 5px;
+    		margin-top: 10px;
+    	}
+
+    	a {
+    		margin: 5px auto 0 auto;
+    		width: auto;
+    		display: inline-block;
+    		padding: 5px 15px;
+    	}
+	}
 }

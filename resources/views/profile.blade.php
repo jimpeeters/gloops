@@ -201,13 +201,45 @@
 			</div>
 		</section>
 
+		<section class="delete-account" ng-controller="DeleteAccountController">
+			<div class="col-xs-12">
+				<h2 class="title">Danger zone</h2>
+				<p>Once you delete your account, there is no going back. Please be certain.</p>
+				<a href="" class="basic-button" data-toggle="modal" data-target="#confirmationModalDeleteAccount">Delete your account</a>
+			</div>
+
+			<div id="confirmationModalDeleteAccount" class="confirmation-modal modal" role="dialog">
+			  	<div class="modal-dialog">
+				    <div class="modal-content">
+					    <div class="modal-header">
+					    	<h2>Delete</h2>
+					      	<button type="button" class="close" data-dismiss="modal">&times;</button>
+					    </div>
+					    <div class="modal-body">
+					    	<h4>Are you sure you want to delete your account ?</h4>
+					    	<p>Type your <strong>email</strong> in the inputfield below.</p>
+					    	<input 
+						    	type="text" 
+						    	value="" 
+						    	ng-model="query"
+								ng-model-options='{ debounce: 500 }'
+								class="form-control"
+								ng-change="checkAccountEmail(query,'{{ Auth::user()->email }}')"
+								ng-placeholder="Enter your email here">
+
+							<a class="basic-button" href="/delete/account/{{ Auth::user()->id }}" ng-class="{ 'disabled': !enableDelete }">Yes</a>
+							<a class="basic-button" href="" data-dismiss="modal">No</a
+					  	</div>
+					</div>
+			  	</div>
+			</div>
+
+		</section>
 	@else
 
 		@include('snippets.login')
 
 	@endif
-
-	@include('sections.tutorial')
 </div>
 
 @stop

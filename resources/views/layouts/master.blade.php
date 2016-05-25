@@ -67,7 +67,7 @@
 
         @endif
 
-        <!-- Open login modal when successfully logged in-->
+        <!-- Open register modal when successfully logged in-->
         @if(session()->has('successfullRegister'))
 
             @include('snippets.register-modal')

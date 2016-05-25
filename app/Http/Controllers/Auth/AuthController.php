@@ -196,6 +196,7 @@ class AuthController extends Controller
         $user = new User();
         // Capitalize first letter and lowercase next
         $name = ucwords(strtolower($input['name']));
+        $userName = $name;
         $user->name = $name;
         $user->email    = $input['email'];
         $user->rating = 0;

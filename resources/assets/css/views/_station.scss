@@ -1,14 +1,13 @@
 .station {
 
 	overflow: hidden;
-	padding-bottom: 45px;
 
 	section.your-loops {
 		overflow: hidden;
 		position: relative;
 		border-bottom: 1px solid darken($white, 10);
 		display: inline-block;
-		padding-bottom: 30px;
+		padding-bottom: 45px;
 		width: 100%;
 
 		.load-more-button, .remove-button, .editing-button {
@@ -83,39 +82,49 @@
 		}
 	}
 
-	.record-button {
-		margin: 30px auto 30px auto;
-		display: block;
-		width: 100px;
-		height: 100px;
-
-		i {
-			font-size: 3rem;
-			line-height: 100px;
-		}
-	}
-
-	.upload-button {
-		margin-top: 25px;
-	}
-
-    @media only screen and (min-width : $screen-tablet) {
+	section.upload-section {
+	
+		overflow: hidden;
+		position: relative;
+		padding-bottom: 45px;
+		width: 100%;
 
 		.record-button {
-			margin: 15px auto;
+			margin: 30px auto 30px auto;
+			display: block;
+			width: 100px;
+			height: 100px;
+
+			i {
+				font-size: 3rem;
+				line-height: 100px;
+			}
 		}
-    }
 
-    .division-title {
+		.upload-button {
+			margin-top: 25px;
+		}
 
-	    span {
-	    	font-size: 2rem;
+	    @media only screen and (min-width : $screen-tablet) {
+
+			.record-button {
+				margin: 15px auto;
+			}
 	    }
 
-    	&:before {
-	        width: 75%;
+	    .division-title {
+
+		    span {
+		    	font-size: 2rem;
+		    }
+
+	    	&:before {
+		        width: 75%;
+		    }
 	    }
-    }
+	}
+
+
 }
 
 .station-edit {

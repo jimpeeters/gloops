@@ -139,6 +139,7 @@ class ProfileController extends Controller
 
     public function deleteUser($id)
     {
+        // Check if it is the admin account that is doing this
         if(Auth::user()->id == 1)
         {
             $user = User::findOrFail($id);
@@ -150,6 +151,24 @@ class ProfileController extends Controller
         else
         {
             return View::make('admin-options');
+        }
+
+    }
+
+
+    public function deleteMyAccount($id)
+    {
+        // Check if it is your own account
+        if(Auth::user()->id == $id)
+        {
+            $user = User::findOrFail($id);
+            $user->delete();
+
+            return Redirect::route('home');
+        }
+        else
+        {
+            return Redirect::back();
         }
 
     }

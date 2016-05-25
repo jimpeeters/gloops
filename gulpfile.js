@@ -46,7 +46,8 @@ elixir(function(mix) {
         'controllers/HomeController.js',
         'controllers/MainController.js',
         'controllers/RecordController.js',
-        'controllers/SpecificuserController.js'
+        'controllers/SpecificuserController.js',
+        'controllers/DeleteAccountController.js'
     ], 'public/js/angular/controllers/controllers.js');
 
     mix.scripts([

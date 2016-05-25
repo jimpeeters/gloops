@@ -64,5 +64,4 @@ gloopsApp.controller('MainController', ['$scope', '$http', 'OverheatingService',
             });
         }
     }
-
 }]);

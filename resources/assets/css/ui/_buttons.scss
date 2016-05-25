@@ -18,6 +18,12 @@
 		text-decoration: none;
 		color: $white;
 	}
+
+	&.disabled {
+		background-color: #DFDFDF;
+		pointer-events: none;
+   		cursor: default;
+	}
 }
 
 // Turn button

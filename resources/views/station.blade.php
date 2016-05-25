@@ -107,71 +107,75 @@
 
 		</section>
 
-		<div class="col-xs-12 col-sm-6 col-sm-offset-3 upload-section">
-			<h2 class="title">Start uploading</h2>
+		<section class="upload-section">
+			<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+				<h2 class="title">Start uploading</h2>
 
-			@if (count($errors) > 0)
-			    <div ng-controller="AlertController">
-			    	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
-			    		@foreach ($errors->all() as $key => $error)
-							<p>
-								<i class="fa fa-times alert-type-icon"></i>{{ $error }}
-								@if($key == 0)
-									<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
-								@endif
-							</p>
-						@endforeach
+				@if (count($errors) > 0)
+				    <div ng-controller="AlertController">
+				    	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
+				    		@foreach ($errors->all() as $key => $error)
+								<p>
+									<i class="fa fa-times alert-type-icon"></i>{{ $error }}
+									@if($key == 0)
+										<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+									@endif
+								</p>
+							@endforeach
+						</div>
+				    </div>
+				@endif
+
+				{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true)) !!}
+					<div class="form-group">
+						{!! Form::label('name', 'Name') !!}
+						{!! Form::text('name','',array('class' => 'form-control', 'required' => 'required', 'placeholder' => 'Name your loop')) !!}
 					</div>
-			    </div>
-			@endif
 
-			{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true)) !!}
-				<div class="form-group">
-					{!! Form::label('name', 'Name') !!}
-					{!! Form::text('name','',array('class' => 'form-control', 'required' => 'required', 'placeholder' => 'Name your loop')) !!}
-				</div>
-
-				<div class="form-group">
-				    <div class="custom-file-upload">
-					    {!! Form::label('file', 'File') !!}
-					    <input type="file" id="file" name="file"/>
+					<div class="form-group">
+					    <div class="custom-file-upload">
+						    {!! Form::label('file', 'File') !!}
+						    <input type="file" id="file" name="file"/>
+						</div>
 					</div>
-				</div>
 
-				<div class="form-group">
-					{!! Form::label('Tags') !!}
-					<select size="5" name="tags[]" class="form-control chosen-select" data-placeholder="Add tags to this guitar loop..." multiple required>
-						@foreach ($tags as $name)
-							<option value="{{$name}}">{{$name}}</option>
-						@endforeach
-					</select>
-	    		</div>
+					<div class="form-group">
+						{!! Form::label('Tags') !!}
+						<select size="5" name="tags[]" class="form-control chosen-select" data-placeholder="Add tags to this guitar loop..." multiple required>
+							@foreach ($tags as $name)
+								<option value="{{$name}}">{{$name}}</option>
+							@endforeach
+						</select>
+		    		</div>
 
-	    		<div class="form-group">
-					{!! Form::label('Category') !!}
-					<select name="category" class="form-control chosen-select-dropdown" data-placeholder="Choose a Category" required>
-						<option value="">Choose a category</option>
-						@foreach ($categories as $category)
-							<option value="{{$category->id}}">{{$category->name}}</option>
-						@endforeach
-					</select>
-	    		</div>
-                
-				<button type="submit" class="basic-button upload-button">Upload</button>
-			{!! Form::close() !!}	
+		    		<div class="form-group">
+						{!! Form::label('Category') !!}
+						<select name="category" class="form-control chosen-select-dropdown" data-placeholder="Choose a Category" required>
+							<option value="">Choose a category</option>
+							@foreach ($categories as $category)
+								<option value="{{$category->id}}">{{$category->name}}</option>
+							@endforeach
+						</select>
+		    		</div>
+	                
+					<button type="submit" class="basic-button upload-button">Upload</button>
+				{!! Form::close() !!}	
 
-			<h2 class="title division-title"><span>Or recording</span></h2>
+				<h2 class="title division-title"><span>Or recording</span></h2>
 
-			<a class="record-button btn-floating waves-effect waves-light btn-large red" href="" data-toggle="modal" data-target="#recordModal"><i class="fa fa-microphone"></i></a>
-			@include('record')
+				<a class="record-button btn-floating waves-effect waves-light btn-large red" href="" data-toggle="modal" data-target="#recordModal"><i class="fa fa-microphone"></i></a>
+				@include('record')
 
-		</div>
+			</div>
+		</section>
 
 	@else
 
 		@include('snippets.login')
 
 	@endif
+
+	@include('sections.tutorial')
 
 
 </div>

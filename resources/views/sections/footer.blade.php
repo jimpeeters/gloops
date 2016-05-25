@@ -17,7 +17,6 @@
 		<div class="col-xs-12 col-sm-3">
 			<div class="sub-footer">
 				<h5>Loops //</h5>
-				<a href="#">Most popular</a>
 				<a href="#">Most recent</a>
 				<a href="#">Your loops</a>
 			</div>
