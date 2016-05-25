@@ -42,8 +42,8 @@
 				</div>
 				<div class="form-group">
 				    <div class="custom-file-upload">
-					    {!! Form::label('file', 'Profile picture') !!}
-					    <input type="file" id="file" name="avatar" multiple />
+					    {!! Form::label('file', 'Profile picture (optional)') !!}
+					    <input type="file" id="file" name="image" multiple />
 					</div>
 				</div>
 

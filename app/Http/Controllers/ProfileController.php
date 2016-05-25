@@ -13,6 +13,7 @@ use App\Loop;
 use App\Favourite;
 use Validator;
 use Redirect;
+use Image;
 
 class ProfileController extends Controller
 {
@@ -65,7 +66,7 @@ class ProfileController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name'         => 'required|max:100|min:2|unique:users,name,'.$input['id'],
-            'avatar'         => 'mimes:png,jpeg',
+            'image'         => 'mimes:png,jpeg|max:500',
             'oldpassword'      => 'min:6',
             'newpassword'      => 'min:6',
             'email'         => 'required|email|unique:users,email,'.$input['id']
@@ -81,7 +82,8 @@ class ProfileController extends Controller
 
         $user = User::findOrFail(Auth::user()->id);
         
-        $user->name = $input['name'];
+        $name = ucwords(strtolower($input['name']));
+        $user->name = $name;
         $user->email = $input['email'];
 
         // If users has filled in old and new password
@@ -98,18 +100,21 @@ class ProfileController extends Controller
             }
         }
 
-
-        if ($request->hasFile('file'))
+        if ($request->hasFile('image'))
         {
-            // Delete current picture
-            $userAvatarPath = $user->avatar;
-            $imagePath = str_replace('/', '\\', $userAvatarPath);
-            unlink(base_path().'\\public'.$imagePath); 
-
+            // Delete current picture if it is not the default picture
+            if($user->avatar != 'images/profilePictures/default.png')
+            {
+                $userAvatarPath = $user->avatar;
+                $imagePath = str_replace('/', '\\', $userAvatarPath);
+                unlink(base_path().'\\public'.$imagePath);
+            }
             // Save new picture
-            $file = $request->file('file');
+            $file = $request->file('image');
             $imageName = $user->email.'.'.$file->getClientOriginalExtension();
-            $file->move(base_path().'/public/images/profilePictures/',$imageName);
+            $img = Image::make($file);
+            $img->fit(200);
+            $img->save(base_path().'\public\images\profilePictures\\'.$imageName);
             $user->avatar = '/images/profilePictures/'.$imageName;
         }
 

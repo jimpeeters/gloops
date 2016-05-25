@@ -190,7 +190,7 @@
 					<div class="form-group">
 					    <div class="custom-file-upload">
 						    {!! Form::label('file', 'Profile picture') !!}
-						    <input type="file" id="file" name="file" placeholder="Upload an mp3 file" multiple />
+						    <input type="file" id="file" name="image" placeholder="Upload an mp3 file" multiple />
 						</div>
 					</div>
 

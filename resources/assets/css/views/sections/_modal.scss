@@ -195,7 +195,7 @@
 }
 
 @media only screen and (min-width : $screen-tablet) {
-    .login-modal {
+    .login-modal, .logout-modal, .register-modal {
         .modal-body {
             padding: 60px 15px;
         }

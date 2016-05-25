@@ -12,6 +12,7 @@ use Auth;
 use Socialite;
 use Redirect;
 use View;
+use Image;
 
 class AuthController extends Controller
 {
@@ -162,7 +163,7 @@ class AuthController extends Controller
             'name'         => 'required|max:100|min:2',
             'password'      => 'required|confirmed|min:6',
             'email'         => 'email|required|unique:users,email',
-            'avatar'         => 'mimes:png,jpeg'
+            'image'         => 'mimes:png,jpeg|max:500'
         ]);
         
 
@@ -192,8 +193,9 @@ class AuthController extends Controller
         $input = $request->all();
 
         $user = new User();
-        $userName = $input['name'];
-        $user->name = $input['name'];
+        // Capitalize first letter and lowercase next
+        $name = ucwords(strtolower($input['name']));
+        $user->name = $name;
         $user->email    = $input['email'];
         $user->rating = 0;
         $user->rank = 1;
@@ -212,11 +214,13 @@ class AuthController extends Controller
         $user->facebookAccount  = false;
         $user->password         = \Hash::make($input['password']);
 
-        if ($request->hasFile('file'))
+        if ($request->hasFile('image'))
         {
-            $file = $request->file('file');
+            $file = $request->file('image');
             $imageName = $user->email.'.'.$file->getClientOriginalExtension();
-            $file->move(base_path().'/public/images/profilePictures/',$imageName);
+            $img = Image::make($file);
+            $img->fit(200);
+            $img->save(base_path().'\public\images\profilePictures\\'.$imageName);
             $user->avatar = '/images/profilePictures/'.$imageName;
         }
         else
