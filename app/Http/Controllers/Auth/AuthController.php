@@ -135,8 +135,9 @@ class AuthController extends Controller
     //logout --------------------
     public function getLogout()
     {
+        $user = Auth::user()->name;
         Auth::logout();
-        return Redirect::route('home')->with('successfullLogout',"You have successfully logged out. We hope to see you again soon!");
+        return Redirect::route('home')->with('successfullLogout', $user);
     }
 
     //get register page ------------
@@ -254,7 +255,7 @@ class AuthController extends Controller
             if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']]))
             {
                 // If login succeeds
-                return Redirect::route('home')->with('successfullLogin','');
+                return Redirect::route('home')->with('successfullLogin', Auth::user()->name);
             }
             else
             {
@@ -285,7 +286,7 @@ class AuthController extends Controller
             if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']]))
             {
                 // If login succeeds
-                return Redirect::route('home')->with('successfullLogin','');
+                return Redirect::route('home')->with('successfullLogin', Auth::user()->name);
             }
             else
             {

@@ -7,7 +7,7 @@
 		    </div>
 		    <div class="modal-body">
 				<h3>Logout successfull!</h3>
-				<p>We hope to see you again soon</p>
+				<p>We hope to see you again soon {{ Session::get('successfullLogout') }}.</p>
 			</div>
 			<div class="modal-footer">
 		      	<p>Still want to browse loops? <a href="{{ route('library') }}">Go to library</a></p>
