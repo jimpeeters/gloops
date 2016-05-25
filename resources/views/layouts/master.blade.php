@@ -53,10 +53,24 @@
 
         @endif
 
-        <!-- Open logout modal when session-->
+        <!-- Open logout modal when successfully logged out-->
         @if(session()->has('successfullLogout'))
 
-            @include('auth.logout')
+            @include('snippets.logout-modal')
+
+        @endif
+
+        <!-- Open login modal when successfully logged in-->
+        @if(session()->has('successfullLogin'))
+
+            @include('snippets.login-modal')
+
+        @endif
+
+        <!-- Open login modal when successfully logged in-->
+        @if(session()->has('successfullRegister'))
+
+            @include('snippets.register-modal')
 
         @endif
 
@@ -143,11 +157,29 @@
     </script>
 @endif
 
-<!-- Open logout modal-->
+<!-- Open successfull logout modal-->
 @if(session()->has('successfullLogout'))
     <script>
         $(document).ready(function() {
-            $('#logoutModal').modal('show');
+            $('#successfullLogoutModal').modal('show');
+        });
+    </script>
+@endif
+
+<!-- Open successfull login modal-->
+@if(session()->has('successfullLogin'))
+    <script>
+        $(document).ready(function() {
+            $('#successfullLoginModal').modal('show');
+        });
+    </script>
+@endif
+
+<!-- Open successfull register modal-->
+@if(session()->has('successfullRegister'))
+    <script>
+        $(document).ready(function() {
+            $('#successfullRegisterModal').modal('show');
         });
     </script>
 @endif
@@ -162,6 +194,7 @@
         });
     </script>
 @endif
+
 <script>
     $( "#activate-modal, #activate-modal-2" ).click(function() {
         $( '#video-modal' ).openModal();

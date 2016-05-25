@@ -192,6 +192,7 @@ class AuthController extends Controller
         $input = $request->all();
 
         $user = new User();
+        $userName = $input['name'];
         $user->name = $input['name'];
         $user->email    = $input['email'];
         $user->rating = 0;
@@ -226,7 +227,7 @@ class AuthController extends Controller
         $user->save();
         Auth::login($user);
         
-        return redirect()->route('home')->with('success','Thank you for registering to gloops, you can start recording guitar loops right now!');
+        return redirect()->route('home')->with('successfullRegister', $userName);
     }
 
     // Login from normal page
@@ -249,7 +250,7 @@ class AuthController extends Controller
             if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']]))
             {
                 // If login succeeds
-                return Redirect::route('home')->with('success','You have successfully logged in!');
+                return Redirect::route('home')->with('successfullLogin','');
             }
             else
             {
@@ -280,7 +281,7 @@ class AuthController extends Controller
             if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']]))
             {
                 // If login succeeds
-                return Redirect::route('home')->with('success','You have successfully logged in!');
+                return Redirect::route('home')->with('successfullLogin','');
             }
             else
             {

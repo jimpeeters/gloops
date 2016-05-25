@@ -39,7 +39,6 @@
 	}
 }
 
-/* Extra Small Devices, Phones */ 
 @media only screen and (min-width : $screen-phone) {
 	.modal-dialog {
 		width: 300px;
@@ -47,7 +46,6 @@
 	}
 }
 
-/* Small Devices, Tablets */
 @media only screen and (min-width : $screen-tablet) {
 	.modal-dialog {
 		width: 450px;
@@ -159,4 +157,47 @@
     max-height: 45%;
     border-radius: 0;
     will-change: bottom, opacity;
+}
+
+//Logout success modal
+.logout-modal, .register-modal {
+    .modal-body {
+        text-align: center;
+        padding: 30px 15px;
+        position: relative;
+
+        h3, p {
+            margin: 0;
+            z-index: 2;
+            position: relative;
+        }
+    }
+}
+
+//Login and success modal
+.login-modal {
+    .modal-body {
+        text-align: center;
+        padding: 30px 15px;
+        position: relative;
+
+        h3, p, a {
+            margin: 0;
+            z-index: 2;
+            position: relative;
+        }
+
+        a {
+            margin: 30px auto 0 auto;
+            width: 70%;
+        }
+    }
+}
+
+@media only screen and (min-width : $screen-tablet) {
+    .login-modal {
+        .modal-body {
+            padding: 60px 15px;
+        }
+    }
 }

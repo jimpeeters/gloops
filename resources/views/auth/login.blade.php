@@ -3,7 +3,7 @@
 	    <div class="modal-content">
 		    <div class="modal-header">
 		      	<button type="button" class="close" data-dismiss="modal">&times;</button>
-		      	<h4 id="login-header-title">Login</h4>
+		      	<h2>Login</h2>
 		    </div>
 		    <div class="modal-body">
 				<div class="row">
@@ -33,7 +33,7 @@
 								{!! Form::label('password', 'Password') !!}
 								{!! Form::password('password', array('class' => 'form-control')) !!}
 							</div>
-							<center><button href="" type="submit" class="basic-button">Login</button></center>
+							<center><button type="submit" class="basic-button">Login</button></center>
 						{!! Form::close() !!}	
 					</div>
 				</div>
