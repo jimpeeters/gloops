@@ -20,7 +20,7 @@ body {
 }
 
 // Responsive fonts
-p,a,input[type="text"],span,div {
+p,a,input[type="text"],span,div, ::placeholder {
 	font-size: 10px;
 }
 
@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : $screen-phone) {
-	p,a,input[type="text"],label,span,div {
+	p,a,input[type="text"],label,span,div, ::placeholder {
 		font-size: 14px;
 	}
 
@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : $screen-tablet) {
-	p,a,input[type="text"],label,span,div {
+	p,a,input[type="text"],label,span,div, ::placeholder {
 		font-size: 16px;
 	}
 

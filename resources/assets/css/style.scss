@@ -74,16 +74,28 @@ body {
 	height: 40px;
 }
 
+input {
+	transition: border-color 0.2s ease-out;
+}
+// Inputfield validation
+input.enabled {
+	border-color: $green;
+
+	&:focus {
+		border-color: $green;
+	}
+}
+
 .form-control:focus {
   border-color: $gray;
   box-shadow: none;
 }
 
 // Label
-.label {
-	font-family: AUdimatBold;
+label {
+	font-family: AUdimat;
+	font-weight: normal;
 	width: 100%;
-	padding: .5em;
 }
 
 // Tooltip styling

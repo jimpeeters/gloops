@@ -112,7 +112,7 @@
     <script type="text/javascript" src="{{asset('/js/libs/gapless5.js')}}"></script>
     
     <!-- Chosen Jquery -->
-    <script type="text/javascript" src="{{asset('/js/libs/chosen.jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/libs/chosen.jquery.js')}}"></script>
     
     <!-- Custom Jquery -->
     <script type="text/javascript" src="{{asset('/js/jquery.js')}}"></script>
@@ -137,7 +137,7 @@
     <script src="{{secure_asset('/js/libs/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{secure_asset('/bower_components/angular/angular.min.js')}}"></script>
     <script type="text/javascript" src="{{secure_asset('/js/libs/gapless5.js')}}"></script>
-    <script type="text/javascript" src="{{secure_asset('/js/libs/chosen.jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{secure_asset('/js/libs/chosen.jquery.js')}}"></script>
     <script type="text/javascript" src="{{secure_asset('/js/jquery.js')}}"></script>
     <script src="{{secure_asset('/bower_components/angularAudioRecorder/dist/angular-audio-recorder.js')}}"></script>
     <script type="text/javascript" src="{{secure_asset('/js/libs/angular-animate.min.js')}}"></script>

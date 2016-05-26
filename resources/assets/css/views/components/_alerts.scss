@@ -9,17 +9,19 @@
 
 	p {
 		display: block;
-		padding: 10px 30px 10px 30px;
+		padding: 5px 30px 5px 30px;
 		margin-bottom: 0;
-		transform: translateX(-100%);
+		transform: translateY(-100%);
   		animation: slideIn 1.2s ease-out forwards;
   		position: relative;
+  		text-align: center;
 	}
 
 	.alert-type-icon {
 		position: absolute;
-		top: 13px;
+		top: 5px;
     	left: 10px;
+    	line-height: 1.42857143;
 	}
 
 	.close-button {
@@ -36,7 +38,7 @@
 
 	@keyframes slideIn {
 	  to {
-	    transform: translateX(0%);
+	    transform: translateY(0%);
 	  }
 	}
 }
@@ -59,12 +61,4 @@
 
 .info-box.close {
 	display: none;
-}
-
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : $screen-tablet) {
-	.info-box {
-		width: auto;
-	}
 }

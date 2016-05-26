@@ -129,36 +129,48 @@
 				{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true)) !!}
 					<div class="form-group">
 						{!! Form::label('name', 'Name') !!}
-						{!! Form::text('name','',array('class' => 'form-control', 'required' => 'required', 'placeholder' => 'Name your loop')) !!}
+						<input 
+					    	type="text" 
+					    	name="name"
+					    	value="" 
+					    	ng-model="name"
+							ng-model-options='{ debounce: 300 }'
+							class="form-control"
+							ng-class="{ enabled : nameIsValid }"
+							ng-change="checkName(name)"
+							ng-placeholder="Name of your loop"
+							required>
 					</div>
+
+
 
 					<div class="form-group">
 					    <div class="custom-file-upload">
 						    {!! Form::label('file', 'File') !!}
-						    <input type="file" id="file" name="file"/>
+						    <input type="file" id="file" name="mp3" ng-model="file" onchange="angular.element(this).scope().checkFile()"/>
 						</div>
 					</div>
 
-					<div class="form-group">
-						{!! Form::label('Tags') !!}
-						<select size="5" name="tags[]" class="form-control chosen-select" data-placeholder="Add tags to this guitar loop..." multiple required>
-							@foreach ($tags as $name)
-								<option value="{{$name}}">{{$name}}</option>
-							@endforeach
-						</select>
-		    		</div>
-
 		    		<div class="form-group">
 						{!! Form::label('Category') !!}
-						<select name="category" class="form-control chosen-select-dropdown" data-placeholder="Choose a Category" required>
+						<select name="category" class="form-control chosen-select-dropdown" data-placeholder="Choose a Category" ng-model="category" ng-change="checkCategory()">
 							<option value="">Choose a category</option>
 							@foreach ($categories as $category)
 								<option value="{{$category->id}}">{{$category->name}}</option>
 							@endforeach
 						</select>
 		    		</div>
+
+		    		<div class="form-group">
+						{!! Form::label('Tags (optional)') !!}
+						<select size="5" name="tags[]" class="form-control chosen-select" data-placeholder="Add tags to this guitar loop..." multiple>
+							@foreach ($tags as $name)
+								<option value="{{$name}}">{{$name}}</option>
+							@endforeach
+						</select>
+		    		</div>
 	                
-					<button type="submit" class="basic-button upload-button">Upload</button>
+					<button ng-disabled="!uploadEnabled" ng-class="{ disabled : !uploadEnabled}" type="submit" class="basic-button upload-button">Upload</button>
 				{!! Form::close() !!}	
 
 				<h2 class="title division-title"><span>Or recording</span></h2>

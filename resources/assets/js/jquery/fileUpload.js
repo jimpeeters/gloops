@@ -60,6 +60,9 @@
 		          .attr('title', filename) // Show filename in title tootlip
 		          .focus(); // Regain focus
 
+		        $input.addClass('enabled');
+		        $button.addClass('enabled');
+
 		      });
 
 		      $input.on({

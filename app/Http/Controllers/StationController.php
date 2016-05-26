@@ -150,10 +150,10 @@ class StationController extends Controller
     {
         // Validation
         $validator = Validator::make($request->all(), [
-            'name'         => 'required|regex:/([A-Za-z0-9 ])+/|max:100|min:6|unique:loops,name',
-            'loop_path'      => 'mimes:mpga',
+            'name'         => 'required|regex:/^[a-zA-Z1-9 ]+$/|max:35|min:6|unique:loops,name',
+            'mp3'      => 'required|mimes:mpga|max:500',
             'category'      => 'required|max:1',
-            'tags'      => 'required|max:5'
+            'tags'      => 'max:5'
         ]);
         
 
@@ -174,9 +174,9 @@ class StationController extends Controller
         $loop->FK_category_id = $categoryId;
         
         // File check and creating upload map
-        if ($request->hasFile('file'))
+        if ($request->hasFile('mp3'))
         {
-            $file = $request->file('file');            
+            $file = $request->file('mp3');            
             $fileName = Auth::user()->email.'-'. $loop->name.'.'.$file->getClientOriginalExtension();
             $file->move(base_path().'/public/loops/uploads/',$fileName);
             $loop->loop_path = '/loops/uploads/'.$fileName;
@@ -185,19 +185,23 @@ class StationController extends Controller
         $loop->save();
 
         // Add tags to loop
-        $tags = $input['tags']; 
-        if (isset($tags))
+        if(array_key_exists('tags', $input))
         {
-            foreach($tags as $tag) 
+            $tags = $input['tags']; 
+            if (isset($tags))
             {
-                $specificTag =  Tag::where('name', '=', $tag)->first();
+                foreach($tags as $tag) 
+                {
+                    $specificTag =  Tag::where('name', '=', $tag)->first();
 
-                $loopTag = new LoopTag;
-                $loopTag->FK_loop_id = $loop->id;
-                $loopTag->FK_tag_id = $specificTag->id;
-                $loopTag->save();
+                    $loopTag = new LoopTag;
+                    $loopTag->FK_loop_id = $loop->id;
+                    $loopTag->FK_tag_id = $specificTag->id;
+                    $loopTag->save();
+                }
             }
         }
+
 
         return redirect('/station')->with('success','Loop successfully added!');
     }
@@ -261,6 +265,6 @@ class StationController extends Controller
         $loopPath = str_replace('/', '\\', $loopPath);
         unlink(base_path().'\\public'.$loopPath); 
 
-        //return redirect('/station')->with('success','Guitar loop '.$loop->name.' is successfully deleted!');
+        return redirect('/station')->with('success','Guitar loop '.$loop->name.' is successfully deleted!');
     }
 }
