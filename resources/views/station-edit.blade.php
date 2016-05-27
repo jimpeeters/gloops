@@ -83,21 +83,6 @@
 			</div>
 
 			<div class="form-group">
-				{!! Form::label('Tags') !!}
-				<select size="5" name="tags[]" class="form-control chosen-select" data-placeholder="Add tags to this guitar loop..." multiple required>
-					@foreach ($tags as $name)
-						@foreach($loop->tags as $looptag)
-							@if($name == $looptag->name)
-								<option value="{{$name}}" selected>{{$name}}</option>
-								<?php continue 2; ?>
-							@endif
-						@endforeach
-						<option value="{{$name}}">{{$name}}</option>
-					@endforeach
-				</select>
-			</div>
-
-			<div class="form-group">
 				{!! Form::label('Category') !!}
 				<select name="category" class="form-control chosen-select-dropdown" data-placeholder="Choose a Category" required>
 					<option value="">Choose a category</option>
@@ -111,9 +96,24 @@
 				</select>
 			</div>
 
+			<div class="form-group">
+				{!! Form::label('Tags (optional)') !!}
+				<select size="5" name="tags[]" class="form-control chosen-select" data-placeholder="Add tags to this guitar loop..." multiple required>
+					@foreach ($tags as $name)
+						@foreach($loop->tags as $looptag)
+							@if($name == $looptag->name)
+								<option value="{{$name}}" selected>{{$name}}</option>
+								<?php continue 2; ?>
+							@endif
+						@endforeach
+						<option value="{{$name}}">{{$name}}</option>
+					@endforeach
+				</select>
+			</div>
+
 			<input type="hidden" name="id" value="{{ $loop->id }}">
 		    
-			<button type="submit" class="basic-button upload-button">Upload</button>
+			<button type="submit" class="basic-button upload-button">Edit this loop</button>
 		{!! Form::close() !!}
 	</div>
 </div>

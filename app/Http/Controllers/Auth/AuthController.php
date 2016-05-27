@@ -161,9 +161,9 @@ class AuthController extends Controller
         ]);
     }*/
         $validator = Validator::make($request->all(), [
-            'name'         => 'required|max:100|min:2',
-            'password'      => 'required|confirmed|min:6',
-            'email'         => 'email|required|unique:users,email',
+            'name'         => 'required|max:50|min:2',
+            'password'      => 'required|confirmed|min:6|max:100',
+            'email'         => 'required|email|unique:users,email',
             'image'         => 'mimes:png,jpeg|max:500'
         ]);
         
@@ -188,7 +188,7 @@ class AuthController extends Controller
             return redirect()->back()
                         ->with('registerMessages', $registerMessages)
                         ->withErrors($validator)
-                        ->withInput();
+                        ->withInput($request->all());
         }
 
         $input = $request->all();

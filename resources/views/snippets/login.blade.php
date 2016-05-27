@@ -50,32 +50,73 @@
 	@endif
 
 
-	<div ng-show="!loginView" class="col-xs-12 col-lg-6 col-lg-offset-3">
+	<div ng-show="!loginView" class="col-xs-12 col-lg-6 col-lg-offset-3" ng-controller="RegisterController">
 		{!! Form::open(array('route' => 'register', 'method' => 'POST','files' => true)) !!}
 			<div class="form-group">
 				{!! Form::label('name', 'Name') !!}
-				{!! Form::text('name','',array('class' => 'form-control', 'required' => 'required', 'placeholder' => 'Name')) !!}
+				<input 
+				    	type="text" 
+				    	name="name"
+				    	value="{{ Input::get('name') }}" 
+				    	ng-model="name"
+						ng-model-options='{ debounce: 300 }'
+						class="form-control"
+						ng-class="{ enabled : nameIsValid }"
+						ng-change="checkName(name)"
+						placeholder="Your nickname"
+						required>
 			</div>
 			<div class="form-group">
 				{!! Form::label('email', 'Email') !!}
-				{!! Form::text('email','',array('class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email' )) !!}
+				<input 
+				    	type="text" 
+				    	name="email"
+				    	value="{{ Input::get('email') }}" 
+				    	ng-model="email"
+						ng-model-options='{ debounce: 300 }'
+						class="form-control"
+						ng-class="{ enabled : emailIsValid }"
+						ng-change="checkEmail(email)"
+						placeholder="Your email"
+						required>
 			</div>
 			<div class="form-group">
 				{!! Form::label('password', 'Password') !!}
-				{!! Form::password('password', array('class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password')) !!}
+				<input 
+				    	type="password" 
+				    	name="password"
+				    	value="" 
+				    	ng-model="password"
+						ng-model-options='{ debounce: 300 }'
+						class="form-control"
+						ng-class="{ enabled : passwordIsValid }"
+						ng-change="checkPassword(password)"
+						placeholder="Your password"
+						required>
 			</div>
 			<div class="form-group">
 				{!! Form::label('password_confirmation', 'Confirm Password') !!}
-				{!! Form::password('password_confirmation', array('class' => 'form-control', 'required' => 'required', 'placeholder' => 'Confirm your password')) !!}
+				<input 
+					class="form-control"
+					placeholder="Confirm your password" 
+					name="password_confirmation" 
+					type="password"
+					ng-model="passwordConfirmation"
+					ng-model-options='{ debounce: 300 }'
+					ng-class="{ enabled : passwordConfirmationIsValid }"
+					ng-change="checkPasswordConfirmation(passwordConfirmation)"
+					value="" 
+					id="password_confirmation"
+					required>
 			</div>
 			<div class="form-group">
 			    <div class="custom-file-upload">
-				    {!! Form::label('file', 'Profile picture') !!}
-				    <input type="file" id="file" name="file" multiple />
+				    {!! Form::label('file', 'Profile picture (optional)') !!}
+				    <input type="file" id="file" name="image" multiple ng-model="file" onchange="angular.element(this).scope().checkFile()"/>
 				</div>
 			</div>
 
-			<button type="submit" class="basic-button">Register</button>
+			<button type="submit" ng-disabled="!uploadEnabled" ng-class="{ disabled : !uploadEnabled}" class="basic-button">Register</button>
 		{!! Form::close() !!}	
 	</div>
 
