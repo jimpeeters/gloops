@@ -17,8 +17,6 @@
     	}
 
     	a {
-    		padding: 0 2px;
-    		margin: 0 2px;
 	        color: $red;
 	        text-decoration: none;
 	        
@@ -112,6 +110,7 @@
 	.footer {
 		.sub-footer{
 			border-bottom: none;
+			min-height: 98px;
 
 			h5, a {
 	    		display: block;
