@@ -2,33 +2,30 @@
 		<div class="col-xs-12 col-sm-3">
 			<div class="sub-footer">
 				<h5>Gloops //</h5>
-				<a href="{{route('home')}}">Home</a>
-				<a href="{{route('library')}}">Library</a>
+				<a href="{{ route('home') }}">Home</a>
+				<a href="{{ route('library') }}">Library</a>
 				<a href="" id="activate-modal-2">Videos</a>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-3">
 			<div class="sub-footer">
-				<h5>Station //</h5>
-				<a href="{{route('profile')}}">Your account</a>
+				<h5>Pages //</h5>
+				<a href="{{ route('profile') }}">Your account</a>
 				<a href="https://gloops-alpha-jimpeeters.c9users.io/station">Your station</a>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-3">
 			<div class="sub-footer">
 				<h5>Loops //</h5>
-				<a href="#">Most recent</a>
-				<a href="#">Your loops</a>
+				<a href="{{ route('library') }}">Listen loops</a>
+				<a href="https://gloops-alpha-jimpeeters.c9users.io/station">Your loops</a>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-3">
 			<div class="sub-footer">
-				<h5>Categories //</h5>
-				<a href="#">Blues</a>
-				<a href="#">Pop</a>
-				<a href="#">Rock</a>
-				<a href="#">Country</a>
-				<a href="#">Flamenco</a>
+				<h5>Other //</h5>
+				<a href="">Help</a>
+				<a href="">Questions</a>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-6">

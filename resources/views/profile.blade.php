@@ -143,7 +143,7 @@
 
 		</section>
 
-		<section class="edit-loop">
+		<section class="edit-loop" ng-controller="EditProfileController">
 			<div class="col-xs-12 col-sm-6 col-sm-offset-3" id="edit-section">
 				<h2 class="title">Edit your profile</h2>
 				@if(count($errors) > 0)
@@ -173,30 +173,73 @@
 				{!! Form::open(array('route' => 'updateUser','id' => 'edit-profile-form',  'method' => 'POST','files' => true)) !!}
 					<div class="form-group">
 						{!! Form::label('name', 'Name') !!}
-						{!! Form::text('name', Auth::user()->name , array('class' => 'form-control', 'placeholder' => 'You may choose to type a new name', 'required' => 'required')) !!}
+						<input 
+					    	type="text" 
+					    	name="name"
+					    	value=""
+					    	ng-init="name='{{ Auth::user()->name }}'"
+					    	ng-model="name"
+							ng-model-options='{ debounce: 300 }'
+							class="form-control"
+							ng-class="{ enabled : nameIsValid }"
+							ng-change="checkName(name)"
+							placeholder="Your nickname"
+							required>
 					</div>
 					<div class="form-group">
 						{!! Form::label('email', 'Email') !!}
-						{!! Form::text('email', Auth::user()->email ,array('class' => 'form-control','required' => 'required')) !!}
+						<input 
+					    	type="text" 
+					    	name="email"
+					    	value=""
+					    	ng-init="email='{{ Auth::user()->email }}'"
+					    	ng-model="email"
+							ng-model-options='{ debounce: 300 }'
+							class="form-control"
+							ng-class="{ enabled : emailIsValid }"
+							ng-change="checkEmail(email)"
+							placeholder="Your email"
+							required>
 					</div>
 					<div class="form-group">
 						{!! Form::label('oldpassword', 'Old password') !!}
-						{!! Form::password('oldpassword', array('class' => 'form-control' , 'placeholder' => 'Old password')) !!}
+						<input 
+					    	type="password" 
+					    	name="oldpassword"
+					    	value="" 
+					    	ng-model="oldpassword"
+							ng-model-options='{ debounce: 300 }'
+							class="form-control"
+							ng-class="{ enabled : oldPasswordIsValid }"
+							ng-change="checkOldPassword(oldpassword)"
+							placeholder="Old password"
+							required>
 					</div>
 					<div class="form-group">
 						{!! Form::label('newpassword', 'New password') !!}
-						{!! Form::password('newpassword', array('class' => 'form-control','placeholder' => 'New password')) !!}
+						<input 
+					    	type="password" 
+					    	name="newpassword"
+					    	value="" 
+					    	ng-model="newpassword"
+							ng-model-options='{ debounce: 300 }'
+							class="form-control"
+							ng-class="{ enabled : newPasswordIsValid }"
+							ng-change="checkNewPassword(newpassword)"
+							placeholder="New password"
+							required>
 					</div>
 					<div class="form-group">
 					    <div class="custom-file-upload">
 						    {!! Form::label('file', 'Profile picture') !!}
-						    <input type="file" id="file" name="image" placeholder="Upload an mp3 file" multiple />
+						    <input type="file" id="file" name="image" multiple ng-model="file" onchange="angular.element(this).scope().checkFile()"/>
+
 						</div>
 					</div>
 
 					<input type="hidden" name="id" value="{{ Auth::user()->id }}">
 
-					<button type="submit" class="basic-button">Edit</button>
+					<button type="submit" ng-disabled="!uploadEnabled" ng-class="{ disabled : !uploadEnabled}" class="basic-button">Edit</button>
 				{!! Form::close() !!}	
 			</div>
 		</section>

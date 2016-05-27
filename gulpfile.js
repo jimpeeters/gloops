@@ -48,7 +48,8 @@ elixir(function(mix) {
         'controllers/RecordController.js',
         'controllers/SpecificuserController.js',
         'controllers/DeleteAccountController.js',
-        'controllers/RegisterController.js'
+        'controllers/RegisterController.js',
+        'controllers/EditProfileController.js'
     ], 'public/js/angular/controllers/controllers.js');
 
     mix.scripts([

@@ -65,10 +65,10 @@ class ProfileController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($request->all(), [
-            'name'         => 'required|max:100|min:2|unique:users,name,'.$input['id'],
+            'name'         => 'required|max:50|min:2|unique:users,name,'.$input['id'],
             'image'         => 'mimes:png,jpeg|max:500',
-            'oldpassword'      => 'min:6',
-            'newpassword'      => 'min:6',
+            'oldpassword'      => 'min:6|max:100',
+            'newpassword'      => 'min:6|max:100',
             'email'         => 'required|email|unique:users,email,'.$input['id']
         ]);
         

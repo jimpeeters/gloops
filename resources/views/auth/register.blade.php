@@ -25,7 +25,7 @@
 
 			{!! Form::open(array('route' => 'register', 'method' => 'POST','files' => true)) !!}
 				<div class="form-group">
-					{!! Form::label('name', 'Name') !!}
+					{!! Form::label('name', 'Name *') !!}
 					<input 
 					    	type="text" 
 					    	name="name"
@@ -39,7 +39,7 @@
 							required>
 				</div>
 				<div class="form-group">
-					{!! Form::label('email', 'Email') !!}
+					{!! Form::label('email', 'Email *') !!}
 					<input 
 					    	type="text" 
 					    	name="email"
@@ -53,7 +53,7 @@
 							required>
 				</div>
 				<div class="form-group">
-					{!! Form::label('password', 'Password') !!}
+					{!! Form::label('password', 'Password *') !!}
 					<input 
 					    	type="password" 
 					    	name="password"
@@ -67,7 +67,7 @@
 							required>
 				</div>
 				<div class="form-group">
-					{!! Form::label('password_confirmation', 'Confirm Password') !!}
+					{!! Form::label('password_confirmation', 'Confirm Password *') !!}
 					<input 
 						class="form-control"
 						placeholder="Confirm your password" 
