@@ -137,7 +137,7 @@ class AuthController extends Controller
     {
         $user = Auth::user()->name;
         Auth::logout();
-        return Redirect::route('home')->with('successfullLogout', $user);
+        return Redirect::back()->with('successfullLogout', $user);
     }
 
     //get register page ------------
@@ -233,7 +233,7 @@ class AuthController extends Controller
         $user->save();
         Auth::login($user);
         
-        return redirect()->route('home')->with('successfullRegister', $userName);
+        return redirect()->back()->with('successfullRegister', $userName);
     }
 
     // Login from normal page
@@ -256,12 +256,12 @@ class AuthController extends Controller
             if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']]))
             {
                 // If login succeeds
-                return Redirect::route('home')->with('successfullLogin', Auth::user()->name);
+                return Redirect::back()->with('successfullLogin', Auth::user()->name);
             }
             else
             {
                 // If login fails
-                return Redirect::route('home')->withErrors(array('Oops! The email or password you entered is incorrect.')); 
+                return Redirect::back()->withErrors(array('Oops! The email or password you entered is incorrect.')); 
             }
         }
     }
@@ -287,12 +287,12 @@ class AuthController extends Controller
             if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']]))
             {
                 // If login succeeds
-                return Redirect::route('home')->with('successfullLogin', Auth::user()->name);
+                return Redirect::back()->with('successfullLogin', Auth::user()->name);
             }
             else
             {
                 // If login fails
-                return Redirect::route('home')->withErrors(array('Oops! The email or password you entered is incorrect.'))->with('loginModal', $loginModal); 
+                return Redirect::back()->withErrors(array('Oops! The email or password you entered is incorrect.'))->with('loginModal', $loginModal); 
             }
         }
     }

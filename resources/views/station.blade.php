@@ -81,7 +81,7 @@
 				</div>
 			</div>
 			<div ng-show="loops.length > 0" class="col-xs-12 action-buttons">
-				<button ng-show="loops.length > 9" class="basic-button load-more-button" ng-click="loopLimit = loopLimit + 3" href="">Load more</button>
+				<button ng-show="loops.length > 9" class="basic-button load-more-button" ng-class="{ hide: loopLimit >= loops.length }" ng-click="loopLimit = loopLimit + 3" href="">Load more</button>
 				<div class="button-wrapper">
 					<a class="delete btn-floating waves-effect waves-light btn-small red darken-2" ng-click="enableDeleting = !enableDeleting; enableEditing = false">
 			    		<i ng-show="enableDeleting" class="fa fa-times"></i>

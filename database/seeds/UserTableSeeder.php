@@ -27,10 +27,21 @@ class UserTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'Bobby',
+				'name' => 'JuliaStar',
 				'password' => Hash::make('rootroot'),
 				'email' => 'dummy@hotmail.com',
-				'avatar' => '/images/profilePictures/dummy.jpg',
+				'avatar' => '/images/profilePictures/JuliaStar.jpg',
+				'facebookAccount' => false,
+				'rating' => 0,
+				'rank' => 1
+			),
+
+
+		array(
+				'name' => 'LucPeeters',
+				'password' => Hash::make('rootroot'),
+				'email' => 'luc@hotmail.com',
+				'avatar' => '/images/profilePictures/LucPeeters.jpg',
 				'facebookAccount' => false,
 				'rating' => 0,
 				'rank' => 1

@@ -128,7 +128,7 @@
 				</div>
 			</div>
 
-			<div ng-show="favouriteLoops.length > 9"  class="col-xs-12">
+			<div ng-show="favouriteLoops.length > 9 && loopLimit <= favouriteLoops.length" class="col-xs-12">
 				<button class="basic-button load-more-button" ng-click="loopLimit = loopLimit + 3" href="">Load more</button>
 			</div>
 

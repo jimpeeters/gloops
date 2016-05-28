@@ -127,7 +127,39 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 2',
+				'name' => 'Beach Medley',
+				'loop_path' => '/loops/main/loop-15.mp3',
+				'FK_category_id' => '2',
+				'FK_user_id' => '1',
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
+			),
+
+		array(
+				'name' => 'Soft Ukulele',
+				'loop_path' => '/loops/main/loop-16.mp3',
+				'FK_category_id' => '2',
+				'FK_user_id' => '1',
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
+			),
+
+		array(
+				'name' => 'Hey Soulsister',
+				'loop_path' => '/loops/main/loop-17.mp3',
+				'FK_category_id' => '2',
+				'FK_user_id' => '1',
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
+			),
+
+		array(
+				'name' => 'Wonderfull world',
+				'loop_path' => '/loops/main/loop-18.mp3',
+				'FK_category_id' => '2',
+				'FK_user_id' => '1',
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
+			),
+
+		array(
+				'name' => 'TestLoop 1',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -135,7 +167,15 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 3',
+				'name' => 'TestLoop 2',
+				'loop_path' => '/loops/main/loop-9.mp3',
+				'FK_category_id' => '6',
+				'FK_user_id' => '3',
+				'created_at' => \Carbon\Carbon::now()->toDateTimeString()
+			),
+
+		array(
+				'name' => 'TestLoop 3',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -143,7 +183,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 4',
+				'name' => 'TestLoop 4',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -151,7 +191,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 5',
+				'name' => 'TestLoop 5',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -159,7 +199,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 6',
+				'name' => 'TestLoop 6',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -167,7 +207,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 7',
+				'name' => 'TestLoop 7',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -175,7 +215,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 8',
+				'name' => 'TestLoop 8',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -183,7 +223,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 9',
+				'name' => 'TestLoop 9',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -191,7 +231,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 10',
+				'name' => 'TestLoop 10',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -199,7 +239,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 11',
+				'name' => 'TestLoop 11',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -207,7 +247,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 12',
+				'name' => 'TestLoop 12',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -215,7 +255,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 13',
+				'name' => 'TestLoop 13',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -223,7 +263,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 14',
+				'name' => 'TestLoop 14',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -231,7 +271,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 15',
+				'name' => 'TestLoop 15',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -239,7 +279,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 16',
+				'name' => 'TestLoop 16',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -247,7 +287,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 17',
+				'name' => 'TestLoop 17',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -255,7 +295,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 18',
+				'name' => 'TestLoop 18',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -263,7 +303,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 19',
+				'name' => 'TestLoop 19',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',
@@ -271,7 +311,7 @@ class LoopTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'TEST 20',
+				'name' => 'TestLoop 20',
 				'loop_path' => '/loops/main/loop-9.mp3',
 				'FK_category_id' => '6',
 				'FK_user_id' => '2',

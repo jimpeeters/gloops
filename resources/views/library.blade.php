@@ -177,7 +177,7 @@
                     </p>
                 </div>
             </div>
-            <div ng-show="loops.length > 9 && filtered_result.length > 0" class="col-xs-12">
+            <div ng-show="loops.length > 9 && loopLimit <= filtered_result.length" class="col-xs-12">
                 <button class="basic-button load-more-button" href="" ng-click="loopLimit = loopLimit + 3">Load more</button>
             </div>
 		</div>
