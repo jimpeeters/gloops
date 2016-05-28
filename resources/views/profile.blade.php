@@ -212,8 +212,7 @@
 							class="form-control"
 							ng-class="{ enabled : oldPasswordIsValid }"
 							ng-change="checkOldPassword(oldpassword)"
-							placeholder="Old password"
-							required>
+							placeholder="Old password">
 					</div>
 					<div class="form-group">
 						{!! Form::label('newpassword', 'New password') !!}
@@ -226,8 +225,7 @@
 							class="form-control"
 							ng-class="{ enabled : newPasswordIsValid }"
 							ng-change="checkNewPassword(newpassword)"
-							placeholder="New password"
-							required>
+							placeholder="New password">
 					</div>
 					<div class="form-group">
 					    <div class="custom-file-upload">
