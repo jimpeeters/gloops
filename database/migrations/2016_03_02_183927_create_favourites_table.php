@@ -12,6 +12,7 @@ class CreateFavouritesTable extends Migration {
 			$table->timestamps();
 			$table->integer('FK_user_id')->unsigned();
 			$table->integer('FK_loop_id')->unsigned();
+			$table->onDelete('cascade');
 		});
 	}
 

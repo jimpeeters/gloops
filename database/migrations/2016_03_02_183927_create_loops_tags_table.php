@@ -12,6 +12,7 @@ class CreateLoopsTagsTable extends Migration {
 			$table->timestamps();
 			$table->integer('FK_loop_id')->unsigned();
 			$table->integer('FK_tag_id')->unsigned();
+			$table->onDelete('cascade');
 		});
 	}
 
