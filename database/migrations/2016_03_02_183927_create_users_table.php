@@ -17,9 +17,8 @@ class CreateUsersTable extends Migration {
 			$table->integer('rating');
 			$table->integer('rank');
 			$table->rememberToken();
-			$table->timestamps();
 			$table->boolean('facebookAccount');
-			$table->onDelete('cascade');
+			$table->timestamps();
 		});
 	}
 

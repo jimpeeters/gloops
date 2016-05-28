@@ -9,10 +9,9 @@ class CreateFavouritesTable extends Migration {
 	{
 		Schema::create('favourites', function(Blueprint $table) {
 			$table->increments('id');
-			$table->timestamps();
 			$table->integer('FK_user_id')->unsigned();
 			$table->integer('FK_loop_id')->unsigned();
-			$table->onDelete('cascade');
+			$table->timestamps();
 		});
 	}
 

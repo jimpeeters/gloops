@@ -10,27 +10,27 @@ class CreateForeignKeys extends Migration {
 	{
 		Schema::table('loops', function(Blueprint $table) {
 			$table->foreign('FK_category_id')->references('id')->on('categories')
-						->onDelete('restrict')
+						->onDelete('cascade')
 						->onUpdate('restrict');
 		});
 		Schema::table('loops_tags', function(Blueprint $table) {
 			$table->foreign('FK_loop_id')->references('id')->on('loops')
-						->onDelete('restrict')
+						->onDelete('cascade')
 						->onUpdate('restrict');
 		});
 		Schema::table('loops_tags', function(Blueprint $table) {
 			$table->foreign('FK_tag_id')->references('id')->on('tags')
-						->onDelete('restrict')
+						->onDelete('cascade')
 						->onUpdate('restrict');
 		});
 		Schema::table('favourites', function(Blueprint $table) {
 			$table->foreign('FK_user_id')->references('id')->on('users')
-						->onDelete('restrict')
+						->onDelete('cascade')
 						->onUpdate('restrict');
 		});
 		Schema::table('favourites', function(Blueprint $table) {
 			$table->foreign('FK_loop_id')->references('id')->on('loops')
-						->onDelete('restrict')
+						->onDelete('cascade')
 						->onUpdate('restrict');
 		});
 	}
