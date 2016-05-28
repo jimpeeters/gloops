@@ -44,6 +44,8 @@
 
 <body>
 
+    @include('analytics.analyticstracking')
+
     <div class="container" ng-controller="MainController">
 
         <!-- Login modal when not logged in -->
