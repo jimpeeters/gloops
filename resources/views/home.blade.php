@@ -30,7 +30,7 @@
 			<div class="video-layer">
 				@if(Auth::check())
 					<h1>Your station</h1>
-					<center><a href="https://g-loops.com/station" class="basic-button">Visit your station</a></center>
+					<center><a href="{{ route('station') }}" class="basic-button">Visit your station</a></center>
 				@else
 					<h1>Join now</h1>
 					<center><a href="{{ route('getRegister') }}" class="basic-button">Register</a></center>
@@ -92,7 +92,7 @@
 	<section class="information">
 		<div class="col-xs-12 col-sm-4 information-record">
 			<center>
-				<a href="https://g-loops.com/station" class="btn-floating waves-effect waves-light btn-large information-button">
+				<a href="{{ route('station') }}" class="btn-floating waves-effect waves-light btn-large information-button">
 			    	<i class="fa fa-microphone"></i> 
 			    </a>
 			</center>

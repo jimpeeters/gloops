@@ -48,7 +48,7 @@
 			    		<i class="fa fa-trash"></i> 
 			    	</a>
 
-			    	<a class="btn-floating waves-effect waves-light btn-small blue edit-button" href="https://g-loops.com/station/edit/<% loop.id %>" ng-show="enableEditing">
+			    	<a class="btn-floating waves-effect waves-light btn-small blue edit-button" href="/station/edit/<% loop.id %>" ng-show="enableEditing">
 			    		<i class="fa fa-pencil"></i> 
 			    	</a>
 
