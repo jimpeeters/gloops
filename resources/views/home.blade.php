@@ -18,15 +18,19 @@
 	@endif
 
 	<section class="video">
+		<div class="col-xs-12">
+			<center><h1>THIS WEBSITE IS UNDER CONSTRUCTION  <i class="fa fa-plug" aria-hidden="true"></i><h1></center>
+			<center><p> report bugs : jim.peeters.93&amp;gmail.com </p></center>
+		</div>
 		<div class="col-xs-12 video-container padding-0">
 			<video class="home-video" poster="" autoplay="true" muted loop>
-				<source src="video/home.mp4" type="video/mp4">
+		<!-- 		<source src="video/home.mp4" type="video/mp4"> -->
 			   <!--  <source src="video/home.webm" type="video/webm"> -->
 			</video>
 			<div class="video-layer">
 				@if(Auth::check())
 					<h1>Your station</h1>
-					<center><a href="https://gloops-alpha-jimpeeters.c9users.io/station" class="basic-button">Visit your station</a></center>
+					<center><a href="https://g-loops.com/station" class="basic-button">Visit your station</a></center>
 				@else
 					<h1>Join now</h1>
 					<center><a href="{{ route('getRegister') }}" class="basic-button">Register</a></center>
@@ -88,7 +92,7 @@
 	<section class="information">
 		<div class="col-xs-12 col-sm-4 information-record">
 			<center>
-				<a href="https://gloops-alpha-jimpeeters.c9users.io/station" class="btn-floating waves-effect waves-light btn-large information-button">
+				<a href="https://g-loops.com/station" class="btn-floating waves-effect waves-light btn-large information-button">
 			    	<i class="fa fa-microphone"></i> 
 			    </a>
 			</center>

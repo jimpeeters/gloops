@@ -11,14 +11,14 @@
 			<div class="sub-footer">
 				<h5>Pages //</h5>
 				<a href="{{ route('profile') }}">Your account</a>
-				<a href="https://gloops-alpha-jimpeeters.c9users.io/station">Your station</a>
+				<a href="https://g-loops.com/station">Your station</a>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-3">
 			<div class="sub-footer">
 				<h5>Loops //</h5>
 				<a href="{{ route('library') }}">Listen loops</a>
-				<a href="https://gloops-alpha-jimpeeters.c9users.io/station">Your loops</a>
+				<a href="https://g-loops.com/station">Your loops</a>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-3">
