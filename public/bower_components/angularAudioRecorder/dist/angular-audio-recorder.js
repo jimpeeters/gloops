@@ -68,6 +68,27 @@ var blobToDataURL = function (blob, callback) {
 };
 
 var RecorderController = function (element, service, recorderUtils, $scope, $timeout, $interval, PLAYBACK) {
+
+  navigator.getUserMedia (
+     // constraints
+     {
+        video: false,
+        audio: true
+     },
+
+     // successCallback
+     function(localMediaStream) {
+
+     },
+
+     // errorCallback
+     function(err) {
+      if(err === PERMISSION_DENIED) {
+        // Explain why you need permission and how to update the permission setting
+      }
+     }
+  );
+
   //used in NON-Angular Async process
   var scopeApply = function (fn) {
     var phase = $scope.$root.$$phase;
