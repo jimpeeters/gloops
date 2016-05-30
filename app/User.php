@@ -19,6 +19,7 @@ class User extends Model implements AuthenticatableContract,
 
 
     protected $table = 'users';
+    protected $fillable =  ['name', 'email', 'created_at', 'updated_at'];
     protected $primaryKey = 'id';
     public $timestamps = true;
     protected $hidden = ['password', 'remember_token'];

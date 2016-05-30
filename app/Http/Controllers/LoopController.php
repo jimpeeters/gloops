@@ -42,7 +42,7 @@ class LoopController extends Controller
             if($owner->id != Auth::user()->id)
             {
                 // Increase users rating
-                $ownersRating ++;
+                $ownersRating = $ownersRating + 1;
                 $owner->rating = $ownersRating;
 
                 // Check for rank
