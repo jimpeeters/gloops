@@ -57,29 +57,41 @@
 
     <div class="container" ng-controller="MainController">
 
-        <!-- Login modal when not logged in -->
+        
         @if(!Auth::check())
+        <!-- Login modal when not logged in -->
 
             @include('auth.login')
 
         @endif
 
-        <!-- Open logout modal when successfully logged out-->
+        
         @if(session()->has('successfullLogout'))
+        <!-- Open logout modal when successfully logged out-->
 
             @include('snippets.logout-modal')
 
         @endif
 
-        <!-- Open login modal when successfully logged in-->
+       
         @if(session()->has('successfullLogin'))
+         <!-- Open login modal when successfully logged in-->
 
             @include('snippets.login-modal')
 
         @endif
 
-        <!-- Open register modal when successfully logged in-->
+        
+        @if(session()->has('successfullFacebookLogin'))
+        <!-- Open login modal when successfully logged in with facebook -->
+
+            @include('snippets.facebook-login-modal')
+
+        @endif
+
+        
         @if(session()->has('successfullRegister'))
+        <!-- Open register modal when successfully logged in-->
 
             @include('snippets.register-modal')
 
@@ -141,8 +153,8 @@
 <script type="text/javascript" src="{{asset('/js/angular/directives/directives.js')}}"></script>
 <script type="text/javascript" src="{{asset('/js/angular/controllers/controllers.js')}}"></script>
 
-<!-- Open login modal with error messages -->
 @if(session()->has('loginModal'))
+<!-- Open login modal with error messages -->
     <script>
         $(document).ready(function() {
             $('#loginModal').modal('show');
@@ -150,8 +162,8 @@
     </script>
 @endif
 
-<!-- Open successfull logout modal-->
 @if(session()->has('successfullLogout'))
+<!-- Open successfull logout modal-->
     <script>
         $(document).ready(function() {
             $('#successfullLogoutModal').modal('show');
@@ -159,8 +171,8 @@
     </script>
 @endif
 
-<!-- Open successfull login modal-->
 @if(session()->has('successfullLogin'))
+<!-- Open successfull login modal-->
     <script>
         $(document).ready(function() {
             $('#successfullLoginModal').modal('show');
@@ -168,8 +180,17 @@
     </script>
 @endif
 
-<!-- Open successfull register modal-->
+@if(session()->has('successfullFacebookLogin'))
+<!-- Open successfull login modal-->
+    <script>
+        $(document).ready(function() {
+            $('#successfullFacebookLoginModal').modal('show');
+        });
+    </script>
+@endif
+
 @if(session()->has('successfullRegister'))
+<!-- Open successfull register modal-->
     <script>
         $(document).ready(function() {
             $('#successfullRegisterModal').modal('show');
@@ -177,8 +198,8 @@
     </script>
 @endif
 
-<!-- In profile view scroll with update message -->
 @if(session()->has('updateMessage') && Request::is('profile'))
+<!-- In profile view scroll with update message -->
     <script>
         $(document).ready(function() {
             $('html, body').animate({
