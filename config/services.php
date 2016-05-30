@@ -37,9 +37,9 @@ return [
 
     //facebook login
     'facebook' => [
-    'client_id' => env('FACEBOOK_CLIENT_ID'),
-    'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-    'redirect' => env('CALLBACK_URL'),
+    'client_id' => '573073939530144',
+    'client_secret' => '6fd02a8b764190d9e46bddc49e0e28b6',
+    'redirect' => 'http://g-loops.com/auth/facebook/callback',
     ],
 
 ];

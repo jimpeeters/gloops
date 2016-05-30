@@ -29,13 +29,14 @@
 					<input 
 					    	type="text" 
 					    	name="name"
-					    	value="" 
+					    	value="{{ old('name') }}" 
 					    	ng-model="name"
 							ng-model-options='{ debounce: 300 }'
 							class="form-control"
 							ng-class="{ enabled : nameIsValid }"
 							ng-change="checkName(name)"
 							placeholder="Your nickname"
+							id="registerName"
 							required>
 				</div>
 				<div class="form-group">
@@ -43,13 +44,14 @@
 					<input 
 					    	type="text" 
 					    	name="email"
-					    	value="" 
+					    	value="{{ old('email') }}" 
 					    	ng-model="email"
 							ng-model-options='{ debounce: 300 }'
 							class="form-control"
 							ng-class="{ enabled : emailIsValid }"
 							ng-change="checkEmail(email)"
 							placeholder="Your email"
+							id="registerEmail"
 							required>
 				</div>
 				<div class="form-group">

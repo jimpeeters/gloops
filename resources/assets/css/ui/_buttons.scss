@@ -247,3 +247,18 @@
     	}
     }
 }
+
+// Facebook login
+
+.facebook-login-button {
+	background-color: #4B66A1;
+	text-transform: none;
+
+	i {
+		padding-right: 10px;
+	}
+
+	&:hover, &:focus {
+		background-color: darken(#4B66A1 , 10);
+	}
+}

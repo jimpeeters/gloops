@@ -26,6 +26,40 @@
 	    }
     }
 
+    .facebook-button, .youtube-button {
+
+    	display: inline-block;
+    	width: 32px;
+    	height: 32px;
+    	margin-top: 3px;
+    	margin-bottom: 3px;
+
+    	i {
+    		line-height: 32px;
+    		font-size: 1.6rem;
+    	}
+	
+	}
+
+	.facebook-button {
+		background-color: #4B66A1;
+		margin-left: 10px;
+		margin-right: 5px;
+
+		&:hover {
+			background-color: darken(#4B66A1 , 10);
+		}
+	}
+
+	.youtube-button {
+		background-color: #D32F2F;
+
+		&:hover {
+			background-color: darken(#D32F2F , 10);
+		}
+	}
+
+
 	.search {
 
 		form {
@@ -83,6 +117,10 @@
 			}
 		}
 
+		.facebook-button, .youtube-button {
+	    	margin-top: 6px;
+	    	margin-bottom: 6px;
+		}
 
 		.search {
 			form {
@@ -115,6 +153,16 @@
 			h5, a {
 	    		display: block;
 	    	}
+		}
+
+		.facebook-button, .youtube-button {
+	    	float: left;
+	    	margin-top: 5px;
+	    	margin-bottom: 0px;
+		}
+
+		.facebook-button {
+			margin-left: 0px;
 		}
 
 		.search form {

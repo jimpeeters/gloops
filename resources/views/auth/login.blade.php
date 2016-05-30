@@ -23,7 +23,7 @@
 					@endif
 				</div>
 				<div class="row login-modal">
-					<div class="col-md-12">
+					<div class="col-xs-12">
 						{!! Form::open(array('route' => 'loginModal', 'method' => 'POST')) !!}
 							<div class="form-group">
 								{!! Form::label('email', 'Email') !!}
@@ -35,6 +35,11 @@
 							</div>
 							<center><button type="submit" class="basic-button">Login</button></center>
 						{!! Form::close() !!}	
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<center><a class="facebook-login-button basic-button" href="{{ route('facebookLogin') }}" class="basic-button"><i class="fa fa-facebook"></i>Facebook Login</a></center>
 					</div>
 				</div>
 			</div>

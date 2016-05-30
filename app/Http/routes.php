@@ -70,7 +70,7 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/profile', array('as' => 'profile', 'uses' => "ProfileController@index"));
 
     // Facebook login
-    Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
+    Route::get('auth/facebook', array('as' => 'facebookLogin', 'uses' => "Auth\AuthController@redirectToProvider"));
 	Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
 
 	// Get Register page

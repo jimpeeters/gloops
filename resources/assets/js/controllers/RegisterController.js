@@ -11,6 +11,10 @@ gloopsApp.controller('RegisterController', ['$scope', function($scope) {
     $scope.passwordConfirmationIsValid = false;
     $scope.fileIsValid = false;
 
+    // set values of inputfields
+    $scope.name = document.getElementById('registerName').value;
+    $scope.email = document.getElementById('registerEmail').value;
+
 
 
     // Check if it can be uploaded
