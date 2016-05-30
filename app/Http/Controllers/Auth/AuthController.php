@@ -119,6 +119,8 @@ class AuthController extends Controller
     private function findOrCreateUser($facebookUser)
     {
         $authUser = User::where('facebook_id', $facebookUser->id)->first();
+
+        dd($authUser);
  
         if ($authUser){
             return $authUser;
@@ -128,7 +130,9 @@ class AuthController extends Controller
             'name' => $facebookUser->name,
             'email' => $facebookUser->email,
             'facebook_id' => $facebookUser->id,
-            'avatar' => $facebookUser->avatar
+            'avatar' => $facebookUser->avatar,
+            'facebookAccount' => 1
+
         ]);
     }
 
