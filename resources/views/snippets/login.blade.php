@@ -51,7 +51,7 @@
 
 
 	<div ng-show="!loginView" class="col-xs-12 col-lg-6 col-lg-offset-3" ng-controller="RegisterController">
-		{!! Form::open(array('route' => 'register', 'method' => 'POST','files' => true)) !!}
+		{!! Form::open(array('route' => 'register', 'method' => 'POST','files' => true, 'enctype' => 'multipart/form-data')) !!}
 			<div class="form-group">
 				{!! Form::label('name', 'Name *') !!}
 				<input 

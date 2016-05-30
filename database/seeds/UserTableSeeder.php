@@ -51,7 +51,7 @@ class UserTableSeeder extends Seeder
 				'name' => 'RockingJohny',
 				'password' => Hash::make('rootroot'),
 				'email' => 'dummy2@hotmail.com',
-				'avatar' => '/images/profilePictures/dummy.jpg',
+				'avatar' => '/images/profilePictures/JuliaStar.jpg',
 				'facebookAccount' => false,
 				'rating' => 0,
 				'rank' => 1
@@ -61,7 +61,7 @@ class UserTableSeeder extends Seeder
 				'name' => 'Ricky',
 				'password' => Hash::make('rootroot'),
 				'email' => 'dummy3@hotmail.com',
-				'avatar' => '/images/profilePictures/dummy.jpg',
+				'avatar' => '/images/profilePictures/JuliaStar.jpg',
 				'facebookAccount' => false,
 				'rating' => 0,
 				'rank' => 1
@@ -71,7 +71,7 @@ class UserTableSeeder extends Seeder
 				'name' => 'Tom Rocker',
 				'password' => Hash::make('rootroot'),
 				'email' => 'dummy4@hotmail.com',
-				'avatar' => '/images/profilePictures/dummy.jpg',
+				'avatar' => '/images/profilePictures/JuliaStar.jpg',
 				'facebookAccount' => false,
 				'rating' => 0,
 				'rank' => 1
@@ -81,7 +81,7 @@ class UserTableSeeder extends Seeder
 				'name' => 'Gino Pietermaai',
 				'password' => Hash::make('rootroot'),
 				'email' => 'dummy5@hotmail.com',
-				'avatar' => '/images/profilePictures/dummy.jpg',
+				'avatar' => '/images/profilePictures/JuliaStar.jpg',
 				'facebookAccount' => false,
 				'rating' => 0,
 				'rank' => 1

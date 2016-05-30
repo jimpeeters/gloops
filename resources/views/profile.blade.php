@@ -170,7 +170,7 @@
 			        </div>
 			    @endif
 
-				{!! Form::open(array('route' => 'updateUser','id' => 'edit-profile-form',  'method' => 'POST','files' => true)) !!}
+				{!! Form::open(array('route' => 'updateUser','id' => 'edit-profile-form',  'method' => 'POST','files' => true, 'enctype' => 'multipart/form-data')) !!}
 					<div class="form-group">
 						{!! Form::label('name', 'Name') !!}
 						<input 

@@ -55,6 +55,8 @@ gloopsApp.controller('MainController', ['$scope', '$http', 'OverheatingService',
     // Search a loop based on loopname
     $scope.searchOnLoopname = function(query) {
 
+        query = query.toLowerCase();
+
         if (query.length > 0) {
            $http({
                   method  : 'GET',

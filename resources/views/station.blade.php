@@ -126,7 +126,7 @@
 				    </div>
 				@endif
 
-				{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true)) !!}
+				{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true, 'enctype' => 'multipart/form-data')) !!}
 					<div class="form-group">
 						{!! Form::label('name', 'Name') !!}
 						<input 

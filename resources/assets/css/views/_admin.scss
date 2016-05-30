@@ -1,4 +1,9 @@
 .admin {
 	overflow: hidden;
 	padding-bottom: 45px;
+
+	.user-avatar {
+		background-repeat: no-repeat;
+    	background-size: cover;
+	}
 }

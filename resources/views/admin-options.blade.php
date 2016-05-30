@@ -27,6 +27,7 @@
 		          <tr>
 		              <th>Name</th>
 		              <th>Email</th>
+		          	  <th>Picture</th>
 		              <th>Loop amount</th>
 		              <th>Reputation</th>
 		              <th>Delete</th>
@@ -53,6 +54,7 @@
 				        <tr>
 				            <td>{{ $user->name }}</td>
 				            <td>{{ $user->email }}</td>
+				            <td class="user-avatar" style="background-image:url('{{$user->avatar}}')"></td>
 				            <td>{{ count($user->loops) }}</td>
 				            <td>{{ $user->rating }}</td>
 				            <td>
