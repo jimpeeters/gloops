@@ -19,7 +19,7 @@ class User extends Model implements AuthenticatableContract,
 
 
     protected $table = 'users';
-    protected $fillable =  ['name', 'email', 'created_at', 'updated_at', 'avatar', 'facebook_id'];
+    protected $fillable =  ['name', 'email', 'created_at', 'updated_at', 'avatar', 'facebook_id', 'facebookAccount', 'facebook_profile_picture'];
     protected $primaryKey = 'id';
     public $timestamps = true;
     protected $hidden = ['password', 'remember_token'];

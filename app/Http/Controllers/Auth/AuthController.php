@@ -129,7 +129,8 @@ class AuthController extends Controller
             'email' => $facebookUser->getEmail(),
             'facebook_id' => $facebookUser->getId(),
             'avatar' => $facebookUser->getAvatar(),
-	    'facebookAccount' => true
+            'facebook_profile_picture' => $facebookUser->avatar_original,
+	        'facebookAccount' => '1'
 
         ]);
     }

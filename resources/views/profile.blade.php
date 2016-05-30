@@ -23,7 +23,11 @@
 			<div class="col-xs-12">
 				<h2 class="title">Your profile</h2>
 				<center>
+					@if(Auth::user()->facebook_profile_picture != null)
+					<div class="profile-picture" style="background-image: url({{ Auth::user()->facebook_profile_picture }})" title="Edit your profile picture" data-toggle="tooltip" data-placement="left" tooltip>
+					@else
 					<div class="profile-picture" style="background-image: url({{ Auth::user()->avatar }})" title="Edit your profile picture" data-toggle="tooltip" data-placement="left" tooltip>
+					@endif
 						<a class="btn-floating waves-effect waves-light btn-small red profile-edit" smooth-scroll target="edit-profile-form">
 				    		<i class="fa fa-pencil"></i>
 				    	</a>

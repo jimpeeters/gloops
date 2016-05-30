@@ -9,7 +9,11 @@
 		<div class="col-xs-12">
 			<h2 class="title">{{ $user->name }}</h2>
 			<center>
+				@if($user->facebook_profile_picture != null)
+				<div class="profile-picture" style="background-image: url({{ $user->facebook_profile_picture }})">
+				@else
 				<div class="profile-picture" style="background-image: url({{ $user->avatar }})">
+				@endif
 				</div>
 				<h2 class="profile-name">{{ $user->name }}</h2>
 				<ul class="profile-rank" title="This user has {{$user->rating}} reputation" data-toggle="tooltip" data-placement="left" tooltip>
