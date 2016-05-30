@@ -99,6 +99,35 @@
 
     </div>
 
+    
+                        <!-- Recorder control buttons -->
+                        <div class="recorder">
+                            <button class="start-recording" onclick="FWRecorder.record('audio', 'audio.wav');">
+                                
+                            </button>
+                            <div class="level">
+                                <div class="progress"></div>
+                            </div>
+                            <button class="stop-recording" onclick="FWRecorder.stopRecording('audio');">
+                               
+                            </button>
+                            <button class="start-playing" onclick="FWRecorder.playBack('audio');" title="Play">
+                               
+                            </button>
+                            <div class="upload" style="display: inline-block">
+                                <div id="flashcontent">
+                                    <p>Your browser must have JavaScript enabled and the Adobe Flash Player installed.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hidden form for easy specifying the upload request parameters -->
+                        <form id="uploadForm" name="uploadForm" action="../upload.php">
+                            <input name="authenticity_token" value="xxxxx" type="hidden">
+                            <input name="upload_file[parent_id]" value="1" type="hidden">
+                            <input name="format" value="json" type="hidden">
+                        </form>
+
 <!-- Jquery library -->
 <script src="{{asset('/js/libs/jquery.min.js')}}"></script>
 
@@ -116,6 +145,10 @@
 
 <!-- Audio recorder angular -->
 <script src="{{asset('/bower_components/angularAudioRecorder/dist/angular-audio-recorder.js')}}"></script>
+ <script type="text/javascript" src="/js/libs/swfobject.js"></script>
+    <script type="text/javascript" src="/js/libs/recorder.js"></script>
+    <script type="text/javascript" src="/js/libs/basic.js"></script>
+
 
 <!-- angular animation -->
 <script type="text/javascript" src="{{asset('/js/libs/angular-animate.min.js')}}"></script>
@@ -129,6 +162,8 @@
 <script type="text/javascript" src="{{asset('/js/angular/services/services.js')}}"></script>
 <script type="text/javascript" src="{{asset('/js/angular/directives/directives.js')}}"></script>
 <script type="text/javascript" src="{{asset('/js/angular/controllers/controllers.js')}}"></script>
+
+   
 
 <!-- Open login modal with error messages -->
 @if(session()->has('loginModal'))
