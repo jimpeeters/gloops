@@ -132,13 +132,14 @@
 						<input 
 					    	type="text" 
 					    	name="name"
-					    	value="" 
+					    	value="{{ old('name') }}" 
 					    	ng-model="name"
 							ng-model-options='{ debounce: 300 }'
 							class="form-control"
 							ng-class="{ enabled : nameIsValid }"
 							ng-change="checkName(name)"
 							ng-placeholder="Name of your loop"
+							id="loopName"
 							required>
 					</div>
 

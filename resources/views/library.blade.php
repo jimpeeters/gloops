@@ -114,7 +114,7 @@
                 <i ng-click="categoryAlternative = !categoryAlternative; includeCategory('Alternative')" ng-show="!categoryAlternative" class="fa fa-square-o" aria-hidden="true"></i>
                 <a ng-click="categoryAlternative = !categoryAlternative; includeCategory('Alternative')" ng-class="{ 'underline' : categoryAlternative }">Alternative</a>
             </li>
-            <li>
+            <li class="last-child">
                 <i ng-click="categoryPunk = !categoryPunk; includeCategory('Punk')" ng-show="categoryPunk" class="fa fa-check-square" aria-hidden="true"></i>
                 <i ng-click="categoryPunk = !categoryPunk; includeCategory('Punk')" ng-show="!categoryPunk" class="fa fa-square-o" aria-hidden="true"></i>
                 <a ng-click="categoryPunk = !categoryPunk; includeCategory('Punk')" ng-class="{ 'underline' : categoryPunk }">Punk</a>
@@ -123,7 +123,7 @@
         <div class="slide-up-toggle" ng-click="sidebarUp = !sidebarUp">
         	<span ng-show="!sidebarUp">Hide filters</span>
         	<span ng-show="sidebarUp">Show filters</span>
-           	<i class="fa" ng-class="{ 'fa-arrow-up' : !sidebarUp, 'fa-arrow-down' : sidebarUp }"></i>
+           	<i class="fa" ng-class="{ 'fa-arrow-up' : !sidebarUp, 'fa-bars' : sidebarUp }"></i>
         </div>
     </div>
     <div class="col-xs-12 col-sm-10 loops">

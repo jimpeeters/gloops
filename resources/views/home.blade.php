@@ -19,8 +19,7 @@
 
 	<section class="video">
 		<div class="col-xs-12">
-			<center><h1>THIS WEBSITE IS UNDER CONSTRUCTION  <i class="fa fa-plug" aria-hidden="true"></i><h1></center>
-			<center><p> report bugs : jim.peeters.93&amp;gmail.com </p></center>
+			<center><h1>This website is still in development mode.  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i><h1></center>
 		</div>
 		<div class="col-xs-12 video-container padding-0">
 			<video class="home-video" poster="" autoplay="true" muted loop>

@@ -13,6 +13,10 @@
     
     .sidebar-nav.mobile {
         max-height: 0;
+
+        li.last-child {
+            padding-bottom: 15px;
+        }
     }
 
     .sidebar-nav {
@@ -42,7 +46,7 @@
 
             a {
                 text-decoration: none;
-                font-size: 1.2em;
+                font-size: 1.5em;
 
                 &:hover{
                     text-decoration: underline;
@@ -59,7 +63,7 @@
             text-align: left;
             
             p {
-                font-size: 1.5em;
+                font-size: 1.8em;
             }
         }
     }
@@ -72,8 +76,22 @@
         background-color: $red;
         text-align: center;
         transition: background-color 0.2s ease-out;
-        padding: 5px 0;
+        padding: 10px 0;
         color: $white;
+        position: relative;
+        font-size: 14px;
+
+        @media only screen and (min-width : $screen-tablet) {
+            font-size: 16px;
+        }
+
+        span {
+            font-size: 14px;
+
+            @media only screen and (min-width : $screen-tablet) {
+                font-size: 16px;
+            }
+        }
 
         &:hover {
             background-color: lighten($red , 10);
@@ -81,7 +99,9 @@
         }
 
         i {
-            margin: 0 auto;
+            position: absolute;
+            right: 10px;
+            top: 12px;
         }
     }
 
@@ -114,7 +134,17 @@
         .load-more-button {
             width: 300px;
         }
+
+        .sidebar-nav.mobile {
+            padding-bottom: 0px;
+        }
+
+        .sidebar-nav li a {
+            font-size: 1.2em;
+        }
+
+        .sidebar-nav .sub-title p {
+            font-size: 1.5em;
+        }
     }
-
 }
-

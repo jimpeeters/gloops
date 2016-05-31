@@ -9,6 +9,9 @@ gloopsApp.controller('StationController', ['$scope','$http', function($scope, $h
 
     $scope.successMessage = "";
 
+    // set value of inputfield
+    $scope.name = document.getElementById('loopName').value;
+
     // Get all user his loops from database
     $scope.getUserLoops = function() {
 
