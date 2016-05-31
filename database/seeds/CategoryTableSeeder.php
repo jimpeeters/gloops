@@ -38,6 +38,27 @@ class CategoryTableSeeder extends Seeder {
 				'name' => 'Punk'
 			),
 
+		array(
+				'name' => 'Metal'
+			),
+
+		array(
+				'name' => 'Folk'
+			),
+
+		array(
+				'name' => 'Classic'
+			),
+
+		array(
+				'name' => 'Reggae'
+			),
+
+		array(
+				'name' => 'Funk'
+			),
+
+
 		);
 
 		DB::table('categories')->insert($categories);

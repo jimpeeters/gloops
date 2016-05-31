@@ -106,7 +106,7 @@ class ProfileController extends Controller
             if($user->avatar != 'images/profilePictures/default.png')
             {
                 $userAvatarPath = $user->avatar;
-                unlink(base_path().'/public'.$imagePath);
+                unlink(base_path().'/public'.$userAvatarPath;
             }
             // Save new picture
             $file = $request->file('image');

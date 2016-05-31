@@ -196,8 +196,68 @@ class LoopTagTableSeeder extends Seeder {
 			),
 
 		array(
-				'FK_loop_id' => '16',
+				'FK_loop_id' => '19',
+				'FK_tag_id' => '15'
+			),
+
+		array(
+				'FK_loop_id' => '19',
+				'FK_tag_id' => '14'
+			),
+
+		array(
+				'FK_loop_id' => '19',
 				'FK_tag_id' => '11'
+			),
+
+		array(
+				'FK_loop_id' => '20',
+				'FK_tag_id' => '11'
+			),
+
+		array(
+				'FK_loop_id' => '20',
+				'FK_tag_id' => '1'
+			),
+
+		array(
+				'FK_loop_id' => '20',
+				'FK_tag_id' => '4'
+			),
+
+		array(
+				'FK_loop_id' => '21',
+				'FK_tag_id' => '2'
+			),
+
+		array(
+				'FK_loop_id' => '21',
+				'FK_tag_id' => '9'
+			),
+
+		array(
+				'FK_loop_id' => '22',
+				'FK_tag_id' => '2'
+			),
+
+		array(
+				'FK_loop_id' => '22',
+				'FK_tag_id' => '9'
+			),
+
+		array(
+				'FK_loop_id' => '23',
+				'FK_tag_id' => '9'
+			),
+
+		array(
+				'FK_loop_id' => '23',
+				'FK_tag_id' => '32'
+			),
+
+		array(
+				'FK_loop_id' => '24',
+				'FK_tag_id' => '9'
 			),
 
 		);

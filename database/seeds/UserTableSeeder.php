@@ -16,19 +16,19 @@ class UserTableSeeder extends Seeder
 		$users = array(
 
 		array(
-				'name' => 'Admin',
+				'name' => 'Gloops',
 				'password' => Hash::make('rootroot'),
 				'email' => 'jim.peeters.93@gmail.com',
 				'avatar' => '/images/profilePictures/admin.jpg',
 				'facebookAccount' => false,
-				'rating' => 0,
+				'rating' => 500,
 				'rank' => 1
 
 			),
 
 		array(
 				'name' => 'JuliaStar',
-				'password' => Hash::make('rootroot'),
+				'password' => Hash::make('rootroot123'),
 				'email' => 'dummy@hotmail.com',
 				'avatar' => '/images/profilePictures/JuliaStar.jpg',
 				'facebookAccount' => false,
@@ -48,20 +48,20 @@ class UserTableSeeder extends Seeder
 			),
 
 		array(
-				'name' => 'RockingJohny',
-				'password' => Hash::make('rootroot'),
+				'name' => 'Gustavo',
+				'password' => Hash::make('rootroot123'),
 				'email' => 'dummy2@hotmail.com',
-				'avatar' => '/images/profilePictures/JuliaStar.jpg',
+				'avatar' => '/images/profilePictures/Gustavo.jpg',
 				'facebookAccount' => false,
 				'rating' => 0,
 				'rank' => 1
 			),
 
 		array(
-				'name' => 'Ricky',
+				'name' => 'Robert',
 				'password' => Hash::make('rootroot'),
 				'email' => 'dummy3@hotmail.com',
-				'avatar' => '/images/profilePictures/JuliaStar.jpg',
+				'avatar' => '/images/profilePictures/Robert.jpg',
 				'facebookAccount' => false,
 				'rating' => 0,
 				'rank' => 1
