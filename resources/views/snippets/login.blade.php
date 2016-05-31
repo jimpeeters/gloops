@@ -119,7 +119,10 @@
 			</div>
 
 			<button type="submit" ng-disabled="!uploadEnabled" ng-class="{ disabled : !uploadEnabled}" class="basic-button">Register</button>
-		{!! Form::close() !!}	
+		{!! Form::close() !!}
+			<div class="form-group">
+				<center><a class="facebook-login-button basic-button" href="{{ route('facebookLogin') }}" class="basic-button"><i class="fa fa-facebook"></i>Facebook Login</a></center>
+			</div>
 	</div>
 
 	<div ng-show="loginView" class="col-xs-12 col-lg-6 col-lg-offset-3">
@@ -133,7 +136,10 @@
 				{!! Form::password('password', array('class' => 'form-control', 'required' => 'required')) !!}
 			</div>
 			<button href="" type="submit" class="basic-button">Login</button>
-		{!! Form::close() !!}	
+		{!! Form::close() !!}
+		<div class="form-group">
+			<center><a class="facebook-login-button basic-button" href="{{ route('facebookLogin') }}" class="basic-button"><i class="fa fa-facebook"></i>Facebook Login</a></center>
+		</div>
 	</div>
 
 	<div class="col-xs-12 col-lg-6 col-lg-offset-3 toggle-text">

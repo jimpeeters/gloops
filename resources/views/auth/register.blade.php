@@ -91,7 +91,11 @@
 				</div>
 
 				<button type="submit" ng-disabled="!uploadEnabled" ng-class="{ disabled : !uploadEnabled}" class="basic-button">Register</button>
-			{!! Form::close() !!}	
+			{!! Form::close() !!}
+				<div class="form-group">
+					<center><a class="facebook-login-button basic-button" href="{{ route('facebookLogin') }}" class="basic-button"><i class="fa fa-facebook"></i>Facebook Login</a></center>
+				</div>
+
 		</div>
 		<div class="col-xs-12 col-lg-6 col-lg-offset-3 toggle-text">
 		    <p ng-show="!loginView">You already have an account? <a data-toggle="modal" data-target="#loginModal" href="">Login now</a></p>

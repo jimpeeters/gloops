@@ -130,7 +130,9 @@ class AuthController extends Controller
             'facebook_id' => $facebookUser->getId(),
             'avatar' => $facebookUser->getAvatar(),
             'facebook_profile_picture' => $facebookUser->avatar_original,
-	        'facebookAccount' => '1'
+	        'facebookAccount' => '1',
+            'rating' => '0',
+            'rank' => '1'
 
         ]);
     }
@@ -225,7 +227,7 @@ class AuthController extends Controller
             $imageName = $user->email.'.'.$file->getClientOriginalExtension();
             $img = Image::make($file);
             $img->fit(200);
-            $img->save(base_path().'\public\images\profilePictures\\'.$imageName);
+            $img->save(base_path().'/public/images/profilePictures/'.$imageName);
             $user->avatar = '/images/profilePictures/'.$imageName;
         }
         else
