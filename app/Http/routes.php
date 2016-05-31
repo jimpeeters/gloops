@@ -47,7 +47,7 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('/station/getUserLoops', 'StationController@getUserLoops');
 
 		// Delete a loop
-		Route::post('/loop/delete', 'StationController@deleteLoop');
+		Route::get('/loop/delete', 'StationController@deleteLoop');
 
 		// Update a user
 		Route::post('/profile/update', array('as' => 'updateUser', 'uses' => 'ProfileController@update'));
