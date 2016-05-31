@@ -13,8 +13,7 @@ gloopsApp.controller('ProfileController', ['$scope', '$http', function($scope, $
             $scope.favouriteLoops = data;
         });
     };
-    $scope.getUserFavourites();
-
+    
     // Remove favourite in front-end 
     $scope.removeFavourite = function(loop) {
         var i = $.inArray(loop, $scope.favouriteLoops);

@@ -91,7 +91,7 @@
 			</div>
 		</section>
 		
-		<section class="favourite-loops">
+		<section class="favourite-loops" ng-init="getUserFavourites()">
 			<div class="col-xs-12">
 				<h2 class="title">Your favourite loops</h2>
 			</div>

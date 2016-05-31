@@ -92,32 +92,4 @@ gloopsApp.controller('LibraryController', ['$scope', '$http', function($scope, $
             return;
         }
     }
-    
-    
-    /*    //Get user 
-    $scope.getUser = function() {
-
-        $http({
-              method  : 'GET',
-              url     : '/getuser'
-        }).success(function(data) {
-
-            $scope.currentUser = data;
-
-            //if user object is empty (not logged in)
-            if(Object.keys($scope.currentUser).length > 0)
-            {
-                $scope.loggedIn = true;
-            }
-            else
-            {
-                $scope.loggedIn = false;
-            }
-
-        });
-    };
-*/
-
-    //$scope.getUser();
-
 }]);

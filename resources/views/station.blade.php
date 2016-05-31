@@ -126,7 +126,7 @@
 				    </div>
 				@endif
 
-				{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true, 'enctype' => 'multipart/form-data')) !!}
+				{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true, 'enctype' => 'multipart/form-data', 'ng-init' => 'getInputValues()')) !!}
 					<div class="form-group">
 						{!! Form::label('name', 'Name') !!}
 						<input 
