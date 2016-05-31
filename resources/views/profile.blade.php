@@ -40,19 +40,19 @@
 							<li class="filled"></li>
 						@endif
 
-						@if(Auth::user()->rank > 1 && Auth::user()->rank < 3)
+						@if(Auth::user()->rank > 1)
 							<li class="filled"></li>
 						@else
 							<li></li>
 						@endif
 
-						@if(Auth::user()->rank > 2 && Auth::user()->rank < 4)
+						@if(Auth::user()->rank > 2)
 							<li class="filled"></li>
 						@else
 							<li></li>
 						@endif
 
-						@if(Auth::user()->rank > 3 && Auth::user()->rank < 5)
+						@if(Auth::user()->rank > 3)
 							<li class="filled"></li>
 						@else
 							<li></li>

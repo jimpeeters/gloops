@@ -23,19 +23,19 @@
 						<li class="filled"></li>
 					@endif
 
-					@if($user->rank > 1 && $user->rank < 3)
+					@if($user->rank > 1)
 						<li class="filled"></li>
 					@else
 						<li></li>
 					@endif
 
-					@if($user->rank > 2 && $user->rank < 4)
+					@if($user->rank > 2)
 						<li class="filled"></li>
 					@else
 						<li></li>
 					@endif
 
-					@if($user->rank > 3 && $user->rank < 5)
+					@if($user->rank > 3)
 						<li class="filled"></li>
 					@else
 						<li></li>
