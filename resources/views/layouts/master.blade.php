@@ -154,7 +154,7 @@
 <script type="text/javascript" src="{{asset('/js/angular/controllers/controllers.js')}}"></script>
 
 @if(session()->has('loginModal'))
-<!-- Open login modal with error messages -->
+    <!-- Open login modal with error messages -->
     <script>
         $(document).ready(function() {
             $('#loginModal').modal('show');
@@ -163,7 +163,7 @@
 @endif
 
 @if(session()->has('successfullLogout'))
-<!-- Open successfull logout modal-->
+    <!-- Open successfull logout modal-->
     <script>
         $(document).ready(function() {
             $('#successfullLogoutModal').modal('show');
@@ -172,7 +172,7 @@
 @endif
 
 @if(session()->has('successfullLogin'))
-<!-- Open successfull login modal-->
+    <!-- Open successfull login modal-->
     <script>
         $(document).ready(function() {
             $('#successfullLoginModal').modal('show');
@@ -181,7 +181,7 @@
 @endif
 
 @if(session()->has('successfullFacebookLogin'))
-<!-- Open successfull login modal-->
+    <!-- Open successfull login modal-->
     <script>
         $(document).ready(function() {
             $('#successfullFacebookLoginModal').modal('show');
@@ -190,7 +190,7 @@
 @endif
 
 @if(session()->has('successfullRegister'))
-<!-- Open successfull register modal-->
+    <!-- Open successfull register modal-->
     <script>
         $(document).ready(function() {
             $('#successfullRegisterModal').modal('show');
@@ -199,13 +199,24 @@
 @endif
 
 @if(session()->has('updateMessage') && Request::is('profile'))
-<!-- In profile view scroll with update message -->
+    <!-- In profile view scroll with update message -->
     <script>
         $(document).ready(function() {
             $('html, body').animate({
                 scrollTop: $("#edit-section").offset().top -135
             }, 700);
         });
+    </script>
+@endif
+
+@if(session()->has('loopUploadValidationError') && Request::is('station'))
+    <!-- In station view scroll with error message -->
+    <script>
+        $(document).ready(function() {
+            $('html, body').animate({
+                scrollTop: $("#upload-section").offset().top +650
+            }, 700);
+        })
     </script>
 @endif
 

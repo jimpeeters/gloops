@@ -160,6 +160,7 @@ class StationController extends Controller
         if ($validator->fails()) 
         {
             return redirect()->back()
+                        ->with('loopUploadValidationError', '')
                         ->withErrors($validator)
                         ->withInput();
         }
@@ -240,31 +241,36 @@ class StationController extends Controller
         }
     }
 
-    public function deleteLoop(Request $request)
+    public function deleteLoop($id)
     {
-        $input = $request->all();
-        $loop = Loop::findOrFail($input['loopId']);
+        $loop = Loop::findOrFail($id);
 
-        $loopPath = $loop->loop_path;
-
-        //Remove all connections with tags
-        foreach ($loop->loopTags as $tag)
+        //Only remove when it's your own loop
+        if($loop->user->id == Auth::user()->id)
         {
-          $tag->delete();
+            $loopPath = $loop->loop_path;
+
+            //Remove all connections with tags
+            foreach ($loop->loopTags as $tag)
+            {
+              $tag->delete();
+            }
+
+            //Remove all connections with favourites
+            foreach ($loop->loopFavourites as $favourite)
+            {
+              $favourite->delete();
+            }
+
+            $loop->delete();
+
+            //Remove file from public folder
+            $loopPath = str_replace('/', '\\', $loopPath);
+            unlink(base_path().'\\public'.$loopPath); 
+
+            return redirect('/station')->with('success','Guitar loop '.$loop->name.' is successfully deleted!');
         }
 
-        //Remove all connections with favourites
-        foreach ($loop->loopFavourites as $favourite)
-        {
-          $favourite->delete();
-        }
 
-        $loop->delete();
-
-        //Remove file from public folder
-        $loopPath = str_replace('/', '\\', $loopPath);
-        unlink(base_path().'\\public'.$loopPath); 
-
-        return redirect('/station')->with('success','Guitar loop '.$loop->name.' is successfully deleted!');
     }
 }

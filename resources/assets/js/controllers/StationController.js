@@ -26,44 +26,6 @@ gloopsApp.controller('StationController', ['$scope','$http', function($scope, $h
         });
     };
 
-    // Delete a loop
-    $scope.deleteLoop = function(loop) {
-
-        $loopId = loop.id
-        var data = {};
-        $data = {
-            loopId : $loopId
-        }
-        $http({
-              method  : 'POST',
-              url     : 'loop/delete',
-              headers : {'Content-Type': 'application/json'},
-              dataType: 'json',
-              data    : $data
-        });
-
-        /*.then(function successCallback(response) {
-
-                // Send successmessage
-                $scope.successMessage = "You have successfully removed";
-                
-            
-            }, function errorCallback(response) {
-
-                // Send error message
-
-                // Include loop back in array
-                $scope.loops.push(loop);
-            
-            });*/
-
-        
-
-        // Remove loop from loops array
-        var i = $.inArray(loop, $scope.loops);
-        $scope.loops.splice(i, 1);
-    }
-
     // Set inputfield variables
     $scope.nameIsValid = false;
     $scope.categoryIsValid = false;

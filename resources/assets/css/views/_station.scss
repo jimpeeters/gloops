@@ -33,11 +33,21 @@
 				.delete {
 					float: right;
 					margin-right: 5px;
+					background-color: #D32F2F;
+
+					&:hover, &:focus {
+						background-color: darken(#D32F2F, 10);
+					}
 				}
 
 				.edit {
 					float: left;
 					margin-left: 5px;
+					background-color: $blue;
+
+					&:hover, &:focus {
+						background-color: darken($blue, 10);
+					}
 				}
 
 				@media only screen and (min-width : $screen-tablet) {
@@ -90,6 +100,34 @@
 		padding-bottom: 45px;
 		width: 100%;
 
+		.help-button {
+			position: absolute;
+			width: 35px;
+			height: 35px;
+			background-color: $blue;
+			top: -24px;
+    		right: 0px;
+
+			&:hover, &:focus {
+				background-color: darken($blue, 10);
+			}
+
+			i {
+				font-size: 2.3rem;
+				line-height: 35px;
+			}
+
+		}
+
+		.tutorial-modal {
+			.modal-body{
+				iframe {
+					width: 100%;
+					height: 150px;
+				}
+			}
+		}
+
 		.record-button {
 			margin: 30px auto 30px auto;
 			display: block;
@@ -106,26 +144,36 @@
 			margin-top: 25px;
 		}
 
+		.record-title {
+			font-size: 1.8em;
+		}
+
+		@media only screen and (min-width : $screen-phone) {
+			.tutorial-modal {
+				.modal-body{
+					iframe {
+						width: 100%;
+						height: 250px;
+					}
+				}
+			}
+		}
+
 	    @media only screen and (min-width : $screen-tablet) {
 
+	    	.tutorial-modal {
+				.modal-body{
+					iframe {
+						width: 100%;
+						height: 300px;
+					}
+				}
+			}
 			.record-button {
 				margin: 15px auto;
 			}
 	    }
-
-	    .division-title {
-
-		    span {
-		    	font-size: 2rem;
-		    }
-
-	    	&:before {
-		        width: 75%;
-		    }
-	    }
 	}
-
-
 }
 
 .station-edit {

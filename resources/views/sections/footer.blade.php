@@ -27,7 +27,7 @@
 				<a href="https://www.facebook.com/sharer/sharer.php?app_id=573073939530144&amp;sdk=joey&amp;u=http%3A%2F%2Fwww.g-loops.com%2F&amp;display=popup&amp;ref=plugin&amp;src=share_button" target="_blank" id="u_0_1"class="_2vmz btn-floating waves-effect waves-light btn-small facebook-button">
 			    	<i class="fa fa-facebook"></i> 
 			    </a>
-			    <a href="" target="_blank" class="btn-floating waves-effect waves-light btn-small youtube-button">
+			    <a href="https://www.youtube.com/channel/UCHG4TOZusAzc_Benf9BGZBA" target="_blank" class="btn-floating waves-effect waves-light btn-small youtube-button">
 			    	<i class="fa fa-youtube"></i> 
 			    </a>
 				

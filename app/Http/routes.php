@@ -47,7 +47,7 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('/station/getUserLoops', 'StationController@getUserLoops');
 
 		// Delete a loop
-		Route::get('/loop/delete', 'StationController@deleteLoop');
+		Route::get('/loop/delete/{id}', 'StationController@deleteLoop');
 
 		// Update a user
 		Route::post('/profile/update', array('as' => 'updateUser', 'uses' => 'ProfileController@update'));
@@ -99,8 +99,6 @@ Route::group(['middleware' => ['web']], function () {
 
 	// Get Station page
 	Route::get('/station', array('as' => 'station', 'uses' => "StationController@index"));
-	//stationData
-	//Route::get('/station/data', 'StationController@getData');
 
 	// Get Library page
 	Route::get('/library', array('as' => 'library', 'uses' => "LibraryController@index"));
@@ -110,10 +108,6 @@ Route::group(['middleware' => ['web']], function () {
 
 	// Get user
 	Route::get('/getuser', 'UserController@getUser');
-	
-	// Get Record page
-	//Route::get('/record', array('as' => 'record', 'uses' => "RecordController@index", 'https' => true));
-	Route::get('/record', ['as' => 'record', 'uses' => 'RecordController@index', 'https' => true]);
 
 	// Search on tags
 	Route::get('/search/tags/{query}', array('as' => 'searchOnTags', 'uses' => 'MainController@searchOnTags')); 
