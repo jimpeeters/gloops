@@ -53,11 +53,11 @@ class StationController extends Controller
 
                 if ($user_favorites == null)
                 {
-                    $loop->isFavourite = false;
+                    $loop->isFavourite = 'false';
                 } 
                 else 
                 {
-                    $loop->isFavourite = true;
+                    $loop->isFavourite = 'true';
                 }
 
                 return View::make('station-edit')->with('loop', $loop)
@@ -269,6 +269,10 @@ class StationController extends Controller
             unlink(base_path().'\\public'.$loopPath); 
 
             return redirect('/station')->with('success','Guitar loop '.$loop->name.' is successfully deleted!');
+        }
+        else
+        {
+            return View::make('errors.401');
         }
 
 

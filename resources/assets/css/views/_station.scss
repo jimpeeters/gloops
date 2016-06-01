@@ -177,8 +177,10 @@
 }
 
 .station-edit {
-	overflow: hidden;
-	padding-bottom: 45px;
+
+	form {
+		margin-bottom: 45px;
+	}
 	
 	.block-title {
 		margin-bottom: 30px;

@@ -34,7 +34,6 @@
 			</div>
         </div>
     @endif
-
 	<div class="col-xs-12 col-md-offset-3 col-md-6" ng-controller="LoopController" ng-init="isFavourite={{ $loop->isFavourite }}">
 		<div class="row loop-box" ng-class="{ 'favourite' : isFavourite }">
 		  	<div class="col-xs-2 loopbox-section">
