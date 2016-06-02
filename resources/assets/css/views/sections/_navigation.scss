@@ -23,86 +23,6 @@
 	}
 }
 
-.navigation {
-	padding-top: 15px;
-	background-color: $white;
-	border-bottom: 1px solid $black;
-
-	.center-content {
-
-		display: inline-block;
-
-		a {
-			display: block;
-			margin: 0 auto;
-		}		
-
-		p {
-			clear:both;
-			text-align: left;
-			text-transform: uppercase;
-			width: auto;
-			display: inline-block;
-		}
-
-		#login-text {
-			padding: 0 3px;
-		}
-	}
-
-	#login-button {
-		    &:active + #login-light, &:focus + #login-light {
-		    	background-color: $green;
-		    }
-	}
-
-	#login-light {
-		transition: all .4s linear;
-		top: 0;
-        margin-left: -6px;
-		height: 6px;
-		width: 6px;
-		border-radius: 3px;
-		position: absolute;
-        background-color: $red;
-	}
-
-	#login-light.bg-green {
-		background-color: $green;
-	}
-
-	#login-button.green-button {
-		color: $green;
-	}
-
-	@media only screen and (min-width : $screen-desktop-s) {
-		#login-light {
-			margin-left: -12px;
-			height: 12px;
-			width: 12px;
-			border-radius: 6px;
-		}
-	}
-
- 	#search-button {
-		z-index: 100;
-		position: relative;
-	} 
-
-	#search-input {
-		position: absolute;
-	    top: 0;
-	    margin-left: 15px;
-	    height: 30px;
-	    width: 0;
-	    padding: 0;
-	    border: 1px solid $black;
-	    border-top: 0;
-	    border-right: 0;
-	}
-
-}
-
 @media only screen and (min-width : $screen-phone) {
 
 	.header {
@@ -111,17 +31,6 @@
 
 	.header .logo {
 		width: 100px;
-	}
-
-	.navigation {
-
-		#search-input {
-		    margin-left: 20px;
-		    height: 40px;
-		}
-		.center-content {
-			overflow:hidden;
-		}
 	}
 }
 
@@ -135,32 +44,228 @@
 			width: 120px;
 		}
 	}
-
-	.navigation {
-		.center-content {
-			p {
-				font-size: 22px;
-				margin-top: 5px;
-			}
-
-			#login-text {
-				padding: 0 15px;
-			}
-		}
-
-		#search-input {
-		    margin-left: 30px;
-		    height: 60px;
-		}
-
-		#search-input[placeholder] {
-			font-size: 16px;
-		}
-	}
 }
 
 @media only screen and (min-width : $screen-desktop-l) {
 	.header .logo {
 		width: 170px;
 	}
+}
+
+.navigation {
+	background-color: $red;
+	#menu {
+		background: $red;
+		width: auto;
+		box-sizing: content-box;
+	}
+	#menu ul {
+	    list-style: none;
+	    margin: 0;
+	    padding: 0;
+	    line-height: 1;
+	    display: block;
+	    zoom: 1;
+	    font-size: 0;
+	}
+	#menu ul:after {
+	    content: " ";
+	    display: block;
+	    font-size: 0;
+	    height: 0;
+	    clear: both;
+	    visibility: hidden;
+	}
+	#menu ul li {
+	    display: inline-block;
+	    padding: 0;
+	    margin: 0;
+
+	   	#search-input {
+	    	border: none;
+		    padding: 8px;
+		    margin: 8px 0px 8px 0px;
+		    color: black;
+		    width: 100%;
+		    font-size: 14px;
+
+		    @media only screen and (min-width : $screen-phone) {
+		    	width: 50%;
+		    }
+	    }
+
+	    ::placeholder {
+	    	font-size: 14px;
+	    }
+
+	    &.mobile-search {
+			display: inline-block;
+			border-bottom: 1px solid $gray;
+			width: 100%;
+			overflow: hidden;
+
+			@media only screen and (min-width : $screen-tablet) {
+				display: none;
+			}
+	    }
+
+	    &.search {
+	    	display: none;
+	    	overflow: visible;
+
+			@media only screen and (min-width : $screen-tablet) {
+				display: inline-block;
+			}
+
+	    	#search-input {
+    			display: inline-block;
+    			position: absolute;
+			    top: 48px;
+			    margin: 0;
+			    background-color: lighten($red, 20);
+			    width: 25%;
+			    padding-left: 25px;
+			    z-index: 25;
+			    opacity: 0;
+			    animation: fadeIn 1s ease-out forwards;
+			    font-size: 16px;
+
+			    &::placeholder {
+			    	color: lighten($black, 30);
+			    	font-size: 16px;
+			    }
+
+			    @keyframes fadeIn {
+				  to {
+				    opacity: 1;
+				  }
+				}
+	    	}
+	    }
+
+	    &.logout-button, &.login-button, &.avatar-section {
+	    	
+	    	@media only screen and (min-width : $screen-tablet) {
+				float: right;
+		    }
+	    }
+
+	    &.avatar-section {
+
+	    	a {
+		    	padding: 12px 50px 12px 10px;
+
+		    	.avatar {
+			   		display:none;
+			   		width: 24px;
+					height: 24px;
+					background-repeat: no-repeat;
+		    		background-size: cover;
+
+					@media only screen and (min-width : $screen-tablet) {
+						display: block;
+					}
+
+					span {
+						position: absolute;
+						left: 39px;
+					    top: 15px;
+					    font-size: 14px;
+
+					    i {
+					    	padding-right: 1px;
+					    }
+					}
+			    }
+			}
+	    }
+
+	}
+
+	#menu ul li a {
+	    color: white;
+	    text-decoration: none;
+	    display: block;
+	    padding: 15px 25px;
+	    text-transform: uppercase;
+	    font-size: 14px;
+	    position: relative;
+	    transition: color .25s;
+
+		span {
+		  	font-size: 14px;
+
+		    @media only screen and (min-width : $screen-tablet) {
+				font-size: 18px;
+		    }
+		}
+	}
+	#menu ul li a:hover {
+	   color: #1e1e1e;
+	}
+	#menu ul li a:hover:before {
+	   width: 100%;
+	}
+	#menu ul li a:after {
+	   content: "";
+	   display: block;
+	   position: absolute;
+	   right: -3px;
+	   top: 19px;
+	   height: 6px;
+	   width: 6px;
+	   background: white;
+	   opacity: .5;
+	}
+
+	#menu ul li a.search-button:after, #menu ul li.logout-button a:after {
+	   display: none;
+	}
+
+	#menu ul li a:before {
+	   content: "";
+	   display: block;
+	   position: absolute;
+	   left: 0;
+	   bottom: 0;
+	   height: 3px;
+	   width: 0;
+	   background: $gray;
+	   transition: width .25s;
+	}
+	#menu ul li.last > a:after,
+	#menu ul li:last-child > a:after {
+	   display: none;
+	} 
+	#menu ul li.active a {
+	   color: $gray;
+	}
+	#menu ul li.active a:before {
+	   width: 100%;
+	}
+
+	@media screen and (max-width: 768px) {
+		#menu ul li {
+		    float: none;
+		    display: block;
+		}
+		#menu ul li a {
+		    width: 100%;
+		    -moz-box-sizing: border-box;
+		    -webkit-box-sizing: border-box;
+		    box-sizing: border-box;
+		    border-bottom: 1px solid $gray;
+		}
+		#menu ul li.last > a,
+		#menu ul li:last-child > a {
+		    border: 0;
+		}
+		#menu ul li a:after {
+		    display: none;
+		}
+		#menu ul li a:before {
+		    display: none;
+		}
+	}
+
 }
