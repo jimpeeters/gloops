@@ -239,6 +239,7 @@
     background-color: $red; 
     float: left; /* IE 9 Fix */
     transition: background-color 0.2s ease-out;
+
     &:hover {
         background-color: darken($red, 10);
     }

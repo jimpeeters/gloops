@@ -195,7 +195,7 @@
 
 				<h2 class="title record-title">Or recording</h2>
 
-				<a class="record-button btn-floating waves-effect waves-light btn-large red" href="" data-toggle="modal" data-target="#recordModal"><i class="fa fa-microphone"></i></a>
+				<a class="record-button btn-floating waves-effect waves-light btn-large" href="" data-toggle="modal" data-target="#recordModal"><i class="fa fa-microphone"></i></a>
 				@include('record')
 
 			</div>

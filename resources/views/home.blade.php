@@ -17,30 +17,31 @@
 	    </div>
 	@endif
 
-	<section class="video">
-		<div class="col-xs-12">
-			<center><h1>This website is still in development mode.  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i><h1></center>
-		</div>
-		<div class="col-xs-12 video-container padding-0">
-			<video class="home-video" poster="" autoplay="true" muted>
-		<!-- 		<source src="video/home.mp4" type="video/mp4"> -->
-			   <source src="video/home.webm" type="video/webm">
-			   
-			</video>
-			<div class="video-layer">
-				@if(Auth::check())
-					<h1>Your station</h1>
-					<center><a href="{{ route('station') }}" class="basic-button">Visit your station</a></center>
-				@else
-					<h1>Join now</h1>
-					<center><a href="{{ route('getRegister') }}" class="basic-button">Register</a></center>
-				@endif
-			</div>
-			<a target="_blank" class="youtube-link" href="/">
-				<i class="fa fa-play"></i>
-			</a>
-		</div>
+	<section class="title">
+		
 	</section>
+
+<!-- 	<section class="video">
+	<div class="col-xs-12 video-container padding-0">
+		<video class="home-video" poster="" autoplay="true" muted>
+	<source src="video/home.mp4" type="video/mp4">
+		   <source src="video/home.webm" type="video/webm">
+		   
+		</video>
+		<div class="video-layer">
+			@if(Auth::check())
+				<h1>Your station</h1>
+				<center><a href="{{ route('station') }}" class="basic-button">Visit your station</a></center>
+			@else
+				<h1>Join now</h1>
+				<center><a href="{{ route('getRegister') }}" class="basic-button">Register</a></center>
+			@endif
+		</div>
+		<a target="_blank" class="youtube-link" href="/">
+			<i class="fa fa-play"></i>
+		</a>
+	</div>
+</section> -->
 	
 	<section class="popular">
 		<div class="col-xs-12">

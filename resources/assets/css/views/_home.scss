@@ -82,6 +82,10 @@
 			margin-bottom: 15px;
 			background-color: $red;
 
+			&:hover, &:active, &:focus {
+				background-color: darken($red, 10);
+			}
+
 			i {
 				line-height: 60px;
 				font-size: 3rem;

@@ -11,11 +11,11 @@
 					    <ng-audio-recorder id="mainAudio" audio-model="recorded" show-player="false" time-limit="timeLimit">
 					        <div ng-if="recorder.isAvailable">
 
-					        	<a class="record-button-modal btn-floating waves-effect waves-light btn-large red" ng-click="recorder.startRecord()" type="button" ng-hide="recorder.status.isDenied === true || recorder.status.isRecording || recorder.status.isConverting">
+					        	<a class="record-button-modal btn-floating waves-effect waves-light btn-large" ng-click="recorder.startRecord()" type="button" ng-hide="recorder.status.isDenied === true || recorder.status.isRecording || recorder.status.isConverting">
 					        		<i class="fa fa-microphone"></i>
 					        	</a>
 
-					        	<a class="pauze-button-modal btn-floating waves-effect waves-light btn-large red" ng-click="recorder.stopRecord()" type="button" ng-hide="recorder.status.isRecording === false">
+					        	<a class="pauze-button-modal btn-floating waves-effect waves-light btn-large" ng-click="recorder.stopRecord()" type="button" ng-hide="recorder.status.isRecording === false">
 					        		<i class="fa fa-stop"></i>
 					        	</a>
 								
@@ -36,11 +36,11 @@
 					            </div>
 
 					            <div class="button-record-options">
-						            <a class="btn-floating waves-effect waves-light btn-small red" ng-click="recorder.status.isPlaying ? recorder.playbackPause() : recorder.playbackResume()" type="button" ng-disabled="recorder.status.isRecording || !recorder.audioModel" ng-class="{ 'disabled' : recorder.status.isRecording || !recorder.audioModel }">
+						            <a class="btn-floating waves-effect waves-light btn-small" ng-click="recorder.status.isPlaying ? recorder.playbackPause() : recorder.playbackResume()" type="button" ng-disabled="recorder.status.isRecording || !recorder.audioModel" ng-class="{ 'disabled' : recorder.status.isRecording || !recorder.audioModel }">
 						        		<i class="fa fa-<% recorder.status.isStopped || recorder.status.isPaused ? 'play' : 'pause' %>"></i>
 						        	</a>
 
-						        	<a class="btn-floating waves-effect waves-light btn-small red" ng-click="recorder.save()" ng-disabled="recorder.status.isRecording || !recorder.audioModel" ng-class="{ 'disabled' : recorder.status.isRecording || !recorder.audioModel }">
+						        	<a class="btn-floating waves-effect waves-light btn-small" ng-click="recorder.save()" ng-disabled="recorder.status.isRecording || !recorder.audioModel" ng-class="{ 'disabled' : recorder.status.isRecording || !recorder.audioModel }">
 						        		<i class="fa fa-download"></i>
 						        	</a>
 					        	</div>

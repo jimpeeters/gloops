@@ -28,7 +28,7 @@
 					@else
 					<div class="profile-picture" style="background-image: url({{ Auth::user()->avatar }})" title="Edit your profile picture" data-toggle="tooltip" data-placement="left" tooltip>
 					@endif
-						<a class="btn-floating waves-effect waves-light btn-small red profile-edit" smooth-scroll target="edit-profile-form">
+						<a class="btn-floating waves-effect waves-light btn-small profile-edit" smooth-scroll target="edit-profile-form">
 				    		<i class="fa fa-pencil"></i>
 				    	</a>
 					</div>

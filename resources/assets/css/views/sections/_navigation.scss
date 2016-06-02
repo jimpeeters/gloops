@@ -94,11 +94,11 @@
 	    top: 0;
 	    margin-left: 15px;
 	    height: 30px;
-	    border-top-right-radius: 15px;
-	    border-bottom-right-radius: 15px;
 	    width: 0;
 	    padding: 0;
 	    border: 1px solid $black;
+	    border-top: 0;
+	    border-right: 0;
 	}
 
 }
@@ -118,8 +118,6 @@
 		#search-input {
 		    margin-left: 20px;
 		    height: 40px;
-		   	border-top-right-radius: 20px;
-		    border-bottom-right-radius: 20px;
 		}
 		.center-content {
 			overflow:hidden;
@@ -153,8 +151,6 @@
 		#search-input {
 		    margin-left: 30px;
 		    height: 60px;
-		   	border-top-right-radius: 30px;
-		    border-bottom-right-radius: 30px;
 		}
 
 		#search-input[placeholder] {
