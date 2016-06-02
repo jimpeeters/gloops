@@ -10,8 +10,19 @@
     </div>
 </div>
 <div class="row navigation">
-    <div class="col-md-12">
-        <div id="menu">
+    <div class="col-md-12 no-padding no-min-h">
+        <div id="menu" class="mobile-dropdown">
+            <ul>
+                <li>
+                    <a href="" ng-click="dropdownToggled = !dropdownToggled">
+                        <span><i class="fa fa-bars"></i></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-12 no-min-h">
+        <div id="menu" class="dropdown" ng-class="{ down : dropdownToggled }">
             <ul>
                 <li class="{{{ (Request::is('home') ? 'active' : '') }}}">
                     <a href="{{ route('home') }}">

@@ -54,11 +54,55 @@
 
 .navigation {
 	background-color: $red;
+
+	.mobile-dropdown {
+		display: block;
+
+		@media only screen and (min-width : $screen-tablet) {
+			display: none;
+		}
+
+	}
+
+	.mobile-dropdown li {
+		border-bottom: 1px solid $gray;
+	}
+
 	#menu {
 		background: $red;
 		width: auto;
 		box-sizing: content-box;
+
+		&.dropdown {
+			max-height: 0;
+			z-index: -10;
+			opacity: 0;
+			transition: max-height .5s ease-out, opacity .5s ease-out;
+
+			@media only screen and (min-width : $screen-tablet) {
+				max-height: 100px;
+				z-index: 20;
+				opacity: 1;
+			}
+
+			&.down {
+				opacity: 1;
+				max-height: 300px;
+				z-index: 10;
+
+				ul li a {
+				    border-bottom: 1px solid $gray;
+				}
+			}
+
+			ul li a {
+			    border-bottom: none;
+			}
+		}
+
+
 	}
+
 	#menu ul {
 	    list-style: none;
 	    margin: 0;
@@ -68,6 +112,7 @@
 	    zoom: 1;
 	    font-size: 0;
 	}
+
 	#menu ul:after {
 	    content: " ";
 	    display: block;
@@ -76,10 +121,20 @@
 	    clear: both;
 	    visibility: hidden;
 	}
+
 	#menu ul li {
 	    display: inline-block;
 	    padding: 0;
 	    margin: 0;
+
+	    .mobile-dropdown {
+	    	display: inline-block;
+
+	    	@media only screen and (min-width : $screen-phone) {
+		    	display: none;
+		    }
+
+	    }
 
 	   	#search-input {
 	    	border: none;
@@ -122,7 +177,7 @@
     			position: absolute;
 			    top: 48px;
 			    margin: 0;
-			    background-color: lighten($red, 20);
+			    background-color: lighten($red, 35);
 			    width: 25%;
 			    padding-left: 25px;
 			    z-index: 25;
@@ -151,20 +206,19 @@
 	    }
 
 	    &.avatar-section {
+	    	display:none;
+			@media only screen and (min-width : $screen-tablet) {
+				display: block;
+			}
 
 	    	a {
 		    	padding: 12px 50px 12px 10px;
 
 		    	.avatar {
-			   		display:none;
 			   		width: 24px;
 					height: 24px;
 					background-repeat: no-repeat;
 		    		background-size: cover;
-
-					@media only screen and (min-width : $screen-tablet) {
-						display: block;
-					}
 
 					span {
 						position: absolute;

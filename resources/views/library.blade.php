@@ -123,7 +123,7 @@
         <div class="slide-up-toggle" ng-click="sidebarUp = !sidebarUp">
         	<span ng-show="!sidebarUp">Hide filters</span>
         	<span ng-show="sidebarUp">Show filters</span>
-           	<i class="fa" ng-class="{ 'fa-arrow-up' : !sidebarUp, 'fa-bars' : sidebarUp }"></i>
+           	<i class="fa" ng-class="{ 'fa-arrow-up' : !sidebarUp, 'fa-eye' : sidebarUp }"></i>
         </div>
     </div>
     <div class="col-xs-12 col-sm-10 loops">

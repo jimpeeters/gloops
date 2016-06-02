@@ -6,6 +6,8 @@ gloopsApp.controller('MainController', ['$scope', '$http', 'OverheatingService',
         return OverheatingService.isOverheating;
     };
 
+    $scope.dropdownToggled = false;
+
     $scope.searchActive = false;
 
     // Search array

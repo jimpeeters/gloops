@@ -17,8 +17,17 @@
 	    </div>
 	@endif
 
-	<section class="title">
+	<section class="general">
 		
+		@if(Auth::check())
+			<h1>DISCOVER GLOOPS</h1>
+			<p>Visit your station to start uploading and managing your own loops!</p>
+			<a href="{{ route('station') }}" class="basic-button">YOUR STATION</a>
+		@else
+			<h1>JOIN GLOOPS</h1>
+			<p>Join our community and start uploading and managing your own loops!</p>
+			<a href="{{ route('getRegister') }}" class="basic-button">REGISTER NOW</a>
+		@endif
 	</section>
 
 <!-- 	<section class="video">

@@ -47,3 +47,8 @@ button, a, input {
 @mixin text-shadow() {
     text-shadow: 1px 1px 1px $black;
 }
+
+// No min height
+.no-min-h {
+    min-height: 0;
+}
