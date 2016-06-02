@@ -27,6 +27,11 @@
         overflow: hidden;
 
         li {
+
+            &:last-child {
+                padding-bottom: 15px;
+            }
+
             padding-bottom: 5px;
             
             i, a {
@@ -69,7 +74,7 @@
     }
 
     .sidebar-nav.down {
-        max-height: 450px;
+        max-height: 650px;
     }
 
     .slide-up-toggle {
@@ -109,6 +114,7 @@
     .loops {
         padding-top: 15px;
         background-color: $white;
+        min-height: 200px;
     }
 
     .load-more-button {
@@ -120,7 +126,7 @@
     @media only screen and (min-width : $screen-phone) {
 
         .loops {
-            min-height: 510px;
+            min-height: 576px;
         }
 
     }

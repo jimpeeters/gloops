@@ -177,16 +177,17 @@
     			position: absolute;
 			    top: 48px;
 			    margin: 0;
-			    background-color: lighten($red, 35);
+			    background-color: $gray;
 			    width: 25%;
 			    padding-left: 25px;
 			    z-index: 25;
 			    opacity: 0;
 			    animation: fadeIn 1s ease-out forwards;
 			    font-size: 16px;
+			    color: white;
 
 			    &::placeholder {
-			    	color: lighten($black, 30);
+			    	color: lighten($black, 55);
 			    	font-size: 16px;
 			    }
 

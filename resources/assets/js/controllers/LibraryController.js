@@ -21,6 +21,11 @@ gloopsApp.controller('LibraryController', ['$scope', '$http', function($scope, $
     $scope.categoryFlamenco = false;
     $scope.categoryAlternative = false;
     $scope.categoryPunk = false;
+    $scope.categoryMetal = false;
+    $scope.categoryFolk = false;
+    $scope.categoryClassic = false;
+    $scope.categoryReggae = false;
+    $scope.categoryFunk = false;
 
     // Your loop filter toggle
     $scope.yourLoopfilterOn = false;

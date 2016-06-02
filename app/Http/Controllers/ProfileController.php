@@ -92,7 +92,7 @@ class ProfileController extends Controller
             // Check if old password is correct
             if( \Hash::check($input['oldpassword'], $user->password) )
             {
-                $user->password = \Hash::make($input['password']);
+                $user->password = \Hash::make($input['oldpassword']);
             }
             else
             {

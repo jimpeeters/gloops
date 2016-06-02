@@ -103,7 +103,7 @@
         <!-- Overheating -->
         @include('snippets.overheating')
 
-        <div class="row content" ng-class="{ 'overheating' : isOverheating() }">
+        <div class="row content">
 
             <div ng-show="!isSearching">
         	   @yield('content')

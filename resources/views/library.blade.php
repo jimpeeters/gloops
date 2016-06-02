@@ -61,6 +61,31 @@
                 <i ng-click="categoryPunk = !categoryPunk; includeCategory('Punk')" ng-show="!categoryPunk" class="fa fa-square-o" aria-hidden="true"></i>
                 <a ng-click="categoryPunk = !categoryPunk; includeCategory('Punk')" ng-class="{ 'underline' : categoryPunk }">Punk</a>
             </li>
+            <li>
+                <i ng-click="categoryMetal = !categoryMetal; includeCategory('Metal')" ng-show="categoryMetal" class="fa fa-check-square" aria-hidden="true"></i>
+                <i ng-click="categoryMetal = !categoryMetal; includeCategory('Metal')" ng-show="!categoryMetal" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryMetal = !categoryMetal; includeCategory('Metal')" ng-class="{ 'underline' : categoryMetal }">Metal</a>
+            </li>
+            <li>
+                <i ng-click="categoryFolk = !categoryFolk; includeCategory('Folk')" ng-show="categoryFolk" class="fa fa-check-square" aria-hidden="true"></i>
+                <i ng-click="categoryFolk = !categoryFolk; includeCategory('Folk')" ng-show="!categoryFolk" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryFolk = !categoryFolk; includeCategory('Folk')" ng-class="{ 'underline' : categoryFolk }">Folk</a>
+            </li>
+            <li>
+                <i ng-click="categoryClassic = !categoryClassic; includeCategory('Classic')" ng-show="categoryClassic" class="fa fa-check-square" aria-hidden="true"></i>
+                <i ng-click="categoryClassic = !categoryClassic; includeCategory('Classic')" ng-show="!categoryClassic" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryClassic = !categoryClassic; includeCategory('Classic')" ng-class="{ 'underline' : categoryClassic }">Classic</a>
+            </li>
+            <li>
+                <i ng-click="categoryReggae = !categoryReggae; includeCategory('Reggae')" ng-show="categoryReggae" class="fa fa-check-square" aria-hidden="true"></i>
+                <i ng-click="categoryReggae = !categoryReggae; includeCategory('Reggae')" ng-show="!categoryReggae" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryReggae = !categoryReggae; includeCategory('Reggae')" ng-class="{ 'underline' : categoryReggae }">Reggae</a>
+            </li>
+            <li>
+                <i ng-click="categoryFunk = !categoryFunk; includeCategory('Funk')" ng-show="categoryFunk" class="fa fa-check-square" aria-hidden="true"></i>
+                <i ng-click="categoryFunk = !categoryFunk; includeCategory('Funk')" ng-show="!categoryFunk" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryFunk = !categoryFunk; includeCategory('Funk')" ng-class="{ 'underline' : categoryFunk }">Funk</a>
+            </li>
         </ul>
 	</div>
 
@@ -114,10 +139,35 @@
                 <i ng-click="categoryAlternative = !categoryAlternative; includeCategory('Alternative')" ng-show="!categoryAlternative" class="fa fa-square-o" aria-hidden="true"></i>
                 <a ng-click="categoryAlternative = !categoryAlternative; includeCategory('Alternative')" ng-class="{ 'underline' : categoryAlternative }">Alternative</a>
             </li>
-            <li class="last-child">
+            <li>
                 <i ng-click="categoryPunk = !categoryPunk; includeCategory('Punk')" ng-show="categoryPunk" class="fa fa-check-square" aria-hidden="true"></i>
                 <i ng-click="categoryPunk = !categoryPunk; includeCategory('Punk')" ng-show="!categoryPunk" class="fa fa-square-o" aria-hidden="true"></i>
                 <a ng-click="categoryPunk = !categoryPunk; includeCategory('Punk')" ng-class="{ 'underline' : categoryPunk }">Punk</a>
+            </li>
+            <li>
+                <i ng-click="categoryMetal = !categoryMetal; includeCategory('Metal')" ng-show="categoryMetal" class="fa fa-check-square" aria-hidden="true"></i>
+                <i ng-click="categoryMetal = !categoryMetal; includeCategory('Metal')" ng-show="!categoryMetal" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryMetal = !categoryMetal; includeCategory('Metal')" ng-class="{ 'underline' : categoryMetal }">Metal</a>
+            </li>
+            <li>
+                <i ng-click="categoryFolk = !categoryFolk; includeCategory('Folk')" ng-show="categoryFolk" class="fa fa-check-square" aria-hidden="true"></i>
+                <i ng-click="categoryFolk = !categoryFolk; includeCategory('Folk')" ng-show="!categoryFolk" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryFolk = !categoryFolk; includeCategory('Folk')" ng-class="{ 'underline' : categoryFolk }">Folk</a>
+            </li>
+            <li>
+                <i ng-click="categoryClassic = !categoryClassic; includeCategory('Classic')" ng-show="categoryClassic" class="fa fa-check-square" aria-hidden="true"></i>
+                <i ng-click="categoryClassic = !categoryClassic; includeCategory('Classic')" ng-show="!categoryClassic" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryClassic = !categoryClassic; includeCategory('Classic')" ng-class="{ 'underline' : categoryClassic }">Classic</a>
+            </li>
+            <li>
+                <i ng-click="categoryReggae = !categoryReggae; includeCategory('Reggae')" ng-show="categoryReggae" class="fa fa-check-square" aria-hidden="true"></i>
+                <i ng-click="categoryReggae = !categoryReggae; includeCategory('Reggae')" ng-show="!categoryReggae" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryReggae = !categoryReggae; includeCategory('Reggae')" ng-class="{ 'underline' : categoryReggae }">Reggae</a>
+            </li>
+            <li>
+                <i ng-click="categoryFunk = !categoryFunk; includeCategory('Funk')" ng-show="categoryFunk" class="fa fa-check-square" aria-hidden="true"></i>
+                <i ng-click="categoryFunk = !categoryFunk; includeCategory('Funk')" ng-show="!categoryFunk" class="fa fa-square-o" aria-hidden="true"></i>
+                <a ng-click="categoryFunk = !categoryFunk; includeCategory('Funk')" ng-class="{ 'underline' : categoryFunk }">Funk</a>
             </li>
         </ul>
         <div class="slide-up-toggle" ng-click="sidebarUp = !sidebarUp">
