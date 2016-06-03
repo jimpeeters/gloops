@@ -153,6 +153,11 @@
 			font-size: 1.8em;
 		}
 
+		.tip-label {
+			margin-top: 5px;
+			margin-bottom: 0;
+		}
+
 		@media only screen and (min-width : $screen-phone) {
 			.tutorial-modal {
 				.modal-body{

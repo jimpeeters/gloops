@@ -17,6 +17,14 @@
 	  }
 	}
 
+	.loop-link {
+		color: black;
+
+		&:hover, &:focus {
+			color: black;
+		}
+	}
+
     .loopbox-section {
     	height: 100%;
     }

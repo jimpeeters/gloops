@@ -9,6 +9,8 @@ use App\Favourite;
 use Auth;
 use App\Loop;
 use App\User;
+use View;
+use Response;
 
 class LoopController extends Controller
 {
@@ -23,7 +25,6 @@ class LoopController extends Controller
 
         //Check if it is already favourite
         $favouriteCheck = Favourite::where('FK_loop_id', '=', $input['loopId'])->first();
-
 
         // Get owner of loop and his rating
         $loop = Loop::find($input['loopId']);
@@ -42,7 +43,7 @@ class LoopController extends Controller
             if($owner->id != Auth::user()->id)
             {
                 // Increase users rating
-                $ownersRating = $ownersRating + 1;
+                $ownersRating ++;
                 $owner->rating = $ownersRating;
 
                 // Check for rank
@@ -97,6 +98,41 @@ class LoopController extends Controller
                 $owner->save();
             }
         }
+    }
+
+    public function getSpecificLoopPage($name) {
+        $loop = Loop::where('name', '=', $name)->first();
+        return View::make('specific-loop')->with('loop', $loop);
+    }
+
+
+    public function getSpecificLoop($id) {
+
+        $loop = Loop::with('favourites')->
+                        with('user')->
+                        with('category')->
+                        with('tags')->findOrFail($id);
+
+        //only do this check when user is logged in (else you dont have favourites)
+        if(Auth::check())
+        {
+            //check if logged in user has favourited this
+            $user_favorites = Favourite::where('FK_user_id', '=', Auth::user()->id)
+                ->where('FK_loop_id', '=', $loop->id)
+                ->first();
+
+            //give property to say wether it is favourited or not
+            if ($user_favorites == null)
+            {
+                $loop->isFavourite = false;
+            } 
+            else 
+            {
+                $loop->isFavourite = true;
+            }
+        }
+
+        return Response::json($loop);
     }
 
 }

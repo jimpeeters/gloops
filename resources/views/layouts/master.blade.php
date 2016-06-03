@@ -214,7 +214,7 @@
     <script>
         $(document).ready(function() {
             $('html, body').animate({
-                scrollTop: $("#upload-section").offset().top +650
+                scrollTop: $("#upload-section").offset().top +420
             }, 700);
         })
     </script>

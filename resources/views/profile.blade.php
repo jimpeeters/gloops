@@ -28,11 +28,12 @@
 					@else
 					<div class="profile-picture" style="background-image: url({{ Auth::user()->avatar }})" title="Edit your profile picture" data-toggle="tooltip" data-placement="left" tooltip>
 					@endif
-						<a class="btn-floating waves-effect waves-light btn-small profile-edit" smooth-scroll target="edit-profile-form">
-				    		<i class="fa fa-pencil"></i>
-				    	</a>
+					<a class="btn-floating waves-effect waves-light btn-small profile-edit" smooth-scroll target="edit-profile-form">
+			    		<i class="fa fa-pencil"></i>
+			    	</a>
 					</div>
 					<h2 class="profile-name">{{ Auth::user()->name }}</h2>
+					<a href="" class="edit-link" smooth-scroll target="edit-profile-form">(Edit your profile)</a>
 					<ul class="profile-rank" title="Gain more rating to rank up" data-toggle="tooltip" data-placement="left" tooltip>
 						@if(Auth::user()->rating == 0)
 							<li></li>
@@ -108,7 +109,7 @@
 					    <div class="gapless-block" id="gapless_<% loop.id %>"></div>
 				  	</div>
 				  	<div class="col-xs-7">
-				    	<h3 class="loop-title"><% loop.name %></h3>
+				    	<a href="/loop/name/<% loop.name %>" class="loop-link"><h3 class="loop-title"><% loop.name %></h3></a>
 				    	<p class="duration" id="gapless_<% loop.id %>_duration">0:00</p>
 				    	<p class="category"><i class="fa fa-music"></i> <% loop.category.name %></p>
 				  	</div>

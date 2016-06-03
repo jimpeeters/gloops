@@ -25,7 +25,7 @@
 				<h2 class="title">Your loops</h2>
 			</div>
 
-			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit track by loop.id" ng-init="isFavourite=loop.isFavourite">
+			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit track by loop.id">
 				<!-- Confirmation modal delete -->
 				<div id="confirmationModal<% loop.id %>" class="confirmation-modal modal" role="dialog">
 				  	<div class="modal-dialog">
@@ -59,7 +59,7 @@
 					    <div class="gapless-block" id="gapless_<% loop.id %>"></div>
 				  	</div>
 				  	<div class="col-xs-7 loopbox-section">
-				    	<h3 class="loop-title"><% loop.name %></h3>
+				    	<a href="/loop/name/<% loop.name %>" class="loop-link"><h3 class="loop-title"><% loop.name %></h3></a>
 				    	<p class="duration" id="gapless_<% loop.id %>_duration">0:00</p>
 				    	<p class="category"><i class="fa fa-music"></i> <% loop.category.name %></p>
 				  	</div>
@@ -147,7 +147,7 @@
 
 				{!! Form::open(array('route' => 'upload', 'method' => 'POST','files' => true, 'enctype' => 'multipart/form-data')) !!}
 					<div class="form-group">
-						{!! Form::label('name', 'Name') !!}
+						{!! Form::label('name', 'Name *') !!}
 						<input 
 							placeholder="Name of your loop"
 					    	type="text" 
@@ -166,13 +166,13 @@
 
 					<div class="form-group">
 					    <div class="custom-file-upload">
-						    {!! Form::label('file', 'Mp3 File') !!}
+						    {!! Form::label('file', 'Mp3 File *') !!}
 						    <input type="file" id="file" name="mp3" ng-model="file" onchange="angular.element(this).scope().checkFile()"/>
 						</div>
 					</div>
 
 		    		<div class="form-group">
-						{!! Form::label('Category') !!}
+						{!! Form::label('Category *') !!}
 						<select name="category" class="form-control chosen-select-dropdown" data-placeholder="Choose a Category" ng-model="category" ng-change="checkCategory()">
 							<option value="">Choose a category</option>
 							@foreach ($categories as $category)
@@ -188,6 +188,7 @@
 								<option value="{{$name}}">{{$name}}</option>
 							@endforeach
 						</select>
+						<p class="tip-label">(Adding <strong>tags</strong> to your loop makes them easier to find for other people!)</p>
 		    		</div>
 	                
 					<button ng-disabled="!uploadEnabled" ng-class="{ disabled : !uploadEnabled}" type="submit" class="basic-button upload-button">Upload</button>

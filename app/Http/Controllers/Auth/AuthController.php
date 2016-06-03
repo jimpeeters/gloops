@@ -232,7 +232,7 @@ class AuthController extends Controller
         }
         else
         {
-            $user->avatar = 'images/profilePictures/default.png';
+            $user->avatar = '/images/profilePictures/default.png';
         }
 
         $user->save();

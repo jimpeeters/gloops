@@ -127,7 +127,9 @@ Route::group(['middleware' => ['web']], function () {
 	// Get specific users loops
 	Route::get('/user/loops/{id}', array('as' => 'specificUserLoops', 'uses' => 'UserController@getSpecificUserLoops'));
 
-	Route::get('/test', function () {
-	    return view('welcome');
-	});
+	// Get specific Loop Page
+	Route::get('/loop/name/{name}', array('as' => 'specificLoopPage', 'uses' => 'LoopController@getSpecificLoopPage'));
+
+	// Get specific Loop
+	Route::get('/loop/{id}', array('as' => 'specificLoop', 'uses' => 'LoopController@getSpecificLoop'));
 });

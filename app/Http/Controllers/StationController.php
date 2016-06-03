@@ -14,6 +14,7 @@ use Validator;
 use Redirect;
 use Response;
 use Storage;
+use Input;
 
 class StationController extends Controller
 {
@@ -79,7 +80,7 @@ class StationController extends Controller
         // Validation
         $validator = Validator::make($request->all(), [
             'name'         => 'required|regex:/([A-Za-z0-9 ])+/|max:100|min:6|unique:loops,name,'.$input['id'],
-            'loop_path'      => 'mimes:mpga',
+            'loop_path'      => 'mimes:mpga|max:500',
             'category'      => 'required|max:1',
             'tags'      => 'required|max:5'
         ]);

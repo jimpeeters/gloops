@@ -67,7 +67,7 @@
 				    <div class="gapless-block" id="gapless_<% loop.id %>"></div>
 			  	</div>
 			  	<div class="col-xs-7">
-			    	<h3 class="loop-title"><% loop.name %></h3>
+			    	<a href="/loop/name/<% loop.name %>" class="loop-link"><h3 class="loop-title"><% loop.name %></h3></a>
 			    	<p class="duration" id="gapless_<% loop.id %>_duration">0:00</p>
 			    	<p class="category"><i class="fa fa-music"></i> <% loop.category.name %></p>
 			  	</div>
@@ -78,7 +78,7 @@
 			    		</a>
 			    		<p class="user-name"><% loop.user.name %></p>
 	                    <p class="rank-text">
-	                        <img class="rank-icon" ng-src="images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>
+	                        <img class="rank-icon" ng-src="/images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>
 	                    </p>
 			    	</div>
 			  	</div>

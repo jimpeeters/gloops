@@ -187,7 +187,7 @@
 					    <div class="gapless-block" id="gapless_<% loop.id %>"></div>
 				  	</div>
 				  	<div class="col-xs-7">
-				    	<h3 class="loop-title"><% loop.name %></h3>
+				    	<a href="/loop/name/<% loop.name %>" class="loop-link"><h3 class="loop-title"><% loop.name %></h3></a>
 				    	<p class="duration" id="gapless_<% loop.id %>_duration">0:00</p>
 				    	<p class="category"><i class="fa fa-music"></i> <% loop.category.name %></p>
 				  	</div>
