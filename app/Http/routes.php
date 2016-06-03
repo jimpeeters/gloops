@@ -61,6 +61,9 @@ Route::group(['middleware' => ['web']], function () {
 		// Delete a user
 		Route::get('/admin/user/delete/{id}',  'ProfileController@deleteUser');
 
+		// Delete a user
+		Route::get('/admin/loop/delete/{id}',  'ProfileController@deleteLoop');
+
 		// Delete my account
 		Route::get('/delete/account/{id}',  'ProfileController@deleteMyAccount');
 

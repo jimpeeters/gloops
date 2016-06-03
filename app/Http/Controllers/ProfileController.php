@@ -171,9 +171,38 @@ class ProfileController extends Controller
         }
         else
         {
-            return View::make('admin-options');
+            return View::make('errors.401');
         }
+    }
 
+    public function deleteLoop($id)
+    {
+        // Check if it is the admin account that is doing this
+        if(Auth::user()->id == 1)
+        {
+            $loop = Loop::findOrFail($id);
+            $loopName = $loop->name;
+
+            //Remove all connections with tags
+            foreach ($loop->loopTags as $tag)
+            {
+              $tag->delete();
+            }
+
+            //Remove all connections with favourites
+            foreach ($loop->loopFavourites as $favourite)
+            {
+              $favourite->delete();
+            }
+
+            $loop->delete();
+
+            return Redirect::back()->with('success','You have sucessfully deleted loop : ' . $loopName . '.');
+        }
+        else
+        {
+            return View::make('errors.401');
+        }
     }
 
 
@@ -185,7 +214,7 @@ class ProfileController extends Controller
             $user = User::findOrFail($id);
             $user->delete();
 
-            return Redirect::route('home');
+            return Redirect::route('home')->with('success','You have sucessfully deleted your account. Was is because something annoyed you on this website? Please feel free to tell me so I can improve it : jim.peeters.93@gmail.com.');
         }
         else
         {
