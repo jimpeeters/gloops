@@ -152,7 +152,7 @@ class StationController extends Controller
         $validator = Validator::make($request->all(), [
             'name'         => 'required|regex:/^[a-zA-Z1-9 ]+$/|max:35|min:6|unique:loops,name',
             'mp3'      => 'required|mimes:mpga|max:500',
-            'category'      => 'required|max:1',
+            'category'      => 'required',
             'tags'      => 'max:5'
         ]);
         

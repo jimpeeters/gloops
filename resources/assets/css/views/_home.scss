@@ -64,16 +64,15 @@
 		display: inline-block;
 		background-image: url('/images/home.jpg');
 		background-position: 70% 0%; 
-
-		@media only screen and (min-width : $screen-desktop-s) {
-			background-image: url('/images/home-desktop.jpg');
-					background-position: 30% 20%; 
-		}
-		
 		background-repeat: no-repeat;
     	background-size: cover;
     	width: 100%;
     	padding: 30px 0;
+
+		@media only screen and (min-width : $screen-desktop-s) {
+			background-image: url('/images/home-desktop.jpg');
+			background-position: 30% 20%; 
+		}
 
     	h1, p {
     		margin-left: 0;
@@ -120,6 +119,10 @@
 	    		width: 50%;
 	    	}
 		}
+
+		@media only screen and (min-width : $screen-desktop-l) {
+			padding: 125px 0;
+	    }
 	}
 
 	section.information {

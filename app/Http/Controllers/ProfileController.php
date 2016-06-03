@@ -143,6 +143,28 @@ class ProfileController extends Controller
         {
             $user = User::findOrFail($id);
             $userName = $user->name;
+            $userId = $user->id;
+
+            //loops van deze user verwijderen
+            $loops = Loop::where('FK_user_id', '=', $userId)->get();
+
+            foreach($loops as $loop)
+            {
+                //Remove all connections with tags
+                foreach ($loop->loopTags as $tag)
+                {
+                  $tag->delete();
+                }
+
+                //Remove all connections with favourites
+                foreach ($loop->loopFavourites as $favourite)
+                {
+                  $favourite->delete();
+                }
+
+                $loop->delete();
+            }
+
             $user->delete();
 
             return Redirect::back()->with('success','You have sucessfully deleted ' . $userName . '.');
