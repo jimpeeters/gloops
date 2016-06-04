@@ -33,24 +33,7 @@
 				
 			</div>
 		</div>
-		<div class="col-xs-12 col-sm-6">
-			<div class="search">
-				<form>
-		            <a href="" class="round-button search-button">
-		                <i class="fa fa-search"></i>
-		            </a>
-		            <input 
-			            class="search-input"
-			            type="text" 
-	                    ng-model="query" 
-	                    ng-model-options='{ debounce: 500 }' 
-	                    id="search-input" 
-	                    ng-change="setQueryValue(query); searchOnTags(query); searchOnCategory(query); searchOnLoopname(query)"
-	                    placeholder="Search loops"/>
-			    </form>
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-6">
+		<div class="col-xs-12 col-sm-6 col-sm-offset-6">
 			<a class="email-link" href="#">
 				<i class="fa fa-envelope-o"></i>jim.peeters.93&amp;gmail.com
 			</a>
