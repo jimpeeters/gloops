@@ -1,4 +1,4 @@
-<section class="tutorial">
+<section class="tutorial scrollable-section" data-section-title="Gloops videos">
 	<div class="col-xs-12 col-md-8">
 		<h2>GLOOPS VIDEOS</h2>
 		<p>Start watching videos of the gloops youtube channel.</p>

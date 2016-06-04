@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="library" ng-controller="LibraryController">
+<section class="library" ng-controller="LibraryController">
 	
 	<div class="col-sm-2 hidden-xs sidebar">
 	   <ul class="sidebar-nav">
@@ -232,6 +232,6 @@
             </div>
 		</div>
     </div>
-</div>
+</section>
 
 @stop

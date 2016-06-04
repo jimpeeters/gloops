@@ -13,6 +13,8 @@
 <link rel="stylesheet" href="{{asset('/css/libs/bootstrap.min.css')}}">
 <!-- Chosen select  -->
 <link rel="stylesheet" href="{{asset('/css/libs/chosen.css')}}">
+<!-- Section scroll  -->
+<link rel="stylesheet" href="{{asset('/css/libs/section-scroll.css')}}">
 <!-- Custom css -->
 <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 
@@ -97,10 +99,8 @@
 
         @endif
 
-        <!-- Header -->
         @include('sections.navigation')
         
-        <!-- Overheating -->
         @include('snippets.overheating')
 
         <div class="row content">
@@ -224,6 +224,12 @@
     $( "#activate-modal, #activate-modal-2" ).click(function() {
         $( '#video-modal' ).openModal();
     });
+</script>
+
+<script type="text/javascript"> 
+    $(document).ready(function () { 
+        $('body').sectionScroll(); // Section scroll library
+    }) 
 </script>
 
 </body>

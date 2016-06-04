@@ -19,7 +19,7 @@
 	        </div>
 	    @endif
 
-	    <section class="profile-info">
+	    <section class="profile-info scrollable-section" data-section-title="Profile info">
 			<div class="col-xs-12">
 				<h2 class="title">Your profile</h2>
 				<center>
@@ -92,7 +92,7 @@
 			</div>
 		</section>
 		
-		<section class="favourite-loops" ng-init="getUserFavourites()">
+		<section class="favourite-loops scrollable-section" data-section-title="Your favourite loops" ng-init="getUserFavourites()">
 			<div class="col-xs-12">
 				<h2 class="title">Your favourite loops</h2>
 			</div>
@@ -145,10 +145,9 @@
 					</p>
 				</div>
 			</div>
-
 		</section>
 
-		<section class="edit-loop" ng-controller="EditProfileController">
+		<section class="edit-profile scrollable-section" data-section-title="Edit your profile" ng-controller="EditProfileController">
 			<div class="col-xs-12 col-sm-6 col-sm-offset-3" id="edit-section">
 				<h2 class="title">Edit your profile</h2>
 				@if(count($errors) > 0)
@@ -247,7 +246,7 @@
 			</div>
 		</section>
 
-		<section class="delete-account" ng-controller="DeleteAccountController">
+		<section class="delete-account scrollable-section" data-section-title="Delete your account" ng-controller="DeleteAccountController">
 			<div class="col-xs-12">
 				<h2 class="title">Danger zone</h2>
 				<p>Once you delete your account, there is no going back. Please be certain.</p>
@@ -279,7 +278,6 @@
 					</div>
 			  	</div>
 			</div>
-
 		</section>
 	@else
 

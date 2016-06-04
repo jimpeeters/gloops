@@ -29,7 +29,8 @@ elixir(function(mix) {
        'jquery/chosenSelect.js',
        'jquery/fileUpload.js',
        'jquery/velocity.min.js',
-       'jquery/leanModal.js'
+       'jquery/leanModal.js',
+       'jquery/sectionScroll.js'
     ], 'public/js/jquery.js');
     
     mix.scripts([

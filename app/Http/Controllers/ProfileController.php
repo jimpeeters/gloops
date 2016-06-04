@@ -103,7 +103,7 @@ class ProfileController extends Controller
         if ($request->hasFile('image'))
         {
             // Delete current picture if it is not the default picture
-            if($user->avatar != 'images/profilePictures/default.png')
+            if($user->avatar != 'images/profilePictures/default.png' && $user->facebookAccount != 1)
             {
                 $userAvatarPath = $user->avatar;
                 unlink(base_path().'/public'.$userAvatarPath);

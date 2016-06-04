@@ -19,7 +19,7 @@
 	        </div>
 	    @endif
 
-	    <section class="your-loops" ng-init="getUserLoops()">
+	    <section class="your-loops scrollable-section" data-section-title="Your loops" ng-init="getUserLoops()">
 
 			<div class="col-xs-12">
 				<h2 class="title">Your loops</h2>
@@ -104,10 +104,9 @@
 					</p>
 				</div>
 			</div>
-
 		</section>
 
-		<section class="upload-section" id="upload-section">
+		<section class="upload-section scrollable-section" data-section-title="Upload a loop" id="upload-section">
 			<div class="col-xs-12 col-sm-6 col-sm-offset-3">
 				<div id="tutorialModal1" class="modal tutorial-modal" role="dialog">
 				  	<div class="modal-dialog">
