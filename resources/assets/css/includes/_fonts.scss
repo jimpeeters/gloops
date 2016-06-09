@@ -8,13 +8,6 @@
    src: url('../fonts/AUdimat-Bold.otf');
 }
 
-//h1 36px 
-//h2 30px
-//h3 24px
-//h4 18px
-//h5 14px
-//h6 12px
-
 body {
 	color: black;
 }
@@ -49,8 +42,6 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: AUdimatBold;
 }
 
-
-/* Extra Small Devices, Phones */ 
 @media only screen and (min-width : $screen-phone) {
 	p,a,input[type="text"],label,span,div, ::placeholder {
 		font-size: 14px;
@@ -73,7 +64,6 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-/* Small Devices, Tablets */
 @media only screen and (min-width : $screen-tablet) {
 	p,a,input[type="text"],label,span,div, ::placeholder {
 		font-size: 16px;
@@ -96,7 +86,6 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-/* Medium Devices, Desktops */
 @media only screen and (min-width : $screen-desktop-s) {
 	h1 {
 		font-size: 38px;

@@ -13,5 +13,4 @@ gloopsApp.controller('SpecificuserController', ['$scope', '$http', function($sco
             $scope.popularLoops = data;
         });
     };
-
 }]);

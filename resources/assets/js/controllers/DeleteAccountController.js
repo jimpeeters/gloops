@@ -12,7 +12,5 @@ gloopsApp.controller('DeleteAccountController', ['$scope', function($scope) {
         else {
             $scope.enableDelete = false;
         }
-        
     };
-
 }]);

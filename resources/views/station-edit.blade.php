@@ -5,6 +5,10 @@
 @section('content')
 <div class="station-edit">
 
+	<a href="{{ route('station') }}" class="btn-floating waves-effect waves-light btn-small red darken-2 back-button">
+    	<i class="fa fa-chevron-left"></i> 
+    </a>
+
 	<div class="col-xs-12 col-md-offset-3 col-md-6">
 		<h2 class="title">Edit this loop</h2>
 	</div>

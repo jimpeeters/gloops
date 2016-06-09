@@ -12,8 +12,6 @@ gloopsApp.controller('EditProfileController', ['$scope', function($scope) {
     $scope.newPasswordIsValid = false;
     $scope.newPasswordTemp = '';
 
-
-
     // Check if it can be uploaded
     $scope.uploadEnabled = false;
 

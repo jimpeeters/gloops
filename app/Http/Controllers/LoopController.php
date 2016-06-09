@@ -24,7 +24,9 @@ class LoopController extends Controller
     	$input = $request->all();
 
         //Check if it is already favourite
-        $favouriteCheck = Favourite::where('FK_loop_id', '=', $input['loopId'])->first();
+        $favouriteCheck = Favourite::where('FK_loop_id', '=', $input['loopId'])
+                                    ->where('FK_user_id', '=', Auth::user()->id)
+                                    ->first();
 
         // Get owner of loop and his rating
         $loop = Loop::find($input['loopId']);

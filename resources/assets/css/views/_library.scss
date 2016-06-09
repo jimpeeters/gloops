@@ -1,5 +1,4 @@
 .library {
-
     background-color: $gray;
     overflow: hidden;
 
@@ -110,7 +109,6 @@
         }
     }
 
-
     .loops {
         padding-top: 15px;
         background-color: $white;
@@ -131,7 +129,6 @@
 
     }
 
-    /* Small Devices, Tablets */
     @media only screen and (min-width : $screen-tablet) {
         .sidebar {
             padding-right: 15px;

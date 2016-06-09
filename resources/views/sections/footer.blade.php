@@ -41,7 +41,7 @@
 			@if(Auth::check() && Auth::user()->id == 1)
 				<a class="copyright-text" href="/admin">Admin options</a>
 			@else
-				<p class="copyright-text">&copy; 2013 Studio6, Inc. All rights reserved</p>
+				<p class="copyright-text">&copy; 2016 Gloops, Inc. All rights reserved</p>
 			@endif
 		</div>
 </div>

@@ -15,8 +15,6 @@ gloopsApp.controller('RegisterController', ['$scope', function($scope) {
     $scope.name = document.getElementById('registerName').value;
     $scope.email = document.getElementById('registerEmail').value;
 
-
-
     // Check if it can be uploaded
     $scope.uploadEnabled = false;
 

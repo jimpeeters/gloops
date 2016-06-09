@@ -15,3 +15,4 @@ public/js/angular/directives/directives.js.map
 public/js/angular/directives/services.js
 public/js/angular/directives/services.js.map
 config/database.php
+config/session.php

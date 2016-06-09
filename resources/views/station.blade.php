@@ -27,17 +27,17 @@
 
 			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit track by loop.id">
 				<!-- Confirmation modal delete -->
-				<div id="confirmationModal<% loop.id %>" class="confirmation-modal modal" role="dialog">
+				<div id="confirmationModal<% loop.id %>" class="confirmation-modal delete-confirm modal" role="dialog">
 				  	<div class="modal-dialog">
 					    <div class="modal-content">
 						    <div class="modal-header">
-						    	<h2>Delete</h2>
+						    	<h2>Confirm</h2>
 						      	<button type="button" class="close" data-dismiss="modal">&times;</button>
 						    </div>
 						    <div class="modal-body">
 						    	<h4>Are you sure you want to delete '<% loop.name %>' ?</h4>
 								<a class="basic-button" href="/loop/delete/<% loop.id %>">Yes</a>
-								<button class="basic-button" href="" data-dismiss="modal">No</button>
+								<button class="basic-button" href="" data-dismiss="modal">Cancel</button>
 						  	</div>
 						</div>
 				  	</div>
@@ -112,7 +112,7 @@
 				  	<div class="modal-dialog">
 					    <div class="modal-content">
 						    <div class="modal-header">
-						    	<h2>Tutorial video 1</h2>
+						    	<h2>Tutorial video</h2>
 						      	<button type="button" class="close" data-dismiss="modal">&times;</button>
 						    </div>
 						    <div class="modal-body">
@@ -161,13 +161,12 @@
 							required>
 					</div>
 
-
-
-					<div class="form-group">
+					<div class="form-group file-upload">
 					    <div class="custom-file-upload">
 						    {!! Form::label('file', 'Mp3 File *') !!}
 						    <input type="file" id="file" name="mp3" ng-model="file" onchange="angular.element(this).scope().checkFile()"/>
 						</div>
+						<a class="btn-floating waves-effect waves-light btn-small small-record-button" href="" data-toggle="modal" data-target="#recordModal"><i class="fa fa-microphone"></i></a>
 					</div>
 
 		    		<div class="form-group">

@@ -6,6 +6,5 @@ $(".chosen-select").chosen({
 	width:"100%", 
 });
 
-
 $(".chosen-select-dropdown").chosen({
 });
