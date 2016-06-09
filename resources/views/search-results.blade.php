@@ -2,7 +2,7 @@
 	<h2 class="title">Search results</h2>
 </div>
 
-<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in searchResults | limitTo:loopLimit" ng-init="isFavourite=loop.isFavourite">
+<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in searchResults | limitTo:loopLimit | unique : 'name'" ng-init="isFavourite=loop.isFavourite">
 	<div class="row loop-box" ng-class="{ 'favourite' : isFavourite }">
 	  	<div class="col-xs-2">
 	    	<a class="play-button" ng-click="playLoop(loop, $event)">
