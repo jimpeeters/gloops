@@ -81,7 +81,7 @@ class StationController extends Controller
         $validator = Validator::make($request->all(), [
             'name'         => 'required|regex:/([A-Za-z0-9 ])+/|max:100|min:6|unique:loops,name,'.$input['id'],
             'loop_path'      => 'mimes:mpga|max:500',
-            'category'      => 'required|max:1',
+            'category'      => 'required',
             'tags'      => 'required|max:5'
         ]);
 
@@ -104,9 +104,8 @@ class StationController extends Controller
         if ($request->hasFile('file'))
         {
             $loopPath = $loop->loop_path;
-            $filePath = str_replace('/', '\\', $loopPath);
             // Delete original mp3
-            unlink(base_path().'\\public'.$filePath);
+            unlink(base_path().'/public'.$loopPath);
 
             $file = $request->file('file');           
             $fileName = Auth::user()->email.'-'. $loop->name.'.'.$file->getClientOriginalExtension();
@@ -266,8 +265,7 @@ class StationController extends Controller
             $loop->delete();
 
             //Remove file from public folder
-            $loopPath = str_replace('/', '\\', $loopPath);
-            unlink(base_path().'\\public'.$loopPath); 
+            unlink(base_path().'/public'.$loopPath); 
 
             return redirect('/station')->with('success','Guitar loop '.$loop->name.' is successfully deleted!');
         }
