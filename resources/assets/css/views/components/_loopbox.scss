@@ -20,6 +20,13 @@
 	.loop-link {
 		color: black;
 
+		&.disabled-link {
+			&:hover, &:focus {
+				cursor: normal;
+				text-decoration: none;
+			}
+		}
+
 		&:hover, &:focus {
 			color: black;
 		}

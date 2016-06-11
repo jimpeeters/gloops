@@ -44,11 +44,11 @@
 				</div>
 				<!-- /Confirmation modal delete-->
 				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite, 'deletable' : enableDeleting, 'editable' : enableEditing }">				
-					<a class="btn-floating waves-effect waves-light btn-small red darken-2 delete-button" data-toggle="modal" data-target="#confirmationModal<% loop.id %>" ng-show="enableDeleting">
+					<a class="btn-floating waves-effect waves-light btn-small delete-button" data-toggle="modal" data-target="#confirmationModal<% loop.id %>" ng-show="enableDeleting">
 			    		<i class="fa fa-trash"></i> 
 			    	</a>
 
-			    	<a class="btn-floating waves-effect waves-light btn-small blue edit-button" href="/station/edit/<% loop.id %>" ng-show="enableEditing">
+			    	<a class="btn-floating waves-effect waves-light btn-small edit-button" href="/station/edit/<% loop.id %>" ng-show="enableEditing">
 			    		<i class="fa fa-pencil"></i> 
 			    	</a>
 
@@ -59,7 +59,12 @@
 					    <div class="gapless-block" id="gapless_<% loop.id %>"></div>
 				  	</div>
 				  	<div class="col-xs-7 loopbox-section">
-				    	<a href="/loop/name/<% loop.name %>" class="loop-link"><h3 class="loop-title"><% loop.name %></h3></a>
+				    	<a ng-show="!enableDeleting && !enableEditing" href="/loop/name/<% loop.name %>" class="loop-link">
+				    		<h3 class="loop-title"><% loop.name %></h3>
+				    	</a>
+				    	<a ng-show="enableDeleting || enableEditing" class="loop-link disabled-link">
+				    		<h3 class="loop-title"><% loop.name %></h3>
+				    	</a>
 				    	<p class="duration" id="gapless_<% loop.id %>_duration">0:00</p>
 				    	<p class="category"><i class="fa fa-music"></i> <% loop.category.name %></p>
 				  	</div>

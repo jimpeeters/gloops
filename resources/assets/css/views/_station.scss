@@ -15,6 +15,22 @@
 	    	display: block;
 		}
 
+		.delete-button {
+			background-color: #D32F2F;
+
+			&:hover, &:active, &:focus {
+				background-color: darken(#D32F2F, 10);
+			}
+		}
+
+		.edit-button {
+			background-color: $blue;
+
+			&:hover, &:focus {
+				background-color: darken($blue, 10);
+			}
+		}
+
 		.action-buttons {
 				position: relative;
 				min-height: 37px;
@@ -210,7 +226,6 @@
 }
 
 .station-edit {
-
 	position: relative;
 
 	form {

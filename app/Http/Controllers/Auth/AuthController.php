@@ -154,17 +154,6 @@ class AuthController extends Controller
     //register ------------------------
     public function register(Request $request)
     {
-    /*        if($request->has('facebook'))
-    {
-         $validator = Validator::make($request->all(), [
-            'fName'         => 'required|max:100|min:2',
-            'lName'         => 'required|max:100|min:2',
-            'username'      => 'required|min:4|max:20',
-            'email'         => 'email|required|unique:Users,email',
-            'city'          => 'required',
-            'validLocation' => 'accepted'
-        ]);
-    }*/
         $validator = Validator::make($request->all(), [
             'name'         => 'required|max:50|min:2|unique:users,name',
             'password'      => 'required|confirmed|min:6|max:100',
@@ -175,18 +164,6 @@ class AuthController extends Controller
 
         if ($validator->fails()) 
         {
-            /* if($request->has('facebook'))
-            {
-
-                $user = new User();
-                $user->isFacebook = true;
-
-                return redirect()->back()
-                        ->with('user',$user)
-                        ->withErrors($validator)
-                        ->withInput();
-            }*/
-
             // To toggle register view in station and profile
             $registerMessages = '';
 
@@ -206,17 +183,6 @@ class AuthController extends Controller
         $user->email    = $input['email'];
         $user->rating = 0;
         $user->rank = 1;
-
-        /* if($request->has('facebook'))
-        {
-            $user->facebookAccount  = true;
-            $user->profilePicture = $input['profilePicture'];
-
-            $user->save();
-
-            Auth::login($user);
-            return redirect('/')->with('success','Account successvol aangemaakt!');
-        }*/
 
         $user->facebookAccount  = false;
         $user->password         = \Hash::make($input['password']);
