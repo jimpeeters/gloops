@@ -178,7 +178,7 @@
     </div>
     <div class="col-xs-12 col-sm-10 loops">
     	<div class="row">
-			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | filter:categoryFilter | filter:(!filterLoopsUserId ? '' : yourLoopFilter) | orderBy: 'created_at':mostRecent | limitTo:loopLimit as filtered_result" ng-init="isFavourite=loop.isFavourite">
+			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | filter:categoryFilter | filter:(!filterLoopsUserId ? '' : yourLoopFilter) | orderBy:(!mostRecent ? '' : '-created_at') | limitTo:loopLimit as filtered_result" ng-init="isFavourite=loop.isFavourite">
 				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite }">
 				  	<div class="col-xs-2">
 				    	<a class="play-button" ng-click="playLoop(loop, $event)">
