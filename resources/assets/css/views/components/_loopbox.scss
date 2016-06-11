@@ -50,7 +50,7 @@
     	margin-left: -20px;
 		transition: all .2s ease-out;
 
-	    &:hover, &:active, &:focus {
+	    &:hover, &:active {
 	    	color: $green;
 	    	text-shadow:0px 0px 6px rgba( $green, 0.8);
 	    	cursor: pointer;
@@ -161,7 +161,7 @@
 
 		.play-button {
 
-		    &:hover, &:active, &:focus {
+		    &:hover, &:active {
 		    	color: $yellow;
 		    	text-shadow:0px 0px 6px rgba( $yellow, 0.8);
 		    }
