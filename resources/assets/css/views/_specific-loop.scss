@@ -25,4 +25,8 @@ section.specific-loop {
 			margin-right: 5px;
 		}
 	}
+
+	@media only screen and (min-width : $screen-desktop-l) {
+    	padding-bottom: 400px;
+    }
 }
