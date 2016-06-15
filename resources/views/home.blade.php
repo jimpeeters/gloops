@@ -29,7 +29,18 @@
 			<a href="{{ route('getRegister') }}" class="basic-button">REGISTER NOW</a>
 		@endif
 	</section>
-	
+
+	<section class="video scrollable-section" data-section-title="What is gloops?">
+		<div class="col-xs-12 col-md-6 col-lg-5">
+			<h2>WHAT IS GLOOPS?</h2>
+			<p>Watch our demonstration video.</p>
+			<img class="arrow-right hidden-sm hidden-xs" src="/images/arrow-right.png" alt="Arrow that points at video">
+		</div>
+		<div class="col-xs-12 col-md-6 col-lg-7">
+			<iframe title="What is gloops?" src="http://www.youtube.com/embed/2MKaWri-h18" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</section>
+
 	<section class="popular scrollable-section" data-section-title="Popular loops">
 		<div class="col-xs-12">
 			<h2 class="title">Popular loops</h2>
@@ -75,7 +86,6 @@
 			</div>
 		</div>
 	</section>
-	
 
 	<section class="information scrollable-section" data-section-title="Information">
 		<div class="col-xs-12 col-sm-4 information-record">

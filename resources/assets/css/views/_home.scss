@@ -1,6 +1,6 @@
 .home {
 	
-	.information, .popular, .tutorial {
+	.information, .popular, .tutorial, .video {
 		overflow: hidden;
 		position: relative;
 	}
@@ -178,6 +178,105 @@
 			color: lighten($yellow, 20);
 			right: -70px;
 			bottom: -70px;
+		}
+	}
+
+	section.video {
+		overflow: hidden;
+		position: relative;
+		background-color: $white;
+		padding: 30px 0;
+		border-bottom: none;
+		width: 100%;
+		border-bottom: 1px solid darken($white, 10); 
+
+		@media only screen and (min-width : $screen-phone) {
+			padding: 45px 0;
+		}
+
+		@media only screen and (min-width : $screen-tablet) {
+			padding: 60px 0;
+		}
+
+		.arrow-right {
+			display: none;
+			height: 134px;
+			width: 313px;
+
+			@media only screen and (min-width : $screen-desktop-s) {
+				display: block;
+				margin-left: 180px;
+				z-index: 10;
+				margin-top: 30px;
+			}
+
+			@media screen and (min-width: 1400px) {
+				margin-left: 220px;
+				height: 200px;
+				width: 400px;
+				margin-top: 60px;
+		    }
+		}
+
+		iframe {
+			width: 100%;
+			height: 250px;
+			box-shadow: none;
+
+			@media only screen and (min-width : $screen-phone) {
+				height: 325px;
+			}
+
+			@media only screen and (min-width : $screen-tablet) {
+				box-shadow: 6px 6px 6px darken($white, 50); 
+				width: 80%;
+				margin: 0 auto;
+				display: block;
+			}
+
+			@media only screen and (min-width : $screen-desktop-s) {
+				margin-right: 45px;
+			}
+
+			@media screen and (min-width: 1400px) {
+				height: 470px;
+				margin-right: 60px;
+		    }
+		}
+
+		h2 {
+			font-size: 3em;
+			color: $black;
+			margin-top: 0;
+			text-align: center;
+			margin-bottom: 5px;
+
+			@media only screen and (min-width : $screen-desktop-s) {
+				margin-left: 45px;
+				text-align: left;
+			}
+
+			@media screen and (min-width: 1400px) {
+				font-size: 4em;
+				margin-left: 60px;
+			}
+		}
+
+		p {
+			font-size: 1.5em;
+			color: lighten($black, 30);
+			text-align: center;
+
+			@media only screen and (min-width : $screen-desktop-s) {
+				width: 70%;
+				margin-left: 45px;
+				text-align: left;
+			}
+
+			@media screen and (min-width: 1400px) {
+				font-size: 2em;
+				margin-left: 60px;
+			}
 		}
 	}
 }
