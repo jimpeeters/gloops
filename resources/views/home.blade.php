@@ -37,7 +37,7 @@
 			<img class="arrow-right hidden-sm hidden-xs" src="/images/arrow-right.png" alt="Arrow that points at video">
 		</div>
 		<div class="col-xs-12 col-md-6 col-lg-7">
-			<iframe title="What is gloops?" src="http://www.youtube.com/embed/2MKaWri-h18" frameborder="0" allowfullscreen></iframe>
+			<iframe title="What is gloops?" src="https://www.youtube.com/embed/2MKaWri-h18" frameborder="0" allowfullscreen></iframe>
 		</div>
 	</section>
 
