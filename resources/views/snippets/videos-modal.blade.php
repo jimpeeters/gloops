@@ -20,6 +20,12 @@
                     <p class="collection-info">Do you have no clue how to jam on guitar loops or backing tracks? This video can give u a quick hint on how to be able to jam on loops.</p>
                     <a target="_blank" href="https://www.youtube.com/watch?v=2hUTcuSJ-xE" class="secondary-content youtube-link"><i class="fa fa-3x fa-youtube-play" aria-hidden="true"></i></a>
                 </li>
+                <li class="collection-item avatar">
+                    <img src="/images/videoThumbnails/jamsession1.png" alt="A screenshot of the youtube video : tutorial 2" class="circle">
+                    <a class="collection-title" target="_blank" href="https://www.youtube.com/watch?v=NK2z69KoaOE">Jam session : Stand by me - Ben E. King</a>
+                    <p class="collection-info">Jam session on one of the loops of g-loops.com</p>
+                    <a target="_blank" href="https://www.youtube.com/watch?v=NK2z69KoaOE" class="secondary-content youtube-link"><i class="fa fa-3x fa-youtube-play" aria-hidden="true"></i></a>
+                </li>
             </ul>
     </div>
 </div>
