@@ -178,7 +178,6 @@ class LoopController extends Controller
                 {
                     $loop->isFavourite = true;
                 }
-
             }
         }
 

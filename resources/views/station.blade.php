@@ -25,7 +25,7 @@
 				<h2 class="title">Your loops</h2>
 			</div>
 
-			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit track by loop.id">
+			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit | orderBy:'-created_at' track by loop.id">
 				<!-- Confirmation modal delete -->
 				<div id="confirmationModal<% loop.id %>" class="confirmation-modal delete-confirm modal" role="dialog">
 				  	<div class="modal-dialog">
@@ -43,7 +43,7 @@
 				  	</div>
 				</div>
 				<!-- /Confirmation modal delete-->
-				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite, 'deletable' : enableDeleting, 'editable' : enableEditing }">				
+				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite, 'deletable' : enableDeleting, 'editable' : enableEditing }" ng-init="isFavourite=loop.isFavourite">				
 					<a class="btn-floating waves-effect waves-light btn-small delete-button" data-toggle="modal" data-target="#confirmationModal<% loop.id %>" ng-show="enableDeleting">
 			    		<i class="fa fa-trash"></i> 
 			    	</a>
@@ -78,7 +78,7 @@
 				    	</div>
 				  	</div>
 					<div class="favourite">
-					  	<i class="fa" ng-class="{ 'fa-star active' : isFavourite, 'fa-star-o' : !isFavourite }" ng-click="favourite(loop.id);"></i>
+					  	<i class="fa" ng-class="{ 'fa-star active' : isFavourite, 'fa-star-o' : !isFavourite }" ng-click="favourite(loop.id)"></i>
 					</div>
 				</div>
 				<div class="labels">
