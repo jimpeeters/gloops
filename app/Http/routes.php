@@ -132,4 +132,10 @@ Route::group(['middleware' => ['web']], function () {
 
 	// Get specific Loop
 	Route::get('/loop/{id}', array('as' => 'specificLoop', 'uses' => 'LoopController@getSpecificLoop'));
+
+	// Get specific tag page
+	Route::get('/tag/{name}', array('as' => 'specificTagPage', 'uses' => 'LoopController@getSpecificTagPage'));
+
+	// Get specific tag page
+	Route::get('/loops/tag/{name}', array('as' => 'loopsFromTag', 'uses' => 'LoopController@getLoopsFromTag'));
 });

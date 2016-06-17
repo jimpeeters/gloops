@@ -60,6 +60,8 @@
     	color: $red;
         display: inline;
         text-decoration : underline;
+        margin: 5px 0;
+        display: block;
 
         i {
     		padding-right: 5px;
@@ -112,8 +114,7 @@
 		.email-link {
 			float:right;
 			display: block;
-			margin-top: 60px;
-			margin-right: 10px;
+			margin: 60px 10px 0 0;
 		}
 
 		.copyright-text {

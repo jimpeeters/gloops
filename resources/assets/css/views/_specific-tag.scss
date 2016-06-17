@@ -1,0 +1,21 @@
+section.specific-tag {
+	width: 100%;
+	display: inline-block;
+	position: relative;
+	padding-bottom: 45px;
+
+	@media only screen and (min-width : $screen-desktop-l) {
+    	padding-bottom: 270px;
+    }
+
+    .load-more-button {
+        width: 100%;
+        margin: 15px auto;
+        display: block;
+
+	    @media only screen and (min-width : $screen-tablet) {
+			width: 350px;
+		}
+	}
+
+}

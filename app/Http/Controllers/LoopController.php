@@ -102,13 +102,15 @@ class LoopController extends Controller
         }
     }
 
-    public function getSpecificLoopPage($name) {
+    public function getSpecificLoopPage($name) 
+    {
         $loop = Loop::where('name', '=', $name)->first();
         return View::make('specific-loop')->with('loop', $loop);
     }
 
 
-    public function getSpecificLoop($id) {
+    public function getSpecificLoop($id) 
+    {
 
         $loop = Loop::with('favourites')->
                         with('user')->
@@ -135,6 +137,52 @@ class LoopController extends Controller
         }
 
         return Response::json($loop);
+    }
+
+    public function getSpecificTagPage($name) 
+    {
+        return View::make('specific-tag')->with('tagname', $name);
+    }
+
+    public function getLoopsFromTag($name) 
+    {
+
+        $loops = Loop::whereHas('tags', function ($q) use ($name) {
+                    $q->where('name', 'LIKE', $name);  
+                })->
+                leftJoin('favourites','loops.id','=','favourites.FK_loop_id')->
+                selectRaw('loops.*, count(favourites.FK_loop_id) AS `count`')->
+                with('favourites')->
+                with('user')->
+                with('category')->
+                with('tags')->
+                groupBy('loops.id')->
+                orderBy('count','DESC')->get();
+
+        //only do this check when user is logged in (else you dont have favourites)
+        if(Auth::check())
+        {
+            foreach($loops as $loop) 
+            {
+                //check if logged in user has favourited this
+                $user_favorites = Favourite::where('FK_user_id', '=', Auth::user()->id)
+                    ->where('FK_loop_id', '=', $loop->id)
+                    ->first();
+
+                //give property to say wether it is favourited or not
+                if ($user_favorites == null)
+                {
+                    $loop->isFavourite = false;
+                } 
+                else 
+                {
+                    $loop->isFavourite = true;
+                }
+
+            }
+        }
+
+        return Response::json($loops);
     }
 
 }

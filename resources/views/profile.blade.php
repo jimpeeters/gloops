@@ -129,7 +129,11 @@
 					</div>
 				</div>
 				<div class="labels">
-					<p ng-repeat="tag in loop.tags"><span class="label"><i class="fa fa-tag"></i> <% tag.name %></span></p>
+					<p ng-repeat="tag in loop.tags">
+						<span class="label">
+							<i class="fa fa-tag"></i> <a href="/tag/<% tag.name %>"><% tag.name %></a>
+						</span>
+					</p>
 				</div>
 			</div>
 

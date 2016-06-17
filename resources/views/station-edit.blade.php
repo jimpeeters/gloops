@@ -66,7 +66,11 @@
 		</div>
 		<div class="labels">
 			@foreach($loop->tags as $tag)
-				<p><span class="label"><i class="fa fa-tag"></i> {{ $tag->name }}</span></p>
+				<p>
+					<span class="label">
+						<i class="fa fa-tag"></i> <a href="/tag/{{ $tag->name }}">{{ $tag->name }}</a>
+					</span>
+				</p>
 			@endforeach
 		</div>
 	</div>
