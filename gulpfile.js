@@ -4,6 +4,14 @@ process.env.DISABLE_NOTIFIER = false;
 
 var elixir = require('laravel-elixir');
 var autoprefixer = require('gulp-autoprefixer');
+var gulp = require('gulp');
+var cleanCSS = require('gulp-clean-css');
+
+gulp.task('minify-css', function() {
+  return gulp.src('public/css/style.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('public/css'));
+});
 
 elixir(function(mix) {
     mix.sass([
