@@ -11,7 +11,7 @@
         right: 0;
         height: auto;
         margin-top: 170px;
-        z-index: 1049;
+        z-index: 1000;
         font-weight: normal;
     }
 
@@ -40,7 +40,7 @@
         content: ' ';
         width: 0;
         height: 100%;
-        background-color: #eee;
+        background-color: #141414; /* achtergrond kleur */
         position: absolute;
         right: 0;
         top: 0;
@@ -51,18 +51,18 @@
 
     .section-bullets li a:after {
         content: ' ';
-        width: 6px;
-        height: 6px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
-        background-color: #000;
+        background-color: #F44336; /* bolletje kleur */
         position: absolute;
-        right: 8px;
+        right: 20px;
         top: 8px;
         transition-duration: .2s;
     }
 
     .section-bullets li a {
-        color: #000;
+        color: white; /* Text kleur */
         overflow: hidden;
         position: relative;
         display: inline-block;
@@ -79,6 +79,7 @@
         right: 0;
         transition-duration: 0.3s;
         opacity: 0;
+        padding-right: 20px;
     }
 
     .section-bullets li.active a {
@@ -89,6 +90,10 @@
         width: 100%;
         transition-duration: .3s;
         transition-delay: 0.4s;
+    }
+
+    .section-bullets li:hover {
+        background-color: rgba(20, 20, 20, 0.72); /* hover kleur */
     }
 
     .section-bullets li:hover a {

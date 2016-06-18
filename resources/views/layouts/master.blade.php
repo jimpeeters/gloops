@@ -221,16 +221,5 @@
     </script>
 @endif
 
-<script>
-    $( "#activate-modal, #activate-modal-2" ).click(function() {
-        $( '#video-modal' ).openModal();
-    });
-</script>
-
-<script type="text/javascript"> 
-    $(document).ready(function () { 
-        $('body').sectionScroll(); // Section scroll library
-    }) 
-</script>
 </body>
 </html>

@@ -1,20 +1,9 @@
 'use strict';
 
-process.env.DISABLE_NOTIFIER = true;
+process.env.DISABLE_NOTIFIER = false;
 
 var elixir = require('laravel-elixir');
-var autoprefixer = require('gulp-autoprefixer'); //for browser compatibility
-
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Sass
- | file for our application, as well as publishing vendor resources.
- |
- */
+var autoprefixer = require('gulp-autoprefixer');
 
 elixir(function(mix) {
     mix.sass([
@@ -30,7 +19,8 @@ elixir(function(mix) {
        'jquery/fileUpload.js',
        'jquery/velocity.min.js',
        'jquery/leanModal.js',
-       'jquery/sectionScroll.js'
+       'jquery/sectionScroll.js',
+       'jquery/main.js'
     ], 'public/js/jquery.js');
     
     mix.scripts([
@@ -58,16 +48,7 @@ elixir(function(mix) {
         'directives/tooltip.js',
         'directives/smoothScroll.js'
     ], 'public/js/angular/directives/directives.js');
-
-
-/*    mix.scripts([
-        'modules/angular.audio.js'
-    ], 'public/js/modules.js');*/
 });
 
 //To watch changes in sass files
 elixir.Task.find('sass').watch('./resources/assets/css/**/*.scss');
-
-
-//console.log(elixir);
-// run gulp scripts and gulp sass
