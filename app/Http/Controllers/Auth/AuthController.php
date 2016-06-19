@@ -107,7 +107,7 @@ class AuthController extends Controller
  
         Auth::login($authUser, true);
  
-        return redirect()->route('home')->with('successfullFacebookLogin', Auth::user()->name);
+        return redirect()->back()->with('successfullFacebookLogin', Auth::user()->name);
     }
  
     /**
@@ -142,7 +142,7 @@ class AuthController extends Controller
     {
         $user = Auth::user()->name;
         Auth::logout();
-        return Redirect::back()->with('successfullLogout', $user);
+        return Redirect::route('home')->with('successfullLogout', $user);
     }
 
     //get register page ------------
