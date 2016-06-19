@@ -1,30 +1,7 @@
 gloopsApp.service("OverheatingService", function() {
-    
-    this.playingLoops = 0;
-    this.isOverheating = false;
-        
-    this.increaseOverheating = function() {
-        this.playingLoops ++;
-        this.checkOverheating();
-    }
-    
-    this.decreaseOverheating = function() {
-        this.playingLoops --;
-        this.checkOverheating();
-    }
-    
-    this.checkOverheating = function() {
-        
-        if (this.playingLoops >= 9) {
-            this.isOverheating = true;
-            
-            if (this.playingLoops = 9) {
-                angular.element('#overheating-modal').modal('show');
-            }
-        }
-        else {
-            this.isOverheating = false;
-        }
-    }
+
+    //Serves as glue between loopcontrollers, so only 1 loop plays at a time.
+    this.playingLoopId = null;
+    this.playingLoopButtonId = null;
 
 })

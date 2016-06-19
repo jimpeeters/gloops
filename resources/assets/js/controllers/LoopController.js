@@ -5,7 +5,7 @@ gloopsApp.controller('LoopController', ['$scope', '$http', 'OverheatingService',
     $scope.isInit = false;
 
     $scope.playLoop = function(loop, $event) {
-        
+
         var playBtnIcon = $event.target;
         
         // If loop is not initialised yet
@@ -18,24 +18,32 @@ gloopsApp.controller('LoopController', ['$scope', '$http', 'OverheatingService',
         }
 
         // If loop is not playing 
-        if ($scope.isPlaying == false) {
+        if (OverheatingService.playingLoopId != $scope.player.id) {
+
+            // When there is already a loop playing, stop it.
+            if (OverheatingService.playingLoopId != null && OverheatingService.playingLoopButtonId != null) {
+                GAPLESS5_PLAYERS[OverheatingService.playingLoopId].stop();
+
+                if (document.getElementById("play-button-" + OverheatingService.playingLoopButtonId) != null) {
+                    document.getElementById("play-button-" + OverheatingService.playingLoopButtonId).className = "fa fa-play";
+                }
+            }
+
+            OverheatingService.playingLoopId = $scope.player.id;
+            OverheatingService.playingLoopButtonId = loop.id
+
             $scope.player.play();
             $scope.isPlaying = true;
             
             playBtnIcon.className = "fa fa-pause";
-        
-            // Increase overheating
-            OverheatingService.increaseOverheating();
         }
         // If loop is playing
         else {
+            OverheatingService.playingLoopId = null;
             $scope.player.pause();
             $scope.isPlaying = false;
             
             playBtnIcon.className = "fa fa-play";
-        
-            // Decrease overheating
-            OverheatingService.decreaseOverheating();
         }
     };
 

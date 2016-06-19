@@ -101,8 +101,6 @@
         @endif
 
         @include('sections.navigation')
-        
-        @include('snippets.overheating')
 
         <div class="row content">
 

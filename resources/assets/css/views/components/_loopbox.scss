@@ -62,6 +62,10 @@
 			width: 100%;
 			line-height: inherit;
 			font-size: 16px;
+
+			&.fa-pause {
+				color: $green;
+			}
 		}
 	}
 
@@ -164,6 +168,12 @@
 		    &:hover, &:active {
 		    	color: $yellow;
 		    	text-shadow:0px 0px 6px rgba( $yellow, 0.8);
+		    }
+
+		    i {
+		    	&.fa-pause {
+					color: $yellow;
+				}
 		    }
 		}
 	}

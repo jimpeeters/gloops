@@ -59,18 +59,6 @@
 	}
 }
 
-//Overheating modal
-.modal-body.reward {
-	.reward-title, .reward-info {
-		text-align: center;
-	}
-	
-	.reward-icon {
-		color: $yellow;
-	}
-}
-
-
 //Bottom modal with video list
 .modal-bottom {
     @extend .z-depth-4;
