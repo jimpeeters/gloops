@@ -106,8 +106,7 @@ class AuthController extends Controller
         $authUser = $this->findOrCreateUser($user);
  
         Auth::login($authUser, true);
- 
-        return redirect()->back()->with('successfullFacebookLogin', Auth::user()->name);
+        return redirect()->route('home')->with('successfullFacebookLogin', Auth::user()->name);
     }
  
     /**
