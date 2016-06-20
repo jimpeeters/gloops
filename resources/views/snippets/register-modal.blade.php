@@ -7,7 +7,7 @@
 		    </div>
 		    <div class="modal-body">
 				<h3>Hi {{ Session::get('successfullRegister') }}!</h3>
-				<p>You have joined the Gloops community.</p>
+				<p>Thank you for joining the Gloops community!</p>
 			</div>
 			<div class="modal-footer">
 		      	<p>Start visiting your very own loop station? <a href="{{ route('station') }}">Go to your station</a></p>

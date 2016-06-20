@@ -107,7 +107,7 @@ class AuthController extends Controller
  
         Auth::login($authUser, true);
  
-        return redirect()->back()->with('successfullFacebookLogin', Auth::user()->name);
+        return redirect()->route('home')->with('successfullFacebookLogin', Auth::user()->name);
     }
  
     /**
@@ -203,8 +203,8 @@ class AuthController extends Controller
 
         $user->save();
         Auth::login($user);
-        
-        return redirect()->back()->with('successfullRegister', $userName);
+
+        return redirect()->route('home')->with('successfullRegister', $userName);   
     }
 
     // Login from normal page
