@@ -4,28 +4,28 @@
 
 @section('content')
 
-<div class="station" ng-controller="StationController">
+<div class="station" data-ng-controller="StationController">
 
 	@if(Auth::check())
 
 		@if (session()->has('success'))
-	        <div class="col-xs-12" ng-controller="AlertController">
-	        	<div class="info-box success" ng-hide="hidden" ng-class="{fade: startFade}">
+	        <div class="col-xs-12" data-ng-controller="AlertController">
+	        	<div class="info-box success" data-ng-hide="hidden" data-ng-class="{fade: startFade}">
 					<p>
 						<i class="fa fa-check alert-type-icon"></i>{{ Session::get('success') }}
-						<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+						<i data-ng-click="closeAlert()" class="fa fa-times close-button"></i>
 					</p>
 				</div>
 	        </div>
 	    @endif
 
-	    <section class="your-loops scrollable-section" data-section-title="Your loops" ng-init="getUserLoops()">
+	    <section class="your-loops scrollable-section" data-section-title="Your loops" data-ng-init="getUserLoops()">
 
 			<div class="col-xs-12">
 				<h2 class="title">Your loops</h2>
 			</div>
 
-			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in loops | limitTo:loopLimit | orderBy:'-created_at' track by loop.id">
+			<div class="col-xs-12 col-sm-6 col-lg-4" data-ng-controller="LoopController" data-ng-repeat="loop in loops | limitTo:loopLimit | orderBy:'-created_at' track by loop.id">
 				<!-- Confirmation modal delete -->
 				<div id="confirmationModal<% loop.id %>" class="confirmation-modal delete-confirm modal" role="dialog">
 				  	<div class="modal-dialog">
@@ -43,26 +43,26 @@
 				  	</div>
 				</div>
 				<!-- /Confirmation modal delete-->
-				<div class="row loop-box" ng-class="{ 'favourite' : isFavourite, 'deletable' : enableDeleting, 'editable' : enableEditing }" ng-init="isFavourite=loop.isFavourite">				
-					<a class="btn-floating waves-effect waves-light btn-small delete-button" data-toggle="modal" data-target="#confirmationModal<% loop.id %>" ng-show="enableDeleting">
+				<div class="row loop-box" data-ng-class="{ 'favourite' : isFavourite, 'deletable' : enableDeleting, 'editable' : enableEditing }" data-ng-init="isFavourite=loop.isFavourite">				
+					<a class="btn-floating waves-effect waves-light btn-small delete-button" data-toggle="modal" data-target="#confirmationModal<% loop.id %>" data-ng-show="enableDeleting">
 			    		<i class="fa fa-trash"></i> 
 			    	</a>
 
-			    	<a class="btn-floating waves-effect waves-light btn-small edit-button" href="/station/edit/<% loop.id %>" ng-show="enableEditing">
+			    	<a class="btn-floating waves-effect waves-light btn-small edit-button" href="/station/edit/<% loop.id %>" data-ng-show="enableEditing">
 			    		<i class="fa fa-pencil"></i> 
 			    	</a>
 
 				  	<div class="col-xs-2 loopbox-section">
-				    	<a class="play-button" ng-click="playLoop(loop, $event)">
+				    	<a class="play-button" data-ng-click="playLoop(loop, $event)">
 				      		<i id="play-button-<% loop.id %>" class="fa fa-play"></i>
 				   		</a>
 					    <div class="gapless-block" id="gapless_<% loop.id %>"></div>
 				  	</div>
 				  	<div class="col-xs-7 loopbox-section">
-				    	<a ng-show="!enableDeleting && !enableEditing" href="/loop/name/<% loop.name %>" class="loop-link">
+				    	<a data-ng-show="!enableDeleting && !enableEditing" href="/loop/name/<% loop.name %>" class="loop-link">
 				    		<h3 class="loop-title"><% loop.name %></h3>
 				    	</a>
-				    	<a ng-show="enableDeleting || enableEditing" class="loop-link disabled-link">
+				    	<a data-ng-show="enableDeleting || enableEditing" class="loop-link disabled-link">
 				    		<h3 class="loop-title"><% loop.name %></h3>
 				    	</a>
 				    	<p class="duration" id="gapless_<% loop.id %>_duration">0:00</p>
@@ -73,43 +73,43 @@
 				    		<div class="user-avatar" style="background-image: url(<% loop.user.avatar %>)"></div>
 				    		<p class="user-name"><% loop.user.name %></p>
 							<p class="rank-text">
-								<img class="rank-icon" ng-src="/images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>
+								<img class="rank-icon" data-ng-src="/images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>
 							</p>
 				    	</div>
 				  	</div>
 					<div class="favourite">
-					  	<i class="fa" ng-class="{ 'fa-star active' : isFavourite, 'fa-star-o' : !isFavourite }" ng-click="favourite(loop.id)"></i>
+					  	<i class="fa" data-ng-class="{ 'fa-star active' : isFavourite, 'fa-star-o' : !isFavourite }" data-ng-click="favourite(loop.id)"></i>
 					</div>
 				</div>
 				<div class="labels">
-					<p ng-repeat="tag in loop.tags">
+					<p data-ng-repeat="tag in loop.tags">
 						<span class="label">
 							<i class="fa fa-tag"></i> <a href="/tag/<% tag.name %>"><% tag.name %></a>
 						</span>
 					</p>
 				</div>
 			</div>
-			<div ng-show="loops.length > 0" class="col-xs-12 action-buttons">
-				<button ng-show="loops.length > 9" class="basic-button load-more-button" ng-class="{ hide: loopLimit >= loops.length }" ng-click="loopLimit = loopLimit + 3" href="">Load more</button>
+			<div data-ng-show="loops.length > 0" class="col-xs-12 action-buttons">
+				<button data-ng-show="loops.length > 9" class="basic-button load-more-button" data-ng-class="{ hide: loopLimit >= loops.length }" data-ng-click="loopLimit = loopLimit + 3" href="">Load more</button>
 				<div class="button-wrapper">
-					<a class="delete btn-floating waves-effect waves-light btn-small" ng-click="enableDeleting = !enableDeleting; enableEditing = false">
-			    		<i ng-show="enableDeleting" class="fa fa-times"></i>
-			    		<i ng-show="!enableDeleting" class="fa fa-trash"></i> 
+					<a class="delete btn-floating waves-effect waves-light btn-small" data-ng-click="enableDeleting = !enableDeleting; enableEditing = false">
+			    		<i data-ng-show="enableDeleting" class="fa fa-times"></i>
+			    		<i data-ng-show="!enableDeleting" class="fa fa-trash"></i> 
 			    	</a>
 			    </div>
 			    <div class="button-wrapper">
-					<a class="edit btn-floating waves-effect waves-light btn-small" ng-click="enableEditing = !enableEditing; enableDeleting = false">
-			    		<i ng-show="enableEditing" class="fa fa-times"></i>
-			    		<i ng-show="!enableEditing" class="fa fa-pencil"></i> 
+					<a class="edit btn-floating waves-effect waves-light btn-small" data-ng-click="enableEditing = !enableEditing; enableDeleting = false">
+			    		<i data-ng-show="enableEditing" class="fa fa-times"></i>
+			    		<i data-ng-show="!enableEditing" class="fa fa-pencil"></i> 
 			    	</a>
 		    	</div>
 			</div>
 
-			<div ng-show="loops.length === 0" class="col-xs-12" ng-controller="AlertController">
-				<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
+			<div data-ng-show="loops.length === 0" class="col-xs-12" data-ng-controller="AlertController">
+				<div class="info-box info" data-ng-hide="hidden" data-ng-class="{fade: startFade}">
 					<p>
 						<i class="fa fa-info alert-type-icon"></i>You currently have no <strong>guitar loops</strong>.
-						<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+						<i data-ng-click="closeAlert()" class="fa fa-times close-button"></i>
 					</p>
 				</div>
 			</div>
@@ -139,13 +139,13 @@
 			    </h2>
 
 				@if (count($errors) > 0)
-				    <div ng-controller="AlertController">
-				    	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
+				    <div data-ng-controller="AlertController">
+				    	<div class="info-box error" data-ng-hide="hidden" data-ng-class="{fade: startFade}">
 				    		@foreach ($errors->all() as $key => $error)
 								<p>
 									<i class="fa fa-times alert-type-icon"></i>{{ $error }}
 									@if($key == 0)
-										<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+										<i data-ng-click="closeAlert()" class="fa fa-times close-button"></i>
 									@endif
 								</p>
 							@endforeach
@@ -161,11 +161,11 @@
 					    	type="text" 
 					    	name="name"
 					    	value="{{ old('name') }}" 
-					    	ng-model="name"
-							ng-model-options='{ debounce: 300 }'
+					    	data-ng-model="name"
+							data-ng-model-options='{ debounce: 300 }'
 							class="form-control"
-							ng-class="{ enabled : nameIsValid }"
-							ng-change="checkName(name)"
+							data-ng-class="{ enabled : nameIsValid }"
+							data-ng-change="checkName(name)"
 							id="loopName"
 							required>
 					</div>
@@ -173,14 +173,14 @@
 					<div class="form-group file-upload">
 					    <div class="custom-file-upload">
 						    {!! Form::label('file', 'Mp3 File *') !!}
-						    <input type="file" id="file" name="mp3" ng-model="file" onchange="angular.element(this).scope().checkFile()"/>
+						    <input type="file" id="file" name="mp3" data-ng-model="file" onchange="angular.element(this).scope().checkFile()"/>
 						</div>
 						<a class="btn-floating waves-effect waves-light btn-small small-record-button" href="" data-toggle="modal" data-target="#recordModal"><i class="fa fa-microphone"></i></a>
 					</div>
 
 		    		<div class="form-group">
 						{!! Form::label('Category *') !!}
-						<select name="category" class="form-control chosen-select-dropdown" data-placeholder="Choose a Category" ng-model="category" ng-change="checkCategory()">
+						<select name="category" class="form-control chosen-select-dropdown" data-placeholder="Choose a Category" data-ng-model="category" data-ng-change="checkCategory()">
 							<option value="">Choose a category</option>
 							@foreach ($categories as $category)
 								<option value="{{$category->id}}">{{$category->name}}</option>
@@ -198,7 +198,7 @@
 						<p class="tip-label">(Adding <strong>tags</strong> to your loop makes them easier to find for other people!)</p>
 		    		</div>
 	                
-					<button ng-disabled="!uploadEnabled" ng-class="{ disabled : !uploadEnabled}" type="submit" class="basic-button upload-button">Upload</button>
+					<button data-ng-disabled="!uploadEnabled" data-ng-class="{ disabled : !uploadEnabled}" type="submit" class="basic-button upload-button">Upload</button>
 				{!! Form::close() !!}	
 
 				<h2 class="title record-title">Or recording</h2>

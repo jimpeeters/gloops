@@ -4,15 +4,15 @@
 
 @section('content')
 
-<section class="specific-loop" ng-controller="SpecificLoopController" ng-init="getSpecificLoop({{ $loop->id }})">
+<section class="specific-loop" data-ng-controller="SpecificLoopController" data-ng-init="getSpecificLoop({{ $loop->id }})">
 
 	<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
 		<h2 class="title">{{ $loop->name }}</h2>
 	</div>
-	<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4" ng-controller="LoopController">
-			<div class="row loop-box" ng-class="{ 'favourite' : isFavourite }">
+	<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4" data-ng-controller="LoopController">
+			<div class="row loop-box" data-ng-class="{ 'favourite' : isFavourite }">
 			  	<div class="col-xs-2">
-			    	<a class="play-button" ng-click="playLoop(loop, $event)">
+			    	<a class="play-button" data-ng-click="playLoop(loop, $event)">
 			      		<i class="fa fa-play"></i>
 			   		</a>
 				    <div class="gapless-block" id="gapless_<% loop.id %>"></div>
@@ -29,13 +29,13 @@
 			    		</a>
 			    		<p class="user-name"><% loop.user.name %></p>
 	                    <p class="rank-text">
-	                        <img class="rank-icon" ng-src="/images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>
+	                        <img class="rank-icon" data-ng-src="/images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>
 	                    </p>
 			    	</div>
 			  	</div>
 	            @if(Auth::check())
 				  	<div class="favourite">
-				  			<i class="fa" ng-class="{ 'fa-star active' : isFavourite, 'fa-star-o' : !isFavourite }" ng-click="favourite(loop.id);"></i>
+				  			<i class="fa" data-ng-class="{ 'fa-star active' : isFavourite, 'fa-star-o' : !isFavourite }" data-ng-click="favourite(loop.id);"></i>
 				  	</div>
 	            @else
 				  	<div class="favourite">
@@ -44,7 +44,7 @@
 	            @endif
 			</div>
 			<div class="labels">
-				<p ng-repeat="tag in loop.tags">
+				<p data-ng-repeat="tag in loop.tags">
 					<span class="label">
 						<i class="fa fa-tag"></i> <a href="/tag/<% tag.name %>"><% tag.name %></a>
 					</span>

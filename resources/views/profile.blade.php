@@ -4,16 +4,16 @@
 
 @section('content')
 
-<div class="profile" ng-controller="ProfileController">
+<div class="profile" data-ng-controller="ProfileController">
 
 	@if(Auth::check())
 
 		@if (session()->has('success'))
-	        <div class="col-xs-12" ng-controller="AlertController">
-	        	<div class="info-box success" ng-hide="hidden" ng-class="{fade: startFade}">
+	        <div class="col-xs-12" data-ng-controller="AlertController">
+	        	<div class="info-box success" data-ng-hide="hidden" data-ng-class="{fade: startFade}">
 					<p>
 						<i class="fa fa-check alert-type-icon"></i>{{ Session::get('success') }}
-						<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+						<i data-ng-click="closeAlert()" class="fa fa-times close-button"></i>
 					</p>
 				</div>
 	        </div>
@@ -92,18 +92,18 @@
 			</div>
 		</section>
 		
-		<section class="favourite-loops scrollable-section" data-section-title="Your favourite loops" ng-init="getUserFavourites()">
+		<section class="favourite-loops scrollable-section" data-section-title="Your favourite loops" data-ng-init="getUserFavourites()">
 			<div class="col-xs-12">
 				<h2 class="title">Your favourite loops</h2>
 			</div>
 			<i class="fa fa-heart heart-background"></i>
 			<i class="fa fa-heart heart-background-2"></i>
 
-			<div class="col-xs-12 col-sm-6 col-lg-4" ng-controller="LoopController" ng-repeat="loop in favouriteLoops | limitTo:loopLimit track by loop.id" ng-init="isFavourite=loop.isFavourite">
+			<div class="col-xs-12 col-sm-6 col-lg-4" data-ng-controller="LoopController" data-ng-repeat="loop in favouriteLoops | limitTo:loopLimit track by loop.id" data-ng-init="isFavourite=loop.isFavourite">
 
 				<div class="row loop-box favourite">
 				  	<div class="col-xs-2">
-				    	<a class="play-button" ng-click="playLoop(loop, $event)">
+				    	<a class="play-button" data-ng-click="playLoop(loop, $event)">
 				      		<i id="play-button-<% loop.id %>" class="fa fa-play"></i>
 				   		</a>
 					    <div class="gapless-block" id="gapless_<% loop.id %>"></div>
@@ -120,16 +120,16 @@
 					    	</a>
 				    		<p class="user-name"><% loop.user.name %></p>
 	                        <p class="rank-text">
-	                            <img class="rank-icon" ng-src="/images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>
+	                            <img class="rank-icon" data-ng-src="/images/rankIcons/rank_<% loop.user.rank %>.png" alt="This users rank medal"> <% loop.user.rating %>
 	                        </p>
 				    	</div>
 				  	</div>
 					<div class="favourite">
-					  	<i class="fa fa-star active" ng-click="favourite(loop.id); removeFavourite(loop)"></i>
+					  	<i class="fa fa-star active" data-ng-click="favourite(loop.id); removeFavourite(loop)"></i>
 					</div>
 				</div>
 				<div class="labels">
-					<p ng-repeat="tag in loop.tags">
+					<p data-ng-repeat="tag in loop.tags">
 						<span class="label">
 							<i class="fa fa-tag"></i> <a href="/tag/<% tag.name %>"><% tag.name %></a>
 						</span>
@@ -137,30 +137,30 @@
 				</div>
 			</div>
 
-			<div ng-show="favouriteLoops.length > 9 && loopLimit <= favouriteLoops.length" class="col-xs-12">
-				<button class="basic-button load-more-button" ng-click="loopLimit = loopLimit + 3" href="">Load more</button>
+			<div data-ng-show="favouriteLoops.length > 9 && loopLimit <= favouriteLoops.length" class="col-xs-12">
+				<button class="basic-button load-more-button" data-ng-click="loopLimit = loopLimit + 3" href="">Load more</button>
 			</div>
 
-			<div ng-show="favouriteLoops.length === 0" class="col-xs-12" ng-controller="AlertController">
-				<div class="info-box info" ng-hide="hidden" ng-class="{fade: startFade}">
+			<div data-ng-show="favouriteLoops.length === 0" class="col-xs-12" data-ng-controller="AlertController">
+				<div class="info-box info" data-ng-hide="hidden" data-ng-class="{fade: startFade}">
 					<p>
 						<i class="fa fa-info alert-type-icon"></i>You currently don't have anny <strong>favourite guitar loops</strong>.
-						<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+						<i data-ng-click="closeAlert()" class="fa fa-times close-button"></i>
 					</p>
 				</div>
 			</div>
 		</section>
 
-		<section class="edit-profile scrollable-section" data-section-title="Edit your profile" ng-controller="EditProfileController">
+		<section class="edit-profile scrollable-section" data-section-title="Edit your profile" data-ng-controller="EditProfileController">
 			<div class="col-xs-12 col-sm-6 col-sm-offset-3" id="edit-section">
 				<h2 class="title">Edit your profile</h2>
 				@if(count($errors) > 0)
-				    <div ng-controller="AlertController">
-				    	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
+				    <div data-ng-controller="AlertController">
+				    	<div class="info-box error" data-ng-hide="hidden" data-ng-class="{fade: startFade}">
 				    		@foreach ($errors->all() as $error)
 								<p>
 									<i class="fa fa-times alert-type-icon"></i>{{ $error }}
-									<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+									<i data-ng-click="closeAlert()" class="fa fa-times close-button"></i>
 								</p>
 							@endforeach
 						</div>
@@ -168,11 +168,11 @@
 				@endif
 
 				@if (session()->has('error'))
-			        <div ng-controller="AlertController">
-			        	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
+			        <div data-ng-controller="AlertController">
+			        	<div class="info-box error" data-ng-hide="hidden" data-ng-class="{fade: startFade}">
 							<p>
 								<i class="fa fa-check alert-type-icon"></i>{{ Session::get('error') }}
-								<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+								<i data-ng-click="closeAlert()" class="fa fa-times close-button"></i>
 							</p>
 						</div>
 			        </div>
@@ -185,12 +185,12 @@
 					    	type="text" 
 					    	name="name"
 					    	value=""
-					    	ng-init="name='{{ Auth::user()->name }}'"
-					    	ng-model="name"
-							ng-model-options='{ debounce: 300 }'
+					    	data-ng-init="name='{{ Auth::user()->name }}'"
+					    	data-ng-model="name"
+							data-ng-model-options='{ debounce: 300 }'
 							class="form-control"
-							ng-class="{ enabled : nameIsValid }"
-							ng-change="checkName(name)"
+							data-ng-class="{ enabled : nameIsValid }"
+							data-ng-change="checkName(name)"
 							placeholder="Your nickname"
 							required>
 					</div>
@@ -200,12 +200,12 @@
 					    	type="text" 
 					    	name="email"
 					    	value=""
-					    	ng-init="email='{{ Auth::user()->email }}'"
-					    	ng-model="email"
-							ng-model-options='{ debounce: 300 }'
+					    	data-ng-init="email='{{ Auth::user()->email }}'"
+					    	data-ng-model="email"
+							data-ng-model-options='{ debounce: 300 }'
 							class="form-control"
-							ng-class="{ enabled : emailIsValid }"
-							ng-change="checkEmail(email)"
+							data-ng-class="{ enabled : emailIsValid }"
+							data-ng-change="checkEmail(email)"
 							placeholder="Your email"
 							required>
 					</div>
@@ -215,11 +215,11 @@
 					    	type="password" 
 					    	name="oldpassword"
 					    	value="" 
-					    	ng-model="oldpassword"
-							ng-model-options='{ debounce: 300 }'
+					    	data-ng-model="oldpassword"
+							data-ng-model-options='{ debounce: 300 }'
 							class="form-control"
-							ng-class="{ enabled : oldPasswordIsValid }"
-							ng-change="checkOldPassword(oldpassword)"
+							data-ng-class="{ enabled : oldPasswordIsValid }"
+							data-ng-change="checkOldPassword(oldpassword)"
 							placeholder="Old password">
 					</div>
 					<div class="form-group">
@@ -228,29 +228,29 @@
 					    	type="password" 
 					    	name="newpassword"
 					    	value="" 
-					    	ng-model="newpassword"
-							ng-model-options='{ debounce: 300 }'
+					    	data-ng-model="newpassword"
+							data-ng-model-options='{ debounce: 300 }'
 							class="form-control"
-							ng-class="{ enabled : newPasswordIsValid }"
-							ng-change="checkNewPassword(newpassword)"
+							data-ng-class="{ enabled : newPasswordIsValid }"
+							data-ng-change="checkNewPassword(newpassword)"
 							placeholder="New password">
 					</div>
 					<div class="form-group">
 					    <div class="custom-file-upload">
 						    {!! Form::label('file', 'Profile picture') !!}
-						    <input type="file" id="file" name="image" multiple ng-model="file" onchange="angular.element(this).scope().checkFile()"/>
+						    <input type="file" id="file" name="image" multiple data-ng-model="file" onchange="angular.element(this).scope().checkFile()"/>
 
 						</div>
 					</div>
 
 					<input type="hidden" name="id" value="{{ Auth::user()->id }}">
 
-					<button type="submit" ng-disabled="!uploadEnabled" ng-class="{ disabled : !uploadEnabled}" class="basic-button">Edit</button>
+					<button type="submit" data-ng-disabled="!uploadEnabled" data-ng-class="{ disabled : !uploadEnabled}" class="basic-button">Edit</button>
 				{!! Form::close() !!}	
 			</div>
 		</section>
 
-		<section class="delete-account scrollable-section" data-section-title="Delete your account" ng-controller="DeleteAccountController">
+		<section class="delete-account scrollable-section" data-section-title="Delete your account" data-ng-controller="DeleteAccountController">
 			<div class="col-xs-12">
 				<h2 class="title">Danger zone</h2>
 				<p>Once you delete your account, there is no going back. Please be certain.</p>
@@ -270,13 +270,13 @@
 					    	<input 
 						    	type="text" 
 						    	value="" 
-						    	ng-model="query"
-								ng-model-options='{ debounce: 500 }'
+						    	data-ng-model="query"
+								data-ng-model-options='{ debounce: 500 }'
 								class="form-control"
-								ng-change="checkAccountEmail(query,'{{ Auth::user()->email }}')"
-								ng-placeholder="Enter your email here">
+								data-ng-change="checkAccountEmail(query,'{{ Auth::user()->email }}')"
+								data-ng-placeholder="Enter your email here">
 
-							<a class="basic-button" href="/delete/account/{{ Auth::user()->id }}" ng-class="{ 'disabled': !enableDelete }">Yes</a>
+							<a class="basic-button" href="/delete/account/{{ Auth::user()->id }}" data-ng-class="{ 'disabled': !enableDelete }">Yes</a>
 							<a class="basic-button" href="" data-dismiss="modal">No</a
 					  	</div>
 					</div>

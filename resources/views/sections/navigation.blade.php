@@ -14,7 +14,7 @@
         <div id="menu" class="mobile-dropdown">
             <ul>
                 <li>
-                    <a href="" ng-click="dropdownToggled = !dropdownToggled">
+                    <a href="" data-ng-click="dropdownToggled = !dropdownToggled">
                         <span><i class="fa fa-bars"></i></span>
                     </a>
                 </li>
@@ -22,7 +22,7 @@
         </div>
     </div>
     <div class="col-md-12 no-min-h">
-        <div id="menu" class="dropdown" ng-class="{ down : dropdownToggled }">
+        <div id="menu" class="dropdown" data-ng-class="{ down : dropdownToggled }">
             <ul>
                 <li class="{{{ (Request::is('home') ? 'active' : '') }}}">
                     <a href="{{ route('home') }}">
@@ -47,27 +47,27 @@
                 <li class="mobile-search">
                     <input 
                         type="text" 
-                        ng-model="query" 
-                        ng-model-options='{ debounce: 500 }' 
+                        data-ng-model="query" 
+                        data-ng-model-options='{ debounce: 500 }' 
                         id="search-input" 
-                        ng-change="setQueryValue(query); searchOnTags(query); searchOnCategory(query); searchOnLoopname(query)" 
+                        data-ng-change="setQueryValue(query); searchOnTags(query); searchOnCategory(query); searchOnLoopname(query)" 
                         class="closed"
                         placeholder="&#xF002; Search loops"
                         style="font-family:AUdimat, FontAwesome"/>
                 </li>
                 <li class="search">
-                    <a class="search-button" href="" ng-click="searchActive = !searchActive">
+                    <a class="search-button" href="" data-ng-click="searchActive = !searchActive">
                         <span><i class="fa fa-fw fa-search"></i> Search</span>
                     </a>
                     <input 
                         type="text" 
-                        ng-model="query" 
-                        ng-model-options='{ debounce: 500 }' 
+                        data-ng-model="query" 
+                        data-ng-model-options='{ debounce: 500 }' 
                         id="search-input" 
-                        ng-change="setQueryValue(query); searchOnTags(query); searchOnCategory(query); searchOnLoopname(query)" 
+                        data-ng-change="setQueryValue(query); searchOnTags(query); searchOnCategory(query); searchOnLoopname(query)" 
                         class="closed"
                         placeholder="Search guitar loops"
-                        ng-show="searchActive"/>
+                        data-ng-show="searchActive"/>
                 </li>
                 @if(Auth::check())
                     <li class="logout-button"><a href="{{route('getLogout')}}"><span>Logout</span></a></li>

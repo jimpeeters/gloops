@@ -14,13 +14,13 @@
 	</div>
 
 	@if (count($errors) > 0)
-	    <div class="col-xs-12 col-lg-6 col-lg-offset-3" ng-controller="AlertController">
-	    	<div class="info-box error" ng-hide="hidden" ng-class="{fade: startFade}">
+	    <div class="col-xs-12 col-lg-6 col-lg-offset-3" data-ng-controller="AlertController">
+	    	<div class="info-box error" data-ng-hide="hidden" data-ng-class="{fade: startFade}">
 	    		@foreach ($errors->all() as $key => $error)
 					<p>
 						<i class="fa fa-times alert-type-icon"></i>{{ $error }}
 						@if($key == 0)
-							<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+							<i data-ng-click="closeAlert()" class="fa fa-times close-button"></i>
 						@endif
 					</p>
 				@endforeach
@@ -29,25 +29,25 @@
 	@endif
 
 	@if (session()->has('success'))
-        <div class="col-xs-12 col-lg-6 col-lg-offset-3" ng-controller="AlertController">
-        	<div class="info-box success" ng-hide="hidden" ng-class="{fade: startFade}">
+        <div class="col-xs-12 col-lg-6 col-lg-offset-3" data-ng-controller="AlertController">
+        	<div class="info-box success" data-ng-hide="hidden" data-ng-class="{fade: startFade}">
 				<p>
 					<i class="fa fa-check alert-type-icon"></i>{{ Session::get('success') }}
-					<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+					<i data-ng-click="closeAlert()" class="fa fa-times close-button"></i>
 				</p>
 			</div>
         </div>
     @endif
-	<div class="col-xs-12 col-md-offset-3 col-md-6" ng-controller="LoopController" ng-init="isFavourite={{ $loop->isFavourite }}">
-		<div class="row loop-box" ng-class="{ 'favourite' : isFavourite }">
+	<div class="col-xs-12 col-md-offset-3 col-md-6" data-ng-controller="LoopController" data-ng-init="isFavourite={{ $loop->isFavourite }}">
+		<div class="row loop-box" data-ng-class="{ 'favourite' : isFavourite }">
 		  	<div class="col-xs-2 loopbox-section">
-		    	<a class="play-button" ng-click="playLoop({{ $loop }}, $event)">
+		    	<a class="play-button" data-ng-click="playLoop({{ $loop }}, $event)">
 		      		<i class="fa fa-play"></i>
 		   		</a>
 			    <div class="gapless-block" id="gapless_{{ $loop->id }}"></div>
 		  	</div>
 		  	<div class="col-xs-7 loopbox-section">
-		    	<h3 class="loop-title" ng-bind="name">{{ $loop->name }}</h3>
+		    	<h3 class="loop-title" data-ng-bind="name">{{ $loop->name }}</h3>
 		    	<p class="duration" id="gapless_{{ $loop->id }}_duration">0:00</p>
 		    	<p class="category"><i class="fa fa-music"></i> {{ $loop->category->name }}</p>
 		  	</div>
@@ -56,12 +56,12 @@
 		    		<div class="user-avatar" style="background-image: url({{ $loop->user->avatar }})"></div>
 		    		<p class="user-name">{{ $loop->user->name }}</p>
 					<p class="rank-text">
-						<img class="rank-icon" ng-src="/images/rankIcons/rank_{{ $loop->user->rank }}.png" alt="This users rank medal"> {{ $loop->user->rating }}
+						<img class="rank-icon" data-ng-src="/images/rankIcons/rank_{{ $loop->user->rank }}.png" alt="This users rank medal"> {{ $loop->user->rating }}
 					</p>
 		    	</div>
 		  	</div>
 			<div class="favourite">
-			  	<i class="fa" ng-class="{ 'fa-star active' : isFavourite, 'fa-star-o' : !isFavourite }" ng-click="favourite({{ $loop->id }});"></i>
+			  	<i class="fa" data-ng-class="{ 'fa-star active' : isFavourite, 'fa-star-o' : !isFavourite }" data-ng-click="favourite({{ $loop->id }});"></i>
 			</div>
 		</div>
 		<div class="labels">
@@ -79,7 +79,7 @@
 		{!! Form::open(array('route' => 'edit', 'method' => 'POST','files' => true)) !!}
 			<div class="form-group">
 				{!! Form::label('name', 'Name') !!}
-				<input class="form-control" type="text" ng-model="name" ng-init="name='{{ $loop->name }}'" name="name" value="{{ $loop->name }}" id="name" required>
+				<input class="form-control" type="text" data-ng-model="name" data-ng-init="name='{{ $loop->name }}'" name="name" value="{{ $loop->name }}" id="name" required>
 			</div>
 
 			<div class="form-group">

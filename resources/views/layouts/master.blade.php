@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="gloopsApp">
+<html lang="en" data-ng-app="gloopsApp">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -59,7 +59,7 @@
 
     @include('analytics.analyticstracking')
 
-    <div class="container" ng-controller="MainController">
+    <div class="container" data-ng-controller="MainController">
         
         @if(!Auth::check())
         <!-- Login modal when not logged in -->
@@ -104,11 +104,11 @@
 
         <div class="row content">
 
-            <div ng-show="!isSearching">
+            <div data-ng-if="!isSearching">
         	   @yield('content')
             </div>
 
-            <div ng-show="isSearching" class="search">
+            <div data-ng-if="isSearching" class="search">
                @include('search-results')
             </div>
 

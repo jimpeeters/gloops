@@ -12,11 +12,11 @@
 		<h2 class="title">Admin section</h2>
 
 			@if (session()->has('success'))
-		        <div ng-controller="AlertController">
-		        	<div class="info-box success" ng-hide="hidden" ng-class="{fade: startFade}">
+		        <div data-ng-controller="AlertController">
+		        	<div class="info-box success" data-ng-hide="hidden" data-ng-class="{fade: startFade}">
 						<p>
 							<i class="fa fa-check alert-type-icon"></i>{{ Session::get('success') }}
-							<i ng-click="closeAlert()" class="fa fa-times close-button"></i>
+							<i data-ng-click="closeAlert()" class="fa fa-times close-button"></i>
 						</p>
 					</div>
 		        </div>
@@ -105,8 +105,8 @@
 						        <tr>
 						            <td>{{ $loop->name }}</td>
 						            <td>
-						            	<div class="admin-loopbox" ng-controller="LoopController">
-									    	<a class="play-button" ng-click="playLoop({{ $loop }}, $event)">
+						            	<div class="admin-loopbox" data-ng-controller="LoopController">
+									    	<a class="play-button" data-ng-click="playLoop({{ $loop }}, $event)">
 									      		<i id="play-button-{{ $loop->id }}" class="fa fa-play"></i>
 									   		</a>
 										    <div class="gapless-block" id="gapless_{{ $loop->id }}"></div>
